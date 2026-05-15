@@ -1,0 +1,622 @@
+/* ──────────────────────────────────────────────────────────────
+   Le CP5 de Maurisson — Le guide ultime
+   Mode d'emploi imprimable A4 portrait, recto seul.
+   Style : DNA Chez Maurisson en version claire, étendu pour CP5.
+   ────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@100..900&display=swap');
+
+:root {
+  /* Palette claire — fond blanc (éco-encre), accents ember conservés */
+  --bg:       #ffffff;
+  --bg-tone:  #f5efe6;
+  --bg-warm:  #fdf8ee;
+  --bg-silver:#e8e6e2;   /* panneau silver CP5 */
+  --bg-dark:  #1a1814;   /* zones panneau noir/sombre */
+  --ink:      #120f0c;
+  --ink-soft: #241f19;
+  --ink-muted:#4a4038;
+  --ink-faint:#6d6158;
+  --ember:        #c56a2a;
+  --ember-deep:   #7a3a14;
+  --ember-bright: #e08a44;
+  --ember-light:  #edaa6a;
+  --ember-pale:   #fde4c0;
+  --moss: #5a7360;
+  --crit: #b3261e;       /* rouge alerte critique */
+  --crit-bg: #fde7e3;
+  --line:        rgba(18,15,12,.14);
+  --line-strong: rgba(18,15,12,.28);
+
+  /* Couleur écran LED imprimable (rouge profond, lisible papier) */
+  --led-bg: #1a0d08;
+  --led-fg: #d63a1a;
+
+  --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'Fraunces', Georgia, serif;
+}
+
+@page { size: A4 portrait; margin: 0; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 9.5pt;
+  line-height: 1.42;
+  font-weight: 300;
+  letter-spacing: -.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+/* ── Page (A4 portrait) ─────────────────────────────────────── */
+.page {
+  width: 210mm; height: 297mm;
+  position: relative; overflow: hidden;
+  break-after: page;
+  page-break-after: always;
+  padding: 16mm 16mm 14mm 16mm;
+  background: var(--bg);
+}
+.page:last-of-type {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.page > * { position: relative; z-index: 1; }
+
+/* ── Page footer (folio + tagline) ──────────────────────────── */
+.foot {
+  position: absolute;
+  bottom: 7mm; left: 16mm; right: 16mm;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 7pt; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.foot .num {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 10pt; letter-spacing: 0; text-transform: none; color: var(--ember);
+}
+.foot .brand {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 8.5pt; letter-spacing: .03em; text-transform: none; color: var(--ink-faint);
+}
+
+/* ── Eyebrow ────────────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .55em;
+  font-family: var(--font-body); font-size: 7.5pt; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ember-deep);
+  margin-bottom: 5mm;
+}
+.eyebrow::before {
+  content:''; display:inline-block; width: 22pt; height: 1px;
+  background: currentColor; opacity: .55;
+}
+
+/* ── Display & headings ─────────────────────────────────────── */
+.display { font-family: var(--font-display); font-weight: 300; line-height: .98; letter-spacing: -.025em; }
+
+h1.section-title {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 24pt; line-height: 1.05; letter-spacing: -.025em;
+  color: var(--ink); margin-bottom: 2.5mm;
+  max-width: 24ch;
+}
+h1.section-title em {
+  font-style: italic; font-weight: 300; color: var(--ember-deep);
+}
+
+h2.sub-title {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 11.5pt; color: var(--ember-deep);
+  margin-top: 2.5mm; margin-bottom: 1mm; letter-spacing: -.01em;
+}
+h3.mini-title {
+  font-family: var(--font-display); font-weight: 500; font-style: italic;
+  font-size: 10.5pt; color: var(--ink-soft);
+  margin-top: 2.5mm; margin-bottom: 1mm;
+}
+
+p.lead {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 11pt; line-height: 1.3; letter-spacing: -.01em;
+  color: var(--ink-soft); max-width: 34em;
+  margin-bottom: 4mm;
+}
+
+.body { color: var(--ink-soft); max-width: 40em; }
+.body p { margin-bottom: 2mm; }
+.body p:last-child { margin-bottom: 0; }
+.body strong { font-weight: 500; color: var(--ink); }
+.body ul, .body ol { padding-left: 5mm; margin-bottom: 2mm; }
+.body li { margin-bottom: .8mm; font-size: 9pt; line-height: 1.4; }
+
+/* Step block */
+.step {
+  margin-bottom: 2mm;
+  padding-left: 0;
+}
+.step .label {
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 7.5pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ember-deep); display: block; margin-bottom: .8mm;
+}
+.step .body-line { color: var(--ink-soft); font-size: 9pt; line-height: 1.4; }
+
+/* Pill button-name reference */
+.pill {
+  display: inline-block;
+  padding: 1pt 5pt;
+  border: .8pt solid var(--line-strong);
+  border-radius: 999px;
+  font-family: var(--font-body); font-weight: 500; font-size: 7.5pt;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink); background: var(--bg-warm);
+  white-space: nowrap;
+}
+
+/* Callout ember (astuce / encadré normal) */
+.callout {
+  border: .8pt solid var(--line-strong);
+  border-left: 3pt solid var(--ember);
+  background: var(--bg-warm);
+  padding: 2.5mm 3.5mm;
+  margin-top: 2.5mm;
+  border-radius: 1.5mm;
+}
+.callout .callout-label {
+  font-family: var(--font-body); font-size: 7pt; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ember-deep); margin-bottom: 1mm;
+}
+.callout p { color: var(--ink-soft); font-size: 8.5pt; line-height: 1.4; margin-bottom: 1mm; }
+.callout p:last-child { margin-bottom: 0; }
+.callout strong { color: var(--ink); font-weight: 500; }
+
+/* Callout WARN (orange dashed) */
+.warn {
+  border: 1pt dashed var(--ember);
+  background: rgba(253, 228, 192, .35);
+  padding: 2.5mm 3.5mm;
+  margin-top: 2.5mm;
+  border-radius: 1.5mm;
+}
+.warn .callout-label {
+  font-family: var(--font-body); font-size: 7pt; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ember-deep); margin-bottom: 1mm;
+}
+.warn p { color: var(--ink-soft); font-size: 8.5pt; line-height: 1.4; margin-bottom: 1mm; }
+.warn p:last-child { margin-bottom: 0; }
+.warn strong { color: var(--ink); font-weight: 600; }
+
+/* Callout CRIT (rouge — alerte critique, peu utilisé) */
+.crit {
+  border: 1.4pt solid var(--crit);
+  background: var(--crit-bg);
+  padding: 3mm 4mm;
+  margin-top: 2.5mm;
+  border-radius: 1.5mm;
+}
+.crit .callout-label {
+  font-family: var(--font-body); font-size: 7.5pt; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--crit); margin-bottom: 1mm;
+}
+.crit p { color: var(--ink-soft); font-size: 8.5pt; line-height: 1.4; margin-bottom: 1mm; }
+.crit p:last-child { margin-bottom: 0; }
+.crit strong { color: var(--crit); font-weight: 600; }
+
+/* Quotation block */
+.quote {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 14pt; line-height: 1.3; letter-spacing: -.01em;
+  color: var(--ember-deep);
+  border-left: 2pt solid var(--ember);
+  padding-left: 5mm;
+  margin: 5mm 0;
+  max-width: 32em;
+}
+.quote .attribution {
+  display: block; margin-top: 2mm;
+  font-family: var(--font-body); font-style: normal; font-weight: 400;
+  font-size: 8pt; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ── LED screen (mini display) ──────────────────────────────── */
+.led {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--led-bg);
+  color: var(--led-fg);
+  font-family: var(--font-display); font-weight: 600; font-style: normal;
+  letter-spacing: .04em;
+  border-radius: 1.5mm;
+  padding: 2mm 4mm;
+  border: .6pt solid #000;
+  box-shadow: inset 0 0 1mm rgba(0,0,0,.6);
+}
+.led.sm { font-size: 12pt; padding: 1.2mm 2.5mm; }
+.led.md { font-size: 18pt; padding: 2mm 4mm; }
+.led.lg { font-size: 28pt; padding: 3mm 6mm; }
+
+/* ── Tables ─────────────────────────────────────────────────── */
+table.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+  margin: 2mm 0 2.5mm 0;
+}
+table.tbl th, table.tbl td {
+  border-bottom: .4pt solid var(--line);
+  padding: 1mm 2mm 1mm 0;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+table.tbl th {
+  border-bottom: .8pt solid var(--line-strong);
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 7pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ember-deep);
+  padding-top: 0;
+}
+table.tbl td.num, table.tbl th.num { font-family: var(--font-display); font-weight: 500; color: var(--ember); }
+table.tbl td.right { text-align: right; }
+table.tbl tr:last-child td { border-bottom: none; }
+
+/* ── Cover page ─────────────────────────────────────────────── */
+.cover {
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 24mm 20mm 18mm 20mm;
+}
+.cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.cover-mark {
+  width: 16mm; height: 16mm; border-radius: 999px;
+  border: .8pt solid var(--line-strong);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--ember-deep);
+}
+.cover-mark svg { width: 9mm; height: 9mm; }
+.cover-meta {
+  text-align: right;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  color: var(--ink-faint); font-size: 9pt; line-height: 1.4;
+}
+.cover-meta .brand-line { color: var(--ember-deep); font-style: normal; font-family: var(--font-body); font-weight: 500; font-size: 7pt; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 1.5mm; }
+
+.cover-title {
+  font-family: var(--font-display); font-weight: 300;
+  line-height: .92; letter-spacing: -.025em;
+  color: var(--ink); margin-top: -2mm;
+}
+.cover-title .small {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic; font-weight: 300;
+  font-size: 36pt; line-height: 1; letter-spacing: -.02em;
+  text-transform: none;
+  color: var(--ink-soft);
+  margin-bottom: 3mm;
+}
+.cover-title .name {
+  display: block;
+  font-style: italic; font-weight: 300;
+  font-size: 76pt; line-height: .9; letter-spacing: -.035em;
+  background: linear-gradient(95deg, var(--ember-deep) 0%, var(--ember) 50%, var(--ember-bright) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.cover-sub {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 15pt; line-height: 1.32; letter-spacing: -.01em;
+  color: var(--ink-soft); margin-top: 6mm; max-width: 26em;
+}
+
+.cover-illustration {
+  margin: 6mm auto 4mm auto;
+  width: 165mm;
+  display: block;
+  filter: drop-shadow(0 4mm 5mm rgba(18, 15, 12, 0.18));
+}
+
+.cover-menu {
+  text-align: center;
+  border-top: .6pt solid var(--line);
+  border-bottom: .6pt solid var(--line);
+  padding: 5mm 0;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 11pt; line-height: 1.65;
+  color: var(--ink-soft);
+  letter-spacing: -.005em;
+}
+.cover-menu .dot { color: var(--ember); margin: 0 .4em; }
+
+.cover-bottom {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-family: var(--font-body); font-weight: 500; font-size: 7pt;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ink-faint);
+}
+.cover-bottom .meta-italic {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 9pt; letter-spacing: 0; text-transform: none;
+  color: var(--ink-faint);
+}
+
+/* ── Two-column layouts ─────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 9mm;
+  margin-top: 4mm;
+  align-items: start;
+}
+.two-col.flip { grid-template-columns: 0.95fr 1.05fr; }
+.two-col.even { grid-template-columns: 1fr 1fr; }
+.two-col .visual {
+  background: var(--bg-tone);
+  border: .6pt solid var(--line);
+  border-radius: 2mm;
+  padding: 5mm;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Cards grid (voices, recipes) ───────────────────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  margin-top: 3mm;
+}
+.cards-grid.two { grid-template-columns: repeat(2, 1fr); gap: 3.5mm; }
+.vcard {
+  border: .6pt solid var(--line-strong);
+  border-radius: 2mm;
+  padding: 2.8mm 3mm 3mm 3mm;
+  background: var(--bg-warm);
+  position: relative;
+  display: flex; flex-direction: column; gap: 1mm;
+  page-break-inside: avoid;
+}
+.vcard .vcard-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  gap: 2mm;
+}
+.vcard .vcard-name {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 11pt; line-height: 1.05; color: var(--ink); letter-spacing: -.01em;
+}
+.vcard .vcard-cat {
+  font-family: var(--font-body); font-size: 6pt; font-weight: 500;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ember-deep);
+}
+.vcard .vcard-source {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 7.5pt; color: var(--ink-faint);
+  margin-bottom: 1mm;
+}
+.vcard .vcard-desc {
+  font-size: 7.5pt; line-height: 1.32; color: var(--ink-soft);
+  margin-bottom: 1mm;
+}
+.vcard .vcard-combo {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 7.5pt; color: var(--ember-deep);
+  margin-top: auto;
+  padding-top: 1.2mm;
+  border-top: .4pt solid var(--line);
+  line-height: 1.3;
+}
+
+/* ── Visual containers (panel zooms) ────────────────────────── */
+.panel-zoom {
+  width: 100%;
+  background: var(--bg-tone);
+  border-radius: 2mm;
+  padding: 4mm;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3mm;
+}
+.panel-zoom .caption {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 8.5pt; color: var(--ink-faint); text-align: center;
+  max-width: 36em;
+  line-height: 1.4;
+}
+
+/* ── Big numbers (procedures) ───────────────────────────────── */
+.big-step {
+  display: grid;
+  grid-template-columns: 7mm 1fr;
+  gap: 2.5mm;
+  align-items: start;
+  padding: 1mm 0;
+}
+.big-step .num {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 18pt; line-height: 1; color: var(--ember);
+  letter-spacing: -.02em;
+}
+.big-step .body-line {
+  font-size: 9pt; color: var(--ink-soft); line-height: 1.42;
+  padding-top: 3pt;
+}
+.big-step .body-line strong { color: var(--ink); font-weight: 500; }
+
+/* ── Lineage timeline (preface) ─────────────────────────────── */
+.timeline {
+  display: grid;
+  grid-template-columns: 18mm 1fr;
+  gap: 4mm;
+  margin: 4mm 0;
+}
+.timeline-item {
+  display: contents;
+}
+.timeline .year {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 16pt; color: var(--ember);
+  text-align: right;
+  padding-top: 2mm;
+  border-right: .8pt solid var(--ember);
+  padding-right: 4mm;
+}
+.timeline .ev {
+  padding: 2mm 0;
+  font-size: 9pt; color: var(--ink-soft); line-height: 1.5;
+}
+.timeline .ev strong { color: var(--ink); font-weight: 500; }
+.timeline-item:not(:last-child) .ev {
+  border-bottom: .4pt solid var(--line);
+}
+
+/* ── Glossary (P28) — 2 colonnes ────────────────────────────── */
+.gloss {
+  column-count: 2;
+  column-gap: 8mm;
+  margin-top: 2mm;
+  font-size: 7.5pt;
+}
+.gloss dt {
+  font-family: var(--font-display); font-weight: 500; font-style: italic;
+  color: var(--ember-deep);
+  margin-top: 1.5mm;
+  padding-top: .8mm;
+  border-top: .4pt solid var(--line);
+  break-inside: avoid;
+}
+.gloss dt:first-child { margin-top: 0; }
+.gloss dd {
+  color: var(--ink-soft); padding: .3mm 0; line-height: 1.35;
+  margin-bottom: .8mm;
+  break-inside: avoid;
+}
+
+/* ── Recipe blocks (chapitres 7-10) ────────────────────────── */
+.recipe {
+  border-left: 2pt solid var(--ember);
+  padding: 1mm 0 1mm 3.5mm;
+  margin-bottom: 2.2mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.recipe.compact {
+  padding: .5mm 0 .5mm 3mm;
+  margin-bottom: 1.4mm;
+}
+.recipe-title {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: 10.5pt; color: var(--ink); line-height: 1.1;
+  margin-bottom: .3mm; letter-spacing: -.01em;
+}
+.recipe-title .src {
+  font-family: var(--font-body); font-style: normal; font-weight: 400;
+  font-size: 6.5pt; color: var(--ember); letter-spacing: .1em; text-transform: uppercase;
+  margin-left: 2mm; vertical-align: middle;
+}
+.recipe-essence {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 8pt; color: var(--ember-deep);
+  margin-bottom: .8mm; line-height: 1.25;
+}
+.recipe-params {
+  font-size: 7.5pt; line-height: 1.4; color: var(--ink-soft);
+  margin-bottom: .5mm;
+}
+.recipe-params strong {
+  font-weight: 500; color: var(--ink);
+}
+.recipe-params .lbl {
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 6.5pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ember-deep); margin-right: 1.5mm;
+}
+.recipe-listen {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 7.8pt; color: var(--ink-muted);
+  border-top: .4pt dashed var(--line);
+  padding-top: .6mm; margin-top: .6mm;
+  line-height: 1.3;
+}
+.recipe-listen::before {
+  content: "→ "; color: var(--ember); font-weight: 500;
+}
+
+/* ── Param-grid (Pre-Amp didactique etc.) ──────────────────── */
+.param-block {
+  break-inside: avoid;
+  page-break-inside: avoid;
+  margin-bottom: 4mm;
+  padding-bottom: 2mm;
+  border-bottom: .4pt solid var(--line);
+}
+.param-block:last-child { border-bottom: none; }
+.param-name {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: 12pt; color: var(--ember-deep); letter-spacing: -.01em;
+  margin-bottom: .5mm;
+}
+.param-name .range {
+  font-family: var(--font-body); font-style: normal; font-weight: 500;
+  font-size: 7.5pt; color: var(--ink-faint);
+  letter-spacing: .05em; margin-left: 3mm;
+}
+.param-mech {
+  font-size: 8.5pt; line-height: 1.4; color: var(--ink-soft);
+  margin-bottom: 1mm;
+}
+.param-mech strong { color: var(--ink); font-weight: 500; }
+.param-listen {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 8.5pt; color: var(--ink-muted); line-height: 1.4;
+  margin-top: 1mm;
+}
+.param-values {
+  display: grid;
+  grid-template-columns: 22mm 1fr;
+  gap: .8mm 3mm;
+  font-size: 8pt;
+  margin-top: 1mm;
+}
+.param-values dt {
+  font-family: var(--font-body); font-weight: 600;
+  color: var(--ember-deep);
+  font-size: 7.5pt; letter-spacing: .05em;
+}
+.param-values dd {
+  color: var(--ink-soft); line-height: 1.35;
+}
+
+/* ── Specific tweaks ───────────────────────────────────────── */
+p { orphans: 2; widows: 2; }
+.mini { font-size: 8pt; color: var(--ink-faint); }
+.italic { font-style: italic; }
+.center { text-align: center; }
+.serif { font-family: var(--font-display); }
+
+.farewell {
+  margin-top: 6mm;
+  padding: 5mm 5mm 0 5mm;
+  border-top: .8pt solid var(--ember);
+}
+.farewell .sign {
+  margin-top: 5mm;
+  font-family: var(--font-display); font-style: italic; font-weight: 400;
+  font-size: 14pt; color: var(--ember-deep);
+}
+.farewell p {
+  font-size: 9pt; color: var(--ink-soft); margin-bottom: 2.5mm; max-width: 36em;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  line-height: 1.45;
+}

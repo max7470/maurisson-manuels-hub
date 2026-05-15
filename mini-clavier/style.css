@@ -1,0 +1,491 @@
+/* ──────────────────────────────────────────────────────────────
+   Le mini clavier de Maurisson
+   Mode d'emploi imprimable A4 portrait, recto seul.
+   Style : DNA Chez Maurisson en version claire.
+   ────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@100..900&display=swap');
+
+:root {
+  /* Palette claire — fond blanc (éco-encre), accents ember conservés */
+  --bg:       #ffffff;   /* fond page : blanc pur, pas imprimé */
+  --bg-tone:  #f5efe6;   /* zooms panneau (très léger) */
+  --bg-warm:  #fdf8ee;   /* cartes & callouts (quasi blanc) */
+  --ink:      #120f0c;   /* texte principal */
+  --ink-soft: #241f19;
+  --ink-muted:#4a4038;
+  --ink-faint:#6d6158;
+  --ember:        #c56a2a;
+  --ember-deep:   #7a3a14;
+  --ember-bright: #e08a44;
+  --ember-light:  #edaa6a;
+  --ember-pale:   #fde4c0;
+  --moss: #5a7360;
+  --line:        rgba(18,15,12,.14);
+  --line-strong: rgba(18,15,12,.28);
+
+  /* Couleur écran LED imprimable (rouge profond, lisible papier) */
+  --led-bg: #1a0d08;
+  --led-fg: #d63a1a;
+
+  --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'Fraunces', Georgia, serif; /* digits LED */
+}
+
+@page { size: A4 portrait; margin: 0; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 10.5pt;
+  line-height: 1.55;
+  font-weight: 300;
+  letter-spacing: -.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+/* ── Page (A4 portrait) ─────────────────────────────────────── */
+.page {
+  width: 210mm; height: 297mm;
+  position: relative; overflow: hidden;
+  page-break-after: always;
+  padding: 22mm 20mm 18mm 20mm;
+  background: var(--bg);
+}
+.page:last-child { page-break-after: auto; }
+
+/* Pas de texture de fond : on garde le blanc pour économiser l'encre */
+.page::before { content:none; }
+.page > * { position: relative; z-index: 1; }
+
+/* ── Page footer (folio + tagline) ──────────────────────────── */
+.foot {
+  position: absolute;
+  bottom: 10mm; left: 20mm; right: 20mm;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 7.5pt; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.foot .num {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 10pt; letter-spacing: 0; text-transform: none; color: var(--ember);
+}
+.foot .brand {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 9pt; letter-spacing: .03em; text-transform: none; color: var(--ink-faint);
+}
+
+/* ── Eyebrow ────────────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .55em;
+  font-family: var(--font-body); font-size: 8pt; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ember-deep);
+  margin-bottom: 6mm;
+}
+.eyebrow::before {
+  content:''; display:inline-block; width: 22pt; height: 1px;
+  background: currentColor; opacity: .55;
+}
+
+/* ── Display & headings ─────────────────────────────────────── */
+.display { font-family: var(--font-display); font-weight: 300; line-height: .98; letter-spacing: -.025em; }
+
+h1.section-title {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 32pt; line-height: 1.02; letter-spacing: -.025em;
+  color: var(--ink); margin-bottom: 4mm;
+  max-width: 18ch;
+}
+h1.section-title em {
+  font-style: italic; font-weight: 300; color: var(--ember-deep);
+}
+
+p.lead {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 13.5pt; line-height: 1.35; letter-spacing: -.01em;
+  color: var(--ink-soft); max-width: 24em;
+  margin-bottom: 8mm;
+}
+
+.body { color: var(--ink-soft); max-width: 32em; }
+.body p { margin-bottom: 3.2mm; }
+.body p:last-child { margin-bottom: 0; }
+.body strong { font-weight: 500; color: var(--ink); }
+
+/* Step block — used for "ALLUMER. Appuie..." style cues */
+.step {
+  margin-bottom: 4mm;
+  padding-left: 0;
+}
+.step .label {
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 8.5pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ember-deep); display: block; margin-bottom: 1mm;
+}
+.step .body-line { color: var(--ink-soft); font-size: 10.5pt; }
+
+/* Pill button-name reference */
+.pill {
+  display: inline-block;
+  padding: 1pt 6pt;
+  border: .8pt solid var(--line-strong);
+  border-radius: 999px;
+  font-family: var(--font-body); font-weight: 500; font-size: 8.5pt;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink); background: var(--bg-warm);
+  white-space: nowrap;
+}
+
+/* Callout (encadré "astuce" / "essai") */
+.callout {
+  border: .8pt solid var(--line-strong);
+  border-left: 3pt solid var(--ember);
+  background: var(--bg-warm);
+  padding: 4mm 5mm;
+  margin-top: 5mm;
+  border-radius: 1.5mm;
+}
+.callout .callout-label {
+  font-family: var(--font-body); font-size: 7.5pt; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ember-deep); margin-bottom: 1.5mm;
+}
+.callout p { color: var(--ink-soft); font-size: 10pt; line-height: 1.5; }
+
+/* ── LED screen (mini display) ──────────────────────────────── */
+.led {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: var(--led-bg);
+  color: var(--led-fg);
+  font-family: var(--font-display); font-weight: 600; font-style: normal;
+  letter-spacing: .04em;
+  border-radius: 1.5mm;
+  padding: 2mm 4mm;
+  border: .6pt solid #000;
+  box-shadow: inset 0 0 1mm rgba(0,0,0,.6);
+}
+.led.sm { font-size: 14pt; padding: 1.5mm 3mm; }
+.led.md { font-size: 22pt; padding: 2.5mm 5mm; }
+.led.lg { font-size: 36pt; padding: 4mm 8mm; }
+
+/* ── Cover page ─────────────────────────────────────────────── */
+.cover {
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 28mm 22mm 22mm 22mm;
+}
+.cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.cover-mark {
+  width: 18mm; height: 18mm; border-radius: 999px;
+  border: .8pt solid var(--line-strong);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--ember-deep);
+}
+.cover-mark svg { width: 10mm; height: 10mm; }
+.cover-meta {
+  text-align: right;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  color: var(--ink-faint); font-size: 9.5pt; line-height: 1.4;
+}
+.cover-meta .brand-line { color: var(--ember-deep); font-style: normal; font-family: var(--font-body); font-weight: 500; font-size: 7.5pt; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 1.5mm; }
+
+.cover-title {
+  font-family: var(--font-display); font-weight: 300;
+  line-height: .92; letter-spacing: -.025em;
+  color: var(--ink); margin-top: -4mm;
+}
+.cover-title .small {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic; font-weight: 300;
+  font-size: 42pt; line-height: 1; letter-spacing: -.02em;
+  text-transform: none;
+  color: var(--ink-soft);
+  margin-bottom: 4mm;
+}
+.cover-title .small em {
+  /* allows extra emphasis if used (italic-on-italic counter-style) */
+  font-style: normal; font-weight: 300;
+}
+.cover-title .name {
+  display: block;
+  font-style: italic; font-weight: 300;
+  font-size: 68pt; line-height: .9; letter-spacing: -.035em;
+  background: linear-gradient(95deg, var(--ember-deep) 0%, var(--ember) 50%, var(--ember-bright) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.cover-sub {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 18pt; line-height: 1.35; letter-spacing: -.01em;
+  color: var(--ink-soft); margin-top: 8mm; max-width: 22em;
+}
+
+.cover-illustration {
+  margin: 8mm auto 4mm auto;
+  width: 150mm;
+  display: block;
+}
+
+.cover-menu {
+  text-align: center;
+  border-top: .6pt solid var(--line);
+  border-bottom: .6pt solid var(--line);
+  padding: 6mm 0;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 12pt; line-height: 1.7;
+  color: var(--ink-soft);
+  letter-spacing: -.005em;
+}
+.cover-menu .dot { color: var(--ember); margin: 0 .4em; }
+
+.cover-bottom {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-family: var(--font-body); font-weight: 500; font-size: 7.5pt;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ink-faint);
+}
+
+/* ── Two-column layouts ─────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 12mm;
+  margin-top: 6mm;
+  align-items: start;
+}
+.two-col.flip { grid-template-columns: 0.95fr 1.05fr; }
+.two-col .visual {
+  background: var(--bg-tone);
+  border: .6pt solid var(--line);
+  border-radius: 2mm;
+  padding: 6mm;
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Voice list page ────────────────────────────────────────── */
+.voice-list {
+  margin-top: 4mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm 8mm;
+}
+.voice-cat {
+  border-top: .6pt solid var(--line-strong);
+  padding-top: 2.5mm;
+}
+.voice-cat-name {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  color: var(--ember-deep); font-size: 10pt; letter-spacing: -.005em;
+  margin-bottom: 1.5mm;
+}
+.voice-cat-list {
+  font-size: 9pt; color: var(--ink-soft); line-height: 1.55;
+}
+.voice-cat-list .v { display: inline; }
+.voice-cat-list .num {
+  font-family: var(--font-display); font-weight: 500; color: var(--ember);
+  margin-right: 2pt;
+}
+.voice-cat-list .heart {
+  background: var(--ember-pale);
+  padding: 0 3pt; border-radius: 2pt;
+  color: var(--ember-deep); font-weight: 500;
+}
+.voice-cat-list .sep { color: var(--ink-faint); margin: 0 3pt; }
+
+/* ── Voice cards (12 favorites grid) ────────────────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.5mm;
+  margin-top: 4mm;
+}
+.vcard {
+  border: .6pt solid var(--line-strong);
+  border-radius: 2mm;
+  padding: 3mm 3mm 3.5mm 3mm;
+  background: var(--bg-warm);
+  position: relative;
+  display: flex; flex-direction: column; gap: 1.2mm;
+}
+.vcard .vcard-led {
+  align-self: flex-start;
+  margin-bottom: .5mm;
+  font-size: 12pt !important;
+  padding: 1mm 2.5mm !important;
+}
+.vcard .vcard-name {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 10.5pt; line-height: 1.05; color: var(--ink); letter-spacing: -.01em;
+}
+.vcard .vcard-cat {
+  font-family: var(--font-body); font-size: 6.5pt; font-weight: 500;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--ember-deep); margin-bottom: .5mm;
+}
+.vcard .vcard-desc {
+  font-size: 8pt; line-height: 1.35; color: var(--ink-soft);
+}
+.vcard .vcard-combo {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 7.5pt; color: var(--ember-deep);
+  margin-top: auto;
+  padding-top: 1.5mm;
+  border-top: .4pt solid var(--line);
+  line-height: 1.3;
+}
+
+/* ── Arpeggio worlds table ──────────────────────────────────── */
+.worlds {
+  margin-top: 5mm;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 10mm;
+}
+.world {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4mm;
+  padding: 2.5mm 0;
+  border-top: .4pt solid var(--line);
+  align-items: baseline;
+}
+.world .num {
+  font-family: var(--font-display); font-weight: 500; font-style: italic;
+  font-size: 11pt; color: var(--ember); letter-spacing: -.01em;
+  white-space: nowrap;
+}
+.world .label {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 11pt; color: var(--ink); letter-spacing: -.01em;
+}
+.world .desc {
+  display: block;
+  font-family: var(--font-body); font-size: 8.5pt; font-weight: 300;
+  color: var(--ink-muted); margin-top: .5mm; line-height: 1.4;
+}
+
+/* ── Recipes page ───────────────────────────────────────────── */
+.recipes { display: flex; flex-direction: column; gap: 4mm; margin-top: 5mm; }
+.recipe {
+  border: .6pt solid var(--line-strong);
+  border-radius: 2mm;
+  padding: 4mm 5mm;
+  background: var(--bg-warm);
+  display: grid;
+  grid-template-columns: 8mm 1fr;
+  gap: 3mm;
+  align-items: start;
+}
+.recipe-num {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 22pt; line-height: 1; color: var(--ember);
+  letter-spacing: -.02em;
+}
+.recipe-body { }
+.recipe-name {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: 13pt; color: var(--ink); margin-bottom: 1mm; letter-spacing: -.01em;
+}
+.recipe-steps { font-size: 9.5pt; color: var(--ink-soft); line-height: 1.5; }
+.recipe-steps .pill { margin: 0 1pt; vertical-align: baseline; font-size: 8pt; padding: 0 4pt; }
+
+.tap-callout {
+  margin-top: 4mm;
+  border: .8pt dashed var(--ember);
+  border-radius: 2mm;
+  padding: 4mm 5mm;
+  background: rgba(253, 228, 192, .35);
+}
+.tap-callout-label {
+  font-family: var(--font-body); font-size: 7.5pt; font-weight: 600;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ember-deep); margin-bottom: 1mm;
+}
+.tap-callout-body { font-size: 9.5pt; color: var(--ink-soft); line-height: 1.5; }
+
+/* ── Bonus page ─────────────────────────────────────────────── */
+.bonus-block {
+  border-top: .6pt solid var(--line-strong);
+  padding-top: 4mm;
+  margin-bottom: 6mm;
+}
+.bonus-block-title {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 14pt; color: var(--ember-deep); margin-bottom: 2mm; letter-spacing: -.01em;
+}
+.bonus-block-lead {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 11pt; line-height: 1.4; color: var(--ink-soft);
+  margin-bottom: 3mm; max-width: 32em;
+}
+.bonus-steps {
+  list-style: none; counter-reset: step;
+  display: flex; flex-direction: column; gap: 1.5mm;
+  margin-bottom: 2mm;
+}
+.bonus-steps li {
+  counter-increment: step;
+  font-size: 9.5pt; color: var(--ink-soft); line-height: 1.5;
+  padding-left: 7mm; position: relative;
+}
+.bonus-steps li::before {
+  content: counter(step) '.';
+  position: absolute; left: 0;
+  font-family: var(--font-display); font-weight: 500; font-style: italic;
+  color: var(--ember); font-size: 10pt;
+}
+.bonus-fine {
+  font-size: 8.5pt; color: var(--ink-muted); font-style: italic;
+  font-family: var(--font-display); font-weight: 300;
+}
+
+.farewell {
+  margin-top: 8mm;
+  padding: 6mm 6mm;
+  border-top: .8pt solid var(--ember);
+}
+.farewell-title {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 22pt; letter-spacing: -.025em; color: var(--ink);
+  margin-bottom: 4mm;
+}
+.farewell p { font-size: 10pt; color: var(--ink-soft); margin-bottom: 3mm; max-width: 32em; }
+.farewell .sign {
+  margin-top: 6mm;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 14pt; color: var(--ember-deep);
+}
+
+/* ── Visual containers ──────────────────────────────────────── */
+.panel-zoom {
+  width: 100%;
+  background: var(--bg-tone);
+  border-radius: 2mm;
+  padding: 5mm;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 4mm;
+}
+.panel-zoom .caption {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 9pt; color: var(--ink-faint); text-align: center;
+  max-width: 34em;
+}
+
+/* ── Octave chip / value displays ───────────────────────────── */
+.value-chips {
+  display: flex; gap: 3mm; align-items: center; justify-content: center;
+  margin-top: 3mm;
+}
+
+/* prevent ugly orphan widows in body text */
+p { orphans: 2; widows: 2; }

@@ -1,0 +1,2386 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Le mini clavier de Maurisson — Mode d'emploi</title>
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ════════════════════════════════════════════════════════════
+     RÉUTILISABLES : SVG en <symbol> (chargés une fois, référencés)
+     ════════════════════════════════════════════════════════════ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+
+    <!-- Maison Maurisson (monogramme) -->
+    <symbol id="house" viewBox="0 0 32 32">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 15 16 7l10 8"/>
+        <path d="M8 13.5V25h16V13.5"/>
+        <path d="M13 25v-7h6v7"/>
+      </g>
+    </symbol>
+
+    <!-- Sustain pedal icon -->
+    <symbol id="ic-sustain" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12c2 0 4-3 6-3s4 6 6 6 4-3 6-3"/>
+        <path d="M3 18h18"/>
+      </g>
+    </symbol>
+
+    <!-- Octave double-arrow -->
+    <symbol id="ic-octave" viewBox="0 0 24 24">
+      <g fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M3 12h18"/>
+        <path d="M7 8l-4 4 4 4"/>
+        <path d="M17 8l4 4-4 4"/>
+      </g>
+    </symbol>
+
+  </defs>
+</svg>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 1 — COUVERTURE
+     ════════════════════════════════════════════════════════════ -->
+<section class="page cover">
+
+  <header class="cover-top">
+    <span class="cover-mark" aria-hidden="true">
+      <svg><use href="#house"/></svg>
+    </span>
+    <div class="cover-meta">
+      <div class="brand-line">Mode d'emploi</div>
+      Yamaha PSS&#8209;A50<br/>
+      <em>Édition Maurisson</em>
+    </div>
+  </header>
+
+  <div>
+    <h1 class="cover-title">
+      <span class="small">Le mini clavier de</span>
+      <span class="name">Maurisson</span>
+    </h1>
+    <p class="cover-sub">10 minutes pour t'amuser avec un vrai clavier. Aucune expérience requise.</p>
+  </div>
+
+  <!-- Illustration line-art du PSS-A50 -->
+  <svg class="cover-illustration" viewBox="0 0 600 240" aria-hidden="true">
+    <!-- Corps -->
+    <rect x="3" y="3" width="594" height="234" rx="14" ry="14"
+          fill="#fbf5ec" stroke="#241f19" stroke-width="1.8"/>
+    <!-- Panneau noir -->
+    <rect x="22" y="16" width="500" height="68" rx="2.5"
+          fill="#120f0c"/>
+    <!-- Logo YAMAHA stylisé -->
+    <text x="40" y="44" fill="#d63a1a" font-family="Inter, sans-serif" font-size="9" font-weight="600" letter-spacing="2">YAMAHA</text>
+    <text x="40" y="58" fill="#d63a1a" font-family="Fraunces, serif" font-size="11" font-style="italic">PSS-A50</text>
+    <!-- Standby/On -->
+    <circle cx="125" cy="34" r="4.5" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <circle cx="125" cy="34" r="1.5" fill="#d63a1a"/>
+    <!-- Volume -+ -->
+    <rect x="40" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="52" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <!-- Octave < > -->
+    <rect x="80" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="92" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <!-- Motion Effect -->
+    <circle cx="240" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <text x="240" y="22" fill="#d63a1a" font-family="Inter" font-size="3.5" text-anchor="middle" letter-spacing=".5">MOTION EFFECT</text>
+    <!-- Sustain -->
+    <circle cx="290" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <text x="290" y="22" fill="#d63a1a" font-family="Inter" font-size="3.5" text-anchor="middle" letter-spacing=".5">SUSTAIN</text>
+    <!-- VOICE row 1 -->
+    <g fill="none" stroke="#d63a1a" stroke-width=".8">
+      <rect x="180" y="46" width="22" height="10"/>
+      <rect x="206" y="46" width="22" height="10"/>
+      <rect x="232" y="46" width="22" height="10"/>
+      <rect x="258" y="46" width="22" height="10"/>
+      <rect x="284" y="46" width="22" height="10"/>
+    </g>
+    <!-- VOICE row 2 -->
+    <g fill="none" stroke="#d63a1a" stroke-width=".8">
+      <rect x="180" y="60" width="22" height="10"/>
+      <rect x="206" y="60" width="22" height="10"/>
+      <rect x="232" y="60" width="22" height="10"/>
+      <rect x="258" y="60" width="22" height="10"/>
+      <rect x="284" y="60" width="22" height="10"/>
+    </g>
+    <text x="265" y="42" fill="#d63a1a" font-family="Inter" font-size="3.5" text-anchor="middle" letter-spacing="1.5">VOICE</text>
+    <!-- ARPEGGIO area -->
+    <rect x="135" y="60" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/> <!-- SHIFT -->
+    <rect x="148" y="60" width="14" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/> <!-- ARP. HOLD -->
+    <circle cx="172" cy="64" r="5" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <text x="172" y="76" fill="#d63a1a" font-family="Inter" font-size="3.2" text-anchor="middle" letter-spacing=".5">ARPEGGIO</text>
+    <!-- LED screen -->
+    <rect x="450" y="26" width="40" height="22" rx="1.5" fill="#1a0d08"/>
+    <text x="470" y="44" fill="#d63a1a" font-family="Fraunces, serif" font-size="14" font-weight="600" text-anchor="middle">001</text>
+    <!-- Tempo/Tap -->
+    <rect x="445" y="62" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="457" y="62" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="478" cy="66.5" r="3.5" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <!-- Speaker grille -->
+    <rect x="530" y="16" width="62" height="68" rx="2" fill="none" stroke="#241f19" stroke-width=".5" stroke-dasharray="1.5,1.5"/>
+    <g fill="#241f19" opacity=".25">
+      <circle cx="540" cy="30" r=".7"/><circle cx="546" cy="30" r=".7"/><circle cx="552" cy="30" r=".7"/><circle cx="558" cy="30" r=".7"/><circle cx="564" cy="30" r=".7"/><circle cx="570" cy="30" r=".7"/><circle cx="576" cy="30" r=".7"/><circle cx="582" cy="30" r=".7"/>
+      <circle cx="540" cy="40" r=".7"/><circle cx="546" cy="40" r=".7"/><circle cx="552" cy="40" r=".7"/><circle cx="558" cy="40" r=".7"/><circle cx="564" cy="40" r=".7"/><circle cx="570" cy="40" r=".7"/><circle cx="576" cy="40" r=".7"/><circle cx="582" cy="40" r=".7"/>
+      <circle cx="540" cy="50" r=".7"/><circle cx="546" cy="50" r=".7"/><circle cx="552" cy="50" r=".7"/><circle cx="558" cy="50" r=".7"/><circle cx="564" cy="50" r=".7"/><circle cx="570" cy="50" r=".7"/><circle cx="576" cy="50" r=".7"/><circle cx="582" cy="50" r=".7"/>
+      <circle cx="540" cy="60" r=".7"/><circle cx="546" cy="60" r=".7"/><circle cx="552" cy="60" r=".7"/><circle cx="558" cy="60" r=".7"/><circle cx="564" cy="60" r=".7"/><circle cx="570" cy="60" r=".7"/><circle cx="576" cy="60" r=".7"/><circle cx="582" cy="60" r=".7"/>
+      <circle cx="540" cy="70" r=".7"/><circle cx="546" cy="70" r=".7"/><circle cx="552" cy="70" r=".7"/><circle cx="558" cy="70" r=".7"/><circle cx="564" cy="70" r=".7"/><circle cx="570" cy="70" r=".7"/><circle cx="576" cy="70" r=".7"/><circle cx="582" cy="70" r=".7"/>
+    </g>
+    <!-- Touches blanches (37 mini keys, ~22 white) -->
+    <g>
+      <!-- 22 touches blanches -->
+      <g fill="#fbf5ec" stroke="#241f19" stroke-width=".7">
+        <rect x="22"  y="92" width="25.5" height="138" rx="1"/>
+        <rect x="48"  y="92" width="25.5" height="138" rx="1"/>
+        <rect x="74"  y="92" width="25.5" height="138" rx="1"/>
+        <rect x="100" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="126" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="152" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="178" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="204" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="230" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="256" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="282" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="308" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="334" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="360" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="386" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="412" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="438" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="464" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="490" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="516" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="542" y="92" width="25.5" height="138" rx="1"/>
+        <rect x="568" y="92" width="25.5" height="138" rx="1"/>
+      </g>
+      <!-- Touches noires -->
+      <g fill="#120f0c">
+        <rect x="40"  y="92" width="14" height="84" rx=".8"/>
+        <rect x="66"  y="92" width="14" height="84" rx=".8"/>
+        <rect x="118" y="92" width="14" height="84" rx=".8"/>
+        <rect x="144" y="92" width="14" height="84" rx=".8"/>
+        <rect x="170" y="92" width="14" height="84" rx=".8"/>
+        <rect x="222" y="92" width="14" height="84" rx=".8"/>
+        <rect x="248" y="92" width="14" height="84" rx=".8"/>
+        <rect x="300" y="92" width="14" height="84" rx=".8"/>
+        <rect x="326" y="92" width="14" height="84" rx=".8"/>
+        <rect x="352" y="92" width="14" height="84" rx=".8"/>
+        <rect x="404" y="92" width="14" height="84" rx=".8"/>
+        <rect x="430" y="92" width="14" height="84" rx=".8"/>
+        <rect x="482" y="92" width="14" height="84" rx=".8"/>
+        <rect x="508" y="92" width="14" height="84" rx=".8"/>
+        <rect x="534" y="92" width="14" height="84" rx=".8"/>
+      </g>
+    </g>
+  </svg>
+
+  <div class="cover-menu">
+    Premiers gestes <span class="dot">·</span> Le sustain <span class="dot">·</span> Onze coups de cœur <br/>
+    Le motion effect <span class="dot">·</span> L'arpégiateur <span class="dot">·</span> Cinq recettes
+  </div>
+
+  <div class="cover-bottom">
+    <span>Herve, Belgique</span>
+    <span style="font-family: var(--font-display); font-style: italic; font-weight: 300; font-size: 9pt; letter-spacing: 0; text-transform: none; color: var(--ink-faint);">English follows &middot; Nederlands volgt &middot; Deutsch folgt</span>
+    <span>2026</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 2 — PREMIERS GESTES
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 1 · 30 secondes pour démarrer</span>
+  <h1 class="section-title">Pose-toi, allume, <em>joue</em>.</h1>
+  <p class="lead">Le clavier est posé là, prêt à jouer. Les piles sont dedans. Tu n'as rien à brancher.</p>
+
+  <div class="two-col">
+    <div class="body">
+      <div class="step">
+        <span class="label">Allumer</span>
+        <div class="body-line">Une simple pression sur le bouton tout en haut à gauche, celui avec le petit symbole de veille. L'écran rouge s'allume.</div>
+      </div>
+      <div class="step">
+        <span class="label">Éteindre</span>
+        <div class="body-line">Maintiens ce même bouton enfoncé pendant une seconde.</div>
+      </div>
+      <div class="step">
+        <span class="label">Volume</span>
+        <div class="body-line">Les boutons <span class="pill">Master Volume</span> juste en dessous. À gauche pour baisser, à droite pour monter. L'écran affiche un chiffre de 00 à 15. Il est réglé à 13 par défaut. Pour ne pas réveiller la maison, descends à 5 ou 6, ça reste largement audible.</div>
+      </div>
+      <div class="step">
+        <span class="label">Jouer en silence</span>
+        <div class="body-line">Un casque audio se branche à l'arrière dans la prise <span class="pill">Phones / Output</span>. Dès que tu le branches, les haut-parleurs se coupent tout seuls.</div>
+      </div>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 220 260" width="100%" aria-hidden="true">
+        <!-- Cadre panneau coin haut-gauche -->
+        <rect x="6" y="6" width="208" height="180" rx="3" fill="#120f0c"/>
+        <text x="22" y="32" fill="#d63a1a" font-family="Inter" font-size="9" font-weight="600" letter-spacing="2">YAMAHA</text>
+        <text x="22" y="46" fill="#d63a1a" font-family="Fraunces" font-style="italic" font-size="11">PSS-A50</text>
+
+        <!-- Standby/On highlighted -->
+        <circle cx="100" cy="34" r="11" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <circle cx="100" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+        <path d="M 100 30 v 7" stroke="#d63a1a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M 96 32 a 5 5 0 1 0 8 0" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <text x="120" y="38" fill="#fbf5ec" font-family="Inter" font-size="6" letter-spacing="1">STANDBY/ON</text>
+
+        <!-- Master Volume highlighted -->
+        <text x="22" y="76" fill="#d63a1a" font-family="Inter" font-size="6" letter-spacing="1">MASTER VOLUME</text>
+        <rect x="22" y="80" width="22" height="22" rx="2" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="33" y="96" fill="#d63a1a" font-family="Inter" font-size="11" text-anchor="middle">−</text>
+        <rect x="48" y="80" width="22" height="22" rx="2" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="59" y="96" fill="#d63a1a" font-family="Inter" font-size="11" text-anchor="middle">+</text>
+
+        <!-- Octave (grayed) -->
+        <text x="22" y="130" fill="#d63a1a" font-family="Inter" font-size="6" letter-spacing="1" opacity=".4">OCTAVE</text>
+        <rect x="22" y="134" width="22" height="22" rx="2" fill="none" stroke="#d63a1a" stroke-width=".8" opacity=".4"/>
+        <rect x="48" y="134" width="22" height="22" rx="2" fill="none" stroke="#d63a1a" stroke-width=".8" opacity=".4"/>
+
+        <!-- LED display showing 13 -->
+        <rect x="120" y="60" width="60" height="34" rx="2" fill="#1a0d08"/>
+        <text x="150" y="86" fill="#d63a1a" font-family="Fraunces" font-weight="600" font-size="22" text-anchor="middle">13</text>
+        <text x="150" y="105" fill="#fbf5ec" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing="1.5" opacity=".7">VOLUME</text>
+
+        <!-- Casque (vue arrière sous le panneau) -->
+        <line x1="6" y1="200" x2="214" y2="200" stroke="#241f19" stroke-width=".4" stroke-dasharray="2,2"/>
+        <text x="14" y="214" fill="#241f19" font-family="Inter" font-size="6.5" letter-spacing="1.5" font-weight="500">À L'ARRIÈRE</text>
+        <text x="14" y="226" fill="#241f19" font-family="Fraunces" font-style="italic" font-size="10">Prise casque</text>
+        <!-- Mini casque -->
+        <g transform="translate(140,210)" stroke="#241f19" stroke-width="1.2" fill="none" stroke-linecap="round">
+          <path d="M 5 14 a 14 14 0 0 1 28 0"/>
+          <rect x="2" y="14" width="9" height="14" rx="2.5"/>
+          <rect x="27" y="14" width="9" height="14" rx="2.5"/>
+        </g>
+        <!-- Connecteur -->
+        <circle cx="60" cy="244" r="4" fill="none" stroke="#7a3a14" stroke-width="1.4"/>
+        <line x1="64" y1="244" x2="78" y2="244" stroke="#7a3a14" stroke-width="1.4"/>
+        <text x="14" y="248" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6.5" font-weight="500">PHONES / OUTPUT</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">À retenir</div>
+    <p>Pile dans la table de chevet, fonctionne sur piles. Tu peux le déplacer dans le canapé, sur le balcon, sur le lit. Aucun câble.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">2</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 3 — LE SUSTAIN
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 2 · L'effet le plus addictif</span>
+  <h1 class="section-title">Une touche, et toutes tes notes sonnent <em>comme un pro</em>.</h1>
+  <p class="lead">Le bouton <span class="pill">Sustain</span> se trouve en haut du panneau, à droite. Appuie une fois dessus.</p>
+
+  <div class="two-col flip">
+    <div class="visual">
+      <svg viewBox="0 0 240 260" width="100%" aria-hidden="true">
+        <!-- Bandeau panneau -->
+        <rect x="6" y="6" width="228" height="100" rx="3" fill="#120f0c"/>
+
+        <!-- Motion Effect (grayed) -->
+        <text x="60" y="30" fill="#d63a1a" font-family="Inter" font-size="5" text-anchor="middle" letter-spacing="1" opacity=".4">MOTION EFFECT</text>
+        <circle cx="60" cy="50" r="11" fill="none" stroke="#d63a1a" stroke-width="1" opacity=".4"/>
+
+        <!-- Sustain highlighted -->
+        <text x="155" y="30" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing="1.5" font-weight="600">SUSTAIN</text>
+        <circle cx="155" cy="50" r="14" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+        <circle cx="155" cy="50" r="9" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <text x="155" y="74" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle">+ Portamento</text>
+
+        <!-- Curved arrow from finger to button -->
+        <path d="M 180 130 Q 200 90 168 60" fill="none" stroke="#7a3a14" stroke-width="1.4" stroke-linecap="round"/>
+        <polygon points="166,57 169,64 173,59" fill="#7a3a14"/>
+
+        <!-- Hand pointing up -->
+        <g transform="translate(155,140)" fill="none" stroke="#241f19" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 18 20 v -16 a 2 2 0 0 1 4 0 v 12"/>
+          <path d="M 22 16 v -2 a 2 2 0 0 1 4 0 v 4"/>
+          <path d="M 26 18 v -1 a 2 2 0 0 1 4 0 v 5"/>
+          <path d="M 14 22 v -8 a 2 2 0 0 1 4 0"/>
+          <path d="M 10 30 q 0 -10 8 -10 h 14 q 4 0 4 4 v 16"/>
+        </g>
+
+        <!-- LED screen with "Son" -->
+        <rect x="40" y="180" width="160" height="60" rx="3" fill="#1a0d08"/>
+        <text x="120" y="226" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="38" text-anchor="middle" letter-spacing="2">Son</text>
+        <text x="120" y="252" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="8" text-anchor="middle">Sustain ON</text>
+      </svg>
+    </div>
+
+    <div class="body">
+      <p>L'écran affiche <span class="pill">Son</span>. À partir de maintenant, chaque note continue de résonner après que tu aies relâché ta touche.</p>
+      <p>C'est l'effet de la grosse pédale en bas d'un piano à queue. Sans ça, tu joues. Avec ça, <strong>tu fais de la musique</strong>.</p>
+
+      <div class="step">
+        <span class="label">Essai immédiat</span>
+        <div class="body-line">Joue trois notes blanches au hasard, lentement, avec une ou deux secondes entre chaque. Écoute comment elles se mélangent et flottent dans la pièce.</div>
+      </div>
+      <div class="step">
+        <span class="label">Pour couper</span>
+        <div class="body-line">Appuie à nouveau sur Sustain. L'écran affiche <span class="pill">SoF</span>.</div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Astuce du chef</div>
+        <p>Laisse Sustain allumé tout le temps. C'est ton meilleur ami pendant les 10 prochaines minutes.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">3</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 4 — L'OCTAVE
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 3 · Agrandir le clavier</span>
+  <h1 class="section-title">37 touches, c'est compact. Voici comment passer en <em>mode XXL</em>.</h1>
+  <p class="lead">Les boutons <span class="pill">Octave &lt;</span> et <span class="pill">Octave &gt;</span> déplacent toutes les notes vers les graves ou vers les aigus.</p>
+
+  <div class="two-col">
+    <div class="body">
+      <div class="step">
+        <span class="label">Pour les aigus brillants</span>
+        <div class="body-line">Appuie sur <span class="pill">&gt;</span>. Tout devient plus aigu, plus brillant, comme une boîte à musique.</div>
+      </div>
+      <div class="step">
+        <span class="label">Pour les graves profonds</span>
+        <div class="body-line">Appuie sur <span class="pill">&lt;</span>. Tout devient plus grave, plus dense, jusqu'à des basses qui font vibrer le sol.</div>
+      </div>
+      <div class="step">
+        <span class="label">Plage</span>
+        <div class="body-line">L'écran affiche un chiffre de <strong>−04</strong> à <strong>+04</strong>. Quatre octaves dans chaque sens.</div>
+      </div>
+      <div class="step">
+        <span class="label">Revenir au centre</span>
+        <div class="body-line">Appuie simultanément sur les deux boutons <span class="pill">&lt;</span> et <span class="pill">&gt;</span>. L'écran affiche <span class="pill">00</span>.</div>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Recette express</div>
+        <p>Prends la voix <strong>017 Synth Bass</strong> (page 6) et descends de deux octaves. Tu obtiens un sub-bass de cinéma qui fait trembler le mobilier.</p>
+      </div>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 240 280" width="100%" aria-hidden="true">
+        <!-- Three LED states -->
+        <g>
+          <rect x="20" y="10" width="80" height="40" rx="2" fill="#1a0d08"/>
+          <text x="60" y="40" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="22" text-anchor="middle">−02</text>
+          <text x="60" y="60" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle">grave</text>
+
+          <rect x="120" y="10" width="80" height="40" rx="2" fill="#1a0d08"/>
+          <text x="160" y="40" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="22" text-anchor="middle">+02</text>
+          <text x="160" y="60" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle">aigu</text>
+        </g>
+
+        <!-- Panel zoom on Octave -->
+        <rect x="6" y="90" width="228" height="100" rx="3" fill="#120f0c"/>
+        <text x="20" y="112" fill="#d63a1a" font-family="Inter" font-size="7" letter-spacing="1.5" font-weight="500">OCTAVE</text>
+        <rect x="20" y="120" width="36" height="36" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="38" y="146" fill="#d63a1a" font-family="Inter" font-size="20" text-anchor="middle">&lt;</text>
+        <rect x="64" y="120" width="36" height="36" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="82" y="146" fill="#d63a1a" font-family="Inter" font-size="20" text-anchor="middle">&gt;</text>
+
+        <text x="160" y="118" fill="#fbf5ec" font-family="Inter" font-style="italic" font-size="7" opacity=".6">les deux ensemble</text>
+        <text x="160" y="135" fill="#fbf5ec" font-family="Fraunces" font-style="italic" font-size="11">= retour à zéro</text>
+
+        <!-- Range bar -->
+        <g transform="translate(20, 220)">
+          <line x1="0" y1="10" x2="200" y2="10" stroke="#7a3a14" stroke-width="1.2"/>
+          <g font-family="Fraunces" font-size="9" fill="#7a3a14" text-anchor="middle">
+            <text x="0" y="0">−04</text><line x1="0" y1="6" x2="0" y2="14" stroke="#7a3a14" stroke-width="1.2"/>
+            <text x="50" y="0">−02</text><line x1="50" y1="6" x2="50" y2="14" stroke="#7a3a14" stroke-width="1"/>
+            <text x="100" y="0" font-weight="600" fill="#c56a2a">00</text><line x1="100" y1="6" x2="100" y2="14" stroke="#c56a2a" stroke-width="2"/>
+            <text x="150" y="0">+02</text><line x1="150" y1="6" x2="150" y2="14" stroke="#7a3a14" stroke-width="1"/>
+            <text x="200" y="0">+04</text><line x1="200" y1="6" x2="200" y2="14" stroke="#7a3a14" stroke-width="1.2"/>
+          </g>
+          <text x="100" y="32" font-family="Inter" font-style="italic" font-size="7" fill="#4a4038" text-anchor="middle">8 octaves de jeu au total</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">4</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 5 — CHOISIR UN SON (LOGIQUE VOICE)
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 4 · Le menu</span>
+  <h1 class="section-title">42 sons, 10 boutons, <em>une logique simple</em>.</h1>
+  <p class="lead">Le clavier cache 42 sonorités, regroupées en 10 familles. Chaque bouton <span class="pill">Voice</span> correspond à une famille.</p>
+
+  <div class="body" style="max-width: 36em;">
+    <p><strong>La méthode.</strong> Appuie une fois sur <span class="pill">Piano</span>. L'écran affiche <span class="pill">001</span>, c'est le grand piano à queue. Réappuie sur <span class="pill">Piano</span>, tu passes au son suivant de la famille piano. Encore une fois. Et ainsi de suite.</p>
+    <p>Quand tu as fait le tour d'une famille, le bouton repart au début. Pour changer complètement d'ambiance, appuie sur un autre bouton de famille.</p>
+  </div>
+
+  <!-- Visuel : la grille VOICE 2×5 -->
+  <div class="panel-zoom" style="margin-top: 6mm;">
+    <svg viewBox="0 0 460 200" width="92%" aria-hidden="true">
+      <rect x="0" y="0" width="460" height="200" rx="3" fill="#120f0c"/>
+
+      <text x="230" y="22" fill="#d63a1a" font-family="Inter" font-size="9" letter-spacing="3" text-anchor="middle" font-weight="500">VOICE</text>
+
+      <!-- Row 1 -->
+      <g font-family="Inter" font-size="9" font-weight="500" letter-spacing=".5" text-anchor="middle">
+        <g>
+          <rect x="20"  y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="60"  y="70" fill="#d63a1a">PIANO</text>
+          <text x="60"  y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">001 — 004</text>
+        </g>
+        <g>
+          <rect x="108" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="148" y="70" fill="#d63a1a">ORGAN</text>
+          <text x="148" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">005 — 008</text>
+        </g>
+        <g>
+          <rect x="196" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="236" y="70" fill="#d63a1a">GUITAR</text>
+          <text x="236" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">009 — 013</text>
+        </g>
+        <g>
+          <rect x="284" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="324" y="70" fill="#d63a1a">BASS</text>
+          <text x="324" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">014 — 017</text>
+        </g>
+        <g>
+          <rect x="372" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="412" y="70" fill="#d63a1a">STRINGS</text>
+          <text x="412" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">018 — 022</text>
+        </g>
+      </g>
+
+      <!-- Row 2 -->
+      <g font-family="Inter" font-size="9" font-weight="500" letter-spacing=".5" text-anchor="middle">
+        <g>
+          <rect x="20"  y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="60"  y="130" fill="#d63a1a">W.WIND</text>
+          <text x="60"  y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">023 — 026</text>
+        </g>
+        <g>
+          <rect x="108" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="148" y="130" fill="#d63a1a">BRASS</text>
+          <text x="148" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">027 — 031</text>
+        </g>
+        <g>
+          <rect x="196" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="236" y="130" fill="#d63a1a">SY.LEAD</text>
+          <text x="236" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">032 — 035</text>
+        </g>
+        <g>
+          <rect x="284" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="324" y="130" fill="#d63a1a">SY.PAD</text>
+          <text x="324" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">036 — 038</text>
+        </g>
+        <g>
+          <rect x="372" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/>
+          <text x="412" y="130" fill="#d63a1a">DRUM/PERC</text>
+          <text x="412" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">039 — 042</text>
+        </g>
+      </g>
+
+      <!-- LED next to grid -->
+      <text x="230" y="180" fill="#fbf5ec" font-family="Fraunces" font-style="italic" font-size="9" text-anchor="middle" opacity=".7">presse 1× : entre dans la famille → presse encore : son suivant</text>
+    </svg>
+    <div class="caption">Disposition réelle du panneau. Deux rangées de cinq boutons. Tu fouilles dans une famille en réappuyant sur le même bouton.</div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Détail utile</div>
+    <p>L'écran LED rouge affiche en permanence le numéro de voix sélectionné, avec un petit point allumé en bas à droite qui signale qu'il s'agit bien d'un numéro de Voice (et non d'un numéro d'arpège).</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">5</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 6 — CARTE DES 42 VOIX
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 4 (suite) · Tout le menu</span>
+  <h1 class="section-title">Les 42 voix, en un coup d'œil.</h1>
+  <p class="lead">Les onze coups de cœur sont surlignés. Détails et combos page suivante.</p>
+
+  <div class="voice-list">
+    <div class="voice-cat">
+      <div class="voice-cat-name">Piano</div>
+      <div class="voice-cat-list">
+        <span class="num heart">001</span> Grand Piano <span class="sep">·</span>
+        <span class="num heart">002</span> Electric Piano 1 <span class="sep">·</span>
+        <span class="num">003</span> Electric Piano 2 <span class="sep">·</span>
+        <span class="num">004</span> Electric Grand Piano
+      </div>
+    </div>
+
+    <div class="voice-cat">
+      <div class="voice-cat-name">Organ</div>
+      <div class="voice-cat-list">
+        <span class="num heart">005</span> Drawbar Organ <span class="sep">·</span>
+        <span class="num">006</span> Rock Organ <span class="sep">·</span>
+        <span class="num">007</span> Accordion <span class="sep">·</span>
+        <span class="num heart">008</span> Harmonica
+      </div>
+    </div>
+
+    <div class="voice-cat">
+      <div class="voice-cat-name">Guitar</div>
+      <div class="voice-cat-list">
+        <span class="num heart">009</span> Nylon Guitar <span class="sep">·</span>
+        <span class="num">010</span> Steel Guitar <span class="sep">·</span>
+        <span class="num">011</span> Jazz Guitar <span class="sep">·</span>
+        <span class="num">012</span> Clean Guitar <span class="sep">·</span>
+        <span class="num">013</span> Overdriven Guitar
+      </div>
+    </div>
+
+    <div class="voice-cat">
+      <div class="voice-cat-name">Bass</div>
+      <div class="voice-cat-list">
+        <span class="num">014</span> Acoustic Bass <span class="sep">·</span>
+        <span class="num">015</span> Finger Bass <span class="sep">·</span>
+        <span class="num">016</span> Slap Bass <span class="sep">·</span>
+        <span class="num heart">017</span> Synth Bass
+      </div>
+    </div>
+
+    <div class="voice-cat">
+      <div class="voice-cat-name">Strings</div>
+      <div class="voice-cat-list">
+        <span class="num">018</span> Strings <span class="sep">·</span>
+        <span class="num">019</span> Pizzicato Strings <span class="sep">·</span>
+        <span class="num">020</span> Violin <span class="sep">·</span>
+        <span class="num">021</span> Cello <span class="sep">·</span>
+        <span class="num heart">022</span> Orchestral Harp
+      </div>
+    </div>
+
+    <div class="voice-cat">
+      <div class="voice-cat-name">Woodwind</div>
+      <div class="voice-cat-list">
+        <span class="num">023</span> Oboe <span class="sep">·</span>
+        <span class="num">024</span> Clarinet <span class="sep">·</span>
+        <span class="num heart">025</span> Flute <span class="sep">·</span>
+        <span class="num">026</span> Tenor Sax
+      </div>
+    </div>
+
+    <div class="voice-cat">
+      <div class="voice-cat-name">Brass</div>
+      <div class="voice-cat-list">
+        <span class="num">027</span> Brass Section <span class="sep">·</span>
+        <span class="num">028</span> Trumpet <span class="sep">·</span>
+        <span class="num">029</span> Trombone <span class="sep">·</span>
+        <span class="num">030</span> French Horn <span class="sep">·</span>
+        <span class="num">031</span> Synth Brass
+      </div>
+    </div>
+
+    <div class="voice-cat">
+      <div class="voice-cat-name">Synth Lead</div>
+      <div class="voice-cat-list">
+        <span class="num heart">032</span> Gemini <span class="sep">·</span>
+        <span class="num">033</span> Punchy Chordz <span class="sep">·</span>
+        <span class="num">034</span> Square Lead <span class="sep">·</span>
+        <span class="num">035</span> Sawtooth Lead
+      </div>
+    </div>
+
+    <div class="voice-cat">
+      <div class="voice-cat-name">Synth Pad</div>
+      <div class="voice-cat-list">
+        <span class="num heart">036</span> New Age Pad <span class="sep">·</span>
+        <span class="num">037</span> Warm Pad <span class="sep">·</span>
+        <span class="num">038</span> Brightness
+      </div>
+    </div>
+
+    <div class="voice-cat">
+      <div class="voice-cat-name">Drum / Perc.</div>
+      <div class="voice-cat-list">
+        <span class="num">039</span> Standard Kit <span class="sep">·</span>
+        <span class="num heart">040</span> Dance Kit <span class="sep">·</span>
+        <span class="num">041</span> Vibraphone <span class="sep">·</span>
+        <span class="num heart">042</span> Marimba
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">6</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 7 — 11 COUPS DE CŒUR (cards)
+     ════════════════════════════════════════════════════════════ -->
+<section class="page" style="padding-top: 16mm;">
+  <span class="eyebrow">Chapitre 5 · Onze sons à essayer absolument</span>
+  <h1 class="section-title" style="font-size: 28pt; margin-bottom: 2mm;">Les coups de cœur du chef.</h1>
+  <p class="lead" style="font-size: 11.5pt; margin-bottom: 4mm;">Suis l'instruction. Pose un doigt. Sois bluffé.</p>
+
+  <div class="cards-grid">
+    <div class="vcard">
+      <span class="led sm vcard-led">001</span>
+      <span class="vcard-cat">Piano</span>
+      <span class="vcard-name">Grand Piano</span>
+      <p class="vcard-desc">Le grand classique. Pur, profond, immédiat.</p>
+      <span class="vcard-combo">+ Sustain pour les frissons</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">002</span>
+      <span class="vcard-cat">Piano</span>
+      <span class="vcard-name">Electric Piano 1</span>
+      <p class="vcard-desc">Le Rhodes des ballades jazz. Velouté, légèrement vintage.</p>
+      <span class="vcard-combo">+ Sustain · ballade au coucher</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">005</span>
+      <span class="vcard-cat">Organ</span>
+      <span class="vcard-name">Drawbar Organ</span>
+      <p class="vcard-desc">L'orgue Hammond des années 70. Soul instantanée.</p>
+      <span class="vcard-combo">Joue des accords pleins</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">008</span>
+      <span class="vcard-cat">Organ</span>
+      <span class="vcard-name">Harmonica</span>
+      <p class="vcard-desc">Voix nasale, blues immédiat. Super expressif.</p>
+      <span class="vcard-combo">+ Octave +1 pour briller</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">009</span>
+      <span class="vcard-cat">Guitar</span>
+      <span class="vcard-name">Nylon Guitar</span>
+      <p class="vcard-desc">Guitare classique, intime, au coin du feu.</p>
+      <span class="vcard-combo">+ Arpeggio 029 — 041</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">017</span>
+      <span class="vcard-cat">Bass</span>
+      <span class="vcard-name">Synth Bass</span>
+      <p class="vcard-desc">Sub-bass de cinéma, gras et rond.</p>
+      <span class="vcard-combo">+ Octave −2 · fait trembler</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">022</span>
+      <span class="vcard-cat">Strings</span>
+      <span class="vcard-name">Orchestral Harp</span>
+      <p class="vcard-desc">Cascade romantique. Une touche, et la salle se tait.</p>
+      <span class="vcard-combo">+ Arpeggio 075 — 076</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">025</span>
+      <span class="vcard-cat">Woodwind</span>
+      <span class="vcard-name">Flute</span>
+      <p class="vcard-desc">Flûte douce, presque animée. Disney en chambre.</p>
+      <span class="vcard-combo">+ Sustain · mélodie au-dessus</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">032</span>
+      <span class="vcard-cat">Synth Lead</span>
+      <span class="vcard-name">Gemini</span>
+      <p class="vcard-desc">Synthé tranchant des années 80. Stranger Things.</p>
+      <span class="vcard-combo">+ Motion Effect maintenu</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">036</span>
+      <span class="vcard-cat">Synth Pad</span>
+      <span class="vcard-name">New Age Pad</span>
+      <p class="vcard-desc">Nappe lente et planante. Bande-son de générique.</p>
+      <span class="vcard-combo">+ Sustain · ferme les yeux</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">040</span>
+      <span class="vcard-cat">Drum / Perc.</span>
+      <span class="vcard-name">Dance Kit</span>
+      <p class="vcard-desc">Kit de batterie électro. Chaque touche = un son.</p>
+      <span class="vcard-combo">+ Arpeggio 117 — 138</span>
+    </div>
+
+    <div class="vcard">
+      <span class="led sm vcard-led">042</span>
+      <span class="vcard-cat">Drum / Perc.</span>
+      <span class="vcard-name">Marimba</span>
+      <p class="vcard-desc">Bois chaud, percussion mélodique. Joueur instantané.</p>
+      <span class="vcard-combo">+ Sustain pour adoucir</span>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">7</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 8 — MOTION EFFECT
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 6 · Mettre la musique en mouvement</span>
+  <h1 class="section-title">Un seul bouton. Tu le maintiens, le son <em>se déforme</em>.</h1>
+  <p class="lead">Le bouton <span class="pill">Motion Effect</span> est en haut au centre du panneau, juste à gauche de Sustain.</p>
+
+  <div class="two-col flip">
+    <div class="visual">
+      <svg viewBox="0 0 240 280" width="100%" aria-hidden="true">
+        <!-- Panel zoom -->
+        <rect x="6" y="6" width="228" height="100" rx="3" fill="#120f0c"/>
+
+        <!-- Motion Effect highlighted -->
+        <text x="60" y="26" fill="#d63a1a" font-family="Inter" font-size="6.5" text-anchor="middle" letter-spacing="1.5" font-weight="600">MOTION EFFECT</text>
+        <circle cx="60" cy="50" r="14" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+        <circle cx="60" cy="50" r="9" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <text x="60" y="80" fill="#fbf5ec" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">A · filtre</text>
+        <text x="60" y="89" fill="#fbf5ec" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">B · hauteur</text>
+        <text x="60" y="98" fill="#fbf5ec" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">C · modulation</text>
+
+        <!-- Sustain (grayed) -->
+        <circle cx="155" cy="50" r="11" fill="none" stroke="#d63a1a" stroke-width="1" opacity=".4"/>
+        <text x="155" y="78" fill="#d63a1a" font-family="Inter" font-size="5.5" text-anchor="middle" opacity=".4">Sustain</text>
+
+        <!-- Hand pressing button -->
+        <g transform="translate(45,120)" fill="none" stroke="#241f19" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 18 20 v -16 a 2 2 0 0 1 4 0 v 12"/>
+          <path d="M 22 16 v -2 a 2 2 0 0 1 4 0 v 4"/>
+          <path d="M 26 18 v -1 a 2 2 0 0 1 4 0 v 5"/>
+          <path d="M 14 22 v -8 a 2 2 0 0 1 4 0"/>
+          <path d="M 10 30 q 0 -10 8 -10 h 14 q 4 0 4 4 v 16"/>
+          <path d="M 6 46 h 30" stroke-dasharray="2,1.5"/>
+        </g>
+
+        <!-- Wave deformation -->
+        <g transform="translate(20, 200)" stroke="#7a3a14" fill="none" stroke-width="1.4" stroke-linecap="round">
+          <path d="M 0 30 Q 20 5 40 30 T 80 30 T 120 30 T 160 30 T 200 30"/>
+        </g>
+        <g transform="translate(20, 240)" stroke="#c56a2a" fill="none" stroke-width="1.4" stroke-linecap="round">
+          <path d="M 0 30 Q 10 -5 25 25 Q 38 50 50 20 Q 65 -10 80 35 Q 95 55 110 18 Q 125 0 145 30 Q 160 50 175 22 Q 190 5 200 30"/>
+        </g>
+        <text x="120" y="195" fill="#4a4038" font-family="Inter" font-size="6.5" font-style="italic" text-anchor="middle">son normal</text>
+        <text x="120" y="280" fill="#7a3a14" font-family="Inter" font-size="6.5" font-style="italic" text-anchor="middle">son avec Motion Effect maintenu</text>
+      </svg>
+    </div>
+
+    <div class="body">
+      <p>Sa particularité : il ne s'allume pas en pressant simplement. <strong>Tu dois le maintenir enfoncé pendant que tu joues</strong>. Tu le relâches, le son redevient normal.</p>
+      <p>L'effet par défaut modifie le filtre du son : c'est l'impression d'ouvrir et fermer une bouche autour de chaque note. Sur un synthé comme <strong>032 Gemini</strong> ou <strong>036 New Age Pad</strong>, c'est ce qu'on entend dans tous les morceaux électro depuis 40 ans.</p>
+      <p>Le bouton propose trois familles d'effets : A modifie le filtre, B la hauteur, C la modulation. Tu n'as pas besoin d'y toucher pour t'amuser. Le réglage par défaut suffit largement.</p>
+
+      <div class="callout">
+        <div class="callout-label">Recette express</div>
+        <p>Prends <strong>032 Gemini</strong>. Lance une note grave et tiens-la. De l'autre main, maintiens Motion Effect et joue une mélodie au-dessus. Tu fais ton premier solo de synthé.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">8</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 9 — ARPEGGIO 1/3 : COMMENT ÇA MARCHE
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 7 · L'arpégiateur (1/3)</span>
+  <h1 class="section-title">Tu poses un doigt. <em>L'instrument joue tout seul.</em></h1>
+  <p class="lead">L'arpégiateur transforme une simple touche en une phrase musicale rythmée et complète. Probablement la fonction la plus impressionnante de ce clavier.</p>
+
+  <!-- Trois étapes en colonnes -->
+  <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-top: 5mm;">
+    <div class="vcard" style="background: var(--bg-warm);">
+      <div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">1</div>
+      <span class="vcard-name" style="font-size: 12pt;">Activer</span>
+      <p class="vcard-desc">Appuie sur <span class="pill">Arpeggio</span>. L'écran affiche <span class="pill">Aon</span>. Le bouton est armé, mais rien ne joue encore.</p>
+      <div style="margin-top: auto;">
+        <span class="led sm">Aon</span>
+      </div>
+    </div>
+
+    <div class="vcard" style="background: var(--bg-warm);">
+      <div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">2</div>
+      <span class="vcard-name" style="font-size: 12pt;">Pose un doigt</span>
+      <p class="vcard-desc">Sur n'importe quelle touche. Garde-le appuyé. L'arpégiateur démarre, joue une phrase rythmée. Bouge ton doigt sur d'autres touches pour faire évoluer la phrase.</p>
+      <div style="margin-top: auto;">
+        <svg viewBox="0 0 80 30" width="60">
+          <g fill="none" stroke="#7a3a14" stroke-width="1.4" stroke-linecap="round">
+            <circle cx="12" cy="22" r="2.5" fill="#c56a2a"/>
+            <path d="M 18 22 q 8 -16 16 0 t 16 0 t 16 0" stroke-dasharray="3,2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="vcard" style="background: var(--bg-warm);">
+      <div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">3</div>
+      <span class="vcard-name" style="font-size: 12pt;">Libère ta main</span>
+      <p class="vcard-desc">Pendant que la phrase joue, appuie sur <span class="pill">Arp.&nbsp;Hold</span>. La phrase tourne en boucle même si tu lâches le clavier. Va boire ton café, ou joue par-dessus.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 6mm;">
+    <div class="callout-label">Pour arrêter</div>
+    <p>Appuie à nouveau sur <span class="pill">Arpeggio</span>. L'écran affiche <span class="pill">AoF</span>. Le silence revient.</p>
+  </div>
+
+  <!-- Zoom panneau ARPEGGIO + ARP. HOLD -->
+  <div class="panel-zoom" style="margin-top: 5mm;">
+    <svg viewBox="0 0 380 110" width="80%" aria-hidden="true">
+      <rect x="0" y="0" width="380" height="110" rx="3" fill="#120f0c"/>
+
+      <!-- SHIFT (grayed) -->
+      <rect x="20" y="35" width="38" height="38" rx="3" fill="none" stroke="#d63a1a" stroke-width=".8" opacity=".4"/>
+      <text x="39" y="58" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" opacity=".4">SHIFT</text>
+
+      <!-- ARP. HOLD highlighted -->
+      <text x="100" y="22" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing=".5" font-weight="600">ARP. HOLD</text>
+      <rect x="80" y="30" width="50" height="50" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+
+      <!-- ARPEGGIO highlighted -->
+      <text x="180" y="22" fill="#d63a1a" font-family="Inter" font-size="7" text-anchor="middle" letter-spacing="1" font-weight="600">ARPEGGIO</text>
+      <circle cx="180" cy="55" r="22" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+      <circle cx="180" cy="55" r="14" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+
+      <!-- [-] [+] selectors -->
+      <rect x="240" y="40" width="32" height="32" rx="3" fill="none" stroke="#d63a1a" stroke-width="1"/>
+      <text x="256" y="62" fill="#d63a1a" font-family="Inter" font-size="14" text-anchor="middle">−</text>
+      <rect x="278" y="40" width="32" height="32" rx="3" fill="none" stroke="#d63a1a" stroke-width="1"/>
+      <text x="294" y="62" fill="#d63a1a" font-family="Inter" font-size="14" text-anchor="middle">+</text>
+      <text x="275" y="92" fill="#fbf5ec" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle" opacity=".7">choisir le motif</text>
+
+      <!-- LED -->
+      <rect x="320" y="35" width="50" height="40" rx="2" fill="#1a0d08"/>
+      <text x="345" y="62" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="16" text-anchor="middle">Aon</text>
+    </svg>
+    <div class="caption">Disposition réelle. Arp. Hold est juste à gauche du gros bouton Arpeggio.</div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">9</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 10 — ARPEGGIO 2/3 : LES 12 MONDES
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 7 · L'arpégiateur (2/3)</span>
+  <h1 class="section-title">138 phrases, <em>douze mondes</em>.</h1>
+  <p class="lead">Les boutons <span class="pill">−</span> et <span class="pill">+</span> sous l'écran te font voyager. Maintiens-les pour défiler vite.</p>
+
+  <div class="worlds">
+    <div class="world">
+      <span class="num">001 — 018</span>
+      <div>
+        <span class="label">Acoustic Piano</span>
+        <span class="desc">Phrases de piano classiques</span>
+      </div>
+    </div>
+    <div class="world">
+      <span class="num">048 — 064</span>
+      <div>
+        <span class="label">Bass</span>
+        <span class="desc">Lignes de basse groovy</span>
+      </div>
+    </div>
+
+    <div class="world">
+      <span class="num">019 — 028</span>
+      <div>
+        <span class="label">Keyboard</span>
+        <span class="desc">Claviers vintage et orgues</span>
+      </div>
+    </div>
+    <div class="world">
+      <span class="num">065 — 074</span>
+      <div>
+        <span class="label">Strings</span>
+        <span class="desc">Orchestre dramatique</span>
+      </div>
+    </div>
+
+    <div class="world">
+      <span class="num">029 — 041</span>
+      <div>
+        <span class="label">Guitar Chord</span>
+        <span class="desc">Accords de guitare grattés</span>
+      </div>
+    </div>
+    <div class="world">
+      <span class="num">075 — 076</span>
+      <div>
+        <span class="label">Harp</span>
+        <span class="desc">Cascades de harpe</span>
+      </div>
+    </div>
+
+    <div class="world">
+      <span class="num">042 — 047</span>
+      <div>
+        <span class="label">Guitar Arpeggio</span>
+        <span class="desc">Arpèges de guitare folk</span>
+      </div>
+    </div>
+    <div class="world">
+      <span class="num">077 — 081</span>
+      <div>
+        <span class="label">Brass</span>
+        <span class="desc">Riffs de cuivres</span>
+      </div>
+    </div>
+
+    <div class="world">
+      <span class="num">082 — 085</span>
+      <div>
+        <span class="label">Chromatic Perc.</span>
+        <span class="desc">Vibraphone, marimba</span>
+      </div>
+    </div>
+    <div class="world">
+      <span class="num">107 — 116</span>
+      <div>
+        <span class="label">Synth Chord</span>
+        <span class="desc">Accords synthés planants</span>
+      </div>
+    </div>
+
+    <div class="world">
+      <span class="num">086 — 106</span>
+      <div>
+        <span class="label">Synth Sequence</span>
+        <span class="desc">Séquences électro années 80</span>
+      </div>
+    </div>
+    <div class="world">
+      <span class="num">117 — 138</span>
+      <div>
+        <span class="label">Drums</span>
+        <span class="desc">Boîtes à rythme et beats</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 6mm;">
+    <div class="callout-label">Raccourci pratique</div>
+    <p>Pour sauter directement au début de la prochaine catégorie, maintiens <span class="pill">Shift</span> et appuie sur <span class="pill">+</span> ou <span class="pill">−</span>. Tu changes de monde d'un coup, sans défiler.</p>
+  </div>
+
+  <div class="callout" style="margin-top: 4mm; border-left-color: var(--moss); background: rgba(90,115,96,.08);">
+    <div class="callout-label" style="color: var(--moss);">À savoir</div>
+    <p>Les numéros sont imprimés directement au-dessus du clavier, sur la sérigraphie noire du panneau. Pas besoin de retenir cette page : jette un œil au clavier, tout est là.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">10</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 11 — ARPEGGIO 3/3 : 5 RECETTES
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 7 · L'arpégiateur (3/3)</span>
+  <h1 class="section-title">Cinq recettes <em>prêtes à jouer</em>.</h1>
+  <p class="lead">Suis la combinaison, pose un doigt, sois bluffé. Aucune compétence requise.</p>
+
+  <div class="recipes">
+    <div class="recipe">
+      <div class="recipe-num">1</div>
+      <div class="recipe-body">
+        <div class="recipe-name">Boîte à rythme techno</div>
+        <div class="recipe-steps">
+          Voix <span class="pill">040</span> Dance Kit (Drum/Perc., presse 2 fois) ·
+          active <span class="pill">Arpeggio</span> ·
+          numéro entre <span class="pill">117</span> et <span class="pill">138</span> avec <span class="pill">+</span> ·
+          active <span class="pill">Arp. Hold</span>.
+          Pose un doigt n'importe où, le beat s'installe en boucle. Promène un autre doigt pour ajouter des sons par-dessus.
+        </div>
+      </div>
+    </div>
+
+    <div class="recipe">
+      <div class="recipe-num">2</div>
+      <div class="recipe-body">
+        <div class="recipe-name">Bande originale de film</div>
+        <div class="recipe-steps">
+          Voix <span class="pill">036</span> New Age Pad ·
+          <span class="pill">Sustain</span> allumé ·
+          <span class="pill">Arpeggio</span> désactivé.
+          Joue trois notes lentes, écartées. Laisse-les flotter. Tu es dans un Hans Zimmer de chambre d'hôtes.
+        </div>
+      </div>
+    </div>
+
+    <div class="recipe">
+      <div class="recipe-num">3</div>
+      <div class="recipe-body">
+        <div class="recipe-name">Solo synthé années 80</div>
+        <div class="recipe-steps">
+          Voix <span class="pill">032</span> Gemini ·
+          <span class="pill">Motion Effect</span> maintenu pendant que tu joues.
+          Lance une mélodie au hasard avec deux doigts. Plus tu maintiens, plus le son se tord.
+        </div>
+      </div>
+    </div>
+
+    <div class="recipe">
+      <div class="recipe-num">4</div>
+      <div class="recipe-body">
+        <div class="recipe-name">Guitare au coin du feu</div>
+        <div class="recipe-steps">
+          Voix <span class="pill">009</span> Nylon Guitar ·
+          active <span class="pill">Arpeggio</span> ·
+          numéro entre <span class="pill">029</span> et <span class="pill">041</span> avec <span class="pill">−</span>/<span class="pill">+</span> ·
+          active <span class="pill">Arp. Hold</span>.
+          Tu obtiens un accompagnement guitare gratté. Pose des doigts différents pour changer d'accord.
+        </div>
+      </div>
+    </div>
+
+    <div class="recipe">
+      <div class="recipe-num">5</div>
+      <div class="recipe-body">
+        <div class="recipe-name">Synthé Stranger Things</div>
+        <div class="recipe-steps">
+          Voix <span class="pill">032</span> Gemini ·
+          active <span class="pill">Arpeggio</span> ·
+          numéro entre <span class="pill">086</span> et <span class="pill">106</span> ·
+          active <span class="pill">Arp. Hold</span>.
+          Une séquence électro tourne en boucle. Pose une note grave pour la transposer.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tap-callout">
+    <div class="tap-callout-label">Encart Tap Tempo</div>
+    <p class="tap-callout-body">Envie d'accélérer ou de ralentir ? Appuie quatre fois en rythme sur <span class="pill">Tempo / Tap</span> (en bas à droite, près de l'écran), à la vitesse que tu sens. L'arpégiateur cale instantanément la phrase sur ton tempo.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson</span>
+    <span class="num">11</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 12 — BONUS POUR LES CURIEUX + AU REVOIR
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Bonus · Si tu as 5 minutes de plus</span>
+  <h1 class="section-title">Deux secrets <em>pour aller plus loin</em>.</h1>
+
+  <div class="bonus-block">
+    <div class="bonus-block-title">Portamento — le glissé entre les notes</div>
+    <p class="bonus-block-lead">Maintiens <span class="pill">Shift</span> et appuie sur <span class="pill">Sustain</span>. L'écran affiche <span class="pill">Pon</span>. Joue une note, puis une autre quelques touches plus loin : le son glisse au lieu de sauter.</p>
+    <p class="bonus-fine">Spectaculaire sur 032 Gemini ou 017 Synth Bass. Inutile sur piano. Pour couper, refais Shift + Sustain. L'écran affiche <span class="pill">PoF</span>.</p>
+  </div>
+
+  <div class="bonus-block">
+    <div class="bonus-block-title">Enregistrer une boucle</div>
+    <p class="bonus-block-lead">Le clavier mémorise une phrase courte et la rejoue pendant que tu joues par-dessus.</p>
+    <ol class="bonus-steps">
+      <li>Appuie sur <span class="pill">Rec</span>. L'écran affiche <span class="pill">rEC</span> clignotant.</li>
+      <li>Joue. L'enregistrement démarre dès la première note.</li>
+      <li>Appuie sur <span class="pill">Rec</span> pour arrêter.</li>
+      <li>Appuie sur <span class="pill">▶/■</span> pour écouter.</li>
+      <li>Pour la faire tourner en boucle pendant que tu improvises, maintiens <span class="pill">Shift</span> et appuie sur <span class="pill">▶/■</span>.</li>
+    </ol>
+    <p class="bonus-fine">Pour effacer et recommencer : Rec, ▶/■, ▶/■, dans cet ordre.</p>
+  </div>
+
+  <div class="farewell">
+    <div class="farewell-title display">À toi de jouer.</div>
+    <p>Tu sais maintenant tout ce qu'il faut pour passer un bon moment. Le clavier fonctionne sur piles. N'hésite pas à le poser sur le lit ou dans le canapé. Pas de câble à débrancher. Pas de règle.</p>
+    <p>Un dernier conseil. Laisse Sustain allumé, prends la voix qui te parle, et appuie sur des touches au hasard. C'est exactement comme ça qu'on commence.</p>
+    <div class="sign">Bon séjour chez Maurisson, et bonne musique.</div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Le mini clavier de Maurisson · Herve, Belgique</span>
+    <span class="num">12</span>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     ENGLISH VERSION
+     ═══════════════════════════════════════════════════════════════ -->
+
+<!-- ─── EN COVER ─── -->
+<section class="page cover">
+  <header class="cover-top">
+    <span class="cover-mark" aria-hidden="true"><svg><use href="#house"/></svg></span>
+    <div class="cover-meta">
+      <div class="brand-line">User manual</div>
+      Yamaha PSS&#8209;A50<br/>
+      <em>Maurisson edition</em>
+    </div>
+  </header>
+
+  <div>
+    <h1 class="cover-title">
+      <span class="small">The little keyboard of</span>
+      <span class="name">Maurisson</span>
+    </h1>
+    <p class="cover-sub">10 minutes to have fun with a real keyboard. No experience required.</p>
+  </div>
+
+  <svg class="cover-illustration" viewBox="0 0 600 240" aria-hidden="true">
+    <rect x="3" y="3" width="594" height="234" rx="14" ry="14" fill="#ffffff" stroke="#241f19" stroke-width="1.8"/>
+    <rect x="22" y="16" width="500" height="68" rx="2.5" fill="#120f0c"/>
+    <text x="40" y="44" fill="#d63a1a" font-family="Inter" font-size="9" font-weight="600" letter-spacing="2">YAMAHA</text>
+    <text x="40" y="58" fill="#d63a1a" font-family="Fraunces" font-size="11" font-style="italic">PSS-A50</text>
+    <circle cx="125" cy="34" r="4.5" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <circle cx="125" cy="34" r="1.5" fill="#d63a1a"/>
+    <rect x="40" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="52" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="80" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="92" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="240" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <circle cx="290" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <g fill="none" stroke="#d63a1a" stroke-width=".8">
+      <rect x="180" y="46" width="22" height="10"/><rect x="206" y="46" width="22" height="10"/><rect x="232" y="46" width="22" height="10"/><rect x="258" y="46" width="22" height="10"/><rect x="284" y="46" width="22" height="10"/>
+      <rect x="180" y="60" width="22" height="10"/><rect x="206" y="60" width="22" height="10"/><rect x="232" y="60" width="22" height="10"/><rect x="258" y="60" width="22" height="10"/><rect x="284" y="60" width="22" height="10"/>
+    </g>
+    <rect x="135" y="60" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="148" y="60" width="14" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="172" cy="64" r="5" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <rect x="450" y="26" width="40" height="22" rx="1.5" fill="#1a0d08"/>
+    <text x="470" y="44" fill="#d63a1a" font-family="Fraunces" font-size="14" font-weight="600" text-anchor="middle">001</text>
+    <rect x="445" y="62" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="457" y="62" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="478" cy="66.5" r="3.5" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="530" y="16" width="62" height="68" rx="2" fill="none" stroke="#241f19" stroke-width=".5" stroke-dasharray="1.5,1.5"/>
+    <g>
+      <g fill="#ffffff" stroke="#241f19" stroke-width=".7">
+        <rect x="22" y="92" width="25.5" height="138" rx="1"/><rect x="48" y="92" width="25.5" height="138" rx="1"/><rect x="74" y="92" width="25.5" height="138" rx="1"/><rect x="100" y="92" width="25.5" height="138" rx="1"/><rect x="126" y="92" width="25.5" height="138" rx="1"/><rect x="152" y="92" width="25.5" height="138" rx="1"/><rect x="178" y="92" width="25.5" height="138" rx="1"/><rect x="204" y="92" width="25.5" height="138" rx="1"/><rect x="230" y="92" width="25.5" height="138" rx="1"/><rect x="256" y="92" width="25.5" height="138" rx="1"/><rect x="282" y="92" width="25.5" height="138" rx="1"/><rect x="308" y="92" width="25.5" height="138" rx="1"/><rect x="334" y="92" width="25.5" height="138" rx="1"/><rect x="360" y="92" width="25.5" height="138" rx="1"/><rect x="386" y="92" width="25.5" height="138" rx="1"/><rect x="412" y="92" width="25.5" height="138" rx="1"/><rect x="438" y="92" width="25.5" height="138" rx="1"/><rect x="464" y="92" width="25.5" height="138" rx="1"/><rect x="490" y="92" width="25.5" height="138" rx="1"/><rect x="516" y="92" width="25.5" height="138" rx="1"/><rect x="542" y="92" width="25.5" height="138" rx="1"/><rect x="568" y="92" width="25.5" height="138" rx="1"/>
+      </g>
+      <g fill="#120f0c">
+        <rect x="40" y="92" width="14" height="84" rx=".8"/><rect x="66" y="92" width="14" height="84" rx=".8"/><rect x="118" y="92" width="14" height="84" rx=".8"/><rect x="144" y="92" width="14" height="84" rx=".8"/><rect x="170" y="92" width="14" height="84" rx=".8"/><rect x="222" y="92" width="14" height="84" rx=".8"/><rect x="248" y="92" width="14" height="84" rx=".8"/><rect x="300" y="92" width="14" height="84" rx=".8"/><rect x="326" y="92" width="14" height="84" rx=".8"/><rect x="352" y="92" width="14" height="84" rx=".8"/><rect x="404" y="92" width="14" height="84" rx=".8"/><rect x="430" y="92" width="14" height="84" rx=".8"/><rect x="482" y="92" width="14" height="84" rx=".8"/><rect x="508" y="92" width="14" height="84" rx=".8"/><rect x="534" y="92" width="14" height="84" rx=".8"/>
+      </g>
+    </g>
+  </svg>
+
+  <div class="cover-menu">
+    First steps <span class="dot">·</span> The sustain <span class="dot">·</span> Eleven favourites <br/>
+    The motion effect <span class="dot">·</span> The arpeggiator <span class="dot">·</span> Five recipes
+  </div>
+
+  <div class="cover-bottom">
+    <span>Herve, Belgium</span>
+    <span>2026</span>
+  </div>
+</section>
+
+
+<!-- EN PAGE 2 — First steps -->
+<section class="page">
+  <span class="eyebrow">Chapter 1 · 30 seconds to start</span>
+  <h1 class="section-title">Sit down, switch on, <em>play</em>.</h1>
+  <p class="lead">The keyboard is right there, ready to play. The batteries are in. Nothing to plug in.</p>
+
+  <div class="two-col">
+    <div class="body">
+      <div class="step"><span class="label">Switch on</span><div class="body-line">A single press on the button at the top left, the one with the small standby symbol. The red display lights up.</div></div>
+      <div class="step"><span class="label">Switch off</span><div class="body-line">Hold that same button for one second.</div></div>
+      <div class="step"><span class="label">Volume</span><div class="body-line">The <span class="pill">Master Volume</span> buttons just below. Left to lower, right to raise. The display shows a number from 00 to 15. It is set to 13 by default. To not wake the house, drop to 5 or 6 — still plenty audible.</div></div>
+      <div class="step"><span class="label">Silent play</span><div class="body-line">A pair of headphones plugs into the back, in the <span class="pill">Phones / Output</span> jack. The speakers cut off automatically.</div></div>
+    </div>
+
+    <div class="visual">
+      <svg viewBox="0 0 220 260" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="208" height="180" rx="3" fill="#120f0c"/>
+        <text x="22" y="32" fill="#d63a1a" font-family="Inter" font-size="9" font-weight="600" letter-spacing="2">YAMAHA</text>
+        <text x="22" y="46" fill="#d63a1a" font-family="Fraunces" font-style="italic" font-size="11">PSS-A50</text>
+        <circle cx="100" cy="34" r="11" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <circle cx="100" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+        <path d="M 100 30 v 7" stroke="#d63a1a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M 96 32 a 5 5 0 1 0 8 0" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <text x="120" y="38" fill="#fff" font-family="Inter" font-size="6" letter-spacing="1">STANDBY/ON</text>
+        <text x="22" y="76" fill="#d63a1a" font-family="Inter" font-size="6" letter-spacing="1">MASTER VOLUME</text>
+        <rect x="22" y="80" width="22" height="22" rx="2" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="33" y="96" fill="#d63a1a" font-family="Inter" font-size="11" text-anchor="middle">−</text>
+        <rect x="48" y="80" width="22" height="22" rx="2" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="59" y="96" fill="#d63a1a" font-family="Inter" font-size="11" text-anchor="middle">+</text>
+        <rect x="120" y="60" width="60" height="34" rx="2" fill="#1a0d08"/>
+        <text x="150" y="86" fill="#d63a1a" font-family="Fraunces" font-weight="600" font-size="22" text-anchor="middle">13</text>
+        <text x="150" y="105" fill="#fff" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing="1.5" opacity=".7">VOLUME</text>
+        <line x1="6" y1="200" x2="214" y2="200" stroke="#241f19" stroke-width=".4" stroke-dasharray="2,2"/>
+        <text x="14" y="214" fill="#241f19" font-family="Inter" font-size="6.5" letter-spacing="1.5" font-weight="500">ON THE BACK</text>
+        <text x="14" y="226" fill="#241f19" font-family="Fraunces" font-style="italic" font-size="10">Headphone jack</text>
+        <g transform="translate(140,210)" stroke="#241f19" stroke-width="1.2" fill="none" stroke-linecap="round">
+          <path d="M 5 14 a 14 14 0 0 1 28 0"/>
+          <rect x="2" y="14" width="9" height="14" rx="2.5"/>
+          <rect x="27" y="14" width="9" height="14" rx="2.5"/>
+        </g>
+        <text x="14" y="248" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6.5" font-weight="500">PHONES / OUTPUT</text>
+      </svg>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">To remember</div>
+    <p>Right there in the bedside table, runs on batteries. Take it to the bed or the couch. No cables.</p>
+  </div>
+
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">14</span></div>
+</section>
+
+
+<!-- EN PAGE 3 — Sustain -->
+<section class="page">
+  <span class="eyebrow">Chapter 2 · The most addictive effect</span>
+  <h1 class="section-title">One button, and every note sounds <em>like a pro</em>.</h1>
+  <p class="lead">The <span class="pill">Sustain</span> button sits at the top of the panel, on the right. Press it once.</p>
+
+  <div class="two-col flip">
+    <div class="visual">
+      <svg viewBox="0 0 240 260" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="228" height="100" rx="3" fill="#120f0c"/>
+        <circle cx="60" cy="50" r="11" fill="none" stroke="#d63a1a" stroke-width="1" opacity=".4"/>
+        <text x="155" y="30" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing="1.5" font-weight="600">SUSTAIN</text>
+        <circle cx="155" cy="50" r="14" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+        <circle cx="155" cy="50" r="9" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <rect x="40" y="180" width="160" height="60" rx="3" fill="#1a0d08"/>
+        <text x="120" y="226" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="38" text-anchor="middle" letter-spacing="2">Son</text>
+        <text x="120" y="252" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="8" text-anchor="middle">Sustain ON</text>
+      </svg>
+    </div>
+    <div class="body">
+      <p>The display shows <span class="pill">Son</span>. From now on, every note keeps ringing after you let go of the key.</p>
+      <p>It's the effect of the big pedal under a grand piano. Without it, you play. With it, <strong>you make music</strong>.</p>
+      <div class="step"><span class="label">Try right now</span><div class="body-line">Play three random white keys, slowly, with a second or two between each. Listen as they blend and float through the room.</div></div>
+      <div class="step"><span class="label">To turn off</span><div class="body-line">Press Sustain again. The display shows <span class="pill">SoF</span>.</div></div>
+      <div class="callout"><div class="callout-label">Chef's tip</div><p>Leave Sustain on the whole time. It's your best friend for the next 10 minutes.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">15</span></div>
+</section>
+
+
+<!-- EN PAGE 4 — Octave -->
+<section class="page">
+  <span class="eyebrow">Chapter 3 · Stretch the keyboard</span>
+  <h1 class="section-title">37 keys is compact. Here's how to <em>go XXL</em>.</h1>
+  <p class="lead">The <span class="pill">Octave &lt;</span> and <span class="pill">Octave &gt;</span> buttons shift every note down or up.</p>
+
+  <div class="two-col">
+    <div class="body">
+      <div class="step"><span class="label">Bright highs</span><div class="body-line">Press <span class="pill">&gt;</span>. Everything climbs higher, brighter, like a music box.</div></div>
+      <div class="step"><span class="label">Deep lows</span><div class="body-line">Press <span class="pill">&lt;</span>. Everything drops lower, denser, down to bass that shakes the floor.</div></div>
+      <div class="step"><span class="label">Range</span><div class="body-line">The display shows a number from <strong>−04</strong> to <strong>+04</strong>. Four octaves either way.</div></div>
+      <div class="step"><span class="label">Back to centre</span><div class="body-line">Press both buttons <span class="pill">&lt;</span> and <span class="pill">&gt;</span> at once. The display shows <span class="pill">00</span>.</div></div>
+      <div class="callout"><div class="callout-label">Quick recipe</div><p>Pick voice <strong>017 Synth Bass</strong> (page 18) and drop two octaves. You get a cinema sub-bass that rattles the furniture.</p></div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 240 280" width="100%" aria-hidden="true">
+        <rect x="20" y="10" width="80" height="40" rx="2" fill="#1a0d08"/>
+        <text x="60" y="40" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="22" text-anchor="middle">−02</text>
+        <text x="60" y="60" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle">low</text>
+        <rect x="120" y="10" width="80" height="40" rx="2" fill="#1a0d08"/>
+        <text x="160" y="40" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="22" text-anchor="middle">+02</text>
+        <text x="160" y="60" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle">high</text>
+        <rect x="6" y="90" width="228" height="100" rx="3" fill="#120f0c"/>
+        <text x="20" y="112" fill="#d63a1a" font-family="Inter" font-size="7" letter-spacing="1.5" font-weight="500">OCTAVE</text>
+        <rect x="20" y="120" width="36" height="36" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="38" y="146" fill="#d63a1a" font-family="Inter" font-size="20" text-anchor="middle">&lt;</text>
+        <rect x="64" y="120" width="36" height="36" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="82" y="146" fill="#d63a1a" font-family="Inter" font-size="20" text-anchor="middle">&gt;</text>
+        <text x="160" y="118" fill="#fff" font-family="Inter" font-style="italic" font-size="7" opacity=".6">both at once</text>
+        <text x="160" y="135" fill="#fff" font-family="Fraunces" font-style="italic" font-size="11">= reset to zero</text>
+        <g transform="translate(20, 220)">
+          <line x1="0" y1="10" x2="200" y2="10" stroke="#7a3a14" stroke-width="1.2"/>
+          <g font-family="Fraunces" font-size="9" fill="#7a3a14" text-anchor="middle">
+            <text x="0" y="0">−04</text><line x1="0" y1="6" x2="0" y2="14" stroke="#7a3a14" stroke-width="1.2"/>
+            <text x="50" y="0">−02</text><line x1="50" y1="6" x2="50" y2="14" stroke="#7a3a14" stroke-width="1"/>
+            <text x="100" y="0" font-weight="600" fill="#c56a2a">00</text><line x1="100" y1="6" x2="100" y2="14" stroke="#c56a2a" stroke-width="2"/>
+            <text x="150" y="0">+02</text><line x1="150" y1="6" x2="150" y2="14" stroke="#7a3a14" stroke-width="1"/>
+            <text x="200" y="0">+04</text><line x1="200" y1="6" x2="200" y2="14" stroke="#7a3a14" stroke-width="1.2"/>
+          </g>
+          <text x="100" y="32" font-family="Inter" font-style="italic" font-size="7" fill="#4a4038" text-anchor="middle">8 octaves of total range</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">16</span></div>
+</section>
+
+
+<!-- EN PAGE 5 — Voice logic -->
+<section class="page">
+  <span class="eyebrow">Chapter 4 · The menu</span>
+  <h1 class="section-title">42 sounds, 10 buttons, <em>one simple logic</em>.</h1>
+  <p class="lead">The keyboard hides 42 sounds, grouped in 10 families. Each <span class="pill">Voice</span> button is one family.</p>
+
+  <div class="body" style="max-width: 36em;">
+    <p><strong>The method.</strong> Press <span class="pill">Piano</span> once. The display shows <span class="pill">001</span>, the grand piano. Press <span class="pill">Piano</span> again, you move to the next sound in the piano family. Once more. And so on.</p>
+    <p>When you've gone through a family, the button cycles back to the start. To switch mood entirely, press another family button.</p>
+  </div>
+
+  <div class="panel-zoom" style="margin-top: 6mm;">
+    <svg viewBox="0 0 460 200" width="92%" aria-hidden="true">
+      <rect x="0" y="0" width="460" height="200" rx="3" fill="#120f0c"/>
+      <text x="230" y="22" fill="#d63a1a" font-family="Inter" font-size="9" letter-spacing="3" text-anchor="middle" font-weight="500">VOICE</text>
+      <g font-family="Inter" font-size="9" font-weight="500" letter-spacing=".5" text-anchor="middle">
+        <g><rect x="20" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="60" y="70" fill="#d63a1a">PIANO</text><text x="60" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">001 — 004</text></g>
+        <g><rect x="108" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="148" y="70" fill="#d63a1a">ORGAN</text><text x="148" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">005 — 008</text></g>
+        <g><rect x="196" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="236" y="70" fill="#d63a1a">GUITAR</text><text x="236" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">009 — 013</text></g>
+        <g><rect x="284" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="324" y="70" fill="#d63a1a">BASS</text><text x="324" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">014 — 017</text></g>
+        <g><rect x="372" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="412" y="70" fill="#d63a1a">STRINGS</text><text x="412" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">018 — 022</text></g>
+        <g><rect x="20" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="60" y="130" fill="#d63a1a">W.WIND</text><text x="60" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">023 — 026</text></g>
+        <g><rect x="108" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="148" y="130" fill="#d63a1a">BRASS</text><text x="148" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">027 — 031</text></g>
+        <g><rect x="196" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="236" y="130" fill="#d63a1a">SY.LEAD</text><text x="236" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">032 — 035</text></g>
+        <g><rect x="284" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="324" y="130" fill="#d63a1a">SY.PAD</text><text x="324" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">036 — 038</text></g>
+        <g><rect x="372" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="412" y="130" fill="#d63a1a">DRUM/PERC</text><text x="412" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">039 — 042</text></g>
+      </g>
+      <text x="230" y="180" fill="#fff" font-family="Fraunces" font-style="italic" font-size="9" text-anchor="middle" opacity=".7">press once : enter the family → press again : next sound</text>
+    </svg>
+    <div class="caption">The actual panel layout. Two rows of five buttons. You browse a family by pressing the same button again.</div>
+  </div>
+
+  <div class="callout"><div class="callout-label">Useful detail</div><p>The red LED display always shows the selected voice number, with a tiny dot at the bottom right confirming it's a Voice number (not an Arpeggio number).</p></div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">17</span></div>
+</section>
+
+
+<!-- EN PAGE 6 — Voice list -->
+<section class="page">
+  <span class="eyebrow">Chapter 4 (cont.) · The full menu</span>
+  <h1 class="section-title">All 42 voices at a glance.</h1>
+  <p class="lead">The eleven favourites are highlighted. Details and combos on the next page.</p>
+
+  <div class="voice-list">
+    <div class="voice-cat"><div class="voice-cat-name">Piano</div><div class="voice-cat-list"><span class="num heart">001</span> Grand Piano <span class="sep">·</span> <span class="num heart">002</span> Electric Piano 1 <span class="sep">·</span> <span class="num">003</span> Electric Piano 2 <span class="sep">·</span> <span class="num">004</span> Electric Grand Piano</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Organ</div><div class="voice-cat-list"><span class="num heart">005</span> Drawbar Organ <span class="sep">·</span> <span class="num">006</span> Rock Organ <span class="sep">·</span> <span class="num">007</span> Accordion <span class="sep">·</span> <span class="num heart">008</span> Harmonica</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Guitar</div><div class="voice-cat-list"><span class="num heart">009</span> Nylon Guitar <span class="sep">·</span> <span class="num">010</span> Steel Guitar <span class="sep">·</span> <span class="num">011</span> Jazz Guitar <span class="sep">·</span> <span class="num">012</span> Clean Guitar <span class="sep">·</span> <span class="num">013</span> Overdriven Guitar</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Bass</div><div class="voice-cat-list"><span class="num">014</span> Acoustic Bass <span class="sep">·</span> <span class="num">015</span> Finger Bass <span class="sep">·</span> <span class="num">016</span> Slap Bass <span class="sep">·</span> <span class="num heart">017</span> Synth Bass</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Strings</div><div class="voice-cat-list"><span class="num">018</span> Strings <span class="sep">·</span> <span class="num">019</span> Pizzicato Strings <span class="sep">·</span> <span class="num">020</span> Violin <span class="sep">·</span> <span class="num">021</span> Cello <span class="sep">·</span> <span class="num heart">022</span> Orchestral Harp</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Woodwind</div><div class="voice-cat-list"><span class="num">023</span> Oboe <span class="sep">·</span> <span class="num">024</span> Clarinet <span class="sep">·</span> <span class="num heart">025</span> Flute <span class="sep">·</span> <span class="num">026</span> Tenor Sax</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Brass</div><div class="voice-cat-list"><span class="num">027</span> Brass Section <span class="sep">·</span> <span class="num">028</span> Trumpet <span class="sep">·</span> <span class="num">029</span> Trombone <span class="sep">·</span> <span class="num">030</span> French Horn <span class="sep">·</span> <span class="num">031</span> Synth Brass</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Synth Lead</div><div class="voice-cat-list"><span class="num heart">032</span> Gemini <span class="sep">·</span> <span class="num">033</span> Punchy Chordz <span class="sep">·</span> <span class="num">034</span> Square Lead <span class="sep">·</span> <span class="num">035</span> Sawtooth Lead</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Synth Pad</div><div class="voice-cat-list"><span class="num heart">036</span> New Age Pad <span class="sep">·</span> <span class="num">037</span> Warm Pad <span class="sep">·</span> <span class="num">038</span> Brightness</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Drum / Perc.</div><div class="voice-cat-list"><span class="num">039</span> Standard Kit <span class="sep">·</span> <span class="num heart">040</span> Dance Kit <span class="sep">·</span> <span class="num">041</span> Vibraphone <span class="sep">·</span> <span class="num heart">042</span> Marimba</div></div>
+  </div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">18</span></div>
+</section>
+
+
+<!-- EN PAGE 7 — 11 favourites -->
+<section class="page" style="padding-top: 16mm;">
+  <span class="eyebrow">Chapter 5 · Eleven sounds you must try</span>
+  <h1 class="section-title" style="font-size: 28pt; margin-bottom: 2mm;">The chef's favourites.</h1>
+  <p class="lead" style="font-size: 11.5pt; margin-bottom: 4mm;">Follow the cue. Place a finger. Be amazed.</p>
+
+  <div class="cards-grid">
+    <div class="vcard"><span class="led sm vcard-led">001</span><span class="vcard-cat">Piano</span><span class="vcard-name">Grand Piano</span><p class="vcard-desc">The classic. Pure, deep, instant.</p><span class="vcard-combo">+ Sustain for goosebumps</span></div>
+    <div class="vcard"><span class="led sm vcard-led">002</span><span class="vcard-cat">Piano</span><span class="vcard-name">Electric Piano 1</span><p class="vcard-desc">The Rhodes of jazz ballads. Velvet, slightly vintage.</p><span class="vcard-combo">+ Sustain · bedtime ballad</span></div>
+    <div class="vcard"><span class="led sm vcard-led">005</span><span class="vcard-cat">Organ</span><span class="vcard-name">Drawbar Organ</span><p class="vcard-desc">The 70s Hammond. Instant soul.</p><span class="vcard-combo">Play full chords</span></div>
+    <div class="vcard"><span class="led sm vcard-led">008</span><span class="vcard-cat">Organ</span><span class="vcard-name">Harmonica</span><p class="vcard-desc">Nasal voice, instant blues. Highly expressive.</p><span class="vcard-combo">+ Octave +1 to shine</span></div>
+    <div class="vcard"><span class="led sm vcard-led">009</span><span class="vcard-cat">Guitar</span><span class="vcard-name">Nylon Guitar</span><p class="vcard-desc">Classical guitar, intimate, by the fire.</p><span class="vcard-combo">+ Arpeggio 029 — 041</span></div>
+    <div class="vcard"><span class="led sm vcard-led">017</span><span class="vcard-cat">Bass</span><span class="vcard-name">Synth Bass</span><p class="vcard-desc">Cinema sub-bass, fat and round.</p><span class="vcard-combo">+ Octave −2 · shakes the room</span></div>
+    <div class="vcard"><span class="led sm vcard-led">022</span><span class="vcard-cat">Strings</span><span class="vcard-name">Orchestral Harp</span><p class="vcard-desc">Romantic cascade. One touch and the room hushes.</p><span class="vcard-combo">+ Arpeggio 075 — 076</span></div>
+    <div class="vcard"><span class="led sm vcard-led">025</span><span class="vcard-cat">Woodwind</span><span class="vcard-name">Flute</span><p class="vcard-desc">Soft flute, almost cartoon-like. Disney in your bedroom.</p><span class="vcard-combo">+ Sustain · melody on top</span></div>
+    <div class="vcard"><span class="led sm vcard-led">032</span><span class="vcard-cat">Synth Lead</span><span class="vcard-name">Gemini</span><p class="vcard-desc">Sharp 80s synth. Stranger Things.</p><span class="vcard-combo">+ Motion Effect held</span></div>
+    <div class="vcard"><span class="led sm vcard-led">036</span><span class="vcard-cat">Synth Pad</span><span class="vcard-name">New Age Pad</span><p class="vcard-desc">Slow planar pad. End-credits soundtrack.</p><span class="vcard-combo">+ Sustain · close your eyes</span></div>
+    <div class="vcard"><span class="led sm vcard-led">040</span><span class="vcard-cat">Drum / Perc.</span><span class="vcard-name">Dance Kit</span><p class="vcard-desc">Electro drum kit. Each key triggers a different sound.</p><span class="vcard-combo">+ Arpeggio 117 — 138</span></div>
+    <div class="vcard"><span class="led sm vcard-led">042</span><span class="vcard-cat">Drum / Perc.</span><span class="vcard-name">Marimba</span><p class="vcard-desc">Warm wood, melodic percussion. Instant joy.</p><span class="vcard-combo">+ Sustain to soften</span></div>
+  </div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">19</span></div>
+</section>
+
+
+<!-- EN PAGE 8 — Motion Effect -->
+<section class="page">
+  <span class="eyebrow">Chapter 6 · Set the music in motion</span>
+  <h1 class="section-title">One button. Hold it down, the sound <em>bends</em>.</h1>
+  <p class="lead">The <span class="pill">Motion Effect</span> button is at the top centre of the panel, just left of Sustain.</p>
+
+  <div class="two-col flip">
+    <div class="visual">
+      <svg viewBox="0 0 240 280" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="228" height="100" rx="3" fill="#120f0c"/>
+        <text x="60" y="26" fill="#d63a1a" font-family="Inter" font-size="6.5" text-anchor="middle" letter-spacing="1.5" font-weight="600">MOTION EFFECT</text>
+        <circle cx="60" cy="50" r="14" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+        <circle cx="60" cy="50" r="9" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <text x="60" y="80" fill="#fff" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">A · filter</text>
+        <text x="60" y="89" fill="#fff" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">B · pitch</text>
+        <text x="60" y="98" fill="#fff" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">C · modulation</text>
+        <circle cx="155" cy="50" r="11" fill="none" stroke="#d63a1a" stroke-width="1" opacity=".4"/>
+        <text x="155" y="78" fill="#d63a1a" font-family="Inter" font-size="5.5" text-anchor="middle" opacity=".4">Sustain</text>
+        <g transform="translate(20, 200)" stroke="#7a3a14" fill="none" stroke-width="1.4" stroke-linecap="round">
+          <path d="M 0 30 Q 20 5 40 30 T 80 30 T 120 30 T 160 30 T 200 30"/>
+        </g>
+        <g transform="translate(20, 240)" stroke="#c56a2a" fill="none" stroke-width="1.4" stroke-linecap="round">
+          <path d="M 0 30 Q 10 -5 25 25 Q 38 50 50 20 Q 65 -10 80 35 Q 95 55 110 18 Q 125 0 145 30 Q 160 50 175 22 Q 190 5 200 30"/>
+        </g>
+        <text x="120" y="195" fill="#4a4038" font-family="Inter" font-size="6.5" font-style="italic" text-anchor="middle">normal sound</text>
+        <text x="120" y="280" fill="#7a3a14" font-family="Inter" font-size="6.5" font-style="italic" text-anchor="middle">sound with Motion Effect held</text>
+      </svg>
+    </div>
+    <div class="body">
+      <p>Its trick: it doesn't toggle on a simple press. <strong>You have to hold it down while you play</strong>. Release it, the sound returns to normal.</p>
+      <p>The default effect changes the filter of the sound — like a mouth opening and closing around each note. On a synth like <strong>032 Gemini</strong> or <strong>036 New Age Pad</strong>, it's exactly what you've heard in every electronic track for the last 40 years.</p>
+      <p>The button offers three families of effects: A changes the filter, B the pitch, C the modulation. No need to touch them. The default works fine.</p>
+      <div class="callout"><div class="callout-label">Quick recipe</div><p>Pick <strong>032 Gemini</strong>. Play and hold a low note. With your other hand, hold Motion Effect and play a melody on top. Your first synth solo.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">20</span></div>
+</section>
+
+
+<!-- EN PAGE 9 — Arpeggio 1/3 -->
+<section class="page">
+  <span class="eyebrow">Chapter 7 · The arpeggiator (1/3)</span>
+  <h1 class="section-title">Place a finger. <em>The instrument plays itself.</em></h1>
+  <p class="lead">The arpeggiator turns a single key press into a complete rhythmic phrase. Probably the most impressive function on this keyboard.</p>
+
+  <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-top: 5mm;">
+    <div class="vcard" style="background: var(--bg-warm);">
+      <div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">1</div>
+      <span class="vcard-name" style="font-size: 12pt;">Activate</span>
+      <p class="vcard-desc">Press <span class="pill">Arpeggio</span>. The display shows <span class="pill">Aon</span>. The button is armed, but nothing plays yet.</p>
+      <div style="margin-top: auto;"><span class="led sm">Aon</span></div>
+    </div>
+    <div class="vcard" style="background: var(--bg-warm);">
+      <div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">2</div>
+      <span class="vcard-name" style="font-size: 12pt;">Place a finger</span>
+      <p class="vcard-desc">On any key. Hold it down. The arpeggiator starts, plays a rhythmic phrase. Move your finger to other keys to evolve it.</p>
+    </div>
+    <div class="vcard" style="background: var(--bg-warm);">
+      <div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">3</div>
+      <span class="vcard-name" style="font-size: 12pt;">Free your hand</span>
+      <p class="vcard-desc">While the phrase plays, press <span class="pill">Arp.&nbsp;Hold</span>. The phrase loops on its own even if you let go. Go grab a coffee, or play over it.</p>
+    </div>
+  </div>
+
+  <div class="callout" style="margin-top: 6mm;">
+    <div class="callout-label">To stop</div>
+    <p>Press <span class="pill">Arpeggio</span> again. The display shows <span class="pill">AoF</span>. Silence returns.</p>
+  </div>
+
+  <div class="panel-zoom" style="margin-top: 5mm;">
+    <svg viewBox="0 0 380 110" width="80%" aria-hidden="true">
+      <rect x="0" y="0" width="380" height="110" rx="3" fill="#120f0c"/>
+      <rect x="20" y="35" width="38" height="38" rx="3" fill="none" stroke="#d63a1a" stroke-width=".8" opacity=".4"/>
+      <text x="39" y="58" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" opacity=".4">SHIFT</text>
+      <text x="100" y="22" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing=".5" font-weight="600">ARP. HOLD</text>
+      <rect x="80" y="30" width="50" height="50" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+      <text x="180" y="22" fill="#d63a1a" font-family="Inter" font-size="7" text-anchor="middle" letter-spacing="1" font-weight="600">ARPEGGIO</text>
+      <circle cx="180" cy="55" r="22" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+      <circle cx="180" cy="55" r="14" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+      <rect x="240" y="40" width="32" height="32" rx="3" fill="none" stroke="#d63a1a" stroke-width="1"/>
+      <text x="256" y="62" fill="#d63a1a" font-family="Inter" font-size="14" text-anchor="middle">−</text>
+      <rect x="278" y="40" width="32" height="32" rx="3" fill="none" stroke="#d63a1a" stroke-width="1"/>
+      <text x="294" y="62" fill="#d63a1a" font-family="Inter" font-size="14" text-anchor="middle">+</text>
+      <text x="275" y="92" fill="#fff" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle" opacity=".7">choose the pattern</text>
+      <rect x="320" y="35" width="50" height="40" rx="2" fill="#1a0d08"/>
+      <text x="345" y="62" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="16" text-anchor="middle">Aon</text>
+    </svg>
+    <div class="caption">The actual layout. Arp. Hold sits just left of the big Arpeggio button.</div>
+  </div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">21</span></div>
+</section>
+
+
+<!-- EN PAGE 10 — Arpeggio 2/3 -->
+<section class="page">
+  <span class="eyebrow">Chapter 7 · The arpeggiator (2/3)</span>
+  <h1 class="section-title">138 phrases, <em>twelve worlds</em>.</h1>
+  <p class="lead">The <span class="pill">−</span> and <span class="pill">+</span> buttons under the display take you traveling. Hold them to scroll fast.</p>
+
+  <div class="worlds">
+    <div class="world"><span class="num">001 — 018</span><div><span class="label">Acoustic Piano</span><span class="desc">Classic piano phrases</span></div></div>
+    <div class="world"><span class="num">048 — 064</span><div><span class="label">Bass</span><span class="desc">Groovy bass lines</span></div></div>
+    <div class="world"><span class="num">019 — 028</span><div><span class="label">Keyboard</span><span class="desc">Vintage keys and organs</span></div></div>
+    <div class="world"><span class="num">065 — 074</span><div><span class="label">Strings</span><span class="desc">Dramatic orchestra</span></div></div>
+    <div class="world"><span class="num">029 — 041</span><div><span class="label">Guitar Chord</span><span class="desc">Strummed guitar chords</span></div></div>
+    <div class="world"><span class="num">075 — 076</span><div><span class="label">Harp</span><span class="desc">Harp cascades</span></div></div>
+    <div class="world"><span class="num">042 — 047</span><div><span class="label">Guitar Arpeggio</span><span class="desc">Folk guitar arpeggios</span></div></div>
+    <div class="world"><span class="num">077 — 081</span><div><span class="label">Brass</span><span class="desc">Brass riffs</span></div></div>
+    <div class="world"><span class="num">082 — 085</span><div><span class="label">Chromatic Perc.</span><span class="desc">Vibraphone, marimba</span></div></div>
+    <div class="world"><span class="num">107 — 116</span><div><span class="label">Synth Chord</span><span class="desc">Floating synth chords</span></div></div>
+    <div class="world"><span class="num">086 — 106</span><div><span class="label">Synth Sequence</span><span class="desc">80s electro sequences</span></div></div>
+    <div class="world"><span class="num">117 — 138</span><div><span class="label">Drums</span><span class="desc">Drum machines and beats</span></div></div>
+  </div>
+
+  <div class="callout" style="margin-top: 6mm;"><div class="callout-label">Handy shortcut</div><p>To jump straight to the start of the next category, hold <span class="pill">Shift</span> and press <span class="pill">+</span> or <span class="pill">−</span>. You switch worlds in one move, without scrolling.</p></div>
+  <div class="callout" style="margin-top: 4mm; border-left-color: var(--moss); background: rgba(90,115,96,.08);"><div class="callout-label" style="color: var(--moss);">Good to know</div><p>The numbers are printed directly above the keys, on the black panel. No need to memorise this page: glance at the keyboard, it's all there.</p></div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">22</span></div>
+</section>
+
+
+<!-- EN PAGE 11 — 5 recipes -->
+<section class="page">
+  <span class="eyebrow">Chapter 7 · The arpeggiator (3/3)</span>
+  <h1 class="section-title">Five recipes <em>ready to play</em>.</h1>
+  <p class="lead">Follow the combination, place a finger, be amazed. No skill required.</p>
+
+  <div class="recipes">
+    <div class="recipe"><div class="recipe-num">1</div><div class="recipe-body"><div class="recipe-name">Techno drum machine</div><div class="recipe-steps">Voice <span class="pill">040</span> Dance Kit (Drum/Perc., press 2x) · activate <span class="pill">Arpeggio</span> · number between <span class="pill">117</span> and <span class="pill">138</span> with <span class="pill">+</span> · activate <span class="pill">Arp. Hold</span>. Place a finger anywhere, the beat loops. Walk another finger to add sounds on top.</div></div></div>
+    <div class="recipe"><div class="recipe-num">2</div><div class="recipe-body"><div class="recipe-name">Film soundtrack</div><div class="recipe-steps">Voice <span class="pill">036</span> New Age Pad · <span class="pill">Sustain</span> on · <span class="pill">Arpeggio</span> off. Play three slow, spaced notes. Let them float. You're in a Hans Zimmer scene in a B&amp;B.</div></div></div>
+    <div class="recipe"><div class="recipe-num">3</div><div class="recipe-body"><div class="recipe-name">80s synth solo</div><div class="recipe-steps">Voice <span class="pill">032</span> Gemini · <span class="pill">Motion Effect</span> held while you play. Random melody with two fingers. The longer you hold, the more the sound bends.</div></div></div>
+    <div class="recipe"><div class="recipe-num">4</div><div class="recipe-body"><div class="recipe-name">Guitar by the fire</div><div class="recipe-steps">Voice <span class="pill">009</span> Nylon Guitar · activate <span class="pill">Arpeggio</span> · number between <span class="pill">029</span> and <span class="pill">041</span> with <span class="pill">−</span>/<span class="pill">+</span> · activate <span class="pill">Arp. Hold</span>. You get a strummed guitar accompaniment. Place different fingers for new chords.</div></div></div>
+    <div class="recipe"><div class="recipe-num">5</div><div class="recipe-body"><div class="recipe-name">Stranger Things synth</div><div class="recipe-steps">Voice <span class="pill">032</span> Gemini · activate <span class="pill">Arpeggio</span> · number between <span class="pill">086</span> and <span class="pill">106</span> · activate <span class="pill">Arp. Hold</span>. An electro sequence loops. Place a low note to transpose.</div></div></div>
+  </div>
+
+  <div class="tap-callout"><div class="tap-callout-label">Tap Tempo callout</div><p class="tap-callout-body">Want it faster or slower? Tap <span class="pill">Tempo / Tap</span> (bottom right, near the screen) four times in your rhythm. The arpeggiator instantly locks on your tempo.</p></div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson</span><span class="num">23</span></div>
+</section>
+
+
+<!-- EN PAGE 12 — Bonus + farewell -->
+<section class="page">
+  <span class="eyebrow">Bonus · If you have 5 more minutes</span>
+  <h1 class="section-title">Two secrets <em>to go further</em>.</h1>
+
+  <div class="bonus-block">
+    <div class="bonus-block-title">Portamento — the glide between notes</div>
+    <p class="bonus-block-lead">Hold <span class="pill">Shift</span> and press <span class="pill">Sustain</span>. The display shows <span class="pill">Pon</span>. Play a note, then another a few keys away: the sound glides instead of jumping.</p>
+    <p class="bonus-fine">Spectacular on 032 Gemini or 017 Synth Bass. Useless on piano. To turn off, repeat Shift + Sustain. The display shows <span class="pill">PoF</span>.</p>
+  </div>
+
+  <div class="bonus-block">
+    <div class="bonus-block-title">Record a loop</div>
+    <p class="bonus-block-lead">The keyboard remembers a short phrase and plays it back while you play over it.</p>
+    <ol class="bonus-steps">
+      <li>Press <span class="pill">Rec</span>. The display blinks <span class="pill">rEC</span>.</li>
+      <li>Play. Recording starts on the first note.</li>
+      <li>Press <span class="pill">Rec</span> to stop.</li>
+      <li>Press <span class="pill">▶/■</span> to listen.</li>
+      <li>To loop while you improvise, hold <span class="pill">Shift</span> and press <span class="pill">▶/■</span>.</li>
+    </ol>
+    <p class="bonus-fine">To erase and start over: Rec, ▶/■, ▶/■, in that order.</p>
+  </div>
+
+  <div class="farewell">
+    <div class="farewell-title display">Over to you.</div>
+    <p>Now you know everything you need to have a good time. The keyboard runs on batteries. Feel free to put it on the bed or the couch. No cables to unplug. No rules.</p>
+    <p>One last tip. Leave Sustain on, pick the voice that speaks to you, and press random keys. That's exactly how it begins.</p>
+    <div class="sign">Have a great stay at Maurisson, and good music.</div>
+  </div>
+  <div class="foot"><span class="brand">The little keyboard of Maurisson · Herve, Belgium</span><span class="num">24</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     NEDERLANDSE VERSIE
+     ═══════════════════════════════════════════════════════════════ -->
+
+<section class="page cover">
+  <header class="cover-top">
+    <span class="cover-mark" aria-hidden="true"><svg><use href="#house"/></svg></span>
+    <div class="cover-meta">
+      <div class="brand-line">Gebruiksaanwijzing</div>
+      Yamaha PSS&#8209;A50<br/>
+      <em>Maurisson editie</em>
+    </div>
+  </header>
+  <div>
+    <h1 class="cover-title">
+      <span class="small">Het kleine keyboard van</span>
+      <span class="name">Maurisson</span>
+    </h1>
+    <p class="cover-sub">10 minuten plezier met een echt keyboard. Geen ervaring nodig.</p>
+  </div>
+
+  <svg class="cover-illustration" viewBox="0 0 600 240" aria-hidden="true">
+    <rect x="3" y="3" width="594" height="234" rx="14" ry="14" fill="#ffffff" stroke="#241f19" stroke-width="1.8"/>
+    <rect x="22" y="16" width="500" height="68" rx="2.5" fill="#120f0c"/>
+    <text x="40" y="44" fill="#d63a1a" font-family="Inter" font-size="9" font-weight="600" letter-spacing="2">YAMAHA</text>
+    <text x="40" y="58" fill="#d63a1a" font-family="Fraunces" font-size="11" font-style="italic">PSS-A50</text>
+    <circle cx="125" cy="34" r="4.5" fill="none" stroke="#d63a1a" stroke-width="1"/><circle cx="125" cy="34" r="1.5" fill="#d63a1a"/>
+    <rect x="40" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/><rect x="52" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="80" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/><rect x="92" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="240" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <circle cx="290" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <g fill="none" stroke="#d63a1a" stroke-width=".8">
+      <rect x="180" y="46" width="22" height="10"/><rect x="206" y="46" width="22" height="10"/><rect x="232" y="46" width="22" height="10"/><rect x="258" y="46" width="22" height="10"/><rect x="284" y="46" width="22" height="10"/>
+      <rect x="180" y="60" width="22" height="10"/><rect x="206" y="60" width="22" height="10"/><rect x="232" y="60" width="22" height="10"/><rect x="258" y="60" width="22" height="10"/><rect x="284" y="60" width="22" height="10"/>
+    </g>
+    <rect x="135" y="60" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="148" y="60" width="14" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="172" cy="64" r="5" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <rect x="450" y="26" width="40" height="22" rx="1.5" fill="#1a0d08"/>
+    <text x="470" y="44" fill="#d63a1a" font-family="Fraunces" font-size="14" font-weight="600" text-anchor="middle">001</text>
+    <rect x="445" y="62" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/><rect x="457" y="62" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="478" cy="66.5" r="3.5" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="530" y="16" width="62" height="68" rx="2" fill="none" stroke="#241f19" stroke-width=".5" stroke-dasharray="1.5,1.5"/>
+    <g>
+      <g fill="#ffffff" stroke="#241f19" stroke-width=".7">
+        <rect x="22" y="92" width="25.5" height="138" rx="1"/><rect x="48" y="92" width="25.5" height="138" rx="1"/><rect x="74" y="92" width="25.5" height="138" rx="1"/><rect x="100" y="92" width="25.5" height="138" rx="1"/><rect x="126" y="92" width="25.5" height="138" rx="1"/><rect x="152" y="92" width="25.5" height="138" rx="1"/><rect x="178" y="92" width="25.5" height="138" rx="1"/><rect x="204" y="92" width="25.5" height="138" rx="1"/><rect x="230" y="92" width="25.5" height="138" rx="1"/><rect x="256" y="92" width="25.5" height="138" rx="1"/><rect x="282" y="92" width="25.5" height="138" rx="1"/><rect x="308" y="92" width="25.5" height="138" rx="1"/><rect x="334" y="92" width="25.5" height="138" rx="1"/><rect x="360" y="92" width="25.5" height="138" rx="1"/><rect x="386" y="92" width="25.5" height="138" rx="1"/><rect x="412" y="92" width="25.5" height="138" rx="1"/><rect x="438" y="92" width="25.5" height="138" rx="1"/><rect x="464" y="92" width="25.5" height="138" rx="1"/><rect x="490" y="92" width="25.5" height="138" rx="1"/><rect x="516" y="92" width="25.5" height="138" rx="1"/><rect x="542" y="92" width="25.5" height="138" rx="1"/><rect x="568" y="92" width="25.5" height="138" rx="1"/>
+      </g>
+      <g fill="#120f0c">
+        <rect x="40" y="92" width="14" height="84" rx=".8"/><rect x="66" y="92" width="14" height="84" rx=".8"/><rect x="118" y="92" width="14" height="84" rx=".8"/><rect x="144" y="92" width="14" height="84" rx=".8"/><rect x="170" y="92" width="14" height="84" rx=".8"/><rect x="222" y="92" width="14" height="84" rx=".8"/><rect x="248" y="92" width="14" height="84" rx=".8"/><rect x="300" y="92" width="14" height="84" rx=".8"/><rect x="326" y="92" width="14" height="84" rx=".8"/><rect x="352" y="92" width="14" height="84" rx=".8"/><rect x="404" y="92" width="14" height="84" rx=".8"/><rect x="430" y="92" width="14" height="84" rx=".8"/><rect x="482" y="92" width="14" height="84" rx=".8"/><rect x="508" y="92" width="14" height="84" rx=".8"/><rect x="534" y="92" width="14" height="84" rx=".8"/>
+      </g>
+    </g>
+  </svg>
+
+  <div class="cover-menu">
+    Eerste stappen <span class="dot">·</span> De sustain <span class="dot">·</span> Elf favorieten <br/>
+    Het motion effect <span class="dot">·</span> De arpeggiator <span class="dot">·</span> Vijf recepten
+  </div>
+  <div class="cover-bottom"><span>Herve, België</span><span>2026</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Hoofdstuk 1 · 30 seconden om te starten</span>
+  <h1 class="section-title">Ga zitten, zet aan, <em>speel</em>.</h1>
+  <p class="lead">Het keyboard staat klaar. De batterijen zitten erin. Niets om aan te sluiten.</p>
+  <div class="two-col">
+    <div class="body">
+      <div class="step"><span class="label">Aanzetten</span><div class="body-line">Druk één keer op de knop linksboven, met het kleine standby-symbool. Het rode scherm gaat aan.</div></div>
+      <div class="step"><span class="label">Uitzetten</span><div class="body-line">Houd diezelfde knop één seconde ingedrukt.</div></div>
+      <div class="step"><span class="label">Volume</span><div class="body-line">De <span class="pill">Master Volume</span>-knoppen vlak eronder. Links zachter, rechts luider. Schermwaarde 00 tot 15. Standaard 13. Om de buurt niet te wekken: 5 of 6 volstaat ruimschoots.</div></div>
+      <div class="step"><span class="label">Stil spelen</span><div class="body-line">Sluit een hoofdtelefoon aan op de <span class="pill">Phones / Output</span> achteraan. De luidsprekers schakelen automatisch uit.</div></div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 220 260" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="208" height="180" rx="3" fill="#120f0c"/>
+        <text x="22" y="32" fill="#d63a1a" font-family="Inter" font-size="9" font-weight="600" letter-spacing="2">YAMAHA</text>
+        <text x="22" y="46" fill="#d63a1a" font-family="Fraunces" font-style="italic" font-size="11">PSS-A50</text>
+        <circle cx="100" cy="34" r="11" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <circle cx="100" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+        <path d="M 100 30 v 7" stroke="#d63a1a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M 96 32 a 5 5 0 1 0 8 0" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <text x="120" y="38" fill="#fff" font-family="Inter" font-size="6" letter-spacing="1">STANDBY/ON</text>
+        <text x="22" y="76" fill="#d63a1a" font-family="Inter" font-size="6" letter-spacing="1">MASTER VOLUME</text>
+        <rect x="22" y="80" width="22" height="22" rx="2" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="33" y="96" fill="#d63a1a" font-family="Inter" font-size="11" text-anchor="middle">−</text>
+        <rect x="48" y="80" width="22" height="22" rx="2" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="59" y="96" fill="#d63a1a" font-family="Inter" font-size="11" text-anchor="middle">+</text>
+        <rect x="120" y="60" width="60" height="34" rx="2" fill="#1a0d08"/>
+        <text x="150" y="86" fill="#d63a1a" font-family="Fraunces" font-weight="600" font-size="22" text-anchor="middle">13</text>
+        <text x="150" y="105" fill="#fff" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing="1.5" opacity=".7">VOLUME</text>
+        <line x1="6" y1="200" x2="214" y2="200" stroke="#241f19" stroke-width=".4" stroke-dasharray="2,2"/>
+        <text x="14" y="214" fill="#241f19" font-family="Inter" font-size="6.5" letter-spacing="1.5" font-weight="500">ACHTERAAN</text>
+        <text x="14" y="226" fill="#241f19" font-family="Fraunces" font-style="italic" font-size="10">Hoofdtelefoon-jack</text>
+        <g transform="translate(140,210)" stroke="#241f19" stroke-width="1.2" fill="none" stroke-linecap="round">
+          <path d="M 5 14 a 14 14 0 0 1 28 0"/>
+          <rect x="2" y="14" width="9" height="14" rx="2.5"/>
+          <rect x="27" y="14" width="9" height="14" rx="2.5"/>
+        </g>
+        <text x="14" y="248" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6.5" font-weight="500">PHONES / OUTPUT</text>
+      </svg>
+    </div>
+  </div>
+  <div class="callout"><div class="callout-label">Goed te onthouden</div><p>Werkt op batterijen. Neem het mee naar het bed of de zetel. Geen kabels.</p></div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">26</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Hoofdstuk 2 · Het meest verslavende effect</span>
+  <h1 class="section-title">Eén knop, en al je noten klinken <em>als een pro</em>.</h1>
+  <p class="lead">De <span class="pill">Sustain</span>-knop staat bovenaan rechts op het paneel. Druk er één keer op.</p>
+  <div class="two-col flip">
+    <div class="visual">
+      <svg viewBox="0 0 240 260" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="228" height="100" rx="3" fill="#120f0c"/>
+        <circle cx="60" cy="50" r="11" fill="none" stroke="#d63a1a" stroke-width="1" opacity=".4"/>
+        <text x="155" y="30" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing="1.5" font-weight="600">SUSTAIN</text>
+        <circle cx="155" cy="50" r="14" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+        <circle cx="155" cy="50" r="9" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <rect x="40" y="180" width="160" height="60" rx="3" fill="#1a0d08"/>
+        <text x="120" y="226" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="38" text-anchor="middle" letter-spacing="2">Son</text>
+        <text x="120" y="252" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="8" text-anchor="middle">Sustain AAN</text>
+      </svg>
+    </div>
+    <div class="body">
+      <p>Het scherm toont <span class="pill">Son</span>. Vanaf nu blijft elke noot doorklinken nadat je de toets hebt losgelaten.</p>
+      <p>Het effect van het grote pedaal onder een vleugel. Zonder is het spelen. Met is het <strong>muziek maken</strong>.</p>
+      <div class="step"><span class="label">Probeer meteen</span><div class="body-line">Speel drie willekeurige witte toetsen, traag, met een seconde tussen elk. Luister hoe ze samen door de kamer zweven.</div></div>
+      <div class="step"><span class="label">Uitschakelen</span><div class="body-line">Druk opnieuw op Sustain. Het scherm toont <span class="pill">SoF</span>.</div></div>
+      <div class="callout"><div class="callout-label">Tip van de chef</div><p>Laat Sustain de hele tijd aan. Dat is je beste vriend de komende 10 minuten.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">27</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Hoofdstuk 3 · Het keyboard groter maken</span>
+  <h1 class="section-title">37 toetsen is compact. Zo schakel je <em>naar XXL</em>.</h1>
+  <p class="lead">De <span class="pill">Octave &lt;</span> en <span class="pill">Octave &gt;</span>-knoppen verschuiven alle noten omhoog of omlaag.</p>
+  <div class="two-col">
+    <div class="body">
+      <div class="step"><span class="label">Voor heldere hoge tonen</span><div class="body-line">Druk op <span class="pill">&gt;</span>. Alles wordt hoger, helderder, als een muziekdoosje.</div></div>
+      <div class="step"><span class="label">Voor diepe lage tonen</span><div class="body-line">Druk op <span class="pill">&lt;</span>. Alles wordt lager, zwaarder, tot bassen die de vloer doen trillen.</div></div>
+      <div class="step"><span class="label">Bereik</span><div class="body-line">Het scherm toont <strong>−04</strong> tot <strong>+04</strong>. Vier octaven in elke richting.</div></div>
+      <div class="step"><span class="label">Terug naar het midden</span><div class="body-line">Druk gelijktijdig op <span class="pill">&lt;</span> en <span class="pill">&gt;</span>. Het scherm toont <span class="pill">00</span>.</div></div>
+      <div class="callout"><div class="callout-label">Snel recept</div><p>Neem klank <strong>017 Synth Bass</strong> en zak twee octaven. Bioscoop sub-bass die het meubilair doet trillen.</p></div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 240 280" width="100%" aria-hidden="true">
+        <rect x="20" y="10" width="80" height="40" rx="2" fill="#1a0d08"/>
+        <text x="60" y="40" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="22" text-anchor="middle">−02</text>
+        <text x="60" y="60" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle">laag</text>
+        <rect x="120" y="10" width="80" height="40" rx="2" fill="#1a0d08"/>
+        <text x="160" y="40" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="22" text-anchor="middle">+02</text>
+        <text x="160" y="60" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle">hoog</text>
+        <rect x="6" y="90" width="228" height="100" rx="3" fill="#120f0c"/>
+        <text x="20" y="112" fill="#d63a1a" font-family="Inter" font-size="7" letter-spacing="1.5" font-weight="500">OCTAVE</text>
+        <rect x="20" y="120" width="36" height="36" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="38" y="146" fill="#d63a1a" font-family="Inter" font-size="20" text-anchor="middle">&lt;</text>
+        <rect x="64" y="120" width="36" height="36" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="82" y="146" fill="#d63a1a" font-family="Inter" font-size="20" text-anchor="middle">&gt;</text>
+        <text x="160" y="118" fill="#fff" font-family="Inter" font-style="italic" font-size="7" opacity=".6">samen indrukken</text>
+        <text x="160" y="135" fill="#fff" font-family="Fraunces" font-style="italic" font-size="11">= reset naar nul</text>
+        <g transform="translate(20, 220)">
+          <line x1="0" y1="10" x2="200" y2="10" stroke="#7a3a14" stroke-width="1.2"/>
+          <g font-family="Fraunces" font-size="9" fill="#7a3a14" text-anchor="middle">
+            <text x="0" y="0">−04</text><line x1="0" y1="6" x2="0" y2="14" stroke="#7a3a14" stroke-width="1.2"/>
+            <text x="50" y="0">−02</text><line x1="50" y1="6" x2="50" y2="14" stroke="#7a3a14" stroke-width="1"/>
+            <text x="100" y="0" font-weight="600" fill="#c56a2a">00</text><line x1="100" y1="6" x2="100" y2="14" stroke="#c56a2a" stroke-width="2"/>
+            <text x="150" y="0">+02</text><line x1="150" y1="6" x2="150" y2="14" stroke="#7a3a14" stroke-width="1"/>
+            <text x="200" y="0">+04</text><line x1="200" y1="6" x2="200" y2="14" stroke="#7a3a14" stroke-width="1.2"/>
+          </g>
+          <text x="100" y="32" font-family="Inter" font-style="italic" font-size="7" fill="#4a4038" text-anchor="middle">8 octaven totaal speelbereik</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">28</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Hoofdstuk 4 · Het menu</span>
+  <h1 class="section-title">42 klanken, 10 knoppen, <em>één simpele logica</em>.</h1>
+  <p class="lead">Het keyboard verbergt 42 klanken, gegroepeerd in 10 families. Elke <span class="pill">Voice</span>-knop is één familie.</p>
+  <div class="body" style="max-width: 36em;">
+    <p><strong>De methode.</strong> Druk één keer op <span class="pill">Piano</span>. Het scherm toont <span class="pill">001</span>, de grote vleugel. Druk opnieuw op <span class="pill">Piano</span>: je gaat naar de volgende klank van de pianofamilie. Enzovoort.</p>
+    <p>Als je een familie helemaal hebt doorlopen, begint hij weer vooraan. Om volledig van sfeer te wisselen: druk op een andere familieknop.</p>
+  </div>
+  <div class="panel-zoom" style="margin-top: 6mm;">
+    <svg viewBox="0 0 460 200" width="92%" aria-hidden="true">
+      <rect x="0" y="0" width="460" height="200" rx="3" fill="#120f0c"/>
+      <text x="230" y="22" fill="#d63a1a" font-family="Inter" font-size="9" letter-spacing="3" text-anchor="middle" font-weight="500">VOICE</text>
+      <g font-family="Inter" font-size="9" font-weight="500" letter-spacing=".5" text-anchor="middle">
+        <g><rect x="20" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="60" y="70" fill="#d63a1a">PIANO</text><text x="60" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">001 — 004</text></g>
+        <g><rect x="108" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="148" y="70" fill="#d63a1a">ORGAN</text><text x="148" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">005 — 008</text></g>
+        <g><rect x="196" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="236" y="70" fill="#d63a1a">GUITAR</text><text x="236" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">009 — 013</text></g>
+        <g><rect x="284" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="324" y="70" fill="#d63a1a">BASS</text><text x="324" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">014 — 017</text></g>
+        <g><rect x="372" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="412" y="70" fill="#d63a1a">STRINGS</text><text x="412" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">018 — 022</text></g>
+        <g><rect x="20" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="60" y="130" fill="#d63a1a">W.WIND</text><text x="60" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">023 — 026</text></g>
+        <g><rect x="108" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="148" y="130" fill="#d63a1a">BRASS</text><text x="148" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">027 — 031</text></g>
+        <g><rect x="196" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="236" y="130" fill="#d63a1a">SY.LEAD</text><text x="236" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">032 — 035</text></g>
+        <g><rect x="284" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="324" y="130" fill="#d63a1a">SY.PAD</text><text x="324" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">036 — 038</text></g>
+        <g><rect x="372" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="412" y="130" fill="#d63a1a">DRUM/PERC</text><text x="412" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">039 — 042</text></g>
+      </g>
+      <text x="230" y="180" fill="#fff" font-family="Fraunces" font-style="italic" font-size="9" text-anchor="middle" opacity=".7">één keer drukken: in de familie → opnieuw drukken: volgende klank</text>
+    </svg>
+    <div class="caption">Echte indeling van het paneel. Twee rijen van vijf knoppen.</div>
+  </div>
+  <div class="callout"><div class="callout-label">Handig om te weten</div><p>Het rode LED-scherm toont permanent het nummer van de geselecteerde klank, met een klein lampje rechtsonder dat bevestigt dat het een Voice-nummer is (geen Arpeggio-nummer).</p></div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">29</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Hoofdstuk 4 (vervolg) · Het volledige menu</span>
+  <h1 class="section-title">Alle 42 klanken in één oogopslag.</h1>
+  <p class="lead">De elf favorieten zijn gemarkeerd. Details en combinaties op de volgende pagina.</p>
+  <div class="voice-list">
+    <div class="voice-cat"><div class="voice-cat-name">Piano</div><div class="voice-cat-list"><span class="num heart">001</span> Grand Piano <span class="sep">·</span> <span class="num heart">002</span> Electric Piano 1 <span class="sep">·</span> <span class="num">003</span> Electric Piano 2 <span class="sep">·</span> <span class="num">004</span> Electric Grand Piano</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Organ</div><div class="voice-cat-list"><span class="num heart">005</span> Drawbar Organ <span class="sep">·</span> <span class="num">006</span> Rock Organ <span class="sep">·</span> <span class="num">007</span> Accordion <span class="sep">·</span> <span class="num heart">008</span> Harmonica</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Guitar</div><div class="voice-cat-list"><span class="num heart">009</span> Nylon Guitar <span class="sep">·</span> <span class="num">010</span> Steel Guitar <span class="sep">·</span> <span class="num">011</span> Jazz Guitar <span class="sep">·</span> <span class="num">012</span> Clean Guitar <span class="sep">·</span> <span class="num">013</span> Overdriven Guitar</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Bass</div><div class="voice-cat-list"><span class="num">014</span> Acoustic Bass <span class="sep">·</span> <span class="num">015</span> Finger Bass <span class="sep">·</span> <span class="num">016</span> Slap Bass <span class="sep">·</span> <span class="num heart">017</span> Synth Bass</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Strings</div><div class="voice-cat-list"><span class="num">018</span> Strings <span class="sep">·</span> <span class="num">019</span> Pizzicato Strings <span class="sep">·</span> <span class="num">020</span> Violin <span class="sep">·</span> <span class="num">021</span> Cello <span class="sep">·</span> <span class="num heart">022</span> Orchestral Harp</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Woodwind</div><div class="voice-cat-list"><span class="num">023</span> Oboe <span class="sep">·</span> <span class="num">024</span> Clarinet <span class="sep">·</span> <span class="num heart">025</span> Flute <span class="sep">·</span> <span class="num">026</span> Tenor Sax</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Brass</div><div class="voice-cat-list"><span class="num">027</span> Brass Section <span class="sep">·</span> <span class="num">028</span> Trumpet <span class="sep">·</span> <span class="num">029</span> Trombone <span class="sep">·</span> <span class="num">030</span> French Horn <span class="sep">·</span> <span class="num">031</span> Synth Brass</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Synth Lead</div><div class="voice-cat-list"><span class="num heart">032</span> Gemini <span class="sep">·</span> <span class="num">033</span> Punchy Chordz <span class="sep">·</span> <span class="num">034</span> Square Lead <span class="sep">·</span> <span class="num">035</span> Sawtooth Lead</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Synth Pad</div><div class="voice-cat-list"><span class="num heart">036</span> New Age Pad <span class="sep">·</span> <span class="num">037</span> Warm Pad <span class="sep">·</span> <span class="num">038</span> Brightness</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Drum / Perc.</div><div class="voice-cat-list"><span class="num">039</span> Standard Kit <span class="sep">·</span> <span class="num heart">040</span> Dance Kit <span class="sep">·</span> <span class="num">041</span> Vibraphone <span class="sep">·</span> <span class="num heart">042</span> Marimba</div></div>
+  </div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">30</span></div>
+</section>
+
+<section class="page" style="padding-top: 16mm;">
+  <span class="eyebrow">Hoofdstuk 5 · Elf klanken om absoluut te proberen</span>
+  <h1 class="section-title" style="font-size: 28pt; margin-bottom: 2mm;">De favorieten van de chef.</h1>
+  <p class="lead" style="font-size: 11.5pt; margin-bottom: 4mm;">Volg de instructie. Plaats een vinger. Word verbluft.</p>
+  <div class="cards-grid">
+    <div class="vcard"><span class="led sm vcard-led">001</span><span class="vcard-cat">Piano</span><span class="vcard-name">Grand Piano</span><p class="vcard-desc">De klassieker. Puur, diep, meteen.</p><span class="vcard-combo">+ Sustain voor kippenvel</span></div>
+    <div class="vcard"><span class="led sm vcard-led">002</span><span class="vcard-cat">Piano</span><span class="vcard-name">Electric Piano 1</span><p class="vcard-desc">De Rhodes van jazz-ballads. Fluweelzacht, lichtjes vintage.</p><span class="vcard-combo">+ Sustain · slaapliedje</span></div>
+    <div class="vcard"><span class="led sm vcard-led">005</span><span class="vcard-cat">Organ</span><span class="vcard-name">Drawbar Organ</span><p class="vcard-desc">Het Hammond-orgel van de jaren 70. Soul op aanvraag.</p><span class="vcard-combo">Speel volle akkoorden</span></div>
+    <div class="vcard"><span class="led sm vcard-led">008</span><span class="vcard-cat">Organ</span><span class="vcard-name">Harmonica</span><p class="vcard-desc">Nasale stem, blues meteen. Heel expressief.</p><span class="vcard-combo">+ Octave +1 om te schitteren</span></div>
+    <div class="vcard"><span class="led sm vcard-led">009</span><span class="vcard-cat">Guitar</span><span class="vcard-name">Nylon Guitar</span><p class="vcard-desc">Klassieke gitaar, intiem, bij het haardvuur.</p><span class="vcard-combo">+ Arpeggio 029 — 041</span></div>
+    <div class="vcard"><span class="led sm vcard-led">017</span><span class="vcard-cat">Bass</span><span class="vcard-name">Synth Bass</span><p class="vcard-desc">Bioscoop sub-bass, vet en rond.</p><span class="vcard-combo">+ Octave −2 · doet trillen</span></div>
+    <div class="vcard"><span class="led sm vcard-led">022</span><span class="vcard-cat">Strings</span><span class="vcard-name">Orchestral Harp</span><p class="vcard-desc">Romantische cascade. Eén toets, en de zaal valt stil.</p><span class="vcard-combo">+ Arpeggio 075 — 076</span></div>
+    <div class="vcard"><span class="led sm vcard-led">025</span><span class="vcard-cat">Woodwind</span><span class="vcard-name">Flute</span><p class="vcard-desc">Zachte fluit, bijna geanimeerd. Disney in de slaapkamer.</p><span class="vcard-combo">+ Sustain · melodie erbovenop</span></div>
+    <div class="vcard"><span class="led sm vcard-led">032</span><span class="vcard-cat">Synth Lead</span><span class="vcard-name">Gemini</span><p class="vcard-desc">Scherpe synth uit de jaren 80. Stranger Things.</p><span class="vcard-combo">+ Motion Effect ingedrukt</span></div>
+    <div class="vcard"><span class="led sm vcard-led">036</span><span class="vcard-cat">Synth Pad</span><span class="vcard-name">New Age Pad</span><p class="vcard-desc">Trage, zwevende pad. Filmaftiteling.</p><span class="vcard-combo">+ Sustain · ogen dicht</span></div>
+    <div class="vcard"><span class="led sm vcard-led">040</span><span class="vcard-cat">Drum / Perc.</span><span class="vcard-name">Dance Kit</span><p class="vcard-desc">Electro drumkit. Elke toets = één klank.</p><span class="vcard-combo">+ Arpeggio 117 — 138</span></div>
+    <div class="vcard"><span class="led sm vcard-led">042</span><span class="vcard-cat">Drum / Perc.</span><span class="vcard-name">Marimba</span><p class="vcard-desc">Warm hout, melodische percussie. Direct vrolijk.</p><span class="vcard-combo">+ Sustain om te verzachten</span></div>
+  </div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">31</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Hoofdstuk 6 · Breng de muziek in beweging</span>
+  <h1 class="section-title">Eén knop. Houd hem ingedrukt, het geluid <em>vervormt</em>.</h1>
+  <p class="lead">De <span class="pill">Motion Effect</span>-knop staat bovenaan in het midden van het paneel, net links van Sustain.</p>
+  <div class="two-col flip">
+    <div class="visual">
+      <svg viewBox="0 0 240 280" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="228" height="100" rx="3" fill="#120f0c"/>
+        <text x="60" y="26" fill="#d63a1a" font-family="Inter" font-size="6.5" text-anchor="middle" letter-spacing="1.5" font-weight="600">MOTION EFFECT</text>
+        <circle cx="60" cy="50" r="14" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+        <circle cx="60" cy="50" r="9" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <text x="60" y="80" fill="#fff" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">A · filter</text>
+        <text x="60" y="89" fill="#fff" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">B · toonhoogte</text>
+        <text x="60" y="98" fill="#fff" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">C · modulatie</text>
+        <circle cx="155" cy="50" r="11" fill="none" stroke="#d63a1a" stroke-width="1" opacity=".4"/>
+        <text x="155" y="78" fill="#d63a1a" font-family="Inter" font-size="5.5" text-anchor="middle" opacity=".4">Sustain</text>
+        <g transform="translate(20, 200)" stroke="#7a3a14" fill="none" stroke-width="1.4" stroke-linecap="round"><path d="M 0 30 Q 20 5 40 30 T 80 30 T 120 30 T 160 30 T 200 30"/></g>
+        <g transform="translate(20, 240)" stroke="#c56a2a" fill="none" stroke-width="1.4" stroke-linecap="round"><path d="M 0 30 Q 10 -5 25 25 Q 38 50 50 20 Q 65 -10 80 35 Q 95 55 110 18 Q 125 0 145 30 Q 160 50 175 22 Q 190 5 200 30"/></g>
+        <text x="120" y="195" fill="#4a4038" font-family="Inter" font-size="6.5" font-style="italic" text-anchor="middle">normaal geluid</text>
+        <text x="120" y="280" fill="#7a3a14" font-family="Inter" font-size="6.5" font-style="italic" text-anchor="middle">geluid met Motion Effect ingedrukt</text>
+      </svg>
+    </div>
+    <div class="body">
+      <p>Eigenaardigheid: hij gaat niet aan met een gewone druk. <strong>Je moet hem ingedrukt houden terwijl je speelt</strong>. Loslaten en het geluid wordt weer normaal.</p>
+      <p>Het standaardeffect verandert het filter van het geluid: alsof er een mond rond elke noot opent en sluit. Op een synth zoals <strong>032 Gemini</strong> of <strong>036 New Age Pad</strong>: precies wat je in elke elektronische track al 40 jaar hoort.</p>
+      <p>Drie effectfamilies: A wijzigt het filter, B de toonhoogte, C de modulatie. Niet nodig om eraan te zitten. De standaardinstelling werkt prima.</p>
+      <div class="callout"><div class="callout-label">Snel recept</div><p>Neem <strong>032 Gemini</strong>. Speel een lage noot en houd vast. Met de andere hand: houd Motion Effect ingedrukt en speel een melodie erbovenop. Je eerste synth-solo.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">32</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Hoofdstuk 7 · De arpeggiator (1/3)</span>
+  <h1 class="section-title">Plaats een vinger. <em>Het instrument speelt zelf.</em></h1>
+  <p class="lead">De arpeggiator zet één toets om in een volledige ritmische zin. Wellicht de indrukwekkendste functie van dit keyboard.</p>
+  <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-top: 5mm;">
+    <div class="vcard" style="background: var(--bg-warm);"><div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">1</div><span class="vcard-name" style="font-size: 12pt;">Activeren</span><p class="vcard-desc">Druk op <span class="pill">Arpeggio</span>. Het scherm toont <span class="pill">Aon</span>. De knop is gewapend, maar er speelt nog niets.</p><div style="margin-top: auto;"><span class="led sm">Aon</span></div></div>
+    <div class="vcard" style="background: var(--bg-warm);"><div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">2</div><span class="vcard-name" style="font-size: 12pt;">Plaats een vinger</span><p class="vcard-desc">Op om het even welke toets. Houd hem ingedrukt. De arpeggiator start en speelt een ritmische zin. Beweeg je vinger naar andere toetsen om hem te laten evolueren.</p></div>
+    <div class="vcard" style="background: var(--bg-warm);"><div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">3</div><span class="vcard-name" style="font-size: 12pt;">Bevrijd je hand</span><p class="vcard-desc">Terwijl de zin speelt: druk op <span class="pill">Arp.&nbsp;Hold</span>. De zin draait door, ook als je het keyboard loslaat. Ga koffie halen, of speel erbovenop.</p></div>
+  </div>
+  <div class="callout" style="margin-top: 6mm;"><div class="callout-label">Stoppen</div><p>Druk opnieuw op <span class="pill">Arpeggio</span>. Het scherm toont <span class="pill">AoF</span>. De stilte keert terug.</p></div>
+  <div class="panel-zoom" style="margin-top: 5mm;">
+    <svg viewBox="0 0 380 110" width="80%" aria-hidden="true">
+      <rect x="0" y="0" width="380" height="110" rx="3" fill="#120f0c"/>
+      <rect x="20" y="35" width="38" height="38" rx="3" fill="none" stroke="#d63a1a" stroke-width=".8" opacity=".4"/>
+      <text x="39" y="58" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" opacity=".4">SHIFT</text>
+      <text x="100" y="22" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing=".5" font-weight="600">ARP. HOLD</text>
+      <rect x="80" y="30" width="50" height="50" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+      <text x="180" y="22" fill="#d63a1a" font-family="Inter" font-size="7" text-anchor="middle" letter-spacing="1" font-weight="600">ARPEGGIO</text>
+      <circle cx="180" cy="55" r="22" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+      <circle cx="180" cy="55" r="14" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+      <rect x="240" y="40" width="32" height="32" rx="3" fill="none" stroke="#d63a1a" stroke-width="1"/>
+      <text x="256" y="62" fill="#d63a1a" font-family="Inter" font-size="14" text-anchor="middle">−</text>
+      <rect x="278" y="40" width="32" height="32" rx="3" fill="none" stroke="#d63a1a" stroke-width="1"/>
+      <text x="294" y="62" fill="#d63a1a" font-family="Inter" font-size="14" text-anchor="middle">+</text>
+      <text x="275" y="92" fill="#fff" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle" opacity=".7">kies het patroon</text>
+      <rect x="320" y="35" width="50" height="40" rx="2" fill="#1a0d08"/>
+      <text x="345" y="62" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="16" text-anchor="middle">Aon</text>
+    </svg>
+    <div class="caption">Echte indeling. Arp. Hold staat net links van de grote Arpeggio-knop.</div>
+  </div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">33</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Hoofdstuk 7 · De arpeggiator (2/3)</span>
+  <h1 class="section-title">138 zinnen, <em>twaalf werelden</em>.</h1>
+  <p class="lead">De <span class="pill">−</span> en <span class="pill">+</span>-knoppen onder het scherm laten je reizen. Houd ingedrukt om snel te bladeren.</p>
+  <div class="worlds">
+    <div class="world"><span class="num">001 — 018</span><div><span class="label">Acoustic Piano</span><span class="desc">Klassieke pianozinnen</span></div></div>
+    <div class="world"><span class="num">048 — 064</span><div><span class="label">Bass</span><span class="desc">Groovy basslijnen</span></div></div>
+    <div class="world"><span class="num">019 — 028</span><div><span class="label">Keyboard</span><span class="desc">Vintage klavieren en orgels</span></div></div>
+    <div class="world"><span class="num">065 — 074</span><div><span class="label">Strings</span><span class="desc">Dramatisch orkest</span></div></div>
+    <div class="world"><span class="num">029 — 041</span><div><span class="label">Guitar Chord</span><span class="desc">Geslagen gitaarakkoorden</span></div></div>
+    <div class="world"><span class="num">075 — 076</span><div><span class="label">Harp</span><span class="desc">Harpcascades</span></div></div>
+    <div class="world"><span class="num">042 — 047</span><div><span class="label">Guitar Arpeggio</span><span class="desc">Folkgitaar arpeggio's</span></div></div>
+    <div class="world"><span class="num">077 — 081</span><div><span class="label">Brass</span><span class="desc">Koperriffs</span></div></div>
+    <div class="world"><span class="num">082 — 085</span><div><span class="label">Chromatic Perc.</span><span class="desc">Vibrafoon, marimba</span></div></div>
+    <div class="world"><span class="num">107 — 116</span><div><span class="label">Synth Chord</span><span class="desc">Zwevende synth-akkoorden</span></div></div>
+    <div class="world"><span class="num">086 — 106</span><div><span class="label">Synth Sequence</span><span class="desc">Elektro-sequenties jaren 80</span></div></div>
+    <div class="world"><span class="num">117 — 138</span><div><span class="label">Drums</span><span class="desc">Drum machines en beats</span></div></div>
+  </div>
+  <div class="callout" style="margin-top: 6mm;"><div class="callout-label">Handige sneltoets</div><p>Om naar het begin van de volgende categorie te springen: houd <span class="pill">Shift</span> en druk op <span class="pill">+</span> of <span class="pill">−</span>.</p></div>
+  <div class="callout" style="margin-top: 4mm; border-left-color: var(--moss); background: rgba(90,115,96,.08);"><div class="callout-label" style="color: var(--moss);">Goed om te weten</div><p>De nummers staan rechtstreeks boven de toetsen op het zwarte paneel afgedrukt. Een blik op het keyboard, alles staat erop.</p></div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">34</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Hoofdstuk 7 · De arpeggiator (3/3)</span>
+  <h1 class="section-title">Vijf recepten <em>klaar om te spelen</em>.</h1>
+  <p class="lead">Volg de combinatie, plaats een vinger, word verbluft. Geen vaardigheid nodig.</p>
+  <div class="recipes">
+    <div class="recipe"><div class="recipe-num">1</div><div class="recipe-body"><div class="recipe-name">Techno drum machine</div><div class="recipe-steps">Klank <span class="pill">040</span> Dance Kit (Drum/Perc., 2x drukken) · activeer <span class="pill">Arpeggio</span> · nummer tussen <span class="pill">117</span> en <span class="pill">138</span> met <span class="pill">+</span> · activeer <span class="pill">Arp. Hold</span>. Plaats een vinger ergens, de beat draait in lus. Beweeg een andere vinger om er klanken bovenop te leggen.</div></div></div>
+    <div class="recipe"><div class="recipe-num">2</div><div class="recipe-body"><div class="recipe-name">Filmsoundtrack</div><div class="recipe-steps">Klank <span class="pill">036</span> New Age Pad · <span class="pill">Sustain</span> aan · <span class="pill">Arpeggio</span> uit. Speel drie trage, ver uit elkaar liggende noten. Laat ze zweven. Je zit in een Hans Zimmer in een B&amp;B.</div></div></div>
+    <div class="recipe"><div class="recipe-num">3</div><div class="recipe-body"><div class="recipe-name">80s synth solo</div><div class="recipe-steps">Klank <span class="pill">032</span> Gemini · <span class="pill">Motion Effect</span> ingedrukt terwijl je speelt. Speel een willekeurige melodie met twee vingers. Hoe langer je vasthoudt, hoe meer het geluid vervormt.</div></div></div>
+    <div class="recipe"><div class="recipe-num">4</div><div class="recipe-body"><div class="recipe-name">Gitaar bij het haardvuur</div><div class="recipe-steps">Klank <span class="pill">009</span> Nylon Guitar · activeer <span class="pill">Arpeggio</span> · nummer tussen <span class="pill">029</span> en <span class="pill">041</span> met <span class="pill">−</span>/<span class="pill">+</span> · activeer <span class="pill">Arp. Hold</span>. Je krijgt een geslagen gitaarbegeleiding. Druk andere vingers voor andere akkoorden.</div></div></div>
+    <div class="recipe"><div class="recipe-num">5</div><div class="recipe-body"><div class="recipe-name">Stranger Things synth</div><div class="recipe-steps">Klank <span class="pill">032</span> Gemini · activeer <span class="pill">Arpeggio</span> · nummer tussen <span class="pill">086</span> en <span class="pill">106</span> · activeer <span class="pill">Arp. Hold</span>. Een elektro-sequentie draait. Plaats een lage noot om te transponeren.</div></div></div>
+  </div>
+  <div class="tap-callout"><div class="tap-callout-label">Tap Tempo</div><p class="tap-callout-body">Sneller of trager? Tik vier keer op <span class="pill">Tempo / Tap</span> (rechtsonder, naast het scherm), op het tempo dat je voelt. De arpeggiator klinkt meteen op jouw tempo.</p></div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson</span><span class="num">35</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Bonus · Als je nog 5 minuten hebt</span>
+  <h1 class="section-title">Twee geheimen <em>om verder te gaan</em>.</h1>
+  <div class="bonus-block">
+    <div class="bonus-block-title">Portamento — het glijden tussen noten</div>
+    <p class="bonus-block-lead">Houd <span class="pill">Shift</span> en druk op <span class="pill">Sustain</span>. Het scherm toont <span class="pill">Pon</span>. Speel een noot, dan een andere enkele toetsen verder: het geluid glijdt in plaats van te springen.</p>
+    <p class="bonus-fine">Spectaculair op 032 Gemini of 017 Synth Bass. Nutteloos op piano. Uitschakelen: Shift + Sustain opnieuw. Het scherm toont <span class="pill">PoF</span>.</p>
+  </div>
+  <div class="bonus-block">
+    <div class="bonus-block-title">Een lus opnemen</div>
+    <p class="bonus-block-lead">Het keyboard onthoudt een korte zin en speelt hem af terwijl jij erbovenop speelt.</p>
+    <ol class="bonus-steps">
+      <li>Druk op <span class="pill">Rec</span>. Het scherm toont knipperend <span class="pill">rEC</span>.</li>
+      <li>Speel. De opname start bij de eerste noot.</li>
+      <li>Druk op <span class="pill">Rec</span> om te stoppen.</li>
+      <li>Druk op <span class="pill">▶/■</span> om te beluisteren.</li>
+      <li>Om hem in lus te laten draaien terwijl je improviseert: houd <span class="pill">Shift</span> en druk op <span class="pill">▶/■</span>.</li>
+    </ol>
+    <p class="bonus-fine">Wissen: Rec, ▶/■, ▶/■, in die volgorde.</p>
+  </div>
+  <div class="farewell">
+    <div class="farewell-title display">Aan jou.</div>
+    <p>Nu weet je alles om er een mooi moment van te maken. Het keyboard werkt op batterijen. Aarzel niet om het op het bed of in de zetel te zetten. Geen kabels, geen regels.</p>
+    <p>Een laatste tip. Laat Sustain aan, kies de klank die je aanspreekt, en druk willekeurig toetsen aan. Zo begin je.</p>
+    <div class="sign">Mooi verblijf bij Maurisson, en goede muziek.</div>
+  </div>
+  <div class="foot"><span class="brand">Het kleine keyboard van Maurisson · Herve, België</span><span class="num">36</span></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════════════════════════
+     DEUTSCHE VERSION
+     ═══════════════════════════════════════════════════════════════ -->
+
+<section class="page cover">
+  <header class="cover-top">
+    <span class="cover-mark" aria-hidden="true"><svg><use href="#house"/></svg></span>
+    <div class="cover-meta">
+      <div class="brand-line">Bedienungsanleitung</div>
+      Yamaha PSS&#8209;A50<br/>
+      <em>Maurisson Edition</em>
+    </div>
+  </header>
+  <div>
+    <h1 class="cover-title">
+      <span class="small">Das kleine Keyboard von</span>
+      <span class="name">Maurisson</span>
+    </h1>
+    <p class="cover-sub">10 Minuten Spaß mit einem echten Keyboard. Keine Erfahrung nötig.</p>
+  </div>
+
+  <svg class="cover-illustration" viewBox="0 0 600 240" aria-hidden="true">
+    <rect x="3" y="3" width="594" height="234" rx="14" ry="14" fill="#ffffff" stroke="#241f19" stroke-width="1.8"/>
+    <rect x="22" y="16" width="500" height="68" rx="2.5" fill="#120f0c"/>
+    <text x="40" y="44" fill="#d63a1a" font-family="Inter" font-size="9" font-weight="600" letter-spacing="2">YAMAHA</text>
+    <text x="40" y="58" fill="#d63a1a" font-family="Fraunces" font-size="11" font-style="italic">PSS-A50</text>
+    <circle cx="125" cy="34" r="4.5" fill="none" stroke="#d63a1a" stroke-width="1"/><circle cx="125" cy="34" r="1.5" fill="#d63a1a"/>
+    <rect x="40" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/><rect x="52" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="80" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/><rect x="92" y="68" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="240" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <circle cx="290" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <g fill="none" stroke="#d63a1a" stroke-width=".8">
+      <rect x="180" y="46" width="22" height="10"/><rect x="206" y="46" width="22" height="10"/><rect x="232" y="46" width="22" height="10"/><rect x="258" y="46" width="22" height="10"/><rect x="284" y="46" width="22" height="10"/>
+      <rect x="180" y="60" width="22" height="10"/><rect x="206" y="60" width="22" height="10"/><rect x="232" y="60" width="22" height="10"/><rect x="258" y="60" width="22" height="10"/><rect x="284" y="60" width="22" height="10"/>
+    </g>
+    <rect x="135" y="60" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="148" y="60" width="14" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="172" cy="64" r="5" fill="none" stroke="#d63a1a" stroke-width="1"/>
+    <rect x="450" y="26" width="40" height="22" rx="1.5" fill="#1a0d08"/>
+    <text x="470" y="44" fill="#d63a1a" font-family="Fraunces" font-size="14" font-weight="600" text-anchor="middle">001</text>
+    <rect x="445" y="62" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/><rect x="457" y="62" width="9" height="9" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <circle cx="478" cy="66.5" r="3.5" fill="none" stroke="#d63a1a" stroke-width=".8"/>
+    <rect x="530" y="16" width="62" height="68" rx="2" fill="none" stroke="#241f19" stroke-width=".5" stroke-dasharray="1.5,1.5"/>
+    <g>
+      <g fill="#ffffff" stroke="#241f19" stroke-width=".7">
+        <rect x="22" y="92" width="25.5" height="138" rx="1"/><rect x="48" y="92" width="25.5" height="138" rx="1"/><rect x="74" y="92" width="25.5" height="138" rx="1"/><rect x="100" y="92" width="25.5" height="138" rx="1"/><rect x="126" y="92" width="25.5" height="138" rx="1"/><rect x="152" y="92" width="25.5" height="138" rx="1"/><rect x="178" y="92" width="25.5" height="138" rx="1"/><rect x="204" y="92" width="25.5" height="138" rx="1"/><rect x="230" y="92" width="25.5" height="138" rx="1"/><rect x="256" y="92" width="25.5" height="138" rx="1"/><rect x="282" y="92" width="25.5" height="138" rx="1"/><rect x="308" y="92" width="25.5" height="138" rx="1"/><rect x="334" y="92" width="25.5" height="138" rx="1"/><rect x="360" y="92" width="25.5" height="138" rx="1"/><rect x="386" y="92" width="25.5" height="138" rx="1"/><rect x="412" y="92" width="25.5" height="138" rx="1"/><rect x="438" y="92" width="25.5" height="138" rx="1"/><rect x="464" y="92" width="25.5" height="138" rx="1"/><rect x="490" y="92" width="25.5" height="138" rx="1"/><rect x="516" y="92" width="25.5" height="138" rx="1"/><rect x="542" y="92" width="25.5" height="138" rx="1"/><rect x="568" y="92" width="25.5" height="138" rx="1"/>
+      </g>
+      <g fill="#120f0c">
+        <rect x="40" y="92" width="14" height="84" rx=".8"/><rect x="66" y="92" width="14" height="84" rx=".8"/><rect x="118" y="92" width="14" height="84" rx=".8"/><rect x="144" y="92" width="14" height="84" rx=".8"/><rect x="170" y="92" width="14" height="84" rx=".8"/><rect x="222" y="92" width="14" height="84" rx=".8"/><rect x="248" y="92" width="14" height="84" rx=".8"/><rect x="300" y="92" width="14" height="84" rx=".8"/><rect x="326" y="92" width="14" height="84" rx=".8"/><rect x="352" y="92" width="14" height="84" rx=".8"/><rect x="404" y="92" width="14" height="84" rx=".8"/><rect x="430" y="92" width="14" height="84" rx=".8"/><rect x="482" y="92" width="14" height="84" rx=".8"/><rect x="508" y="92" width="14" height="84" rx=".8"/><rect x="534" y="92" width="14" height="84" rx=".8"/>
+      </g>
+    </g>
+  </svg>
+  <div class="cover-menu">
+    Erste Schritte <span class="dot">·</span> Das Sustain <span class="dot">·</span> Elf Lieblingsklänge <br/>
+    Der Motion Effect <span class="dot">·</span> Der Arpeggiator <span class="dot">·</span> Fünf Rezepte
+  </div>
+  <div class="cover-bottom"><span>Herve, Belgien</span><span>2026</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Kapitel 1 · 30 Sekunden zum Starten</span>
+  <h1 class="section-title">Setz dich, schalt ein, <em>spiel</em>.</h1>
+  <p class="lead">Das Keyboard liegt bereit. Die Batterien sind drin. Nichts anzuschließen.</p>
+  <div class="two-col">
+    <div class="body">
+      <div class="step"><span class="label">Einschalten</span><div class="body-line">Drücke einmal auf den Knopf oben links, mit dem kleinen Standby-Symbol. Das rote Display leuchtet auf.</div></div>
+      <div class="step"><span class="label">Ausschalten</span><div class="body-line">Halte denselben Knopf eine Sekunde lang gedrückt.</div></div>
+      <div class="step"><span class="label">Lautstärke</span><div class="body-line">Die <span class="pill">Master Volume</span> Tasten direkt darunter. Links leiser, rechts lauter. Display 00 bis 15. Standard 13. Um die Nachbarn nicht zu wecken: 5 oder 6 reicht völlig.</div></div>
+      <div class="step"><span class="label">Leise spielen</span><div class="body-line">Schließe einen Kopfhörer hinten an die <span class="pill">Phones / Output</span> Buchse an. Die Lautsprecher schalten sich automatisch ab.</div></div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 220 260" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="208" height="180" rx="3" fill="#120f0c"/>
+        <text x="22" y="32" fill="#d63a1a" font-family="Inter" font-size="9" font-weight="600" letter-spacing="2">YAMAHA</text>
+        <text x="22" y="46" fill="#d63a1a" font-family="Fraunces" font-style="italic" font-size="11">PSS-A50</text>
+        <circle cx="100" cy="34" r="11" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <circle cx="100" cy="34" r="6" fill="none" stroke="#d63a1a" stroke-width="1"/>
+        <path d="M 100 30 v 7" stroke="#d63a1a" stroke-width="1.2" stroke-linecap="round"/>
+        <path d="M 96 32 a 5 5 0 1 0 8 0" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <text x="120" y="38" fill="#fff" font-family="Inter" font-size="6" letter-spacing="1">STANDBY/ON</text>
+        <text x="22" y="76" fill="#d63a1a" font-family="Inter" font-size="6" letter-spacing="1">MASTER VOLUME</text>
+        <rect x="22" y="80" width="22" height="22" rx="2" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="33" y="96" fill="#d63a1a" font-family="Inter" font-size="11" text-anchor="middle">−</text>
+        <rect x="48" y="80" width="22" height="22" rx="2" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="59" y="96" fill="#d63a1a" font-family="Inter" font-size="11" text-anchor="middle">+</text>
+        <rect x="120" y="60" width="60" height="34" rx="2" fill="#1a0d08"/>
+        <text x="150" y="86" fill="#d63a1a" font-family="Fraunces" font-weight="600" font-size="22" text-anchor="middle">13</text>
+        <text x="150" y="105" fill="#fff" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing="1.5" opacity=".7">VOLUME</text>
+        <line x1="6" y1="200" x2="214" y2="200" stroke="#241f19" stroke-width=".4" stroke-dasharray="2,2"/>
+        <text x="14" y="214" fill="#241f19" font-family="Inter" font-size="6.5" letter-spacing="1.5" font-weight="500">AUF DER RÜCKSEITE</text>
+        <text x="14" y="226" fill="#241f19" font-family="Fraunces" font-style="italic" font-size="10">Kopfhörerbuchse</text>
+        <g transform="translate(140,210)" stroke="#241f19" stroke-width="1.2" fill="none" stroke-linecap="round">
+          <path d="M 5 14 a 14 14 0 0 1 28 0"/>
+          <rect x="2" y="14" width="9" height="14" rx="2.5"/>
+          <rect x="27" y="14" width="9" height="14" rx="2.5"/>
+        </g>
+        <text x="14" y="248" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6.5" font-weight="500">PHONES / OUTPUT</text>
+      </svg>
+    </div>
+  </div>
+  <div class="callout"><div class="callout-label">Zum Merken</div><p>Läuft mit Batterien. Nimm es mit ins Bett oder aufs Sofa. Keine Kabel.</p></div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">38</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Kapitel 2 · Der süchtigste Effekt</span>
+  <h1 class="section-title">Ein Knopf, und alle Noten klingen <em>wie ein Profi</em>.</h1>
+  <p class="lead">Der <span class="pill">Sustain</span> Knopf liegt oben rechts auf dem Bedienfeld. Drücke einmal darauf.</p>
+  <div class="two-col flip">
+    <div class="visual">
+      <svg viewBox="0 0 240 260" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="228" height="100" rx="3" fill="#120f0c"/>
+        <circle cx="60" cy="50" r="11" fill="none" stroke="#d63a1a" stroke-width="1" opacity=".4"/>
+        <text x="155" y="30" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing="1.5" font-weight="600">SUSTAIN</text>
+        <circle cx="155" cy="50" r="14" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+        <circle cx="155" cy="50" r="9" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <rect x="40" y="180" width="160" height="60" rx="3" fill="#1a0d08"/>
+        <text x="120" y="226" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="38" text-anchor="middle" letter-spacing="2">Son</text>
+        <text x="120" y="252" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="8" text-anchor="middle">Sustain AN</text>
+      </svg>
+    </div>
+    <div class="body">
+      <p>Das Display zeigt <span class="pill">Son</span>. Ab jetzt klingt jede Note weiter, nachdem du die Taste losgelassen hast.</p>
+      <p>Es ist der Effekt des großen Pedals unter einem Flügel. Ohne, du spielst. Damit, <strong>du machst Musik</strong>.</p>
+      <div class="step"><span class="label">Sofort ausprobieren</span><div class="body-line">Spiele drei zufällige weiße Tasten, langsam, mit ein bis zwei Sekunden Abstand. Höre, wie sie sich vermischen und durch den Raum schweben.</div></div>
+      <div class="step"><span class="label">Ausschalten</span><div class="body-line">Drücke erneut auf Sustain. Display zeigt <span class="pill">SoF</span>.</div></div>
+      <div class="callout"><div class="callout-label">Tipp vom Chef</div><p>Lass Sustain die ganze Zeit an. Dein bester Freund für die nächsten 10 Minuten.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">39</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Kapitel 3 · Das Keyboard vergrößern</span>
+  <h1 class="section-title">37 Tasten sind kompakt. So schaltest du in den <em>XXL-Modus</em>.</h1>
+  <p class="lead">Die <span class="pill">Octave &lt;</span> und <span class="pill">Octave &gt;</span> Tasten verschieben alle Noten in die Tiefe oder in die Höhe.</p>
+  <div class="two-col">
+    <div class="body">
+      <div class="step"><span class="label">Für helle Höhen</span><div class="body-line">Drücke <span class="pill">&gt;</span>. Alles wird höher, heller, wie eine Spieluhr.</div></div>
+      <div class="step"><span class="label">Für tiefe Bässe</span><div class="body-line">Drücke <span class="pill">&lt;</span>. Alles wird tiefer, dichter, bis zu Bässen, die den Boden zum Vibrieren bringen.</div></div>
+      <div class="step"><span class="label">Bereich</span><div class="body-line">Display von <strong>−04</strong> bis <strong>+04</strong>. Vier Oktaven in jede Richtung.</div></div>
+      <div class="step"><span class="label">Zurück zur Mitte</span><div class="body-line">Drücke gleichzeitig auf <span class="pill">&lt;</span> und <span class="pill">&gt;</span>. Display zeigt <span class="pill">00</span>.</div></div>
+      <div class="callout"><div class="callout-label">Schnellrezept</div><p>Wähle die Stimme <strong>017 Synth Bass</strong> und gehe zwei Oktaven runter. Kino-Sub-Bass, der die Möbel zum Vibrieren bringt.</p></div>
+    </div>
+    <div class="visual">
+      <svg viewBox="0 0 240 280" width="100%" aria-hidden="true">
+        <rect x="20" y="10" width="80" height="40" rx="2" fill="#1a0d08"/>
+        <text x="60" y="40" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="22" text-anchor="middle">−02</text>
+        <text x="60" y="60" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle">tief</text>
+        <rect x="120" y="10" width="80" height="40" rx="2" fill="#1a0d08"/>
+        <text x="160" y="40" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="22" text-anchor="middle">+02</text>
+        <text x="160" y="60" fill="#7a3a14" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle">hoch</text>
+        <rect x="6" y="90" width="228" height="100" rx="3" fill="#120f0c"/>
+        <text x="20" y="112" fill="#d63a1a" font-family="Inter" font-size="7" letter-spacing="1.5" font-weight="500">OCTAVE</text>
+        <rect x="20" y="120" width="36" height="36" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="38" y="146" fill="#d63a1a" font-family="Inter" font-size="20" text-anchor="middle">&lt;</text>
+        <rect x="64" y="120" width="36" height="36" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+        <text x="82" y="146" fill="#d63a1a" font-family="Inter" font-size="20" text-anchor="middle">&gt;</text>
+        <text x="160" y="118" fill="#fff" font-family="Inter" font-style="italic" font-size="7" opacity=".6">beide gleichzeitig</text>
+        <text x="160" y="135" fill="#fff" font-family="Fraunces" font-style="italic" font-size="11">= zurück auf null</text>
+        <g transform="translate(20, 220)">
+          <line x1="0" y1="10" x2="200" y2="10" stroke="#7a3a14" stroke-width="1.2"/>
+          <g font-family="Fraunces" font-size="9" fill="#7a3a14" text-anchor="middle">
+            <text x="0" y="0">−04</text><line x1="0" y1="6" x2="0" y2="14" stroke="#7a3a14" stroke-width="1.2"/>
+            <text x="50" y="0">−02</text><line x1="50" y1="6" x2="50" y2="14" stroke="#7a3a14" stroke-width="1"/>
+            <text x="100" y="0" font-weight="600" fill="#c56a2a">00</text><line x1="100" y1="6" x2="100" y2="14" stroke="#c56a2a" stroke-width="2"/>
+            <text x="150" y="0">+02</text><line x1="150" y1="6" x2="150" y2="14" stroke="#7a3a14" stroke-width="1"/>
+            <text x="200" y="0">+04</text><line x1="200" y1="6" x2="200" y2="14" stroke="#7a3a14" stroke-width="1.2"/>
+          </g>
+          <text x="100" y="32" font-family="Inter" font-style="italic" font-size="7" fill="#4a4038" text-anchor="middle">8 Oktaven Gesamtumfang</text>
+        </g>
+      </svg>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">40</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Kapitel 4 · Das Menü</span>
+  <h1 class="section-title">42 Klänge, 10 Tasten, <em>eine einfache Logik</em>.</h1>
+  <p class="lead">Das Keyboard versteckt 42 Klänge, gruppiert in 10 Familien. Jede <span class="pill">Voice</span> Taste entspricht einer Familie.</p>
+  <div class="body" style="max-width: 36em;">
+    <p><strong>Die Methode.</strong> Drücke einmal auf <span class="pill">Piano</span>. Display zeigt <span class="pill">001</span>, der Konzertflügel. Drücke erneut auf <span class="pill">Piano</span>: nächster Klang derselben Familie. Und so weiter.</p>
+    <p>Wenn du die Familie durchgegangen bist, beginnt die Taste wieder vorne. Um komplett die Stimmung zu ändern: drücke auf eine andere Familientaste.</p>
+  </div>
+  <div class="panel-zoom" style="margin-top: 6mm;">
+    <svg viewBox="0 0 460 200" width="92%" aria-hidden="true">
+      <rect x="0" y="0" width="460" height="200" rx="3" fill="#120f0c"/>
+      <text x="230" y="22" fill="#d63a1a" font-family="Inter" font-size="9" letter-spacing="3" text-anchor="middle" font-weight="500">VOICE</text>
+      <g font-family="Inter" font-size="9" font-weight="500" letter-spacing=".5" text-anchor="middle">
+        <g><rect x="20" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="60" y="70" fill="#d63a1a">PIANO</text><text x="60" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">001 — 004</text></g>
+        <g><rect x="108" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="148" y="70" fill="#d63a1a">ORGAN</text><text x="148" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">005 — 008</text></g>
+        <g><rect x="196" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="236" y="70" fill="#d63a1a">GUITAR</text><text x="236" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">009 — 013</text></g>
+        <g><rect x="284" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="324" y="70" fill="#d63a1a">BASS</text><text x="324" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">014 — 017</text></g>
+        <g><rect x="372" y="40" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="412" y="70" fill="#d63a1a">STRINGS</text><text x="412" y="84" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">018 — 022</text></g>
+        <g><rect x="20" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="60" y="130" fill="#d63a1a">W.WIND</text><text x="60" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">023 — 026</text></g>
+        <g><rect x="108" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="148" y="130" fill="#d63a1a">BRASS</text><text x="148" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">027 — 031</text></g>
+        <g><rect x="196" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="236" y="130" fill="#d63a1a">SY.LEAD</text><text x="236" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">032 — 035</text></g>
+        <g><rect x="284" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="324" y="130" fill="#d63a1a">SY.PAD</text><text x="324" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">036 — 038</text></g>
+        <g><rect x="372" y="100" width="80" height="50" rx="3" fill="none" stroke="#d63a1a" stroke-width="1.4"/><text x="412" y="130" fill="#d63a1a">DRUM/PERC</text><text x="412" y="144" fill="#7a3a14" font-size="6.5" font-style="italic" font-family="Fraunces">039 — 042</text></g>
+      </g>
+      <text x="230" y="180" fill="#fff" font-family="Fraunces" font-style="italic" font-size="9" text-anchor="middle" opacity=".7">einmal drücken: in die Familie → erneut drücken: nächster Klang</text>
+    </svg>
+    <div class="caption">Tatsächliches Layout des Bedienfelds. Zwei Reihen mit fünf Tasten.</div>
+  </div>
+  <div class="callout"><div class="callout-label">Nützliches Detail</div><p>Das rote LED-Display zeigt dauernd die Nummer des gewählten Klangs. Ein kleiner Punkt unten rechts bestätigt: es ist eine Voice Nummer (keine Arpeggio Nummer).</p></div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">41</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Kapitel 4 (Forts.) · Das ganze Menü</span>
+  <h1 class="section-title">Alle 42 Stimmen auf einen Blick.</h1>
+  <p class="lead">Die elf Lieblingsklänge sind hervorgehoben. Details und Kombinationen auf der nächsten Seite.</p>
+  <div class="voice-list">
+    <div class="voice-cat"><div class="voice-cat-name">Piano</div><div class="voice-cat-list"><span class="num heart">001</span> Grand Piano <span class="sep">·</span> <span class="num heart">002</span> Electric Piano 1 <span class="sep">·</span> <span class="num">003</span> Electric Piano 2 <span class="sep">·</span> <span class="num">004</span> Electric Grand Piano</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Organ</div><div class="voice-cat-list"><span class="num heart">005</span> Drawbar Organ <span class="sep">·</span> <span class="num">006</span> Rock Organ <span class="sep">·</span> <span class="num">007</span> Accordion <span class="sep">·</span> <span class="num heart">008</span> Harmonica</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Guitar</div><div class="voice-cat-list"><span class="num heart">009</span> Nylon Guitar <span class="sep">·</span> <span class="num">010</span> Steel Guitar <span class="sep">·</span> <span class="num">011</span> Jazz Guitar <span class="sep">·</span> <span class="num">012</span> Clean Guitar <span class="sep">·</span> <span class="num">013</span> Overdriven Guitar</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Bass</div><div class="voice-cat-list"><span class="num">014</span> Acoustic Bass <span class="sep">·</span> <span class="num">015</span> Finger Bass <span class="sep">·</span> <span class="num">016</span> Slap Bass <span class="sep">·</span> <span class="num heart">017</span> Synth Bass</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Strings</div><div class="voice-cat-list"><span class="num">018</span> Strings <span class="sep">·</span> <span class="num">019</span> Pizzicato Strings <span class="sep">·</span> <span class="num">020</span> Violin <span class="sep">·</span> <span class="num">021</span> Cello <span class="sep">·</span> <span class="num heart">022</span> Orchestral Harp</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Woodwind</div><div class="voice-cat-list"><span class="num">023</span> Oboe <span class="sep">·</span> <span class="num">024</span> Clarinet <span class="sep">·</span> <span class="num heart">025</span> Flute <span class="sep">·</span> <span class="num">026</span> Tenor Sax</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Brass</div><div class="voice-cat-list"><span class="num">027</span> Brass Section <span class="sep">·</span> <span class="num">028</span> Trumpet <span class="sep">·</span> <span class="num">029</span> Trombone <span class="sep">·</span> <span class="num">030</span> French Horn <span class="sep">·</span> <span class="num">031</span> Synth Brass</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Synth Lead</div><div class="voice-cat-list"><span class="num heart">032</span> Gemini <span class="sep">·</span> <span class="num">033</span> Punchy Chordz <span class="sep">·</span> <span class="num">034</span> Square Lead <span class="sep">·</span> <span class="num">035</span> Sawtooth Lead</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Synth Pad</div><div class="voice-cat-list"><span class="num heart">036</span> New Age Pad <span class="sep">·</span> <span class="num">037</span> Warm Pad <span class="sep">·</span> <span class="num">038</span> Brightness</div></div>
+    <div class="voice-cat"><div class="voice-cat-name">Drum / Perc.</div><div class="voice-cat-list"><span class="num">039</span> Standard Kit <span class="sep">·</span> <span class="num heart">040</span> Dance Kit <span class="sep">·</span> <span class="num">041</span> Vibraphone <span class="sep">·</span> <span class="num heart">042</span> Marimba</div></div>
+  </div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">42</span></div>
+</section>
+
+<section class="page" style="padding-top: 16mm;">
+  <span class="eyebrow">Kapitel 5 · Elf Klänge zum unbedingt Probieren</span>
+  <h1 class="section-title" style="font-size: 28pt; margin-bottom: 2mm;">Die Lieblinge des Hauses.</h1>
+  <p class="lead" style="font-size: 11.5pt; margin-bottom: 4mm;">Folge der Anleitung. Lege einen Finger. Sei verblüfft.</p>
+  <div class="cards-grid">
+    <div class="vcard"><span class="led sm vcard-led">001</span><span class="vcard-cat">Piano</span><span class="vcard-name">Grand Piano</span><p class="vcard-desc">Der Klassiker. Pur, tief, sofort.</p><span class="vcard-combo">+ Sustain für Gänsehaut</span></div>
+    <div class="vcard"><span class="led sm vcard-led">002</span><span class="vcard-cat">Piano</span><span class="vcard-name">Electric Piano 1</span><p class="vcard-desc">Das Rhodes der Jazzballaden. Samtig, leicht Vintage.</p><span class="vcard-combo">+ Sustain · Schlafmusik</span></div>
+    <div class="vcard"><span class="led sm vcard-led">005</span><span class="vcard-cat">Organ</span><span class="vcard-name">Drawbar Organ</span><p class="vcard-desc">Hammond-Orgel der 70er. Soul auf Knopfdruck.</p><span class="vcard-combo">Spiel volle Akkorde</span></div>
+    <div class="vcard"><span class="led sm vcard-led">008</span><span class="vcard-cat">Organ</span><span class="vcard-name">Harmonica</span><p class="vcard-desc">Nasale Stimme, sofort Blues. Sehr ausdrucksstark.</p><span class="vcard-combo">+ Octave +1 zum Glänzen</span></div>
+    <div class="vcard"><span class="led sm vcard-led">009</span><span class="vcard-cat">Guitar</span><span class="vcard-name">Nylon Guitar</span><p class="vcard-desc">Klassische Gitarre, intim, am Kamin.</p><span class="vcard-combo">+ Arpeggio 029 — 041</span></div>
+    <div class="vcard"><span class="led sm vcard-led">017</span><span class="vcard-cat">Bass</span><span class="vcard-name">Synth Bass</span><p class="vcard-desc">Kino-Sub-Bass, fett und rund.</p><span class="vcard-combo">+ Octave −2 · bringt Möbel zum Vibrieren</span></div>
+    <div class="vcard"><span class="led sm vcard-led">022</span><span class="vcard-cat">Strings</span><span class="vcard-name">Orchestral Harp</span><p class="vcard-desc">Romantische Kaskade. Eine Berührung, der Saal verstummt.</p><span class="vcard-combo">+ Arpeggio 075 — 076</span></div>
+    <div class="vcard"><span class="led sm vcard-led">025</span><span class="vcard-cat">Woodwind</span><span class="vcard-name">Flute</span><p class="vcard-desc">Sanfte Flöte, fast lebendig. Disney im Schlafzimmer.</p><span class="vcard-combo">+ Sustain · Melodie obendrauf</span></div>
+    <div class="vcard"><span class="led sm vcard-led">032</span><span class="vcard-cat">Synth Lead</span><span class="vcard-name">Gemini</span><p class="vcard-desc">Scharfer 80er-Synth. Stranger Things.</p><span class="vcard-combo">+ Motion Effect gehalten</span></div>
+    <div class="vcard"><span class="led sm vcard-led">036</span><span class="vcard-cat">Synth Pad</span><span class="vcard-name">New Age Pad</span><p class="vcard-desc">Langsamer, schwebender Pad. Abspann-Soundtrack.</p><span class="vcard-combo">+ Sustain · Augen zu</span></div>
+    <div class="vcard"><span class="led sm vcard-led">040</span><span class="vcard-cat">Drum / Perc.</span><span class="vcard-name">Dance Kit</span><p class="vcard-desc">Electro Drumkit. Jede Taste = ein Klang.</p><span class="vcard-combo">+ Arpeggio 117 — 138</span></div>
+    <div class="vcard"><span class="led sm vcard-led">042</span><span class="vcard-cat">Drum / Perc.</span><span class="vcard-name">Marimba</span><p class="vcard-desc">Warmes Holz, melodische Percussion. Sofort Freude.</p><span class="vcard-combo">+ Sustain zum Weichmachen</span></div>
+  </div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">43</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Kapitel 6 · Die Musik in Bewegung bringen</span>
+  <h1 class="section-title">Ein Knopf. Halte ihn gedrückt, der Klang <em>verformt sich</em>.</h1>
+  <p class="lead">Der <span class="pill">Motion Effect</span> Knopf sitzt oben in der Mitte des Bedienfelds, direkt links neben Sustain.</p>
+  <div class="two-col flip">
+    <div class="visual">
+      <svg viewBox="0 0 240 280" width="100%" aria-hidden="true">
+        <rect x="6" y="6" width="228" height="100" rx="3" fill="#120f0c"/>
+        <text x="60" y="26" fill="#d63a1a" font-family="Inter" font-size="6.5" text-anchor="middle" letter-spacing="1.5" font-weight="600">MOTION EFFECT</text>
+        <circle cx="60" cy="50" r="14" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+        <circle cx="60" cy="50" r="9" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+        <text x="60" y="80" fill="#fff" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">A · Filter</text>
+        <text x="60" y="89" fill="#fff" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">B · Tonhöhe</text>
+        <text x="60" y="98" fill="#fff" font-family="Inter" font-style="italic" font-size="5.5" text-anchor="middle" opacity=".75">C · Modulation</text>
+        <circle cx="155" cy="50" r="11" fill="none" stroke="#d63a1a" stroke-width="1" opacity=".4"/>
+        <text x="155" y="78" fill="#d63a1a" font-family="Inter" font-size="5.5" text-anchor="middle" opacity=".4">Sustain</text>
+        <g transform="translate(20, 200)" stroke="#7a3a14" fill="none" stroke-width="1.4" stroke-linecap="round"><path d="M 0 30 Q 20 5 40 30 T 80 30 T 120 30 T 160 30 T 200 30"/></g>
+        <g transform="translate(20, 240)" stroke="#c56a2a" fill="none" stroke-width="1.4" stroke-linecap="round"><path d="M 0 30 Q 10 -5 25 25 Q 38 50 50 20 Q 65 -10 80 35 Q 95 55 110 18 Q 125 0 145 30 Q 160 50 175 22 Q 190 5 200 30"/></g>
+        <text x="120" y="195" fill="#4a4038" font-family="Inter" font-size="6.5" font-style="italic" text-anchor="middle">normaler Klang</text>
+        <text x="120" y="280" fill="#7a3a14" font-family="Inter" font-size="6.5" font-style="italic" text-anchor="middle">Klang mit Motion Effect gehalten</text>
+      </svg>
+    </div>
+    <div class="body">
+      <p>Sein Trick: Er schaltet sich nicht durch einfaches Drücken ein. <strong>Du musst ihn gedrückt halten, während du spielst</strong>. Loslassen, und der Klang wird wieder normal.</p>
+      <p>Der Standardeffekt ändert den Filter des Klangs: wie ein Mund, der sich um jede Note öffnet und schließt. Auf einem Synth wie <strong>032 Gemini</strong> oder <strong>036 New Age Pad</strong>: genau das, was man seit 40 Jahren in elektronischer Musik hört.</p>
+      <p>Drei Effektfamilien: A ändert den Filter, B die Tonhöhe, C die Modulation. Du musst nichts ändern. Die Standardeinstellung reicht völlig.</p>
+      <div class="callout"><div class="callout-label">Schnellrezept</div><p>Wähle <strong>032 Gemini</strong>. Spiele eine tiefe Note und halte sie. Mit der anderen Hand: halte Motion Effect und spiele eine Melodie darüber. Dein erstes Synth-Solo.</p></div>
+    </div>
+  </div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">44</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Kapitel 7 · Der Arpeggiator (1/3)</span>
+  <h1 class="section-title">Lege einen Finger. <em>Das Instrument spielt von selbst.</em></h1>
+  <p class="lead">Der Arpeggiator verwandelt eine einzige Taste in eine komplette rhythmische Phrase. Wahrscheinlich die beeindruckendste Funktion dieses Keyboards.</p>
+  <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap: 5mm; margin-top: 5mm;">
+    <div class="vcard" style="background: var(--bg-warm);"><div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">1</div><span class="vcard-name" style="font-size: 12pt;">Aktivieren</span><p class="vcard-desc">Drücke auf <span class="pill">Arpeggio</span>. Display zeigt <span class="pill">Aon</span>. Die Taste ist scharf, aber es spielt noch nichts.</p><div style="margin-top: auto;"><span class="led sm">Aon</span></div></div>
+    <div class="vcard" style="background: var(--bg-warm);"><div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">2</div><span class="vcard-name" style="font-size: 12pt;">Lege einen Finger</span><p class="vcard-desc">Auf eine beliebige Taste. Halte gedrückt. Der Arpeggiator startet, spielt eine rhythmische Phrase. Bewege deinen Finger auf andere Tasten, um die Phrase weiterzuentwickeln.</p></div>
+    <div class="vcard" style="background: var(--bg-warm);"><div style="font-family: var(--font-display); font-style: italic; font-weight:300; font-size: 28pt; color: var(--ember); line-height:1;">3</div><span class="vcard-name" style="font-size: 12pt;">Befreie deine Hand</span><p class="vcard-desc">Während die Phrase spielt: drücke auf <span class="pill">Arp.&nbsp;Hold</span>. Die Phrase läuft in Schleife weiter, auch wenn du das Keyboard loslässt. Hol dir einen Kaffee oder spiel darüber.</p></div>
+  </div>
+  <div class="callout" style="margin-top: 6mm;"><div class="callout-label">Zum Stoppen</div><p>Drücke erneut auf <span class="pill">Arpeggio</span>. Display zeigt <span class="pill">AoF</span>. Stille kehrt zurück.</p></div>
+  <div class="panel-zoom" style="margin-top: 5mm;">
+    <svg viewBox="0 0 380 110" width="80%" aria-hidden="true">
+      <rect x="0" y="0" width="380" height="110" rx="3" fill="#120f0c"/>
+      <rect x="20" y="35" width="38" height="38" rx="3" fill="none" stroke="#d63a1a" stroke-width=".8" opacity=".4"/>
+      <text x="39" y="58" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" opacity=".4">SHIFT</text>
+      <text x="100" y="22" fill="#d63a1a" font-family="Inter" font-size="6" text-anchor="middle" letter-spacing=".5" font-weight="600">ARP. HOLD</text>
+      <rect x="80" y="30" width="50" height="50" rx="3" fill="none" stroke="#e08a44" stroke-width="2"/>
+      <text x="180" y="22" fill="#d63a1a" font-family="Inter" font-size="7" text-anchor="middle" letter-spacing="1" font-weight="600">ARPEGGIO</text>
+      <circle cx="180" cy="55" r="22" fill="none" stroke="#e08a44" stroke-width="2.4"/>
+      <circle cx="180" cy="55" r="14" fill="none" stroke="#d63a1a" stroke-width="1.2"/>
+      <rect x="240" y="40" width="32" height="32" rx="3" fill="none" stroke="#d63a1a" stroke-width="1"/>
+      <text x="256" y="62" fill="#d63a1a" font-family="Inter" font-size="14" text-anchor="middle">−</text>
+      <rect x="278" y="40" width="32" height="32" rx="3" fill="none" stroke="#d63a1a" stroke-width="1"/>
+      <text x="294" y="62" fill="#d63a1a" font-family="Inter" font-size="14" text-anchor="middle">+</text>
+      <text x="275" y="92" fill="#fff" font-family="Inter" font-style="italic" font-size="6" text-anchor="middle" opacity=".7">Muster wählen</text>
+      <rect x="320" y="35" width="50" height="40" rx="2" fill="#1a0d08"/>
+      <text x="345" y="62" fill="#d63a1a" font-family="Fraunces" font-weight="700" font-size="16" text-anchor="middle">Aon</text>
+    </svg>
+    <div class="caption">Tatsächliches Layout. Arp. Hold sitzt direkt links neben dem großen Arpeggio Knopf.</div>
+  </div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">45</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Kapitel 7 · Der Arpeggiator (2/3)</span>
+  <h1 class="section-title">138 Phrasen, <em>zwölf Welten</em>.</h1>
+  <p class="lead">Die <span class="pill">−</span> und <span class="pill">+</span> Tasten unter dem Display nehmen dich auf Reise. Halte sie gedrückt, um schnell zu blättern.</p>
+  <div class="worlds">
+    <div class="world"><span class="num">001 — 018</span><div><span class="label">Acoustic Piano</span><span class="desc">Klassische Klavierphrasen</span></div></div>
+    <div class="world"><span class="num">048 — 064</span><div><span class="label">Bass</span><span class="desc">Groovige Basslinien</span></div></div>
+    <div class="world"><span class="num">019 — 028</span><div><span class="label">Keyboard</span><span class="desc">Vintage Tastaturen und Orgeln</span></div></div>
+    <div class="world"><span class="num">065 — 074</span><div><span class="label">Strings</span><span class="desc">Dramatisches Orchester</span></div></div>
+    <div class="world"><span class="num">029 — 041</span><div><span class="label">Guitar Chord</span><span class="desc">Geschlagene Gitarrenakkorde</span></div></div>
+    <div class="world"><span class="num">075 — 076</span><div><span class="label">Harp</span><span class="desc">Harfenkaskaden</span></div></div>
+    <div class="world"><span class="num">042 — 047</span><div><span class="label">Guitar Arpeggio</span><span class="desc">Folk-Gitarrenarpeggios</span></div></div>
+    <div class="world"><span class="num">077 — 081</span><div><span class="label">Brass</span><span class="desc">Bläserriffs</span></div></div>
+    <div class="world"><span class="num">082 — 085</span><div><span class="label">Chromatic Perc.</span><span class="desc">Vibraphon, Marimba</span></div></div>
+    <div class="world"><span class="num">107 — 116</span><div><span class="label">Synth Chord</span><span class="desc">Schwebende Synth-Akkorde</span></div></div>
+    <div class="world"><span class="num">086 — 106</span><div><span class="label">Synth Sequence</span><span class="desc">Elektro-Sequenzen der 80er</span></div></div>
+    <div class="world"><span class="num">117 — 138</span><div><span class="label">Drums</span><span class="desc">Drumcomputer und Beats</span></div></div>
+  </div>
+  <div class="callout" style="margin-top: 6mm;"><div class="callout-label">Praktischer Shortcut</div><p>Um direkt zum Anfang der nächsten Kategorie zu springen: halte <span class="pill">Shift</span> und drücke auf <span class="pill">+</span> oder <span class="pill">−</span>.</p></div>
+  <div class="callout" style="margin-top: 4mm; border-left-color: var(--moss); background: rgba(90,115,96,.08);"><div class="callout-label" style="color: var(--moss);">Gut zu wissen</div><p>Die Nummern sind direkt über dem Keyboard auf das Bedienfeld gedruckt. Ein Blick auf das Keyboard, alles steht dort.</p></div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">46</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Kapitel 7 · Der Arpeggiator (3/3)</span>
+  <h1 class="section-title">Fünf Rezepte <em>spielfertig</em>.</h1>
+  <p class="lead">Folge der Kombination, lege einen Finger, sei verblüfft. Keine Fähigkeit nötig.</p>
+  <div class="recipes">
+    <div class="recipe"><div class="recipe-num">1</div><div class="recipe-body"><div class="recipe-name">Techno-Drumcomputer</div><div class="recipe-steps">Stimme <span class="pill">040</span> Dance Kit (Drum/Perc., 2x drücken) · aktiviere <span class="pill">Arpeggio</span> · Nummer zwischen <span class="pill">117</span> und <span class="pill">138</span> mit <span class="pill">+</span> · aktiviere <span class="pill">Arp. Hold</span>. Lege einen Finger irgendwo, der Beat läuft in Schleife. Bewege einen anderen Finger, um Klänge darüber zu legen.</div></div></div>
+    <div class="recipe"><div class="recipe-num">2</div><div class="recipe-body"><div class="recipe-name">Filmsoundtrack</div><div class="recipe-steps">Stimme <span class="pill">036</span> New Age Pad · <span class="pill">Sustain</span> an · <span class="pill">Arpeggio</span> aus. Spiele drei langsame, weit auseinanderliegende Noten. Lass sie schweben. Du sitzt in einem Hans Zimmer in einer Pension.</div></div></div>
+    <div class="recipe"><div class="recipe-num">3</div><div class="recipe-body"><div class="recipe-name">80er-Synth-Solo</div><div class="recipe-steps">Stimme <span class="pill">032</span> Gemini · <span class="pill">Motion Effect</span> gehalten, während du spielst. Spiele eine zufällige Melodie mit zwei Fingern. Je länger du hältst, desto mehr verformt sich der Klang.</div></div></div>
+    <div class="recipe"><div class="recipe-num">4</div><div class="recipe-body"><div class="recipe-name">Gitarre am Kamin</div><div class="recipe-steps">Stimme <span class="pill">009</span> Nylon Guitar · aktiviere <span class="pill">Arpeggio</span> · Nummer zwischen <span class="pill">029</span> und <span class="pill">041</span> mit <span class="pill">−</span>/<span class="pill">+</span> · aktiviere <span class="pill">Arp. Hold</span>. Du bekommst eine geschlagene Gitarrenbegleitung. Drücke andere Finger für andere Akkorde.</div></div></div>
+    <div class="recipe"><div class="recipe-num">5</div><div class="recipe-body"><div class="recipe-name">Stranger Things Synth</div><div class="recipe-steps">Stimme <span class="pill">032</span> Gemini · aktiviere <span class="pill">Arpeggio</span> · Nummer zwischen <span class="pill">086</span> und <span class="pill">106</span> · aktiviere <span class="pill">Arp. Hold</span>. Eine Elektro-Sequenz läuft. Lege eine tiefe Note, um zu transponieren.</div></div></div>
+  </div>
+  <div class="tap-callout"><div class="tap-callout-label">Tap Tempo</div><p class="tap-callout-body">Schneller oder langsamer? Tippe viermal im Rhythmus auf <span class="pill">Tempo / Tap</span> (unten rechts, neben dem Display). Der Arpeggiator passt sich sofort an dein Tempo an.</p></div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson</span><span class="num">47</span></div>
+</section>
+
+<section class="page">
+  <span class="eyebrow">Bonus · Wenn du noch 5 Minuten hast</span>
+  <h1 class="section-title">Zwei Geheimnisse <em>um weiterzugehen</em>.</h1>
+  <div class="bonus-block">
+    <div class="bonus-block-title">Portamento — das Gleiten zwischen Noten</div>
+    <p class="bonus-block-lead">Halte <span class="pill">Shift</span> und drücke auf <span class="pill">Sustain</span>. Display zeigt <span class="pill">Pon</span>. Spiele eine Note, dann eine andere ein paar Tasten weiter: der Klang gleitet, statt zu springen.</p>
+    <p class="bonus-fine">Spektakulär auf 032 Gemini oder 017 Synth Bass. Auf Klavier nutzlos. Zum Ausschalten: Shift + Sustain wiederholen. Display zeigt <span class="pill">PoF</span>.</p>
+  </div>
+  <div class="bonus-block">
+    <div class="bonus-block-title">Eine Schleife aufnehmen</div>
+    <p class="bonus-block-lead">Das Keyboard merkt sich eine kurze Phrase und spielt sie ab, während du darüber spielst.</p>
+    <ol class="bonus-steps">
+      <li>Drücke auf <span class="pill">Rec</span>. Das Display blinkt <span class="pill">rEC</span>.</li>
+      <li>Spiele. Die Aufnahme startet bei der ersten Note.</li>
+      <li>Drücke auf <span class="pill">Rec</span>, um zu stoppen.</li>
+      <li>Drücke auf <span class="pill">▶/■</span> zum Anhören.</li>
+      <li>Um sie in Schleife laufen zu lassen, während du improvisierst: halte <span class="pill">Shift</span> und drücke auf <span class="pill">▶/■</span>.</li>
+    </ol>
+    <p class="bonus-fine">Löschen: Rec, ▶/■, ▶/■, in dieser Reihenfolge.</p>
+  </div>
+  <div class="farewell">
+    <div class="farewell-title display">Du bist dran.</div>
+    <p>Jetzt weißt du alles, um eine schöne Zeit zu verbringen. Das Keyboard läuft mit Batterien. Stell es ruhig aufs Bett oder aufs Sofa. Keine Kabel zum Ausstecken. Keine Regeln.</p>
+    <p>Ein letzter Tipp. Lass Sustain an, wähle die Stimme, die dich anspricht, und drücke zufällige Tasten. Genau so beginnt man.</p>
+    <div class="sign">Schönen Aufenthalt bei Maurisson, und gute Musik.</div>
+  </div>
+  <div class="foot"><span class="brand">Das kleine Keyboard von Maurisson · Herve, Belgien</span><span class="num">48</span></div>
+</section>
+
+</body>
+</html>
