@@ -1,0 +1,829 @@
+/* ──────────────────────────────────────────────────────────────
+   Les Petites Plantes de Maurisson
+   Manuel de culture imprimable A4 portrait, recto seul.
+   Style : DNA CP5 étendu + palette botanique verte/terre.
+   ────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@100..900&display=swap');
+
+:root {
+  /* Palette claire — fond ivoire chaud, accents ember + verts botaniques */
+  --bg:        #fdfaf3;
+  --bg-tone:   #f3ecdc;
+  --bg-warm:   #fbf4e2;
+  --bg-leaf:   #e9efe2;   /* fond carte végétale */
+  --bg-earth:  #efe4d2;   /* fond carte terre */
+  --bg-dark:   #1a1814;
+  --ink:       #15120c;
+  --ink-soft:  #251f15;
+  --ink-muted: #4a4035;
+  --ink-faint: #6d6055;
+
+  /* Ember (chaleur, soleil, ambre) — conservé du CP5 */
+  --ember:        #c56a2a;
+  --ember-deep:   #7a3a14;
+  --ember-bright: #e08a44;
+  --ember-light:  #edaa6a;
+  --ember-pale:   #fde4c0;
+
+  /* Verts botaniques — feuilles, terre */
+  --leaf:        #4d6b3e;
+  --leaf-deep:   #2e4525;
+  --leaf-bright: #6f8f5c;
+  --leaf-pale:   #d8e2c8;
+  --sage:        #8a9a7b;
+
+  /* Terre, brou, racine */
+  --earth:       #6b4a2d;
+  --earth-deep:  #3e2a18;
+  --earth-pale:  #c9a87a;
+
+  /* Ciel — calendrier, photopériode */
+  --sky:         #4a6f8a;
+  --sky-pale:    #cfdee8;
+  --sky-deep:    #2b4459;
+
+  /* Critique : rouge alerte (botrytis, hermies, gelées) */
+  --crit:        #b3261e;
+  --crit-bg:     #fde7e3;
+  --crit-deep:   #7a1611;
+
+  --line:        rgba(21,18,12,.14);
+  --line-strong: rgba(21,18,12,.28);
+  --line-leaf:   rgba(77,107,62,.30);
+
+  --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'Fraunces', Georgia, serif;
+}
+
+@page { size: A4 portrait; margin: 0; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 9.5pt;
+  line-height: 1.42;
+  font-weight: 300;
+  letter-spacing: -.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+/* ── Page (A4 portrait) ─────────────────────────────────────── */
+.page {
+  width: 210mm; height: 297mm;
+  position: relative; overflow: hidden;
+  break-after: page;
+  page-break-after: always;
+  padding: 16mm 16mm 14mm 16mm;
+  background: var(--bg);
+}
+.page:last-of-type {
+  break-after: avoid;
+  page-break-after: avoid;
+}
+.page > * { position: relative; z-index: 1; }
+
+/* Page variants (background tones) */
+.page.leaf-tone { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-leaf) 100%); }
+.page.earth-tone { background: linear-gradient(180deg, var(--bg) 0%, var(--bg-earth) 100%); }
+
+/* ── Page footer (folio + tagline) ──────────────────────────── */
+.foot {
+  position: absolute;
+  bottom: 7mm; left: 16mm; right: 16mm;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 7pt; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.foot .num {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 10pt; letter-spacing: 0; text-transform: none; color: var(--leaf);
+}
+.foot .brand {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 8.5pt; letter-spacing: .03em; text-transform: none; color: var(--ink-faint);
+}
+
+/* ── Eyebrow ────────────────────────────────────────────────── */
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .55em;
+  font-family: var(--font-body); font-size: 7.5pt; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--leaf-deep);
+  margin-bottom: 5mm;
+}
+.eyebrow::before {
+  content:''; display:inline-block; width: 22pt; height: 1px;
+  background: currentColor; opacity: .55;
+}
+.eyebrow.ember { color: var(--ember-deep); }
+.eyebrow.earth { color: var(--earth-deep); }
+.eyebrow.sky   { color: var(--sky-deep); }
+
+/* ── Display & headings ─────────────────────────────────────── */
+.display { font-family: var(--font-display); font-weight: 300; line-height: .98; letter-spacing: -.025em; }
+
+h1.section-title {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 24pt; line-height: 1.05; letter-spacing: -.025em;
+  color: var(--ink); margin-bottom: 2.5mm;
+  max-width: 24ch;
+}
+h1.section-title em {
+  font-style: italic; font-weight: 300; color: var(--leaf-deep);
+}
+h1.section-title em.ember { color: var(--ember-deep); }
+
+h2.sub-title {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 11.5pt; color: var(--leaf-deep);
+  margin-top: 2.5mm; margin-bottom: 1mm; letter-spacing: -.01em;
+}
+h2.sub-title.ember { color: var(--ember-deep); }
+h3.mini-title {
+  font-family: var(--font-display); font-weight: 500; font-style: italic;
+  font-size: 10.5pt; color: var(--ink-soft);
+  margin-top: 2.5mm; margin-bottom: 1mm;
+}
+
+p.lead {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 11pt; line-height: 1.3; letter-spacing: -.01em;
+  color: var(--ink-soft); max-width: 34em;
+  margin-bottom: 4mm;
+}
+
+.body { color: var(--ink-soft); max-width: 40em; }
+.body p { margin-bottom: 2mm; }
+.body p:last-child { margin-bottom: 0; }
+.body strong { font-weight: 500; color: var(--ink); }
+.body ul, .body ol { padding-left: 5mm; margin-bottom: 2mm; }
+.body li { margin-bottom: .8mm; font-size: 9pt; line-height: 1.4; }
+
+/* Step block */
+.step {
+  margin-bottom: 2mm;
+  padding-left: 0;
+}
+.step .label {
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 7.5pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--leaf-deep); display: block; margin-bottom: .8mm;
+}
+.step .body-line { color: var(--ink-soft); font-size: 9pt; line-height: 1.4; }
+
+/* Pill — référence (variété, terme) */
+.pill {
+  display: inline-block;
+  padding: 1pt 5pt;
+  border: .8pt solid var(--line-strong);
+  border-radius: 999px;
+  font-family: var(--font-body); font-weight: 500; font-size: 7.5pt;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink); background: var(--bg-warm);
+  white-space: nowrap;
+}
+.pill.leaf { background: var(--leaf-pale); border-color: var(--line-leaf); color: var(--leaf-deep); }
+.pill.ember { background: var(--ember-pale); border-color: var(--ember-light); color: var(--ember-deep); }
+
+/* Callout ember (astuce / encadré normal) */
+.callout {
+  border: .8pt solid var(--line-strong);
+  border-left: 3pt solid var(--ember);
+  background: var(--bg-warm);
+  padding: 2.5mm 3.5mm;
+  margin-top: 2.5mm;
+  border-radius: 1.5mm;
+}
+.callout.leaf { border-left-color: var(--leaf); background: var(--bg-leaf); }
+.callout.earth { border-left-color: var(--earth); background: var(--bg-earth); }
+.callout.sky { border-left-color: var(--sky); background: var(--sky-pale); }
+.callout .callout-label {
+  font-family: var(--font-body); font-size: 7pt; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ember-deep); margin-bottom: 1mm;
+}
+.callout.leaf .callout-label { color: var(--leaf-deep); }
+.callout.earth .callout-label { color: var(--earth-deep); }
+.callout.sky .callout-label { color: var(--sky-deep); }
+.callout p { color: var(--ink-soft); font-size: 8.5pt; line-height: 1.4; margin-bottom: 1mm; }
+.callout p:last-child { margin-bottom: 0; }
+.callout strong { color: var(--ink); font-weight: 500; }
+
+/* Callout WARN (orange dashed) */
+.warn {
+  border: 1pt dashed var(--ember);
+  background: rgba(253, 228, 192, .35);
+  padding: 2.5mm 3.5mm;
+  margin-top: 2.5mm;
+  border-radius: 1.5mm;
+}
+.warn .callout-label {
+  font-family: var(--font-body); font-size: 7pt; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ember-deep); margin-bottom: 1mm;
+}
+.warn p { color: var(--ink-soft); font-size: 8.5pt; line-height: 1.4; margin-bottom: 1mm; }
+.warn p:last-child { margin-bottom: 0; }
+.warn strong { color: var(--ink); font-weight: 600; }
+
+/* Callout CRIT (rouge — alerte critique : botrytis, gelées) */
+.crit {
+  border: 1.4pt solid var(--crit);
+  background: var(--crit-bg);
+  padding: 3mm 4mm;
+  margin-top: 2.5mm;
+  border-radius: 1.5mm;
+}
+.crit .callout-label {
+  font-family: var(--font-body); font-size: 7.5pt; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--crit); margin-bottom: 1mm;
+}
+.crit p { color: var(--ink-soft); font-size: 8.5pt; line-height: 1.4; margin-bottom: 1mm; }
+.crit p:last-child { margin-bottom: 0; }
+.crit strong { color: var(--crit); font-weight: 600; }
+
+/* Quotation block */
+.quote {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 14pt; line-height: 1.3; letter-spacing: -.01em;
+  color: var(--leaf-deep);
+  border-left: 2pt solid var(--leaf);
+  padding-left: 5mm;
+  margin: 5mm 0;
+  max-width: 32em;
+}
+.quote.ember { color: var(--ember-deep); border-left-color: var(--ember); }
+.quote .attribution {
+  display: block; margin-top: 2mm;
+  font-family: var(--font-body); font-style: normal; font-weight: 400;
+  font-size: 8pt; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+
+/* ── Tables ─────────────────────────────────────────────────── */
+table.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+  margin: 2mm 0 2.5mm 0;
+}
+table.tbl th, table.tbl td {
+  border-bottom: .4pt solid var(--line);
+  padding: 1mm 2mm 1mm 0;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+table.tbl th {
+  border-bottom: .8pt solid var(--line-strong);
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 7pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--leaf-deep);
+  padding-top: 0;
+}
+table.tbl th.ember { color: var(--ember-deep); }
+table.tbl td.num, table.tbl th.num { font-family: var(--font-display); font-weight: 500; color: var(--leaf); }
+table.tbl td.right { text-align: right; }
+table.tbl tr:last-child td { border-bottom: none; }
+table.tbl tr.alt td { background: var(--bg-tone); }
+
+/* ── Cover page ─────────────────────────────────────────────── */
+.cover {
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 24mm 20mm 18mm 20mm;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--bg-leaf) 60%, var(--bg-earth) 100%);
+}
+.cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.cover-mark {
+  width: 16mm; height: 16mm; border-radius: 999px;
+  border: .8pt solid var(--line-strong);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--leaf-deep);
+  background: var(--bg);
+}
+.cover-mark svg { width: 9mm; height: 9mm; }
+.cover-meta {
+  text-align: right;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  color: var(--ink-faint); font-size: 9pt; line-height: 1.4;
+}
+.cover-meta .brand-line { color: var(--leaf-deep); font-style: normal; font-family: var(--font-body); font-weight: 500; font-size: 7pt; letter-spacing: .22em; text-transform: uppercase; margin-bottom: 1.5mm; }
+
+.cover-title {
+  font-family: var(--font-display); font-weight: 300;
+  line-height: .92; letter-spacing: -.025em;
+  color: var(--ink); margin-top: -2mm;
+}
+.cover-title .small {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic; font-weight: 300;
+  font-size: 30pt; line-height: 1; letter-spacing: -.02em;
+  text-transform: none;
+  color: var(--ink-soft);
+  margin-bottom: 3mm;
+}
+.cover-title .name {
+  display: block;
+  font-style: italic; font-weight: 300;
+  font-size: 64pt; line-height: .9; letter-spacing: -.035em;
+  background: linear-gradient(95deg, var(--leaf-deep) 0%, var(--leaf) 45%, var(--ember-deep) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.cover-sub {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 14pt; line-height: 1.32; letter-spacing: -.01em;
+  color: var(--ink-soft); margin-top: 6mm; max-width: 26em;
+}
+
+.cover-illustration {
+  margin: 4mm auto 4mm auto;
+  width: 145mm;
+  display: block;
+  filter: drop-shadow(0 4mm 5mm rgba(18, 15, 12, 0.14));
+}
+
+.cover-menu {
+  text-align: center;
+  border-top: .6pt solid var(--line);
+  border-bottom: .6pt solid var(--line);
+  padding: 5mm 0;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 11pt; line-height: 1.65;
+  color: var(--ink-soft);
+  letter-spacing: -.005em;
+}
+.cover-menu .dot { color: var(--leaf); margin: 0 .4em; }
+
+.cover-bottom {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-family: var(--font-body); font-weight: 500; font-size: 7pt;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ink-faint);
+}
+.cover-bottom .meta-italic {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 9pt; letter-spacing: 0; text-transform: none;
+  color: var(--ink-faint);
+}
+
+/* ── Two-column layouts ─────────────────────────────────────── */
+.two-col {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 9mm;
+  margin-top: 4mm;
+  align-items: start;
+}
+.two-col.flip { grid-template-columns: 0.95fr 1.05fr; }
+.two-col.even { grid-template-columns: 1fr 1fr; }
+.two-col .visual {
+  background: var(--bg-tone);
+  border: .6pt solid var(--line);
+  border-radius: 2mm;
+  padding: 5mm;
+  display: flex; align-items: center; justify-content: center;
+}
+.two-col .visual.leaf { background: var(--bg-leaf); border-color: var(--line-leaf); }
+.two-col .visual.earth { background: var(--bg-earth); }
+
+/* ── Cards grid (variétés, ravageurs, étapes) ──────────────── */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  margin-top: 3mm;
+}
+.cards-grid.two { grid-template-columns: repeat(2, 1fr); gap: 3.5mm; }
+.cards-grid.four { grid-template-columns: repeat(4, 1fr); gap: 2.5mm; }
+
+/* ── Strain card — fiche d'identité variété ────────────────── */
+.strain-card {
+  border: .8pt solid var(--line-strong);
+  border-radius: 2.5mm;
+  padding: 4mm;
+  background: var(--bg-warm);
+  page-break-inside: avoid;
+}
+.strain-card .strain-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: .6pt solid var(--line);
+  padding-bottom: 1.5mm; margin-bottom: 2mm;
+}
+.strain-card .strain-name {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 18pt; line-height: 1; color: var(--leaf-deep); letter-spacing: -.02em;
+}
+.strain-card .strain-tag {
+  font-family: var(--font-body); font-weight: 600; font-size: 7pt;
+  letter-spacing: .18em; text-transform: uppercase; color: var(--ember-deep);
+}
+.strain-card .strain-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5mm 4mm;
+  font-size: 8pt;
+}
+.strain-card .strain-grid dt {
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 6.8pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--leaf-deep);
+}
+.strain-card .strain-grid dd {
+  color: var(--ink-soft); line-height: 1.32;
+  font-family: var(--font-display); font-weight: 400; font-size: 9.5pt;
+}
+.strain-card .strain-grid dd em { font-style: italic; color: var(--ember-deep); }
+
+/* ── Pest / disease card ───────────────────────────────────── */
+.pest-card {
+  border: .6pt solid var(--line-strong);
+  border-radius: 2mm;
+  padding: 3mm;
+  background: var(--bg);
+  page-break-inside: avoid;
+  display: flex; flex-direction: column; gap: 1.2mm;
+}
+.pest-card.crit { border-color: var(--crit); background: var(--crit-bg); }
+.pest-card.warn { border-color: var(--ember); background: rgba(253, 228, 192, .25); }
+.pest-card .pest-head {
+  display: flex; align-items: center; gap: 2mm;
+  border-bottom: .4pt solid var(--line);
+  padding-bottom: 1.2mm;
+}
+.pest-card .pest-icon {
+  width: 9mm; height: 9mm; flex-shrink: 0;
+  color: var(--leaf-deep);
+}
+.pest-card.crit .pest-icon { color: var(--crit); }
+.pest-card .pest-name {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: 11pt; line-height: 1.1; color: var(--ink);
+}
+.pest-card .pest-latin {
+  font-family: var(--font-body); font-style: italic; font-size: 6.5pt;
+  color: var(--ink-faint); letter-spacing: .03em;
+}
+.pest-card .pest-body {
+  font-size: 7.8pt; line-height: 1.35; color: var(--ink-soft);
+}
+.pest-card .pest-body strong { color: var(--ink); font-weight: 500; }
+.pest-card .pest-treat {
+  margin-top: auto;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 7.5pt; color: var(--leaf-deep);
+  border-top: .4pt dashed var(--line);
+  padding-top: 1mm;
+}
+.pest-card.crit .pest-treat { color: var(--crit-deep); }
+
+/* ── Calendar ribbon (mars → octobre) ──────────────────────── */
+.calendar-ribbon {
+  width: 100%;
+  margin: 3mm 0 4mm 0;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 0;
+  border-radius: 2mm;
+  overflow: hidden;
+  border: .6pt solid var(--line-strong);
+  page-break-inside: avoid;
+}
+.cal-month {
+  padding: 2mm 1.5mm;
+  text-align: center;
+  font-family: var(--font-body);
+  border-right: .4pt solid var(--line);
+  position: relative;
+}
+.cal-month:last-child { border-right: none; }
+.cal-month .name {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: 9.5pt; color: var(--ink); display: block; line-height: 1;
+}
+.cal-month .phase {
+  font-size: 6.2pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ink-faint); margin-top: .8mm; display: block;
+}
+.cal-month.germ { background: var(--earth-pale); }
+.cal-month.veg { background: var(--leaf-pale); }
+.cal-month.preflo { background: var(--bg-warm); }
+.cal-month.flo { background: var(--ember-pale); }
+.cal-month.harvest { background: var(--crit-bg); }
+.cal-month.dry { background: var(--sky-pale); }
+
+/* ── Visual containers (botanical plate) ───────────────────── */
+.panel-zoom {
+  width: 100%;
+  background: var(--bg-tone);
+  border-radius: 2mm;
+  padding: 4mm;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 3mm;
+}
+.panel-zoom.leaf { background: var(--bg-leaf); }
+.panel-zoom.earth { background: var(--bg-earth); }
+.panel-zoom .caption {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 8.5pt; color: var(--ink-faint); text-align: center;
+  max-width: 36em;
+  line-height: 1.4;
+}
+
+/* Botanical plate — encadré illustré style XIX° */
+.bot-plate {
+  border: .8pt solid var(--leaf-deep);
+  background: var(--bg);
+  padding: 4mm;
+  border-radius: 0;
+  position: relative;
+  page-break-inside: avoid;
+}
+.bot-plate::before {
+  content: '';
+  position: absolute;
+  top: 1.5mm; left: 1.5mm; right: 1.5mm; bottom: 1.5mm;
+  border: .3pt solid var(--leaf-deep);
+  pointer-events: none;
+}
+.bot-plate .bot-plate-inner {
+  position: relative; z-index: 1;
+  padding: 2mm;
+}
+.bot-plate .bot-title {
+  font-family: var(--font-display); font-style: italic; font-weight: 400;
+  font-size: 10pt; color: var(--leaf-deep); text-align: center;
+  letter-spacing: .04em;
+  margin-bottom: 2mm;
+}
+.bot-plate .bot-title .latin { font-style: italic; color: var(--earth-deep); }
+.bot-plate .bot-caption {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 7.5pt; color: var(--ink-faint); text-align: center;
+  margin-top: 2mm; line-height: 1.35;
+}
+
+/* ── Big numbers (procedures) ───────────────────────────────── */
+.big-step {
+  display: grid;
+  grid-template-columns: 7mm 1fr;
+  gap: 2.5mm;
+  align-items: start;
+  padding: 1mm 0;
+}
+.big-step .num {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 18pt; line-height: 1; color: var(--leaf);
+  letter-spacing: -.02em;
+}
+.big-step .body-line {
+  font-size: 9pt; color: var(--ink-soft); line-height: 1.42;
+  padding-top: 3pt;
+}
+.big-step .body-line strong { color: var(--ink); font-weight: 500; }
+
+/* ── Lineage timeline ───────────────────────────────────────── */
+.timeline {
+  display: grid;
+  grid-template-columns: 18mm 1fr;
+  gap: 4mm;
+  margin: 4mm 0;
+}
+.timeline-item {
+  display: contents;
+}
+.timeline .year {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 16pt; color: var(--leaf);
+  text-align: right;
+  padding-top: 2mm;
+  border-right: .8pt solid var(--leaf);
+  padding-right: 4mm;
+}
+.timeline .ev {
+  padding: 2mm 0;
+  font-size: 9pt; color: var(--ink-soft); line-height: 1.5;
+}
+.timeline .ev strong { color: var(--ink); font-weight: 500; }
+.timeline-item:not(:last-child) .ev {
+  border-bottom: .4pt solid var(--line);
+}
+
+/* ── Lineage tree (généalogie) ──────────────────────────────── */
+.lineage-tree {
+  margin: 4mm 0;
+  font-family: var(--font-display);
+  display: flex; flex-direction: column; align-items: center;
+  gap: 1mm;
+}
+.lineage-tree .node {
+  border: .6pt solid var(--leaf);
+  background: var(--leaf-pale);
+  padding: 1.2mm 4mm;
+  border-radius: 1.5mm;
+  font-style: italic; font-weight: 400; font-size: 9.5pt;
+  color: var(--leaf-deep);
+  text-align: center;
+}
+.lineage-tree .node.root {
+  background: var(--leaf);
+  color: white;
+  font-weight: 500;
+  font-size: 11pt;
+}
+.lineage-tree .node.landrace {
+  background: var(--earth-pale);
+  color: var(--earth-deep);
+  border-color: var(--earth);
+  font-size: 8.5pt;
+}
+.lineage-tree .branch {
+  width: .6pt; height: 4mm; background: var(--leaf);
+}
+.lineage-tree .branch-row {
+  display: flex; gap: 6mm; justify-content: center;
+  position: relative; padding-top: 3mm;
+}
+.lineage-tree .branch-row::before {
+  content: ''; position: absolute; top: 0; height: 3mm;
+  border-left: .6pt solid var(--leaf);
+}
+
+/* ── Glossary — 2 colonnes ──────────────────────────────────── */
+.gloss {
+  column-count: 2;
+  column-gap: 8mm;
+  margin-top: 2mm;
+  font-size: 7.5pt;
+}
+.gloss dt {
+  font-family: var(--font-display); font-weight: 500; font-style: italic;
+  color: var(--leaf-deep);
+  margin-top: 1.5mm;
+  padding-top: .8mm;
+  border-top: .4pt solid var(--line);
+  break-inside: avoid;
+}
+.gloss dt:first-child { margin-top: 0; }
+.gloss dd {
+  color: var(--ink-soft); padding: .3mm 0; line-height: 1.35;
+  margin-bottom: .8mm;
+  break-inside: avoid;
+}
+
+/* ── Recipe/protocol blocks ────────────────────────────────── */
+.recipe {
+  border-left: 2pt solid var(--leaf);
+  padding: 1mm 0 1mm 3.5mm;
+  margin-bottom: 2.2mm;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.recipe.compact {
+  padding: .5mm 0 .5mm 3mm;
+  margin-bottom: 1.4mm;
+}
+.recipe.ember { border-left-color: var(--ember); }
+.recipe-title {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: 10.5pt; color: var(--ink); line-height: 1.1;
+  margin-bottom: .3mm; letter-spacing: -.01em;
+}
+.recipe-title .src {
+  font-family: var(--font-body); font-style: normal; font-weight: 400;
+  font-size: 6.5pt; color: var(--leaf); letter-spacing: .1em; text-transform: uppercase;
+  margin-left: 2mm; vertical-align: middle;
+}
+.recipe-essence {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 8pt; color: var(--leaf-deep);
+  margin-bottom: .8mm; line-height: 1.25;
+}
+.recipe-params {
+  font-size: 7.5pt; line-height: 1.4; color: var(--ink-soft);
+  margin-bottom: .5mm;
+}
+.recipe-params strong { font-weight: 500; color: var(--ink); }
+.recipe-params .lbl {
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 6.5pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--leaf-deep); margin-right: 1.5mm;
+}
+
+/* ── Climate bar chart (mois Belgique) ─────────────────────── */
+.climate-bar {
+  display: grid;
+  grid-template-columns: 16mm repeat(12, 1fr);
+  gap: .4mm;
+  font-size: 6.5pt;
+  margin: 2mm 0;
+  align-items: center;
+}
+.climate-bar .label {
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 6.5pt; letter-spacing: .08em; text-transform: uppercase;
+  color: var(--leaf-deep);
+}
+.climate-bar .cell {
+  padding: 1mm .3mm;
+  text-align: center;
+  font-family: var(--font-display); font-weight: 400;
+  color: var(--ink-soft);
+  border-radius: .8mm;
+  line-height: 1;
+}
+
+/* ── Trichome zoom card ────────────────────────────────────── */
+.trichome-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3mm;
+  margin-top: 2mm;
+}
+.tri-stage {
+  border: .6pt solid var(--line-strong);
+  border-radius: 2mm;
+  padding: 2.5mm;
+  background: var(--bg);
+  text-align: center;
+  page-break-inside: avoid;
+}
+.tri-stage .tri-svg { width: 22mm; height: 22mm; margin: 0 auto 1.5mm; }
+.tri-stage .tri-name {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: 10pt; color: var(--ink);
+}
+.tri-stage .tri-state {
+  font-family: var(--font-body); font-weight: 600; font-size: 6.5pt;
+  letter-spacing: .15em; text-transform: uppercase;
+  color: var(--leaf-deep); margin: .8mm 0;
+}
+.tri-stage .tri-desc {
+  font-size: 7.5pt; line-height: 1.35; color: var(--ink-soft);
+}
+.tri-stage.too-early .tri-state { color: var(--sky-deep); }
+.tri-stage.perfect .tri-state { color: var(--ember-deep); }
+.tri-stage.too-late .tri-state { color: var(--earth-deep); }
+
+/* ── Specific tweaks ───────────────────────────────────────── */
+p { orphans: 2; widows: 2; }
+.mini { font-size: 8pt; color: var(--ink-faint); }
+.italic { font-style: italic; }
+.center { text-align: center; }
+.serif { font-family: var(--font-display); }
+.right { text-align: right; }
+
+/* Couleurs utilitaires */
+.c-leaf { color: var(--leaf-deep); }
+.c-ember { color: var(--ember-deep); }
+.c-earth { color: var(--earth-deep); }
+.c-sky { color: var(--sky-deep); }
+.c-crit { color: var(--crit); }
+
+.farewell {
+  margin-top: 6mm;
+  padding: 5mm 5mm 0 5mm;
+  border-top: .8pt solid var(--leaf);
+}
+.farewell .sign {
+  margin-top: 5mm;
+  font-family: var(--font-display); font-style: italic; font-weight: 400;
+  font-size: 14pt; color: var(--leaf-deep);
+}
+.farewell p {
+  font-size: 9pt; color: var(--ink-soft); margin-bottom: 2.5mm; max-width: 36em;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  line-height: 1.45;
+}
+
+/* Drop-cap pour ouvertures de chapitres */
+.dropcap::first-letter {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 38pt; line-height: .85;
+  float: left; margin: 1mm 2mm 0 0;
+  color: var(--leaf-deep);
+}
+
+/* Sources / footnotes */
+.sources-block {
+  margin-top: 4mm;
+  padding-top: 2mm;
+  border-top: .4pt solid var(--line);
+  font-size: 6.5pt; line-height: 1.4;
+  color: var(--ink-faint);
+  column-count: 2; column-gap: 6mm;
+}
+.sources-block p { margin-bottom: 1mm; break-inside: avoid; }
+.sources-block strong { color: var(--ink-soft); font-weight: 500; }
