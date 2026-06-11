@@ -1,0 +1,488 @@
+/* ──────────────────────────────────────────────────────────────
+   Encoder CP5 — guide d'encodage des Performances utilisateur
+   Mode d'emploi imprimable A4 portrait, recto seul.
+   ────────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;600&display=swap');
+
+:root {
+  --bg:       #ffffff;
+  --bg-tone:  #f5efe6;
+  --bg-warm:  #fdf8ee;
+  --ink:      #120f0c;
+  --ink-soft: #241f19;
+  --ink-muted:#4a4038;
+  --ink-faint:#6d6158;
+  --ember:        #c56a2a;
+  --ember-deep:   #7a3a14;
+  --ember-bright: #e08a44;
+  --ember-pale:   #fde4c0;
+  --crit: #b3261e;
+  --crit-bg: #fde7e3;
+  --moss: #5a7360;
+  --line:        rgba(18,15,12,.14);
+  --line-strong: rgba(18,15,12,.28);
+
+  --led-bg: #1a0d08;
+  --led-fg: #d63a1a;
+
+  --font-display: 'Fraunces', 'Cormorant Garamond', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Consolas', monospace;
+}
+
+@page { size: A4 portrait; margin: 0; }
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 9.5pt;
+  line-height: 1.42;
+  font-weight: 300;
+  letter-spacing: -.005em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+  color-adjust: exact;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+.page {
+  width: 210mm; height: 297mm;
+  position: relative; overflow: hidden;
+  page-break-after: always;
+  padding: 16mm 16mm 14mm 16mm;
+  background: var(--bg);
+}
+.page:last-of-type { page-break-after: auto; }
+
+.foot {
+  position: absolute;
+  bottom: 7mm; left: 16mm; right: 16mm;
+  display: flex; justify-content: space-between; align-items: baseline;
+  font-size: 7pt; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ink-faint);
+}
+.foot .num {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 10pt; letter-spacing: 0; text-transform: none; color: var(--ember);
+}
+.foot .brand {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 8.5pt; letter-spacing: .03em; text-transform: none; color: var(--ink-faint);
+}
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: .55em;
+  font-family: var(--font-body); font-size: 7.5pt; font-weight: 500;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ember-deep);
+  margin-bottom: 5mm;
+}
+.eyebrow::before {
+  content:''; display:inline-block; width: 22pt; height: 1px;
+  background: currentColor; opacity: .55;
+}
+
+h1.section-title {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 24pt; line-height: 1.05; letter-spacing: -.025em;
+  color: var(--ink); margin-bottom: 2.5mm;
+  max-width: 24ch;
+}
+h1.section-title em {
+  font-style: italic; font-weight: 300; color: var(--ember-deep);
+}
+
+h2.sub-title {
+  font-family: var(--font-display); font-weight: 400; font-style: italic;
+  font-size: 12pt; color: var(--ember-deep);
+  margin-top: 3.5mm; margin-bottom: 1.5mm; letter-spacing: -.01em;
+}
+h3.mini-title {
+  font-family: var(--font-display); font-weight: 500; font-style: italic;
+  font-size: 10.5pt; color: var(--ink-soft);
+  margin-top: 2.5mm; margin-bottom: 1mm;
+}
+
+p.lead {
+  font-family: var(--font-display); font-weight: 300;
+  font-size: 11pt; line-height: 1.3; letter-spacing: -.01em;
+  color: var(--ink-soft); max-width: 34em;
+  margin-bottom: 4mm;
+}
+
+.body { color: var(--ink-soft); max-width: 40em; }
+.body p { margin-bottom: 2mm; }
+.body p:last-child { margin-bottom: 0; }
+.body strong { font-weight: 500; color: var(--ink); }
+.body ul, .body ol { padding-left: 5mm; margin-bottom: 2mm; }
+.body li { margin-bottom: .8mm; font-size: 9pt; line-height: 1.4; }
+
+.pill {
+  display: inline-block;
+  padding: 1pt 5pt;
+  border: .8pt solid var(--line-strong);
+  border-radius: 999px;
+  font-family: var(--font-body); font-weight: 500; font-size: 7.5pt;
+  letter-spacing: .08em; text-transform: uppercase;
+  color: var(--ink); background: var(--bg-warm);
+  white-space: nowrap;
+}
+
+.kbd {
+  display: inline-block;
+  padding: 0 4pt;
+  border: .6pt solid var(--ink-soft);
+  border-bottom-width: 1.5pt;
+  border-radius: 1.5pt;
+  font-family: var(--font-mono); font-weight: 600; font-size: 7.2pt;
+  letter-spacing: 0;
+  color: var(--ink); background: #f8f5f0;
+  white-space: nowrap;
+  vertical-align: 1px;
+}
+
+/* Callouts */
+.callout {
+  border: .8pt solid var(--line-strong);
+  border-left: 3pt solid var(--ember);
+  background: var(--bg-warm);
+  padding: 2.5mm 3.5mm;
+  margin-top: 2.5mm;
+  border-radius: 1.5mm;
+}
+.callout .callout-label {
+  font-family: var(--font-body); font-size: 7pt; font-weight: 600;
+  letter-spacing: .2em; text-transform: uppercase;
+  color: var(--ember-deep); margin-bottom: 1mm;
+}
+.callout p { color: var(--ink-soft); font-size: 8.5pt; line-height: 1.4; margin-bottom: 1mm; }
+.callout p:last-child { margin-bottom: 0; }
+.callout strong { color: var(--ink); font-weight: 500; }
+
+.warn {
+  border: 1pt dashed var(--ember);
+  background: rgba(253, 228, 192, .35);
+  padding: 2.5mm 3.5mm;
+  margin-top: 2.5mm;
+  border-radius: 1.5mm;
+}
+.warn .callout-label {
+  font-family: var(--font-body); font-size: 7pt; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--ember-deep); margin-bottom: 1mm;
+}
+.warn p { color: var(--ink-soft); font-size: 8.5pt; line-height: 1.4; margin-bottom: 1mm; }
+.warn p:last-child { margin-bottom: 0; }
+.warn strong { color: var(--ink); font-weight: 600; }
+
+.crit {
+  border: 1.4pt solid var(--crit);
+  background: var(--crit-bg);
+  padding: 3mm 4mm;
+  margin-top: 2.5mm;
+  border-radius: 1.5mm;
+}
+.crit .callout-label {
+  font-family: var(--font-body); font-size: 7.5pt; font-weight: 700;
+  letter-spacing: .22em; text-transform: uppercase;
+  color: var(--crit); margin-bottom: 1mm;
+}
+.crit p { color: var(--ink-soft); font-size: 8.5pt; line-height: 1.4; margin-bottom: 1mm; }
+.crit p:last-child { margin-bottom: 0; }
+.crit strong { color: var(--crit); font-weight: 600; }
+
+/* Tables */
+table.tbl {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+  margin: 2mm 0 2.5mm 0;
+}
+table.tbl th, table.tbl td {
+  border-bottom: .4pt solid var(--line);
+  padding: 1mm 2mm 1mm 0;
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.3;
+  color: var(--ink-soft);
+}
+table.tbl th {
+  border-bottom: .8pt solid var(--line-strong);
+  font-family: var(--font-body); font-weight: 600;
+  font-size: 7pt; letter-spacing: .12em; text-transform: uppercase;
+  color: var(--ember-deep);
+  padding-top: 0;
+}
+table.tbl td.num, table.tbl th.num { font-family: var(--font-display); font-weight: 500; color: var(--ember); }
+table.tbl tr:last-child td { border-bottom: none; }
+
+/* ── COVER ─────────────────────────────────────────────────── */
+.cover {
+  display: flex; flex-direction: column; justify-content: space-between;
+  padding: 24mm 20mm 18mm 20mm;
+}
+.cover-top { display: flex; justify-content: space-between; align-items: flex-start; }
+.cover-mark {
+  width: 16mm; height: 16mm; border-radius: 999px;
+  border: .8pt solid var(--line-strong);
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--ember-deep);
+}
+.cover-mark svg { width: 9mm; height: 9mm; }
+.cover-meta {
+  text-align: right;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  color: var(--ink-faint); font-size: 9pt; line-height: 1.4;
+}
+.cover-meta .brand-line {
+  color: var(--ember-deep); font-style: normal;
+  font-family: var(--font-body); font-weight: 500; font-size: 7pt;
+  letter-spacing: .22em; text-transform: uppercase; margin-bottom: 1.5mm;
+}
+.cover-title {
+  font-family: var(--font-display); font-weight: 300;
+  line-height: .92; letter-spacing: -.025em;
+  color: var(--ink); margin-top: -2mm;
+}
+.cover-title .small {
+  display: block;
+  font-family: var(--font-display);
+  font-style: italic; font-weight: 300;
+  font-size: 38pt; line-height: 1; letter-spacing: -.02em;
+  color: var(--ink-soft);
+  margin-bottom: 3mm;
+}
+.cover-title .name {
+  display: block;
+  font-style: italic; font-weight: 300;
+  font-size: 88pt; line-height: .9; letter-spacing: -.04em;
+  background: linear-gradient(95deg, var(--ember-deep) 0%, var(--ember) 50%, var(--ember-bright) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.cover-sub {
+  font-family: var(--font-display); font-weight: 300; font-style: italic;
+  font-size: 15pt; line-height: 1.32; letter-spacing: -.01em;
+  color: var(--ink-soft); margin-top: 6mm; max-width: 26em;
+}
+.cover-menu {
+  text-align: center;
+  border-top: .6pt solid var(--line);
+  border-bottom: .6pt solid var(--line);
+  padding: 5mm 0;
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 11pt; line-height: 1.65;
+  color: var(--ink-soft);
+}
+.cover-menu .dot { color: var(--ember); margin: 0 .4em; }
+.cover-bottom {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  font-family: var(--font-body); font-weight: 500; font-size: 7pt;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ink-faint);
+}
+.cover-bottom .meta-italic {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 9pt; letter-spacing: 0; text-transform: none;
+  color: var(--ink-faint);
+}
+
+/* ── ENCODING RECIPE BLOCK ─────────────────────────────────── */
+.enc-recipe {
+  border: .6pt solid var(--line-strong);
+  border-radius: 2mm;
+  padding: 2.5mm 3mm 2.5mm 3mm;
+  margin-bottom: 3mm;
+  page-break-inside: avoid;
+  break-inside: avoid;
+  background: var(--bg);
+}
+.enc-recipe-head {
+  display: flex; justify-content: space-between; align-items: baseline;
+  border-bottom: .6pt solid var(--ember);
+  padding-bottom: 1mm;
+  margin-bottom: 1.5mm;
+  gap: 3mm;
+}
+.enc-recipe-name {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: 11pt; color: var(--ink); letter-spacing: -.01em;
+  line-height: 1.15;
+}
+.enc-recipe-name .essence {
+  font-family: var(--font-body); font-style: normal; font-weight: 400;
+  font-size: 7.5pt; color: var(--ink-muted);
+  display: block;
+  letter-spacing: 0;
+  text-transform: none;
+  margin-top: .3mm;
+}
+.enc-recipe-slot {
+  font-family: var(--font-mono); font-weight: 600;
+  font-size: 8pt; letter-spacing: .04em;
+  color: var(--ember-deep);
+  background: var(--ember-pale);
+  padding: 1pt 5pt;
+  border-radius: 2pt;
+  white-space: nowrap;
+}
+.enc-steps {
+  list-style: none;
+  counter-reset: encstep;
+  margin: 0;
+  padding: 0;
+}
+.enc-steps li {
+  counter-increment: encstep;
+  padding-left: 6mm;
+  margin-bottom: 1mm;
+  position: relative;
+  font-size: 8pt;
+  line-height: 1.4;
+  color: var(--ink-soft);
+}
+.enc-steps li::before {
+  content: counter(encstep);
+  position: absolute;
+  left: 0;
+  top: -1pt;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  color: var(--ember);
+  font-size: 10pt;
+  width: 5mm;
+  text-align: left;
+}
+.enc-steps li strong {
+  color: var(--ink); font-weight: 600;
+}
+.enc-steps .scr {
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  color: var(--ember-deep);
+  background: var(--led-bg);
+  padding: 0 4pt;
+  border-radius: 1.5pt;
+  margin-left: 1mm;
+  white-space: nowrap;
+}
+.enc-steps .scr-r {
+  font-family: var(--font-mono);
+  font-size: 7pt;
+  color: var(--led-fg);
+  background: var(--led-bg);
+  padding: 0 4pt;
+  border-radius: 1.5pt;
+  margin-left: 1mm;
+  white-space: nowrap;
+}
+.enc-steps .v {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 7.8pt;
+  color: var(--crit);
+  background: #fff2ed;
+  padding: 0 3pt;
+  border-radius: 1.5pt;
+}
+
+/* Block "procédure universelle" */
+.universal {
+  background: var(--bg-warm);
+  border: 1pt solid var(--ember);
+  border-radius: 2mm;
+  padding: 4mm 5mm;
+  margin-bottom: 4mm;
+}
+.universal h3 {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: 11pt; color: var(--ember-deep);
+  margin-bottom: 2mm;
+}
+.universal ol {
+  list-style: decimal;
+  padding-left: 5mm;
+  font-size: 8.5pt;
+  line-height: 1.5;
+  color: var(--ink-soft);
+}
+.universal ol li { margin-bottom: 1mm; }
+.universal strong { color: var(--ink); font-weight: 500; }
+
+/* Plan d'attribution USR */
+.usr-plan {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3mm 6mm;
+  margin-top: 3mm;
+}
+.usr-bank {
+  border-top: 1pt solid var(--ember);
+  padding-top: 1.5mm;
+}
+.usr-bank-name {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-size: 10pt; color: var(--ember-deep);
+  margin-bottom: 1mm;
+}
+.usr-bank-slots {
+  font-family: var(--font-mono);
+  font-size: 7.5pt;
+  line-height: 1.55;
+  color: var(--ink-soft);
+}
+.usr-bank-slots .slot {
+  display: inline-block;
+  font-weight: 600;
+  color: var(--ember-deep);
+  width: 12mm;
+}
+
+/* Cheatsheet */
+.cheat {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2mm 6mm;
+  margin-top: 2mm;
+}
+.cheat .entry {
+  display: grid;
+  grid-template-columns: 38mm 1fr;
+  gap: 2mm;
+  padding: 1mm 0;
+  border-bottom: .4pt solid var(--line);
+  font-size: 7.8pt;
+  line-height: 1.35;
+}
+.cheat .entry .combo {
+  font-family: var(--font-mono); font-weight: 600;
+  color: var(--ember-deep);
+}
+.cheat .entry .desc {
+  color: var(--ink-soft);
+}
+
+/* Misc */
+p { orphans: 2; widows: 2; }
+.center { text-align: center; }
+.mini { font-size: 8pt; color: var(--ink-faint); }
+.farewell {
+  margin-top: 6mm;
+  padding: 5mm 5mm 0 5mm;
+  border-top: .8pt solid var(--ember);
+}
+.farewell p {
+  font-family: var(--font-display); font-style: italic; font-weight: 300;
+  font-size: 10pt; line-height: 1.45;
+  color: var(--ink-soft); margin-bottom: 2mm; max-width: 36em;
+}
+.farewell .sign {
+  margin-top: 4mm;
+  font-family: var(--font-display); font-style: italic; font-weight: 400;
+  font-size: 14pt; color: var(--ember-deep);
+}

@@ -1,0 +1,1852 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Encoder le CP5 — Guide d'encodage Maurisson</title>
+<link rel="stylesheet" href="style.css" />
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-56YBF3Q9FN"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-56YBF3Q9FN', { cookie_domain: '.maurisson.com', cookie_flags: 'SameSite=None;Secure' });
+</script>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="house" viewBox="0 0 32 32">
+      <g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M6 15 16 7l10 8"/>
+        <path d="M8 13.5V25h16V13.5"/>
+        <path d="M13 25v-7h6v7"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 1 — COUVERTURE
+     ════════════════════════════════════════════════════════════ -->
+<section class="page cover">
+  <header class="cover-top">
+    <span class="cover-mark" aria-hidden="true">
+      <svg><use href="#house"/></svg>
+    </span>
+    <div class="cover-meta">
+      <div class="brand-line">Compagnon du guide ultime</div>
+      Yamaha CP5 &middot; Stage Piano<br/>
+      <em>Édition Maurisson</em>
+    </div>
+  </header>
+
+  <div>
+    <h1 class="cover-title">
+      <span class="small">Encoder</span>
+      <span class="name">le CP5</span>
+    </h1>
+    <p class="cover-sub">Procédure étape par étape pour transformer cinquante recettes en cinquante Performances utilisateur.</p>
+  </div>
+
+  <div class="cover-menu">
+    Procédure universelle <span class="dot">·</span> Plan d'attribution USR <span class="dot">·</span> Cheatsheet navigation <br/>
+    Pianos <span class="dot">·</span> Rhodes <span class="dot">·</span> Wurlitzer <span class="dot">·</span> DX <span class="dot">·</span> Orgues <span class="dot">·</span> Clavinet <br/>
+    Mallets, leads, pads, brass <span class="dot">·</span> Splits &amp; layers <span class="dot">·</span> Morceaux iconiques
+  </div>
+
+  <div class="cover-bottom">
+    <span>Herve, Belgique</span>
+    <span class="meta-italic">Le compagnon pratique du guide ultime — touche par touche</span>
+    <span>Édition I</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 2 — MODE D'EMPLOI DE CE GUIDE
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Avant de commencer</span>
+  <h1 class="section-title">Comment lire ce guide. <em>Une recette, une procédure, un slot USR.</em></h1>
+  <p class="lead">Ce livret prend chaque recette du guide ultime et la transforme en suite d'étapes touchables. Tu suis les étapes dans l'ordre, tu encodes une Performance, tu passes à la suivante. À la fin tu as 50 sons prêts à jouer en live.</p>
+
+  <h2 class="sub-title">Convention de notation</h2>
+  <table class="tbl">
+    <tbody>
+      <tr><td style="width: 50mm;"><span class="kbd">VOICE</span></td><td>Touche physique du panneau du CP5 (à presser ou maintenir selon le contexte).</td></tr>
+      <tr><td><span class="pill">Hammer</span></td><td>Nom d'un paramètre affiché à l'écran.</td></tr>
+      <tr><td><span class="v">Hard 1</span></td><td>Valeur cible à régler.</td></tr>
+      <tr><td><span class="scr-r">PRE1:A01</span></td><td>Texte affiché sur l'écran LCD du CP5 (à reconnaître).</td></tr>
+      <tr><td><strong>maintenir ≥ 1 s</strong></td><td>Appui long sur la touche, jusqu'à ce qu'un voyant clignote ou que l'écran change.</td></tr>
+      <tr><td><strong>Page 1, Page 2…</strong></td><td>Touches numériques <span class="kbd">1</span> à <span class="kbd">10</span> sur le pavé, qui jouent le rôle de pages dans les écrans d'édition.</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sub-title">Le rituel répété pour chaque recette</h2>
+  <div class="body">
+    <p>Chaque recette commence par charger une Performance neutre (souvent <span class="scr-r">PRE1:A01 CFGrand</span>) pour partir propre. Tu sélectionnes ensuite la partie à éditer (en maintenant <span class="kbd">LEFT1</span> ou <span class="kbd">RIGHT1</span> pendant ≥ 1 s), tu choisis la voix, tu règles le préampli, l'effet de modulation, l'ampli de puissance et le compresseur, puis la velocity sensitivity, puis tu sauvegardes (STORE) dans un slot USR. Ce rituel est détaillé en page suivante — c'est la <strong>procédure universelle</strong> qui sous-tend toutes les recettes.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Avant de commencer — sauvegarde ta mémoire actuelle</div>
+    <p>Si ton CP5 contient déjà des Performances utilisateur que tu veux garder, fais d'abord un backup : branche une clé USB → <span class="kbd">FILE</span> → page 1 → Potar 1 <strong>Save</strong> → type <span class="v">All</span> (.C5A) → <span class="kbd">ENTER</span>. Tu auras le filet de sécurité au cas où.</p>
+  </div>
+
+  <div class="warn">
+    <div class="callout-label">⚠ Pendant <span class="scr-r">Please keep power on...</span></div>
+    <p>NE JAMAIS éteindre le CP5 pendant que cette mention est affichée. Tu corromprais l'intégralité de la mémoire utilisateur. Attends toujours <span class="scr-r">Completed</span>.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">2</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 3 — LA PROCÉDURE UNIVERSELLE
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 1 &middot; Procédure universelle</span>
+  <h1 class="section-title">Les neuf étapes communes <em>à toute recette</em>.</h1>
+  <p class="lead">Toutes les recettes du guide ultime sont une variation de ce squelette. Apprends-le par cœur — ensuite chaque recette se résume à régler les paramètres aux valeurs indiquées.</p>
+
+  <div class="universal">
+    <h3>Le squelette en neuf temps</h3>
+    <ol>
+      <li><strong>Charger Performance neutre.</strong> <span class="kbd">PRE</span> 1× (ou 2×/3× pour défiler PRE1/2/3) → touche groupe <span class="kbd">A</span> → touche numérique <span class="kbd">1</span>. L'écran affiche <span class="scr-r">PRE1:A01 CFGrand</span>. C'est ton point de départ propre.</li>
+      <li><strong>Sélectionner la partie à éditer.</strong> Maintenir <span class="kbd">LEFT1</span> (ou <span class="kbd">LEFT2</span> / <span class="kbd">RIGHT1</span> / <span class="kbd">RIGHT2</span>) ≥ 1 s. Le voyant clignote — la partie est sélectionnée pour édition.</li>
+      <li><strong>Choisir la voix.</strong> Touche <span class="kbd">VOICE</span> → touche numérique <span class="kbd">1</span> à <span class="kbd">10</span> (catégorie : 1=PIANO, 2=E.PIANO, 3=Keyboard, etc.) → tourner Potar 2 pour défiler les voix de la catégorie jusqu'à ton choix.</li>
+      <li><strong>Régler le préampli.</strong> Maintenir <span class="kbd">PRE-AMP</span> ≥ 1 s → Page <span class="kbd">1</span>, <span class="kbd">2</span>, etc. selon les paramètres. Les potars 1/2/3 contrôlent les paramètres affichés sur la ligne du bas. Inactif pour voix non PIANO/E.PIANO.</li>
+      <li><strong>Régler le Mod-FX (effet de modulation).</strong> Maintenir <span class="kbd">MOD-FX</span> ≥ 1 s → Potar 1 = type d'effet. Puis pages 1, 2, 3 pour Speed, Depth, Mix, etc.</li>
+      <li><strong>Régler le Power-Amp / Compresseur 376.</strong> Maintenir <span class="kbd">PWR-AMP</span> ≥ 1 s → Potar 1 = modèle d'ampli ou Comp376. Puis pages pour Drive, Output.</li>
+      <li><strong>Régler la velocity sensitivity.</strong> Pendant que la partie est encore sélectionnée, naviguer vers la page Velocity (variable selon firmware) → Potar 1 <strong>Depth</strong>, Potar 2 <strong>Offset</strong>. <strong>Règle d'or : Depth + Offset = 128</strong>.</li>
+      <li><strong>Réglages Common (volume, pan, split, reverb send).</strong> Maintenir <span class="kbd">COMMON</span> ≥ 1 s → pages 1-6 selon paramètre.</li>
+      <li><strong>STORE.</strong> Touche <span class="kbd">STORE/ASSIGN</span> → Potar 1 = <strong>USR1/2/3</strong>, Potar 2 = <strong>groupe A/B/C/D</strong>, Potar 3 = <strong>numéro 1-10</strong> → <span class="kbd">ENTER</span> → <span class="kbd">ENTER</span> (confirmation). Attendre <span class="scr-r">Completed</span>.</li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Astuce — sauter direct à un bloc d'édition</div>
+    <p>Au lieu de "Maintenir <span class="kbd">PRE-AMP</span> ≥ 1 s", tu peux faire <strong>maintenir <span class="kbd">EXIT</span> + presser <span class="kbd">PRE-AMP</span></strong> — c'est immédiat. Idem pour MOD-FX, PWR-AMP, REVERB, VOICE. Gain de temps réel en encodage répété.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Renommer la Performance après STORE</div>
+    <p>Une fois la Performance stockée, tu peux la renommer : <span class="kbd">COMMON</span> page <span class="kbd">1</span> → Potar 1 = curseur, Potar 2 = caractère. 10 caractères max. Refais <span class="kbd">STORE</span> + <span class="kbd">ENTER</span> + <span class="kbd">ENTER</span> dans le même slot pour figer le nom.</p>
+  </div>
+
+  <div class="warn">
+    <div class="callout-label">⚠ Vérifier la destination STORE</div>
+    <p>STORE propose souvent USR1:A01 par défaut, pas ton slot cible. Vérifie les Potars 1, 2, 3 <strong>avant</strong> le premier ENTER, sinon tu écrases USR1:A01.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">3</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 4 — PLAN D'ATTRIBUTION USR
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 1 &middot; Plan d'attribution</span>
+  <h1 class="section-title">Cinquante slots, <em>cinq banques</em>.</h1>
+  <p class="lead">Voici où placer chaque recette dans la mémoire utilisateur. Tu peux dévier si tu préfères, mais cette répartition suit une logique de "défilement par groupe" pour le live — chaque groupe est une famille sonore.</p>
+
+  <div class="usr-plan">
+
+    <div class="usr-bank">
+      <div class="usr-bank-name">USR1:A &middot; Pianos acoustiques</div>
+      <div class="usr-bank-slots">
+        <div><span class="slot">A01</span> CFGrandRk &middot; <em>CF Grand Rock</em></div>
+        <div><span class="slot">A02</span> S6JazBall &middot; <em>S6 Jazz Ballade</em></div>
+        <div><span class="slot">A03</span> CFGrandPop &middot; <em>CF Pop Ballade</em></div>
+        <div><span class="slot">A04</span> CutoffTrk &middot; <em>Cutoff Trick</em></div>
+        <div><span class="slot">A05</span> CFWorship &middot; <em>CF Worship Modern</em></div>
+        <div><span class="slot">A06</span> S6Cockail &middot; <em>S6 Cocktail Bar</em></div>
+        <div><span class="slot">A07</span> CFBoogie &middot; <em>CF Boogie Woogie</em></div>
+        <div><span class="slot">A08</span> S6Imperial &middot; <em>S6 Imperial + Strings</em></div>
+        <div><span class="slot">A09</span> <em>libre</em></div>
+        <div><span class="slot">A10</span> <em>libre</em></div>
+      </div>
+    </div>
+
+    <div class="usr-bank">
+      <div class="usr-bank-name">USR1:B &middot; Rhodes</div>
+      <div class="usr-bank-slots">
+        <div><span class="slot">B01</span> RdBaseLin &middot; <em>Baseline andi85</em></div>
+        <div><span class="slot">B02</span> 78RdFunk &middot; <em>78Rd II Funk</em></div>
+        <div><span class="slot">B03</span> 75RdFunky &middot; <em>75Rd Funky Bark</em></div>
+        <div><span class="slot">B04</span> 73RdSuit &middot; <em>73Rd Suitcase</em></div>
+        <div><span class="slot">B05</span> 71RdTine &middot; <em>71Rd Pure Tine</em></div>
+        <div><span class="slot">B06</span> 78+Dyno &middot; <em>78+Dyno Layer</em></div>
+        <div><span class="slot">B07</span> 73RdStel &middot; <em>73Rd Steely Dan</em></div>
+        <div><span class="slot">B08</span> DynoSoul &middot; <em>Dyno Néo-Soul</em></div>
+        <div><span class="slot">B09</span> 75RdSmth &middot; <em>75Rd Smooth Jazz</em></div>
+        <div><span class="slot">B10</span> <em>libre</em></div>
+      </div>
+    </div>
+
+    <div class="usr-bank">
+      <div class="usr-bank-name">USR1:C &middot; Wurlitzer + DX</div>
+      <div class="usr-bank-slots">
+        <div><span class="slot">C01</span> WurlyBrt &middot; <em>Wurly Bright</em></div>
+        <div><span class="slot">C02</span> WurlyWrm &middot; <em>Wurly Warm Ballade</em></div>
+        <div><span class="slot">C03</span> WurlyRck &middot; <em>Rock Wurli Stevie</em></div>
+        <div><span class="slot">C04</span> 69WrLng &middot; <em>69Wr Lounge</em></div>
+        <div><span class="slot">C05</span> 77WrRgg &middot; <em>77Wr Reggae Skank</em></div>
+        <div><span class="slot">C06</span> DXLgChor &middot; <em>DX Legend + Chorus</em></div>
+        <div><span class="slot">C07</span> DXFTSnth &middot; <em>DX FTine Synthwave</em></div>
+        <div><span class="slot">C08</span> DXMllwPd &middot; <em>DX Mellow Pad-Layer</em></div>
+        <div><span class="slot">C09</span> DXWoodyP &middot; <em>DX Woody Auto-Pan</em></div>
+        <div><span class="slot">C10</span> DX7+Rd &middot; <em>DX 7II + Rhodes Layer</em></div>
+      </div>
+    </div>
+
+    <div class="usr-bank">
+      <div class="usr-bank-name">USR1:D &middot; Orgues + Clavi + Spécial</div>
+      <div class="usr-bank-slots">
+        <div><span class="slot">D01</span> GospelOrg &middot; <em>Gospel Sunday</em></div>
+        <div><span class="slot">D02</span> JazzSmth &middot; <em>Jazz Smith Drawbars</em></div>
+        <div><span class="slot">D03</span> VintCRck &middot; <em>Vintage C Rock</em></div>
+        <div><span class="slot">D04</span> DrawRgg &middot; <em>DrawOrg Reggae</em></div>
+        <div><span class="slot">D05</span> PrcSoul &middot; <em>Pere.Organ Funk Soul</em></div>
+        <div><span class="slot">D06</span> ChurchOut &middot; <em>ChurchOrg Outro</em></div>
+        <div><span class="slot">D07</span> FnkClavi &middot; <em>Funky Clavi Wah</em></div>
+        <div><span class="slot">D08</span> PdlClvWh &middot; <em>Pedal Wah Clavi</em></div>
+        <div><span class="slot">D09</span> ClavPop &middot; <em>Clavi ST Pop</em></div>
+        <div><span class="slot">D10</span> Riders &middot; <em>Riders on the Storm</em></div>
+      </div>
+    </div>
+
+    <div class="usr-bank">
+      <div class="usr-bank-name">USR2:A &middot; Mallets / Leads / Pads / Brass</div>
+      <div class="usr-bank-slots">
+        <div><span class="slot">A01</span> VibTrem &middot; <em>Vibraphone Tremolo</em></div>
+        <div><span class="slot">A02</span> HardVbs &middot; <em>HardVibes Bop</em></div>
+        <div><span class="slot">A03</span> Marimba &middot; <em>Marimba Hall</em></div>
+        <div><span class="slot">A04</span> SawLead &middot; <em>Saw Lead Rock</em></div>
+        <div><span class="slot">A05</span> AnalogLd &middot; <em>AnalogLd Solo</em></div>
+        <div><span class="slot">A06</span> WireLd &middot; <em>Wire Lead Modern</em></div>
+        <div><span class="slot">A07</span> PnoStr &middot; <em>Piano + Slow Strings</em></div>
+        <div><span class="slot">A08</span> ChoirLyr &middot; <em>Choir Layer Worship</em></div>
+        <div><span class="slot">A09</span> BrassSec &middot; <em>Brass Section Live</em></div>
+        <div><span class="slot">A10</span> SaxSolo &middot; <em>Sax Solo</em></div>
+      </div>
+    </div>
+
+    <div class="usr-bank">
+      <div class="usr-bank-name">USR2:B &middot; Splits &amp; Morceaux iconiques</div>
+      <div class="usr-bank-slots">
+        <div><span class="slot">B01</span> GosplFul &middot; <em>Gospel Sunday Full (split)</em></div>
+        <div><span class="slot">B02</span> JzzTrio &middot; <em>Jazz Trio Solo (split)</em></div>
+        <div><span class="slot">B03</span> Worship4 &middot; <em>Worship 4-Layer</em></div>
+        <div><span class="slot">B04</span> Africa &middot; <em>Africa Toto (Kalimba)</em></div>
+        <div><span class="slot">B05</span> CP80Hold &middot; <em>CP80 Hold the Line</em></div>
+        <div><span class="slot">B06-10</span> <em>libres pour ajouts perso</em></div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Conseil setlist live</div>
+    <p>Une fois encodé, tu peux <strong>réorganiser les slots</strong> selon ton set. Le truc : reste dans la même banque + même groupe (par ex. USR1:A) pour ne presser qu'une seule touche numérique entre morceaux. Pour changer de famille, deux touches (groupe + numéro).</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">4</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 5 — CHEATSHEET NAVIGATION
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 1 &middot; Cheatsheet navigation</span>
+  <h1 class="section-title">Les raccourcis qui font gagner <em>des heures d'encodage</em>.</h1>
+  <p class="lead">Pendant l'encodage, tu navigues constamment entre blocs et pages. Ces raccourcis te permettent de passer d'un endroit à un autre sans la séquence longue habituelle.</p>
+
+  <div class="cheat">
+
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">VOICE</span></div>
+      <div class="desc">Saut direct à l'écran de sélection de voix de la partie active</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">PRE-AMP</span></div>
+      <div class="desc">Saut direct à l'édition Pre-Amp</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">MOD-FX</span></div>
+      <div class="desc">Saut direct à l'édition Mod-FX</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">PWR-AMP</span></div>
+      <div class="desc">Saut direct à l'édition Power-Amp / Comp376</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">REVERB</span></div>
+      <div class="desc">Saut direct à l'édition Reverb commune</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">COMMON</span></div>
+      <div class="desc">Saut direct à l'écran Common (split, pan, volume)</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">◄ PAGE</span></div>
+      <div class="desc">Passer à la partie précédente (R2→R1→L2→L1)</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">PAGE ►</span></div>
+      <div class="desc">Passer à la partie suivante (L1→L2→R1→R2)</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">PRE</span></div>
+      <div class="desc">Retour direct à PRE1:A01</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">EXIT</span>+<span class="kbd">USER</span></div>
+      <div class="desc">Retour direct à USR1:A01</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">UTILITY</span>+<span class="kbd">◄ PAGE</span></div>
+      <div class="desc">Baisser luminosité écran</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">UTILITY</span>+<span class="kbd">PAGE ►</span></div>
+      <div class="desc">Monter luminosité écran</div>
+    </div>
+    <div class="entry">
+      <div class="combo">Touche numérique <span class="kbd">1</span>-<span class="kbd">10</span></div>
+      <div class="desc">Saut direct à la page correspondante (dans un écran d'édition)</div>
+    </div>
+    <div class="entry">
+      <div class="combo">Touche <span class="kbd">A</span>-<span class="kbd">D</span></div>
+      <div class="desc">Saut direct aux pages 11-13 (A=11, B=12, C=13)</div>
+    </div>
+    <div class="entry">
+      <div class="combo">Appui sur Potar 1/2/3</div>
+      <div class="desc">Action contextuelle (confirme, ouvre sous-écran, ou saisie note)</div>
+    </div>
+    <div class="entry">
+      <div class="combo">Appui Potar + jouer note</div>
+      <div class="desc">Saisie directe de note (NoteLimit, Split Point, StartKey)</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">USER</span>+<span class="kbd">EXT</span> au boot</div>
+      <div class="desc">Affiche la version firmware (combo non-officielle)</div>
+    </div>
+    <div class="entry">
+      <div class="combo"><span class="kbd">STORE/ASSIGN</span> long</div>
+      <div class="desc">Ouvre l'écran d'assignation des potars 1/2/3 (par Performance)</div>
+    </div>
+
+  </div>
+
+  <div class="callout" style="margin-top: 4mm;">
+    <div class="callout-label">Notation utilisée dans les recettes</div>
+    <p>Quand une recette dit <strong>"MOD-FX → Page 2 → Potar 1 <span class="pill">Depth</span> = <span class="v">60</span>"</strong>, lis-le comme : maintiens MOD-FX 1 s (ou EXIT+MOD-FX), presse la touche numérique 2, le potar 1 ajuste le paramètre Depth jusqu'à 60.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">5</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 6 — PIANOS ACOUSTIQUES 1/2 (CF Rock + S6 Jazz)
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 2 &middot; Pianos acoustiques</span>
+  <h1 class="section-title">CF Grand &amp; S6 Grand <em>(1/2)</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">CF Grand Rock <span class="essence">Bright et présent dans un mix dense</span></div>
+      <div class="enc-recipe-slot">USR1:A01</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger Performance neutre : <span class="kbd">PRE</span> · <span class="kbd">A</span> · <span class="kbd">1</span> → <span class="scr-r">PRE1:A01 CFGrand</span></li>
+      <li>Maintenir <span class="kbd">LEFT1</span> ≥ 1 s (voyant clignote — partie sélectionnée)</li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">VOICE</span> → touche <span class="kbd">1</span> (PIANO) → Potar 2 → <span class="v">CF Grand</span></li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">PRE-AMP</span> → Page <span class="kbd">1</span> : Potar 1 <span class="pill">Hammer</span> = <span class="v">Hard 1</span></li>
+      <li>Page <span class="kbd">2</span> : Potar 1 <span class="pill">DampReso</span> = <span class="v">+6</span> · Potar 2 <span class="pill">Decay</span> = <span class="v">+4</span> · Potar 3 <span class="pill">KeyOff</span> = <span class="v">−4</span></li>
+      <li>Page Velocity (potar contextuel selon firmware) : <span class="pill">Depth</span> = <span class="v">70</span> · <span class="pill">Offset</span> = <span class="v">58</span></li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">MOD-FX</span> → Potar 1 <span class="pill">Type</span> = <span class="v">OFF</span> (les phasers font passer en mono sur les acoustiques)</li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">PWR-AMP</span> → Potar 1 <span class="pill">Type</span> = <span class="v">Comp376</span> · Page <span class="kbd">1</span> : Drive <span class="v">30</span> · Ratio <span class="v">4</span> · Attack <span class="v">5 ms</span> · Release <span class="v">100 ms</span></li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">REVERB</span> → Potar 1 <span class="pill">Type</span> = <span class="v">Stage1</span> · Page <span class="kbd">1</span> : <span class="pill">Time</span> = <span class="v">1.8 s</span> · <span class="pill">RevSend</span> = <span class="v">25</span></li>
+      <li>Master EQ (5 potars physiques droite panneau) : Low <span class="v">+2 dB</span> · Mid <span class="v">−1 dB</span> · Hi-Mid <span class="v">+2 dB</span></li>
+      <li><span class="kbd">STORE</span> → Potar 1 = <span class="v">USR1</span> · Potar 2 = <span class="v">A</span> · Potar 3 = <span class="v">1</span> → <span class="kbd">ENTER</span> → <span class="kbd">ENTER</span></li>
+      <li>Renommer (optionnel) : <span class="kbd">COMMON</span> page <span class="kbd">1</span> → "CFGrandRk" → STORE encore une fois</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">S6 Jazz Ballade <span class="essence">Feutré, intime, solo jazz</span></div>
+      <div class="enc-recipe-slot">USR1:A02</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger Performance neutre : <span class="kbd">PRE</span> · <span class="kbd">A</span> · <span class="kbd">1</span></li>
+      <li>Maintenir <span class="kbd">LEFT1</span> ≥ 1 s</li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">VOICE</span> → <span class="kbd">1</span> (PIANO) → Potar 2 → <span class="v">S6 Grand</span></li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">PRE-AMP</span> → Page <span class="kbd">1</span> : <span class="pill">Hammer</span> = <span class="v">Soft 1</span></li>
+      <li>Page <span class="kbd">2</span> : <span class="pill">DampReso</span> = <span class="v">+12</span> · <span class="pill">Decay</span> = <span class="v">0</span> · <span class="pill">Release</span> = <span class="v">+3</span> · <span class="pill">KeyOff</span> = <span class="v">+3</span></li>
+      <li>Page Velocity : <span class="pill">Depth</span> = <span class="v">60</span> · <span class="pill">Offset</span> = <span class="v">68</span> · Curve : <span class="v">Soft</span> (Utility)</li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">MOD-FX</span> → Potar 1 <span class="pill">Type</span> = <span class="v">OFF</span></li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">REVERB</span> → <span class="pill">Type</span> = <span class="v">RichHall</span> · Page <span class="kbd">1</span> : Time <span class="v">2.5 s</span> · RevSend <span class="v">35</span></li>
+      <li>Master EQ : Low <span class="v">+1 dB @ 80 Hz</span> · High <span class="v">+1 dB @ 8 kHz Q 0.5</span></li>
+      <li>(Vérif TunCrv) UTILITY → page Tuning : <span class="pill">TunCrv</span> = <span class="v">Equal</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1</span> / <span class="v">A</span> / <span class="v">2</span> → <span class="kbd">ENTER</span> ×2</li>
+      <li>Renommer : "S6JazBall"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">6</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 7 — PIANOS ACOUSTIQUES 2/2 (CF Pop + Cutoff Trick)
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 2 &middot; Pianos acoustiques (suite)</span>
+  <h1 class="section-title">CF Grand &amp; S6 Grand <em>(2/2)</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">CF Grand Pop Ballade <span class="essence">Doux mais tient dans un mix radio</span></div>
+      <div class="enc-recipe-slot">USR1:A03</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger <span class="kbd">PRE</span> · <span class="kbd">A</span> · <span class="kbd">1</span></li>
+      <li>Maintenir <span class="kbd">LEFT1</span> → <span class="kbd">EXIT</span>+<span class="kbd">VOICE</span> → <span class="kbd">1</span> → Potar 2 = <span class="v">CF Grand</span></li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">PRE-AMP</span> → Page <span class="kbd">1</span> : <span class="pill">Hammer</span> = <span class="v">Normal</span> · <span class="pill">DampReso</span> = <span class="v">+8</span> · <span class="pill">Decay</span> = <span class="v">+2</span></li>
+      <li>Velocity Default : <span class="pill">Depth</span> = <span class="v">64</span> · <span class="pill">Offset</span> = <span class="v">64</span></li>
+      <li>Activer LEFT2 pour le layer : presser <span class="kbd">LEFT2</span> (voyant haut-gauche s'allume)</li>
+      <li>Maintenir <span class="kbd">LEFT2</span> → <span class="kbd">EXIT</span>+<span class="kbd">VOICE</span> → <span class="kbd">7</span> (Strings) → Potar 2 = <span class="v">Slow Str 1</span></li>
+      <li>Pendant que LEFT2 sélectionnée : Page d'édition partie → <span class="pill">Volume</span> = <span class="v">55</span></li>
+      <li>FILTER/EG page : <span class="pill">Attack</span> = <span class="v">+30</span> · <span class="pill">Release</span> = <span class="v">70</span> (slow attack)</li>
+      <li>Master Comp : <span class="kbd">UTILITY</span> Master Comp → Mid <span class="pill">Threshold</span> <span class="v">−20 dB</span> · Ratio <span class="v">2.5</span> · Attack <span class="v">20 ms</span> · Release <span class="v">200 ms</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / A / 3</span> → <span class="kbd">ENTER</span> ×2 → Renommer "CFGrandPop"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Le Cutoff Trick <span class="essence">Bright sans EQ harsh — la transformation magique</span></div>
+      <div class="enc-recipe-slot">USR1:A04</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger <span class="kbd">PRE</span> · <span class="kbd">A</span> · <span class="kbd">1</span> (CFGrand)</li>
+      <li>Maintenir <span class="kbd">LEFT1</span> → <span class="kbd">EXIT</span>+<span class="kbd">VOICE</span> → <span class="kbd">1</span> → Potar 2 = <span class="v">CF Grand</span></li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">PRE-AMP</span> → Page <span class="kbd">1</span> : <span class="pill">Hammer</span> = <span class="v">Soft 2</span></li>
+      <li>Vérifier l'EQ intégré pré-amp : <span class="pill">Bass</span> = <span class="v">0</span> · <span class="pill">Middle</span> = <span class="v">0</span> · <span class="pill">Treble</span> = <span class="v">0</span> (tout à plat)</li>
+      <li>Aller dans le Voice block : <span class="kbd">EXIT</span>+<span class="kbd">VOICE</span> (en édition profonde) → Page Filter EG</li>
+      <li>Potar Filter <span class="pill">Cutoff</span> : augmenter de <span class="v">+20 à +40</span> selon ressenti (assigner à un knob 1/2/3 pour le moduler ensuite)</li>
+      <li>Assigner Cutoff à un knob : <span class="kbd">STORE/ASSIGN</span> maintenu ≥ 1 s → choisir Knob → cible <span class="pill">L1-Cutoff</span></li>
+      <li>Master EQ <strong>à plat</strong> : tous les 5 potars du panneau droit au centre 0</li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">REVERB</span> → <span class="pill">Type</span> = <span class="v">Stage1</span> · Time <span class="v">2.0 s</span> · RevSend <span class="v">25</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / A / 4</span> → <span class="kbd">ENTER</span> ×2 → Renommer "CutoffTrk"</li>
+    </ol>
+    <div class="callout" style="margin-top: 2mm; padding: 1.5mm 3mm;">
+      <p style="font-size: 7.5pt;"><strong>Test à l'oreille</strong> : joue un accord majeur. Si le son est étouffé, monte le Cutoff via le knob assigné. Si le son devient harsh, baisse-le. Trouve le sweet spot — c'est ça la magie.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">7</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 8 — PIANOS ACOUSTIQUES 3/2 (extras)
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 2 &middot; Pianos acoustiques (fin)</span>
+  <h1 class="section-title">Quatre extras — <em>Worship, Cocktail, Boogie, Imperial</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">CF Grand Worship Modern <span class="essence">Piano qui flotte derrière la voix</span></div>
+      <div class="enc-recipe-slot">USR1:A05</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger <span class="kbd">PRE</span> · <span class="kbd">A</span> · <span class="kbd">1</span> → Maintenir LEFT1 → VOICE → 1 → <span class="v">CF Grand</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Normal</span> · <span class="pill">DampReso</span> = <span class="v">+10</span> · <span class="pill">Decay</span> = <span class="v">+4</span></li>
+      <li>Activer LEFT2 → Maintenir LEFT2 → VOICE → <span class="kbd">6</span> (Pads/Choirs) → <span class="v">NeoCrystal</span> ou <span class="v">Soft Pad 1</span></li>
+      <li>LEFT2 réglages : Volume <span class="v">50</span> · FILTER/EG Attack <span class="v">+30</span> · Release <span class="v">70</span></li>
+      <li>Master EQ : Hi-Mid <span class="v">+2 dB @ 4 kHz Q 0.7</span></li>
+      <li>REVERB : <span class="v">Stage1</span> · Time <span class="v">3.0 s</span> · RevSend <span class="v">30</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / A / 5</span> → ENTER ×2 → "CFWorship"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">S6 Cocktail Bar <span class="essence">Feutré, ambiance lounge</span></div>
+      <div class="enc-recipe-slot">USR1:A06</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 1 → <span class="v">S6 Grand</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Soft 2</span> · <span class="pill">DampReso</span> = <span class="v">+8</span> · <span class="pill">Decay</span> = <span class="v">0</span> · <span class="pill">KeyOff</span> = <span class="v">+4</span></li>
+      <li>Velocity : <span class="v">Depth 58 / Offset 70</span> · Curve <span class="v">Soft</span></li>
+      <li>Master EQ : Low <span class="v">+1 shelf 80 Hz</span> · High <span class="v">+2 shelf 12 kHz</span></li>
+      <li>REVERB : <span class="v">WoodRoom</span> · Time <span class="v">2.0 s</span> · RevSend <span class="v">28</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / A / 6</span> → "S6Cocktail"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">CF Boogie Woogie <span class="essence">Chaque touche cogne</span></div>
+      <div class="enc-recipe-slot">USR1:A07</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 1 → <span class="v">CF Grand</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 2</span> · <span class="pill">DampReso</span> = <span class="v">+4</span> · <span class="pill">Decay</span> = <span class="v">+2</span> · <span class="pill">KeyOff</span> = <span class="v">−6</span></li>
+      <li>Velocity : <span class="v">Depth 85 / Offset 43</span> · Curve <span class="v">Hard</span></li>
+      <li>Master EQ : Low <span class="v">+3 @ 60 Hz</span> · Mid <span class="v">−2 @ 700 Hz</span> · Hi-Mid <span class="v">+3 @ 2.5 kHz</span></li>
+      <li>PWR-AMP → Comp376 : Drive <span class="v">45</span> · Ratio <span class="v">8</span> · Attack <span class="v">3 ms</span> · Release <span class="v">80 ms</span></li>
+      <li>REVERB : <span class="v">Room2</span> · Time <span class="v">1.0 s</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / A / 7</span> → "CFBoogie"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">S6 Imperial + Strings layer <span class="essence">Concert classique grandiose</span></div>
+      <div class="enc-recipe-slot">USR1:A08</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir RIGHT1 → VOICE → 1 → <span class="v">S6 Grand</span></li>
+      <li>RIGHT1 PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 1</span> · <span class="pill">DampReso</span> = <span class="v">+10</span></li>
+      <li>Activer LEFT1 (layer cordes) → Maintenir LEFT1 → VOICE → <span class="kbd">7</span> (Strings) → <span class="v">Natural Str</span></li>
+      <li>LEFT1 Volume <span class="v">55</span> · FILTER/EG Attack <span class="v">+30</span> · Release <span class="v">80</span></li>
+      <li>Master Comp : Mid Threshold <span class="v">−18 dB</span> · Ratio <span class="v">2</span> · Depth slightly up</li>
+      <li>REVERB : <span class="v">RichHall</span> · Time <span class="v">4.0 s</span> · RevSend RIGHT1 <span class="v">25</span> · LEFT1 <span class="v">55</span> (pad reverb plus longue)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / A / 8</span> → "S6Imperial"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">8</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 9 — RHODES 1/3
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 3 &middot; Rhodes</span>
+  <h1 class="section-title">Cinq Rhodes émulés. <em>Trois recettes par page.</em></h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Baseline andi85 <span class="essence">Le défaut universel pour tous les Rhodes</span></div>
+      <div class="enc-recipe-slot">USR1:B01</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → <span class="kbd">2</span> (E.PIANO) → Potar 2 = <span class="v">75Rd I</span> (le plus polyvalent)</li>
+      <li>PRE-AMP : <span class="pill">StrkPos</span> = <span class="v">Top 1</span> · <span class="pill">Hammer</span> = <span class="v">Hard 1</span></li>
+      <li>Vibrato page : <span class="pill">Depth</span> = <span class="v">0</span> · <span class="pill">Decay</span> = <span class="v">+4</span></li>
+      <li>MOD-FX : <span class="v">OFF</span> (recette nue — c'est la baseline)</li>
+      <li>PWR-AMP : <span class="v">75Rd I</span> matché · Drive <span class="v">10</span> · Output <span class="v">100</span></li>
+      <li>Velocity : <span class="v">64 / 64</span> (default)</li>
+      <li>REVERB : <span class="v">RichPlt</span> · Time <span class="v">1.8 s</span> · RevSend <span class="v">25</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / B / 1</span> → "RdBaseLin"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">78Rd II Funk Steely Dan <span class="essence">"Peg", "Aja", "Babylon Sisters"</span></div>
+      <div class="enc-recipe-slot">USR1:B02</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">78Rd II</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 1</span> · <span class="pill">StrkPos</span> = <span class="v">Top 1</span></li>
+      <li>EQ intégré : <span class="pill">Bass</span> = <span class="v">+2</span> · <span class="pill">Treble</span> = <span class="v">+3</span> · <span class="pill">Decay</span> = <span class="v">+6</span></li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">35</span></li>
+      <li>MOD-FX : <span class="pill">Type</span> = <span class="v">Chorus</span> · Speed <span class="v">0.6 Hz</span> · Depth <span class="v">35</span> · Mix <span class="v">30</span></li>
+      <li>PWR-AMP : <span class="v">78Rd II</span> · Drive <span class="v">25</span> · Output <span class="v">100</span></li>
+      <li>Velocity : Curve <span class="v">Wide1</span> ou <span class="v">64/64</span></li>
+      <li>Master EQ : High <span class="v">+2 @ 6 kHz Q 1.0</span></li>
+      <li>REVERB : <span class="v">RichPlt</span> · Time <span class="v">2.0 s</span> · RevSend <span class="v">30</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / B / 2</span> → "78RdFunk"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">75Rd Funky Bark <span class="essence">Gros bark 70s funk, chaque attaque gifle</span></div>
+      <div class="enc-recipe-slot">USR1:B03</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">75Rd I</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 2</span> · <span class="pill">StrkPos</span> = <span class="v">Default</span> ou <span class="v">Rear 1</span></li>
+      <li>EQ page : <span class="pill">Gain</span> = <span class="v">110</span> (saturation préamp)</li>
+      <li>Velocity : Curve <span class="v">Wide</span> · Depth <span class="v">75</span> / Offset <span class="v">53</span></li>
+      <li>MOD-FX option A : <span class="v">Max90</span> Speed <span class="v">0.4 Hz</span> · Depth <span class="v">60</span> · Mode <span class="v">4</span></li>
+      <li>MOD-FX option B : <span class="v">TouchWah</span> Sens <span class="v">85</span> · ResoOfst <span class="v">+9.0</span> · Drive <span class="v">+16 dB</span></li>
+      <li>PWR-AMP : <span class="v">75Rd I</span> · Drive <span class="v">40</span> · Output <span class="v">95</span></li>
+      <li>Comp376 insert (sur slot disponible) : Drive <span class="v">35</span> · Ratio <span class="v">8</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / B / 3</span> → "75RdFunky"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">9</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 10 — RHODES 2/3
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 3 &middot; Rhodes (suite)</span>
+  <h1 class="section-title">Suitcase, Pure Tine, <em>et le layer 78+Dyno</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">73Rd Suitcase Ballad <span class="essence">Donny Hathaway, Whitney</span></div>
+      <div class="enc-recipe-slot">USR1:B04</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">73Rd I</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Soft 1</span> · <span class="pill">StrkPos</span> = <span class="v">Top 2</span></li>
+      <li>EQ : <span class="pill">Bass</span> = <span class="v">+3</span> · <span class="pill">Middle</span> = <span class="v">0</span> · <span class="pill">Treble</span> = <span class="v">+1</span> · <span class="pill">Decay</span> = <span class="v">+6</span></li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">50</span> · <span class="pill">Speed</span> = <span class="v">1.5 Hz</span> (auto-pan large, lent)</li>
+      <li>MOD-FX : <span class="v">Symphonic</span> Speed <span class="v">0.4 Hz</span> · Depth <span class="v">35</span> · Mix <span class="v">40</span></li>
+      <li>PWR-AMP : <span class="v">73Rd I</span> · Drive <span class="v">15</span></li>
+      <li>REVERB : <span class="v">Stage2</span> · Time <span class="v">2.0 s</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / B / 4</span> → "73RdSuit"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">71Rd Pure Tine <span class="essence">Le Rhodes nu, jazz solo McCoy Tyner</span></div>
+      <div class="enc-recipe-slot">USR1:B05</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">71Rd I</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Normal</span> · <span class="pill">StrkPos</span> = <span class="v">Top 1</span></li>
+      <li>EQ : <span class="pill">Treble</span> = <span class="v">+2</span> (autres flats) · <span class="pill">Decay</span> = <span class="v">+2</span></li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">0</span> (rhodes nu)</li>
+      <li>MOD-FX : <span class="v">OFF</span></li>
+      <li>PWR-AMP : <span class="v">71Rd I</span> · Drive <span class="v">0</span> (clean total)</li>
+      <li>Velocity : Curve <span class="v">Soft</span> · Depth <span class="v">60</span> / Offset <span class="v">68</span></li>
+      <li>REVERB : <span class="v">RichHall</span> · Time <span class="v">2.2 s</span> · RevSend <span class="v">28</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / B / 5</span> → "71RdTine"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">78 + Dyno Layer <span class="essence">Patrice Rushen, Jeff Lorber — funk fusion brillant</span></div>
+      <div class="enc-recipe-slot">USR1:B06</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1</li>
+      <li><strong>RIGHT1 (couche principale)</strong> : Maintenir RIGHT1 → VOICE → 2 → <span class="v">78Rd II</span></li>
+      <li>RIGHT1 PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 1</span> · <span class="pill">StrkPos</span> = <span class="v">Top 1</span></li>
+      <li>RIGHT1 MOD-FX : <span class="v">Max90</span> Speed <span class="v">0.4 Hz</span> · Depth <span class="v">65</span></li>
+      <li>RIGHT1 Volume <span class="v">110</span></li>
+      <li><strong>LEFT1 (couche Dyno)</strong> : activer LEFT1 (voyant ON) → Maintenir LEFT1 → VOICE → 2 → <span class="v">Dyno</span></li>
+      <li>LEFT1 PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 2</span> · <span class="pill">Bass</span> = <span class="v">+2</span> · <span class="pill">Treble</span> = <span class="v">+4</span></li>
+      <li>LEFT1 Volume <span class="v">75</span></li>
+      <li>SPLIT éteint (voyant SPLIT OFF) — les deux jouent sur tout le clavier en layer</li>
+      <li>Master Comp : Mid <span class="v">−18 dB</span> · Ratio <span class="v">3</span> · Attack <span class="v">30 ms</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / B / 6</span> → "78+Dyno"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">10</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 11 — RHODES 3/3
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 3 &middot; Rhodes (fin)</span>
+  <h1 class="section-title">Steely Dan, Néo-Soul, <em>Smooth Jazz</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">73Rd Steely Dan Comping <span class="essence">Comping fluide style "Peg"</span></div>
+      <div class="enc-recipe-slot">USR1:B07</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">73Rd I</span></li>
+      <li>PRE-AMP : <span class="pill">StrkPos</span> = <span class="v">Top 1</span> · <span class="pill">Hammer</span> = <span class="v">Hard 1</span></li>
+      <li>EQ : <span class="pill">Bass</span> = <span class="v">+2</span> · <span class="pill">Treble</span> = <span class="v">+2</span></li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">40</span> · <span class="pill">Speed</span> = <span class="v">2 Hz</span></li>
+      <li>MOD-FX : <span class="v">Max90</span> Speed <span class="v">0.5 Hz</span> · Depth <span class="v">70</span> · Feedback <span class="v">50</span> · Mode <span class="v">4</span></li>
+      <li>PWR-AMP : <span class="v">73Rd I</span> · Drive <span class="v">20</span></li>
+      <li>REVERB : <span class="v">RichPlt</span> · Time <span class="v">2.0 s</span> · RevSend <span class="v">30</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / B / 7</span> → "73RdStel"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Dyno Néo-Soul <span class="essence">D'Angelo, Robert Glasper — Voodoo vibe</span></div>
+      <div class="enc-recipe-slot">USR1:B08</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1</li>
+      <li>RIGHT1 : VOICE → 2 → <span class="v">Dyno</span></li>
+      <li>RIGHT1 PRE-AMP : <span class="pill">StrkPos</span> = <span class="v">Top 2</span> · <span class="pill">Hammer</span> = <span class="v">Hard 1</span></li>
+      <li>RIGHT1 EQ : <span class="pill">Bass</span> = <span class="v">+1</span> · <span class="pill">Treble</span> = <span class="v">+5</span> · <span class="pill">Decay</span> = <span class="v">+8</span></li>
+      <li>RIGHT1 MOD-FX : <span class="v">Sympho</span> Speed <span class="v">0.3 Hz</span> · Depth <span class="v">40</span> · Mix <span class="v">35</span></li>
+      <li>RIGHT1 PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">15</span></li>
+      <li>Activer LEFT2 → Maintenir LEFT2 → VOICE → 2 → <span class="v">77Wr</span> · Volume <span class="v">35</span></li>
+      <li>SPLIT éteint (layer total)</li>
+      <li>REVERB : <span class="v">RichPlt</span> · Time <span class="v">2.5 s</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / B / 8</span> → "DynoSoul"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">75Rd Smooth Jazz <span class="essence">George Duke, Bob James — plaque vintage</span></div>
+      <div class="enc-recipe-slot">USR1:B09</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">75Rd I</span></li>
+      <li>PRE-AMP : <span class="pill">StrkPos</span> = <span class="v">Top 1</span> · <span class="pill">Hammer</span> = <span class="v">Normal</span> · <span class="pill">Treble</span> = <span class="v">+1</span></li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">25</span> · <span class="pill">Speed</span> = <span class="v">2.5 Hz</span></li>
+      <li>MOD-FX : <span class="v">D Chorus</span> Speed <span class="v">0.6 Hz</span> · Depth <span class="v">30</span> · Mix <span class="v">25</span></li>
+      <li>PWR-AMP : <span class="v">75Rd I</span> · Drive <span class="v">5</span> (presque clean)</li>
+      <li>REVERB : <span class="v">RichPlt</span> · Time <span class="v">2.2 s</span> · RevSend <span class="v">35</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / B / 9</span> → "75RdSmth"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">11</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 12 — WURLITZER 1/2
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 4 &middot; Wurlitzer</span>
+  <h1 class="section-title">69Wr et 77Wr. <em>Trois recettes signature.</em></h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Wurly Bright <span class="essence">Ray Charles, Beatles "I am the Walrus"</span></div>
+      <div class="enc-recipe-slot">USR1:C01</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">77Wr</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 1</span></li>
+      <li>EQ : <span class="pill">Bass</span> = <span class="v">+1</span> · <span class="pill">Middle</span> = <span class="v">+2</span> · <span class="pill">Treble</span> = <span class="v">+2</span></li>
+      <li><span class="pill">Gain</span> = <span class="v">105</span> (drive léger préamp)</li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">50</span> (tremolo, pas auto-pan)</li>
+      <li>MOD-FX : <span class="v">OFF</span> (le tremolo est dans le Pre-Amp)</li>
+      <li>PWR-AMP : <span class="v">77Wr</span> · Drive <span class="v">30</span></li>
+      <li>Comp376 (insert via slot dispo) : Drive <span class="v">40</span> · Ratio <span class="v">8</span> · Attack <span class="v">5 ms</span> · Release <span class="v">80 ms</span></li>
+      <li>Velocity : Curve <span class="v">Wide</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 1</span> → "WurlyBrt"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Wurly Warm Ballade <span class="essence">Supertramp, Norah Jones</span></div>
+      <div class="enc-recipe-slot">USR1:C02</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">69Wr</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Soft 1</span></li>
+      <li>EQ : <span class="pill">Bass</span> = <span class="v">+3</span> · <span class="pill">Treble</span> = <span class="v">0</span></li>
+      <li><span class="pill">Gain</span> = <span class="v">100</span> (clean)</li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">35</span></li>
+      <li>PWR-AMP : <span class="v">69Wr</span> · Drive <span class="v">8</span></li>
+      <li>REVERB : <span class="v">Room2</span> · RevSend <span class="v">30</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 2</span> → "WurlyWrm"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Rock Wurli Stevie Wonder <span class="essence">Soul covers, rock vintage</span></div>
+      <div class="enc-recipe-slot">USR1:C03</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">77Wr</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 2</span> · <span class="pill">Gain</span> = <span class="v">115</span> (saturation marquée)</li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">45</span> · <span class="pill">Speed</span> = <span class="v">5 Hz</span></li>
+      <li>MOD-FX : <span class="v">Tremolo</span> Speed <span class="v">4.8 Hz</span> · Depth <span class="v">30</span> (pousse en plus du Pre-Amp)</li>
+      <li>PWR-AMP : <span class="v">77Wr</span> · Drive <span class="v">50</span></li>
+      <li>Comp376 : Drive <span class="v">60</span> · Ratio <span class="v">12</span> · Attack <span class="v">1 ms</span> · Release <span class="v">50 ms</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 3</span> → "WurlyRck"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">12</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 13 — WURLITZER 2/2 (Lounge + Reggae)
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 4 &middot; Wurlitzer (fin)</span>
+  <h1 class="section-title">Lounge et Reggae. <em>Wurli sage et Wurli skank.</em></h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">69Wr Lounge <span class="essence">Wurli qui ronronne, jazz quartet feutré</span></div>
+      <div class="enc-recipe-slot">USR1:C04</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">69Wr</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Soft 1</span></li>
+      <li>EQ : <span class="pill">Bass</span> = <span class="v">0</span> · <span class="pill">Treble</span> = <span class="v">−1</span></li>
+      <li><span class="pill">Gain</span> = <span class="v">95</span> (sous le seuil de drive — clean total)</li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">30</span> · <span class="pill">Speed</span> = <span class="v">4 Hz</span></li>
+      <li>PWR-AMP : <span class="v">69Wr</span> · Drive <span class="v">0</span> (totalement clean)</li>
+      <li>Comp376 : Drive <span class="v">20</span> · Ratio <span class="v">2</span> · Attack <span class="v">15 ms</span> · Release <span class="v">150 ms</span></li>
+      <li>REVERB : <span class="v">RichPlt</span> · Time <span class="v">1.8 s</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 4</span> → "69WrLng"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">77Wr Reggae Skank <span class="essence">Wurli sec qui claque sur les contre-temps comme un cuivre</span></div>
+      <div class="enc-recipe-slot">USR1:C05</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">77Wr</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 1</span> · <span class="pill">Treble</span> = <span class="v">+3</span></li>
+      <li><span class="pill">Gain</span> = <span class="v">108</span></li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">0</span> (pas de tremolo en reggae)</li>
+      <li><span class="pill">Decay</span> = <span class="v">−6</span> (court, sec)</li>
+      <li>MOD-FX : <span class="v">OFF</span></li>
+      <li>PWR-AMP : <span class="v">77Wr</span> · Drive <span class="v">35</span></li>
+      <li>REVERB : <span class="v">WoodRoom</span> · Time <span class="v">0.8 s</span> · RevSend <span class="v">20</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 5</span> → "77WrRgg"</li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Comparaison express</div>
+    <p>Tu peux maintenant zapper entre USR1:C01-C05 pour comparer les 5 Wurli différents. C'est le bon moment pour entendre comment Hammer/Gain/Drive transforment radicalement le même modèle 77 ou 69.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">13</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 14 — DX 1/2
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 5 &middot; DX</span>
+  <h1 class="section-title">Six DX. <em>Trois recettes par page.</em></h1>
+  <p class="lead" style="font-size: 9.5pt; margin-bottom: 3mm;">⚠️ <strong>Sur TOUS les DX : applique d'abord "Tame the DX"</strong> (Velocity Offset 70 / Depth 58) avant chaque recette. Sans ça, ring métallique désagréable à vélocité 127.</p>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">DX Legend + Chorus 2 <span class="essence">La finition Yamaha canonique du piano FM iconique</span></div>
+      <div class="enc-recipe-slot">USR1:C06</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">DX Legend</span></li>
+      <li>Velocity : <span class="pill">Offset</span> = <span class="v">70</span> · <span class="pill">Depth</span> = <span class="v">58</span> (Tame the DX)</li>
+      <li>MOD-FX : <span class="v">Chorus</span> (ou D Chorus) · Speed <span class="v">0.5 Hz</span> · Depth <span class="v">30</span> · Mix <span class="v">35</span></li>
+      <li>Master EQ : Lo-Mid <span class="v">+1 @ 400 Hz</span> · High <span class="v">−2 @ 10 kHz</span></li>
+      <li>REVERB : <span class="v">RichPlt</span> · Time <span class="v">1.5 s</span> · RevSend <span class="v">25</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 6</span> → "DXLgChor"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">DX FTine Synthwave 80s <span class="essence">"Time After Time" — brillant, chorus large</span></div>
+      <div class="enc-recipe-slot">USR1:C07</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">DX FTine</span></li>
+      <li>Velocity : <span class="pill">Offset</span> = <span class="v">72</span> · <span class="pill">Depth</span> = <span class="v">56</span></li>
+      <li>MOD-FX : <span class="v">D Chorus</span> Speed <span class="v">0.4 Hz</span> · Depth <span class="v">45</span> · Mix <span class="v">40</span></li>
+      <li>Master EQ : Low <span class="v">+2 shelf 80 Hz</span> · High <span class="v">+2 @ 10 kHz Q 0.5</span></li>
+      <li>REVERB : <span class="v">Stage1</span> · Time <span class="v">2.5 s</span> · RevSend <span class="v">40</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 7</span> → "DXFTSnth"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">DX Mellow Pad-Layer <span class="essence">DX en sous-couche derrière un piano acoustique</span></div>
+      <div class="enc-recipe-slot">USR1:C08</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1</li>
+      <li>RIGHT1 : Maintenir RIGHT1 → VOICE → 1 → <span class="v">CF Grand</span> · Volume <span class="v">100</span></li>
+      <li>RIGHT1 PRE-AMP : recette CF Pop §1.3 light (Hammer Normal)</li>
+      <li>Activer LEFT2 → Maintenir LEFT2 → VOICE → 2 → <span class="v">DX Mellow</span></li>
+      <li>LEFT2 Velocity : <span class="pill">Offset</span> = <span class="v">70</span> · <span class="pill">Depth</span> = <span class="v">58</span></li>
+      <li>LEFT2 MOD-FX : <span class="v">SmallPha</span> Speed <span class="v">0.3 Hz</span> · Depth <span class="v">25</span> (ou Flanger ou Chorus)</li>
+      <li>LEFT2 Volume <span class="v">60</span></li>
+      <li>SPLIT éteint (layer total)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 8</span> → "DXMllwPd"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">14</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 15 — DX 2/2
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 5 &middot; DX (fin)</span>
+  <h1 class="section-title">Woody, et le layer DX 7II + Rhodes <em>Toto Rosanna</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">DX Woody Auto-Pan funky 80s <span class="essence">Le DX qui groove</span></div>
+      <div class="enc-recipe-slot">USR1:C09</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">DX Woody</span></li>
+      <li>Velocity : <span class="pill">Offset</span> = <span class="v">68</span> · <span class="pill">Depth</span> = <span class="v">60</span></li>
+      <li>MOD-FX : <span class="v">AutoPan</span> ou <span class="v">Tremolo</span> · Speed <span class="v">4 Hz</span> · Depth <span class="v">60</span></li>
+      <li>Master EQ : Lo-Mid <span class="v">+1 @ 300 Hz</span> (corps boisé renforcé)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 9</span> → "DXWoodyP"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">DX 7 II + Rhodes Layer <span class="essence">La cloche FM par-dessus le tine Rhodes — "Rosanna" feel</span></div>
+      <div class="enc-recipe-slot">USR1:C10</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1</li>
+      <li>RIGHT1 : Maintenir RIGHT1 → VOICE → 2 → <span class="v">78Rd II</span></li>
+      <li>RIGHT1 : applique la recette §USR1:B02 (78Rd II Funk) en version light : Hammer Hard 1 · StrkPos Top 1 · Vibrato Depth 35 · Chorus Speed 0.6 Hz</li>
+      <li>RIGHT1 PWR-AMP : <span class="v">78Rd II</span> · Drive <span class="v">20</span></li>
+      <li>RIGHT1 Volume <span class="v">100</span></li>
+      <li>Activer LEFT2 → Maintenir LEFT2 → VOICE → 2 → <span class="v">DX 7 II</span></li>
+      <li>LEFT2 Velocity : <span class="pill">Offset</span> = <span class="v">70</span> · <span class="pill">Depth</span> = <span class="v">58</span></li>
+      <li>LEFT2 Volume <span class="v">50</span> · Transposition <span class="v">0</span></li>
+      <li>LEFT2 MOD-FX : <span class="v">Chorus</span> léger Speed <span class="v">0.4 Hz</span> · Depth <span class="v">25</span></li>
+      <li>SPLIT éteint</li>
+      <li>REVERB : <span class="v">Stage1</span> · Time <span class="v">2.0 s</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / C / 10</span> → "DX7+Rd"</li>
+    </ol>
+    <div class="callout" style="margin-top: 2mm; padding: 1.5mm 3mm;">
+      <p style="font-size: 7.5pt;"><strong>Test à l'oreille</strong> : joue un accord majeur 7. Si le DX masque le Rhodes, baisse LEFT2 Volume à 40. Si le DX disparaît, monte à 60. Le DX doit "scintiller" au-dessus, pas dominer.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Note — DX Crisp et DX FTine</div>
+    <p>Pour <strong>DX Crisp</strong> (touche métallique), même approche que DX Legend mais avec <span class="v">DynaRing</span> en Mod-FX (parcimonie). Velocity Offset <span class="v">75</span>. Pas inclus dans le plan USR principal mais facile à dériver de la recette §USR1:C06.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">15</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 16 — ORGUES 1/3 (Mapping ModWheel + Gospel)
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 6 &middot; Orgues Hammond</span>
+  <h1 class="section-title">Le mapping ModWheel <em>+ Gospel Sunday</em>.</h1>
+  <p class="lead">Pour les orgues, le Rotary Speaker est l'effet central. Voici comment mapper la mod wheel pour passer slow/fast pendant un solo, puis la première recette gospel.</p>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Mapping ModWheel → Rotary speed <span class="essence">À appliquer AVANT chaque recette orgue</span></div>
+      <div class="enc-recipe-slot">procédure</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Une fois la recette orgue assemblée (Mod-FX = Rotary), maintenir la partie active (LEFT1 ou RIGHT1)</li>
+      <li><strong>PART EDIT</strong> → <strong>EFFECT-A</strong> (Rotary) → noter le <span class="pill">SpdCtrl</span> initial : <span class="v">slow</span> ou <span class="v">fast</span></li>
+      <li><strong>PART EDIT</strong> → <strong>CONTROLLER</strong> → page ModWheel</li>
+      <li>Source = <span class="pill">MW</span> · Destination = <strong>EffA(+)</strong> si SpdCtrl initial = slow, ou <strong>EffA(−)</strong> si SpdCtrl initial = fast</li>
+      <li><strong>PART EDIT</strong> → <strong>RECEIVE SWITCH</strong> → page CC : <span class="pill">MW</span> = <span class="v">ON</span></li>
+      <li>Vérifier que le voyant PART EFFECT [A] est allumé sur le panneau</li>
+      <li>Test : pousser la mod wheel — le rotary passe slow ↔ fast</li>
+      <li>STORE pour figer dans la Performance</li>
+    </ol>
+    <div class="callout" style="margin-top: 2mm; padding: 1.5mm 3mm;">
+      <p style="font-size: 7.5pt;"><strong>À appliquer SUR CHAQUE recette orgue ci-dessous</strong>. Sans ce mapping, tu n'auras pas de contrôle en live.</p>
+    </div>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Gospel Organ Sunday Morning <span class="essence">DrawOrg full, rotary chorale</span></div>
+      <div class="enc-recipe-slot">USR1:D01</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → <span class="kbd">3</span> (Keyboard) → Potar 2 → <span class="v">DrawOrg 1</span> (full drawbars 888888888)</li>
+      <li>MOD-FX : <span class="pill">Type</span> = <span class="v">Rotary Speaker</span></li>
+      <li>Page Rotary : <span class="pill">Slow Rotor</span> = <span class="v">0.7 Hz</span> · <span class="pill">Slow Horn</span> = <span class="v">0.8 Hz</span></li>
+      <li>Page suivante : <span class="pill">Fast Rotor</span> = <span class="v">6.7 Hz</span> · <span class="pill">Fast Horn</span> = <span class="v">7.0 Hz</span></li>
+      <li>Page Time : <span class="pill">Slow-Fast Time Rotor</span> = <span class="v">1.5 s</span> · <span class="pill">Slow-Fast Time Horn</span> = <span class="v">0.4 s</span></li>
+      <li>Page Drive : <span class="pill">Drive Rotor</span> = <span class="v">60</span> · <span class="pill">Drive Horn</span> = <span class="v">70</span></li>
+      <li>Page Mic : <span class="pill">Mic L-R Angle</span> = <span class="v">90°</span></li>
+      <li><span class="pill">SpdCtrl</span> initial = <span class="v">slow</span></li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span></li>
+      <li>Velocity : <span class="v">Fixed 100</span> (orgue insensible au toucher)</li>
+      <li><strong>Appliquer le Mapping ModWheel</strong> (recette ci-dessus) → ModWheel mappée à EffA(+)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 1</span> → "GospelOrg"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">16</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 17 — ORGUES 2/3 (Jazz Smith + Vintage C + DrawOrg Reggae)
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 6 &middot; Orgues Hammond (suite)</span>
+  <h1 class="section-title">Jazz Smith, Vintage C Rock, <em>DrawOrg Reggae</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Jazz Organ Jimmy Smith <span class="essence">Drawbars 888000008, percussion 2nd</span></div>
+      <div class="enc-recipe-slot">USR1:D02</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → <span class="kbd">3</span> (Keyboard) → <span class="v">JazzOrgan</span> ou <span class="v">Pere.Organ</span></li>
+      <li>Si JazzOrgan : ajuster Drawbars (page Drawbar) vers <span class="v">888000008</span> ou <span class="v">888800008</span> (creux médium)</li>
+      <li>Si Pere.Organ : la percussion 2nd est déjà intégrée, drawbars selon goût</li>
+      <li>MOD-FX : <span class="v">Rotary Speaker</span> · SpdCtrl initial = <span class="v">slow</span> · Drive Horn <span class="v">75</span></li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">30</span> (chaleur sans pousser)</li>
+      <li>Velocity : <span class="v">Fixed 100</span></li>
+      <li><strong>Mapping ModWheel</strong> (voir page 16)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 2</span> → "JazzSmth"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Vintage C Rock Organ Jon Lord <span class="essence">L'orgue Deep Purple, saturé, rotary fast</span></div>
+      <div class="enc-recipe-slot">USR1:D03</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 3 → <span class="v">Vintage C</span></li>
+      <li>MOD-FX : <span class="v">Rotary Speaker</span> · SpdCtrl initial = <span class="v">fast</span> (verrouillé fast par défaut)</li>
+      <li>Paramètres Rotary identiques au Gospel (voir page 16)</li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">70</span> (pour le grit Deep Purple)</li>
+      <li>Master Compressor (Utility) : 3 bandes ratio <span class="v">4</span> uniforme</li>
+      <li>Velocity : <span class="v">Fixed 100</span></li>
+      <li><strong>Mapping ModWheel</strong> : EffA(−) cette fois (initial = fast) → poussée mod wheel = passe en slow</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 3</span> → "VintCRck"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">DrawOrg Reggae <span class="essence">Hammond M3 sec, bas dans le mix</span></div>
+      <div class="enc-recipe-slot">USR1:D04</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 3 → <span class="v">DrawOrg 1</span></li>
+      <li>Drawbars : <span class="v">800800000</span> (fondamentale + sub-quinte, pas de hauts)</li>
+      <li>MOD-FX : <span class="v">Rotary Speaker</span> · SpdCtrl = <span class="v">slow</span> (verrouillé, pas de fast en reggae)</li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">40</span></li>
+      <li><span class="pill">Decay</span> = <span class="v">−8</span> (court, percussif)</li>
+      <li>Velocity : <span class="v">Fixed 100</span></li>
+      <li>Pas besoin de mapping mod wheel (rotary verrouillé slow)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 4</span> → "DrawRgg"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">17</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 18 — ORGUES 3/3 (Funk Soul + Outro)
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 6 &middot; Orgues Hammond (fin)</span>
+  <h1 class="section-title">Funk Soul percussif <em>+ Outro cathédrale</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Pere.Organ Funk Soul <span class="essence">Percussion 3rd qui claque comme une cloche</span></div>
+      <div class="enc-recipe-slot">USR1:D05</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 3 → <span class="v">Pere.Organ</span></li>
+      <li>Page Percussion : <span class="pill">Percussion harmonic</span> = <span class="v">3rd</span> · <span class="pill">Soft</span> = <span class="v">OFF</span> (= percussion forte)</li>
+      <li>Drawbars : <span class="v">888000088</span> (creux médium, hauts présents)</li>
+      <li>MOD-FX : <span class="v">Rotary Speaker</span> · SpdCtrl = <span class="v">slow</span> · Drive Horn <span class="v">80</span></li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">45</span></li>
+      <li>Velocity : <span class="v">Fixed 100</span></li>
+      <li>Mapping ModWheel : EffA(+) pour passer fast en live</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 5</span> → "PrcSoul"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">ChurchOrg Outro Dramatic <span class="essence">Orgue qui occupe la pièce 30 secondes après relâchement</span></div>
+      <div class="enc-recipe-slot">USR1:D06</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 3 → <span class="v">Pipe Organ 1</span> ou <span class="v">ChurchOrg 1</span></li>
+      <li>Si registres ajustables (selon voix) : tous les registres ouverts (plein jeu)</li>
+      <li>MOD-FX : <span class="v">OFF</span> (l'orgue d'église ne tourne pas, c'est pour les Hammond)</li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">0</span></li>
+      <li>REVERB : <span class="v">RichHall</span> · Time <span class="v">30 s</span> (le MAXIMUM du CP5) · RevSend <span class="v">60</span></li>
+      <li>Velocity : <span class="v">Fixed 120</span> (sortie maximale)</li>
+      <li>Master EQ : Low <span class="v">+3 shelf 50 Hz</span> (tribune basse) · High <span class="v">−2 shelf 12 kHz</span> (sourd, vieux)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 6</span> → "ChurchOut"</li>
+    </ol>
+    <div class="callout" style="margin-top: 2mm; padding: 1.5mm 3mm;">
+      <p style="font-size: 7.5pt;"><strong>Utilisation</strong> : joue un accord parfait majeur, relâche immédiatement la touche, laisse couler. La reverb 30 s te donne 30 secondes de fin dramatique. À garder pour les fins de morceaux worship ou de mariages.</p>
+    </div>
+  </div>
+
+  <div class="warn">
+    <div class="callout-label">⚠ Test du mapping ModWheel sur les 6 orgues</div>
+    <p>Une fois les 6 recettes orgues stockées (D01-D06), prends 5 minutes pour tester la mod wheel sur chacune. Si une recette n'a pas de transition slow/fast, vérifie le RECEIVE SWITCH CC et l'assignation EffA(+/−). Le Gospel et le Jazz Smith doivent absolument répondre à la mod wheel.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">18</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 19 — CLAVINET
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 7 &middot; Clavinet</span>
+  <h1 class="section-title">Trois Clavinet. <em>Le secret est dans le TouchWah.</em></h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Funky Clavi Wah — Stevie "Higher Ground" <span class="essence">★★★ Blake Angelos (Yamaha)</span></div>
+      <div class="enc-recipe-slot">USR1:D07</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → <span class="kbd">3</span> (Keyboard) → <span class="v">Clavi</span> ou <span class="v">Clavi ST</span> (stéréo)</li>
+      <li>MOD-FX : <span class="pill">Type</span> = <span class="v">TouchWah</span></li>
+      <li>Page 1 : <span class="pill">Sens</span> = <span class="v">85</span></li>
+      <li>Page 2 : <span class="pill">ResoOfst</span> = <span class="v">+9.0</span></li>
+      <li>Page 3 : <span class="pill">Drive</span> = <span class="v">+16 dB</span></li>
+      <li>Page suivante : <span class="pill">Bottom</span> = <span class="v">0</span> · <span class="pill">Top</span> = <span class="v">127</span></li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">40</span></li>
+      <li>Comp376 (insert via slot dispo) : Drive <span class="v">50</span> · Ratio <span class="v">8</span> · Attack <span class="v">1 ms</span> · Release <span class="v">60 ms</span></li>
+      <li>Master EQ : Low <span class="v">+2 @ 80 Hz</span> · Mid <span class="v">−2 @ 500 Hz</span> · Hi-Mid <span class="v">+3 @ 3 kHz</span></li>
+      <li>Velocity : Curve <span class="v">Wide</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 7</span> → "FnkClavi"</li>
+    </ol>
+    <div class="callout" style="margin-top: 2mm; padding: 1.5mm 3mm;">
+      <p style="font-size: 7.5pt;"><strong>Test à l'oreille</strong> : joue une mélodie funk en croches dans les médiums. Le wah doit s'ouvrir sur les notes fortes, se refermer sur les notes faibles. Si rien ne bouge, augmente Sens à 95.</p>
+    </div>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Pedal Wah Clavi (FC7) <span class="essence">Plus expressif que TouchWah si FC7 dispo</span></div>
+      <div class="enc-recipe-slot">USR1:D08</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Brancher une <strong>FC7</strong> dans la prise FOOT CONTROLLER 1 ou 2</li>
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 3 → <span class="v">Clavi</span></li>
+      <li>MOD-FX : <span class="pill">Type</span> = <span class="v">PedalWah</span></li>
+      <li>Paramètres : <span class="pill">PdlCtrl</span> = <span class="v">60</span> · <span class="pill">Sens</span> = <span class="v">90</span> · <span class="pill">ResoOfst</span> = <span class="v">+10</span> · <span class="pill">Drive</span> = <span class="v">+18 dB</span></li>
+      <li>UTILITY → page contrôleur : <span class="pill">CtrlAsn</span> = <span class="v">FC1</span> (ou FC2 selon prise) · <span class="pill">CtrlNo</span> = <span class="v">PdlWah</span></li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">25</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 8</span> → "PdlClvWh"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Clavi ST Pop Discrète <span class="essence">Layer rythmique léger derrière une voix</span></div>
+      <div class="enc-recipe-slot">USR1:D09</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 3 → <span class="v">Clavi ST</span></li>
+      <li>MOD-FX : <span class="v">TouchWah</span> · <span class="pill">Sens</span> = <span class="v">45</span> · <span class="pill">ResoOfst</span> = <span class="v">+3</span> · <span class="pill">Drive</span> = <span class="v">+8 dB</span> (subtil)</li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">15</span></li>
+      <li>Common page : Volume = <span class="v">60</span> (bas dans le mix)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 9</span> → "ClavPop"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">19</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 20 — MALLETS
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 8 &middot; Mallets</span>
+  <h1 class="section-title">Vibraphone, HardVibes, <em>Marimba</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Vibraphone Tremolo Sync <span class="essence">Le vibra qui balance avec la batterie</span></div>
+      <div class="enc-recipe-slot">USR2:A01</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → catégorie Sub/Mallets (selon firmware, souvent dans <span class="kbd">3</span> Keyboard ou <span class="kbd">8</span> SynthLead) → Potar 2 → <span class="v">Vibraphone</span></li>
+      <li>MOD-FX : <span class="pill">Type</span> = <span class="v">Tremolo</span></li>
+      <li>Page Speed : <span class="pill">Speed</span> = <span class="v">sync tempo</span> (paramètre tempo-sync activable)</li>
+      <li>Page Depth : <span class="pill">Depth</span> = <span class="v">60</span></li>
+      <li>REVERB : <span class="v">Stage1</span> · Time <span class="v">2.0 s</span> · RevSend <span class="v">50</span></li>
+      <li>Velocity : Curve <span class="v">Soft</span> (pour pp expressif)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 1</span> → "VibTrem"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">HardVibes Bop <span class="essence">Vibra plus dur, énergique</span></div>
+      <div class="enc-recipe-slot">USR2:A02</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → catégorie Sub → Potar 2 → <span class="v">HardVibes</span></li>
+      <li>MOD-FX : <span class="pill">Type</span> = <span class="v">AutoPan</span> · <span class="pill">Speed</span> = <span class="v">4 Hz</span> · <span class="pill">Depth</span> = <span class="v">40</span></li>
+      <li>REVERB : <span class="v">RichRoom</span> · Time <span class="v">1.2 s</span> · RevSend <span class="v">35</span></li>
+      <li>Velocity : Curve <span class="v">Normal</span> (vibra dur veut de la dynamique)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 2</span> → "HardVbs"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Marimba Hall <span class="essence">Marimba acoustique, hall longue</span></div>
+      <div class="enc-recipe-slot">USR2:A03</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → catégorie Sub → Potar 2 → <span class="v">Marimba 1</span></li>
+      <li>MOD-FX : <span class="v">OFF</span> (marimba veut être nue)</li>
+      <li>REVERB : <span class="v">RichHall</span> · Time <span class="v">3.0 s</span> · RevSend <span class="v">35</span></li>
+      <li>Master EQ : Low <span class="v">+1 @ 80 Hz</span> (corps boisé renforcé)</li>
+      <li>Velocity : Curve <span class="v">Normal</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 3</span> → "Marimba"</li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Bonus — Vibraphone + Marimba en layer</div>
+    <p>Pour les passages éthérés : RIGHT1 = Vibraphone (recette A01), LEFT2 = Marimba 1 transposé +1 octave (Common page → Octave +1), Volume LEFT2 = 50. La marimba ajoute le corps grave sous la cloche vibra. À garder en mémoire pour A04 ou tester avant STORE.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">20</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 21 — SYNTH LEAD
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 9 &middot; Synth Lead</span>
+  <h1 class="section-title">Saw, AnalogLd, Wire. <em>Trois leads, trois ambiances.</em></h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Saw Lead Rock <span class="essence">Solos rock, synthwave</span></div>
+      <div class="enc-recipe-slot">USR2:A04</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → <span class="kbd">8</span> (SynthLead) → Potar 2 → <span class="v">Saw Lead 1</span></li>
+      <li>Assigner les Knobs 1-3 (STORE/ASSIGN ≥ 1 s) :</li>
+      <li>&nbsp;&nbsp;&nbsp;Knob 1 = <span class="pill">P/F-Cut</span> (Filter Cutoff) · départ <span class="v">80</span> · jouable 60-110</li>
+      <li>&nbsp;&nbsp;&nbsp;Knob 2 = <span class="pill">P/F-Reso</span> (Resonance) · départ <span class="v">30</span> · jouable jusqu'à 70</li>
+      <li>&nbsp;&nbsp;&nbsp;Knob 3 = <span class="pill">Drive</span> ou Effect Depth</li>
+      <li>MOD-FX : <span class="v">CmpDst+</span> · Drive <span class="v">25</span></li>
+      <li>Master EQ : Hi-Mid <span class="v">+3 @ 3 kHz</span> (le lead doit percer)</li>
+      <li>REVERB : <span class="v">Stage2</span> · RevSend <span class="v">25</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 4</span> → "SawLead"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">AnalogLd Solo Jazz Fusion <span class="essence">Solo fluide, chaud</span></div>
+      <div class="enc-recipe-slot">USR2:A05</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 8 → <span class="v">AnalogLd 1</span></li>
+      <li>Knob 1 = <span class="pill">Cutoff</span> · départ <span class="v">90</span></li>
+      <li>Knob 2 = <span class="pill">Reso</span> · départ <span class="v">50</span></li>
+      <li>MOD-FX : <span class="v">Symphonic</span> · Speed <span class="v">0.4 Hz</span> · Depth <span class="v">35</span></li>
+      <li>REVERB : <span class="v">RichPlt</span> · RevSend <span class="v">25</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 5</span> → "AnalogLd"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Wire Lead Modern <span class="essence">Lead synthétique métallique, ponts mélodiques</span></div>
+      <div class="enc-recipe-slot">USR2:A06</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 8 → <span class="v">Wire Lead</span></li>
+      <li>MOD-FX : <span class="v">DynaFlt</span> (filtre dynamique réactif à la vélocité)</li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">35</span></li>
+      <li>Knob 1 = Filter Cutoff · départ <span class="v">75</span></li>
+      <li>REVERB : <span class="v">Stage1</span> · RevSend <span class="v">30</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 6</span> → "WireLd"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">21</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 22 — PADS / STRINGS
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 10 &middot; Pads &amp; Strings</span>
+  <h1 class="section-title">Les nappes derrière le piano. <em>La règle Bad Mister.</em></h1>
+
+  <div class="callout">
+    <div class="callout-label">★★★ La règle universelle pour pads en layer (Bad Mister)</div>
+    <p>Sur tout pad/string utilisé en layer derrière un piano : <strong>FILTER/EG → Decay = 0</strong> (sustain infini) ou abaisser pour qu'il s'éteigne avec la main · <strong>Release = 60-80</strong> · <strong>Attack = 30-50</strong> (slow attack). Sans Attack haut, le pad surgit comme le piano. Avec Attack +50, il se révèle après l'attaque comme un orchestre qui répond.</p>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Piano + Slow Strings classique <span class="essence">Le pad cordes derrière chaque ballade pop</span></div>
+      <div class="enc-recipe-slot">USR2:A07</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1</li>
+      <li>RIGHT1 : VOICE → 1 → <span class="v">CF Grand</span> (recette §USR1:A01 ou §A03 light)</li>
+      <li>RIGHT1 Volume <span class="v">100</span></li>
+      <li>Activer LEFT1 → Maintenir LEFT1 → VOICE → <span class="kbd">7</span> (Strings) → <span class="v">Slow Str 1</span> ou <span class="v">Natural Str</span></li>
+      <li>LEFT1 Volume <span class="v">55</span> (entre 50 et 60)</li>
+      <li>LEFT1 FILTER/EG : <span class="pill">Decay</span> = <span class="v">0</span> · <span class="pill">Release</span> = <span class="v">70</span> · <span class="pill">Attack</span> = <span class="v">+30</span></li>
+      <li>LEFT1 EQ partie : <span class="pill">HPF</span> = <span class="v">~120 Hz</span> (couper les basses du pad pour laisser place au piano)</li>
+      <li>LEFT1 RevSend : <span class="v">40</span> (pad reverb plus longue que piano à 25)</li>
+      <li>Master Comp : <strong>Depth slightly turned up</strong> (subtil)</li>
+      <li>SPLIT éteint (layer total)</li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 7</span> → "PnoStr"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Choir Layer Worship <span class="essence">Chœur qui tient les fondus de phrases</span></div>
+      <div class="enc-recipe-slot">USR2:A08</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1</li>
+      <li>RIGHT1 : VOICE → 1 → <span class="v">CF Grand</span> (recette Worship §USR1:A05 light)</li>
+      <li>Activer LEFT1 → Maintenir LEFT1 → VOICE → <span class="kbd">6</span> (Pads/Choirs) → <span class="v">Choir 2</span> ou <span class="v">NeoCrystal</span></li>
+      <li>LEFT1 FILTER/EG : <span class="pill">Decay</span> = <span class="v">0</span> · <span class="pill">Release</span> = <span class="v">80</span> · <span class="pill">Attack</span> = <span class="v">+40</span> (encore plus slow)</li>
+      <li>LEFT1 Volume <span class="v">45</span> (chœur plus discret que strings)</li>
+      <li>LEFT1 HPF : <span class="v">~150 Hz</span></li>
+      <li>REVERB : <span class="v">Stage1</span> · Time <span class="v">3.0 s</span> · RIGHT1 RevSend <span class="v">25</span> · LEFT1 RevSend <span class="v">50</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 8</span> → "ChoirLyr"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">22</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 23 — BRASS / SAX
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 11 &middot; Brass &amp; Sax</span>
+  <h1 class="section-title">Section cuivres, <em>sax solo</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Brass Section live <span class="essence">Punch immédiat, mordant qui découpe le mix</span></div>
+      <div class="enc-recipe-slot">USR2:A09</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → <span class="kbd">9</span> (Brass) → Potar 2 → <span class="v">BrassSect 1</span> ou <span class="v">SaxSection</span></li>
+      <li>MOD-FX : <span class="v">Enhans</span> (Harmonic Enhancer) — Mix <span class="v">léger</span> (15-25)</li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">0</span></li>
+      <li>Master EQ : Hi-Mid <span class="v">+2 @ 4 kHz Q 1.0</span> (présence brass)</li>
+      <li>Master Compressor (Utility) : Mid Threshold <span class="v">−18 dB</span> · Ratio <span class="v">4</span> · Attack <span class="v">10 ms</span> · Release <span class="v">150 ms</span></li>
+      <li>Velocity : Curve <span class="v">Normal</span></li>
+      <li>REVERB : <span class="v">Stage2</span> · RevSend <span class="v">30</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 9</span> → "BrassSec"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Sax Solo Jazz <span class="essence">Mélodies expressives, presence sans squeaks</span></div>
+      <div class="enc-recipe-slot">USR2:A10</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → <span class="kbd">10</span> (Woodwind) → Potar 2 → <span class="v">Alto Sax</span> ou <span class="v">Tenor Sax</span></li>
+      <li>MOD-FX : <span class="v">ER</span> (Early Reflections) léger, Mix <span class="v">15</span> · ou <span class="v">OFF</span> selon goût</li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">10</span> (un peu de chaleur pour le grain)</li>
+      <li>Master EQ : Low <span class="v">−2 @ 100 Hz</span> (creuser les sub, évite conflits basse) · Hi-Mid <span class="v">+3 @ 5 kHz</span> (presence, contrôle squeaks)</li>
+      <li>Velocity : Curve <span class="v">Soft</span> (sax veut pp expressif)</li>
+      <li>REVERB : <span class="v">RichPlt</span> · Time <span class="v">1.8 s</span> · RevSend <span class="v">30</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / A / 10</span> → "SaxSolo"</li>
+    </ol>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Bonus — Flute solo (variation)</div>
+    <p>Pour une flûte solo (intros, lignes mélodiques aiguës), substitue <span class="v">Flute 1</span> à la recette Sax. Mod-FX = OFF. Master EQ : High <span class="v">+1 shelf 10 kHz</span> pour l'air. À garder en réserve pour une future extension de banque.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">23</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 24 — SPLIT 1 : GOSPEL SUNDAY FULL
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 12 &middot; Splits &amp; Layers avancés</span>
+  <h1 class="section-title">Gospel Sunday Full. <em>Trio gospel sur deux mains.</em></h1>
+  <p class="lead">Performance multi-zones complexe — basse split main gauche + piano main droite + orgue percussif en layer derrière le piano. Plus de paramètres que les recettes mono-voix, mais résultat orchestré.</p>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Gospel Sunday Full <span class="essence">Basse marche, piano frappe, orgue murmure derrière</span></div>
+      <div class="enc-recipe-slot">USR2:B01</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 (point de départ propre)</li>
+
+      <li><strong>Définir le split point</strong> : Touche <span class="kbd">SPLIT</span> (voyant s'allume)</li>
+      <li><span class="kbd">EXIT</span>+<span class="kbd">COMMON</span> → Page <span class="kbd">2</span> → Potar 2 <span class="pill">Point</span> = <span class="v">C2</span> (appuie sur Potar 2 + joue la note C2 pour saisie directe)</li>
+
+      <li><strong>Configurer LEFT1 (basse, sous C2)</strong> :</li>
+      <li>&nbsp;&nbsp;&nbsp;Maintenir LEFT1 → VOICE → <span class="kbd">4</span> (Bass) → Potar 2 → <span class="v">AcousticBa</span></li>
+      <li>&nbsp;&nbsp;&nbsp;LEFT1 Volume <span class="v">85</span></li>
+      <li>&nbsp;&nbsp;&nbsp;LEFT1 FILTER/EG : <span class="pill">Decay</span> = <span class="v">+4</span> (notes longues, basse qui marche)</li>
+
+      <li><strong>Configurer RIGHT1 (piano, au-dessus de C2)</strong> :</li>
+      <li>&nbsp;&nbsp;&nbsp;Maintenir RIGHT1 → VOICE → <span class="kbd">1</span> (PIANO) → Potar 2 → <span class="v">CF Grand</span></li>
+      <li>&nbsp;&nbsp;&nbsp;RIGHT1 PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 1</span> · <span class="pill">DampReso</span> = <span class="v">+8</span> · <span class="pill">Decay</span> = <span class="v">+4</span></li>
+      <li>&nbsp;&nbsp;&nbsp;RIGHT1 Volume <span class="v">100</span></li>
+
+      <li><strong>Configurer RIGHT2 (orgue en layer derrière le piano)</strong> :</li>
+      <li>&nbsp;&nbsp;&nbsp;Activer RIGHT2 (voyant haut-gauche RIGHT2 s'allume — presser RIGHT2)</li>
+      <li>&nbsp;&nbsp;&nbsp;Maintenir RIGHT2 → VOICE → <span class="kbd">3</span> (Keyboard) → Potar 2 → <span class="v">Pere.Organ</span></li>
+      <li>&nbsp;&nbsp;&nbsp;RIGHT2 Page Percussion : <span class="pill">Percussion harmonic</span> = <span class="v">3rd</span></li>
+      <li>&nbsp;&nbsp;&nbsp;RIGHT2 MOD-FX : <span class="v">Rotary Speaker</span> · SpdCtrl <span class="v">slow</span></li>
+      <li>&nbsp;&nbsp;&nbsp;RIGHT2 Volume <span class="v">40</span> (orgue en sous-couche)</li>
+
+      <li><strong>Vérifier les NoteLimit</strong> (puisque SPLIT actif, LEFT joue sous C2, RIGHT1+RIGHT2 jouent au-dessus)</li>
+
+      <li>REVERB : <span class="v">RichHall</span> · Time <span class="v">2.5 s</span> · LEFT1 RevSend <span class="v">15</span> · RIGHT1 RevSend <span class="v">25</span> · RIGHT2 RevSend <span class="v">35</span></li>
+
+      <li>(Optionnel) Mapping ModWheel sur RIGHT2 EffA(+) pour passer rotary fast pendant solos</li>
+
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / B / 1</span> → "GosplFul"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">24</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 25 — SPLITS 2 : Jazz Trio + Worship 4-Layer
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 12 &middot; Splits &amp; Layers (suite)</span>
+  <h1 class="section-title">Jazz Trio sans bassiste, <em>Worship 4-Layer</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Jazz Trio Solo (split bass + comp piano) <span class="essence">Pour quand le bassiste manque</span></div>
+      <div class="enc-recipe-slot">USR2:B02</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1</li>
+      <li>Touche <span class="kbd">SPLIT</span> → COMMON page 2 → <span class="pill">Point</span> = <span class="v">B2</span> (appui Potar 2 + jouer B2)</li>
+      <li>LEFT1 : VOICE → 4 → <span class="v">AcousticBa</span> · Volume <span class="v">80</span> · <span class="pill">Decay</span> = <span class="v">+4</span></li>
+      <li>RIGHT1 : VOICE → 1 → <span class="v">CF Grand</span> · recette §USR1:A02 (S6 Jazz Ballade) ou §A01 light</li>
+      <li>RIGHT1 PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Soft 1</span> ou <span class="v">Normal</span> · <span class="pill">DampReso</span> = <span class="v">+10</span></li>
+      <li>RIGHT1 Velocity : Soft Depth <span class="v">60</span> / Offset <span class="v">68</span></li>
+      <li>REVERB : <span class="v">RichHall</span> · Time <span class="v">2.5 s</span> · LEFT1 RevSend <span class="v">15</span> · RIGHT1 RevSend <span class="v">30</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / B / 2</span> → "JzzTrio"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Worship 4-Layer <span class="essence">Orchestre miniature sur 88 touches</span></div>
+      <div class="enc-recipe-slot">USR2:B03</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1</li>
+
+      <li><strong>Mode Layer (SPLIT éteint)</strong> — vérifier voyant SPLIT OFF</li>
+
+      <li><strong>LEFT1 (foundation Strings)</strong> :</li>
+      <li>&nbsp;&nbsp;&nbsp;Maintenir LEFT1 → VOICE → 7 → <span class="v">Slow Str 1</span></li>
+      <li>&nbsp;&nbsp;&nbsp;Volume <span class="v">45</span> · FILTER/EG Attack <span class="v">+40</span> · Release <span class="v">80</span></li>
+
+      <li><strong>RIGHT1 (lead Piano)</strong> :</li>
+      <li>&nbsp;&nbsp;&nbsp;Maintenir RIGHT1 → VOICE → 1 → <span class="v">CF Grand</span></li>
+      <li>&nbsp;&nbsp;&nbsp;Volume <span class="v">100</span> · PRE-AMP recette Worship Modern</li>
+
+      <li><strong>RIGHT2 (Brass dans les aigus seulement)</strong> :</li>
+      <li>&nbsp;&nbsp;&nbsp;Activer RIGHT2 (voyant ON) → Maintenir RIGHT2 → VOICE → 9 → <span class="v">BrassSect 1</span></li>
+      <li>&nbsp;&nbsp;&nbsp;RIGHT2 Volume <span class="v">35</span></li>
+      <li>&nbsp;&nbsp;&nbsp;RIGHT2 Page 8 (NoteLimit) : <span class="pill">Note basse</span> = <span class="v">C5</span> · <span class="pill">Note haute</span> = <span class="v">C7</span> (Astuce : appui Potar + jouer la note)</li>
+
+      <li><strong>LEFT2 (Choir dans les graves seulement)</strong> :</li>
+      <li>&nbsp;&nbsp;&nbsp;Activer LEFT2 → Maintenir LEFT2 → VOICE → 6 → <span class="v">Choir Aah</span></li>
+      <li>&nbsp;&nbsp;&nbsp;LEFT2 Volume <span class="v">30</span></li>
+      <li>&nbsp;&nbsp;&nbsp;LEFT2 Page 8 (NoteLimit) : <span class="pill">Note basse</span> = <span class="v">C2</span> · <span class="pill">Note haute</span> = <span class="v">B4</span></li>
+
+      <li>REVERB : <span class="v">Stage1</span> · Time <span class="v">3.0 s</span> · RIGHT1 RevSend <span class="v">25</span> · autres RevSend <span class="v">40</span></li>
+
+      <li>Master Comp léger sur tout</li>
+
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / B / 3</span> → "Worship4"</li>
+    </ol>
+    <div class="callout" style="margin-top: 2mm; padding: 1.5mm 3mm;">
+      <p style="font-size: 7.5pt;"><strong>Test à l'oreille</strong> : joue un accord dans les médiums (C3) — tu entends piano + chœur. Joue dans les aigus (C6) — tu entends piano + brass. Le pad Strings tient partout en arrière-plan.</p>
+    </div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">25</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 26 — MORCEAUX ICONIQUES
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 13 &middot; Morceaux iconiques</span>
+  <h1 class="section-title">Trois reconstitutions <em>signature</em>.</h1>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Riders on the Storm (Doors) — Wurli mouillé <span class="essence">Manzarek approximatif</span></div>
+      <div class="enc-recipe-slot">USR1:D10</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">77Wr</span> (ou 69Wr selon goût)</li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Soft 1</span> · <span class="pill">Treble</span> = <span class="v">+2</span> · <span class="pill">Gain</span> = <span class="v">100</span></li>
+      <li>Vibrato : <span class="pill">Depth</span> = <span class="v">45</span> · <span class="pill">Speed</span> = <span class="v">6 Hz</span></li>
+      <li>MOD-FX : <span class="v">T-DlySt</span> (Tempo Delay Stéréo) · <span class="pill">Time</span> = <span class="v">350 ms</span> · <span class="pill">Feedback</span> = <span class="v">35</span> · <span class="pill">Mix</span> = <span class="v">40</span></li>
+      <li>PWR-AMP : <span class="v">77Wr</span> · Drive <span class="v">25</span></li>
+      <li>REVERB : <span class="v">Stage1</span> · Time <span class="v">3.5 s</span> · RevSend <span class="v">45</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR1 / D / 10</span> → "Riders"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">Africa (Toto) — Kalimba + Flute + Pad <span class="essence">Layer cinématique signature</span></div>
+      <div class="enc-recipe-slot">USR2:B04</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1</li>
+      <li>RIGHT1 : VOICE → catégorie Sub (mallets/bells) → <span class="v">Kalimba</span> · Volume <span class="v">100</span></li>
+      <li>Activer RIGHT2 → Maintenir RIGHT2 → VOICE → 10 → <span class="v">Flute 1</span></li>
+      <li>RIGHT2 Volume <span class="v">40</span></li>
+      <li>RIGHT2 Page 8 NoteLimit : <span class="pill">Basse</span> = <span class="v">C5</span> · <span class="pill">Haute</span> = <span class="v">C7</span> (flûte uniquement dans les aigus)</li>
+      <li>Activer LEFT1 → Maintenir LEFT1 → VOICE → 6 → <span class="v">Slow Pad 1</span> (ou Soft Pad 1)</li>
+      <li>LEFT1 Volume <span class="v">55</span> · Attack <span class="v">+40</span> · Release <span class="v">80</span></li>
+      <li>SPLIT éteint (layer total)</li>
+      <li>REVERB : <span class="v">RichHall</span> · Time <span class="v">3.0 s</span> · RevSend <span class="v">45</span></li>
+      <li>Master EQ : Hi-Mid <span class="v">+2 @ 4 kHz Q 1.0</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / B / 4</span> → "Africa"</li>
+    </ol>
+  </div>
+
+  <div class="enc-recipe">
+    <div class="enc-recipe-head">
+      <div class="enc-recipe-name">CP80 Hold the Line (Toto/David Paich) <span class="essence">Le CP80 signature de 1978</span></div>
+      <div class="enc-recipe-slot">USR2:B05</div>
+    </div>
+    <ol class="enc-steps">
+      <li>Charger PRE · A · 1 → Maintenir LEFT1 → VOICE → 2 → <span class="v">CP80</span></li>
+      <li>PRE-AMP : <span class="pill">Hammer</span> = <span class="v">Hard 1</span></li>
+      <li>EQ intégré : <span class="pill">Bass</span> = <span class="v">+1</span> · <span class="pill">Middle</span> = <span class="v">0</span> · <span class="pill">Treble</span> = <span class="v">+3</span> · <span class="pill">Brilliance</span> = <span class="v">+2</span></li>
+      <li><span class="pill">Decay</span> = <span class="v">+6</span> (le CP80 a un long sustain)</li>
+      <li>(TunCrv possible — CP80 accepte stretch tuning) : Equal par défaut</li>
+      <li>MOD-FX : <span class="v">Chorus</span> · Speed <span class="v">0.5 Hz</span> · Depth <span class="v">30</span> · Mix <span class="v">25</span></li>
+      <li>PWR-AMP : <span class="v">Clean Amp</span> · Drive <span class="v">15</span></li>
+      <li>Comp376 : Drive <span class="v">30</span> · Ratio <span class="v">4</span> · Attack <span class="v">5 ms</span> · Release <span class="v">100 ms</span></li>
+      <li>Master EQ : Hi-Mid <span class="v">+2 @ 3.5 kHz</span> (mordant signature CP80)</li>
+      <li>REVERB : <span class="v">Stage2</span> · Time <span class="v">1.6 s</span></li>
+      <li><span class="kbd">STORE</span> → <span class="v">USR2 / B / 5</span> → "CP80Hold"</li>
+    </ol>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">26</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 27 — VELOCITY PROFILES
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 14 &middot; Velocity Sensitivity</span>
+  <h1 class="section-title">Quatre profils, <em>une règle d'or</em>.</h1>
+  <p class="lead">La Velocity Sensitivity est le réglage le plus sous-estimé du CP5. La règle Bad Mister : <strong>Depth + Offset doivent toujours sommer à 128</strong>. Voici comment encoder les 4 profils à appliquer selon le style de chaque Performance.</p>
+
+  <h2 class="sub-title">Où trouver Velocity Depth + Offset</h2>
+  <div class="body">
+    <p>Pendant l'édition d'une partie (LEFT1, RIGHT1, etc.) — Maintenir la partie ≥ 1 s — naviguer vers la page Velocity. Selon firmware, c'est généralement Page <span class="kbd">7</span> du Part Edit Screen, ou via <strong>EDIT &gt; PART &gt; VELOCITY</strong>.</p>
+    <p>Les Potars 1 et 2 contrôlent <strong>Depth</strong> et <strong>Offset</strong>. À régler avant de STORE.</p>
+  </div>
+
+  <h2 class="sub-title">Les quatre profils à mémoriser</h2>
+  <table class="tbl">
+    <thead><tr><th style="width: 40mm;">Profil</th><th class="num" style="width: 16mm;">Depth</th><th class="num" style="width: 16mm;">Offset</th><th>À utiliser sur</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Default (sensibilité standard)</strong></td><td class="num"><span class="v">64</span></td><td class="num"><span class="v">64</span></td><td>CF Grand Pop, S6 Imperial, Brass Section, recettes neutres</td></tr>
+      <tr><td><strong>Toucher plus lourd</strong></td><td class="num"><span class="v">58</span></td><td class="num"><span class="v">70</span></td><td>Jamais utilisé sauf si tu joues très léger naturellement</td></tr>
+      <tr><td><strong>Toucher dur, rock/pop</strong></td><td class="num"><span class="v">85</span></td><td class="num"><span class="v">43</span></td><td>CF Boogie Woogie, Rock Wurli, 75Rd Funky Bark</td></tr>
+      <tr><td><strong>Sensible, jazz</strong></td><td class="num"><span class="v">60</span></td><td class="num"><span class="v">68</span></td><td>S6 Jazz Ballade, S6 Cocktail Bar, 71Rd Pure Tine, Sax Solo, Vibraphone</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sub-title">Velocity Curves globales (Utility)</h2>
+  <div class="body">
+    <p><span class="kbd">UTILITY</span> → page Velocity (variable selon firmware) → <span class="pill">Curve</span></p>
+  </div>
+  <table class="tbl">
+    <thead><tr><th style="width: 28mm;">Curve</th><th>Caractère</th><th>Performances cibles</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Normal</strong></td><td>Linéaire, équilibré</td><td>Toutes les recettes pop/rock standard</td></tr>
+      <tr><td><strong>Soft / Wide1</strong></td><td>Plus expressif pp</td><td>Jazz acoustique, ballades, Vibraphone, Sax Solo</td></tr>
+      <tr><td><strong>Hard</strong></td><td>Réponse percussive</td><td>Worship full piano, CF Rock</td></tr>
+      <tr><td><strong>Wide</strong></td><td>Compresseur/expander</td><td>Funk Wurli, Clavinet (Funky Clavi Wah)</td></tr>
+      <tr><td><strong>Fixed</strong></td><td>Vélocité constante 100</td><td>Tous les orgues, leads synth (selon goût)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <div class="callout-label">Encoder la Velocity Curve globalement</div>
+    <p>La <strong>Curve</strong> est un paramètre <strong>Utility (global)</strong>, pas par-Performance. Tu choisis donc UNE curve qui correspond à ton style dominant. Si tu fais 80 % du temps du jazz, Soft. Si tu joues funk et rock, Wide. Le Depth/Offset par-Performance affine ensuite à l'intérieur de cette curve.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Le piège du DX à vélocité 127</div>
+    <p>Sur les DX (Legend, Woody, FTine, 7II, Mellow, Crisp), un cling métallique apparaît à vélocité max. Solution : <strong>Offset 70 / Depth 58</strong> — tu plafonnes avant 127, le ring disparaît. <strong>À appliquer sur les 6 DX</strong> de USR1:C06-C10.</p>
+  </div>
+
+  <div class="warn">
+    <div class="callout-label">⚠ La vélocité change le timbre, pas le volume</div>
+    <p>Sur le CP5, la vélocité pilote des changements de timbre profonds — c'est le point du modeling SCM. Ces réglages modifient véritablement la <strong>couleur</strong> du son. <strong>Recommandation Yamaha : joue 15 minutes avant de retoucher.</strong> La sensation s'apprivoise.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">27</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 28 — MASTER EQ + MASTER COMP PAR CONTEXTE
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 15 &middot; Réglages live globaux</span>
+  <h1 class="section-title">Master EQ + Master Comp <em>par contexte de scène</em>.</h1>
+  <p class="lead">Ces deux blocs sont <strong>globaux</strong> (hors Performance), partagés par toutes tes Performances. Tu les règles UNE FOIS pour le contexte de la scène, et c'est tout. Voici les 4 préréglages les plus utiles.</p>
+
+  <h2 class="sub-title">Où encoder</h2>
+  <div class="body">
+    <p><strong>Master EQ</strong> : ajuste directement les 5 potars physiques <span class="kbd">MASTER EQUALIZER</span> à droite du panneau. Pour les paramètres fins (Freq, Q), va dans <span class="kbd">UTILITY</span> → page Master EQ.</p>
+    <p><strong>Master Compressor</strong> : <span class="kbd">UTILITY</span> → page Master Comp → règle 3 bandes (Low/Mid/High). N'oublie pas de STORE depuis cet écran pour figer dans les paramètres système.</p>
+  </div>
+
+  <h2 class="sub-title">Préréglages Master EQ — 5 bandes</h2>
+  <table class="tbl">
+    <thead><tr><th style="width: 42mm;">Contexte</th><th>Réglages (Low · Lo-Mid · Mid · Hi-Mid · High)</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Live PA grosse salle</strong></td><td><span class="v">+2 dB @ 80 Hz shelf</span> · <span class="v">0</span> · <span class="v">−1 @ 500 Hz Q 1.0</span> · <span class="v">+2 @ 3 kHz Q 0.7</span> · <span class="v">+1 @ 8 kHz shelf</span></td></tr>
+      <tr><td><strong>In-ear monitors</strong></td><td><span class="v">0</span> · <span class="v">+1 @ 200 Hz Q 0.5</span> · <span class="v">0</span> · <span class="v">+2 @ 4 kHz Q 1.0</span> · <span class="v">+2 @ 10 kHz shelf</span></td></tr>
+      <tr><td><strong>Jazz acoustique</strong></td><td><span class="v">+1 @ 100 Hz shelf</span> · <span class="v">0</span> · <span class="v">0</span> · <span class="v">0</span> · <span class="v">+1 @ 12 kHz shelf</span></td></tr>
+      <tr><td><strong>Petite salle / cave</strong></td><td><span class="v">−2 @ 80 Hz shelf</span> (couper sub) · <span class="v">0</span> · <span class="v">+1 @ 800 Hz</span> · <span class="v">0</span> · <span class="v">0</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sub-title">Préréglages Master Comp 3 bandes</h2>
+  <table class="tbl">
+    <thead><tr><th style="width: 42mm;">Contexte</th><th>Low (Thr/Ratio/Out)</th><th>Mid</th><th>High</th><th>Release</th></tr></thead>
+    <tbody>
+      <tr><td><strong>Live PA grosse salle</strong></td><td><span class="v">−24 / 3.0 / +2</span></td><td><span class="v">−18 / 4.0 / +1</span></td><td><span class="v">−20 / 2.5 / +2</span></td><td><span class="v">150 ms</span></td></tr>
+      <tr><td><strong>In-ear monitors</strong></td><td><span class="v">−20 / 2.5 / 0</span></td><td><span class="v">−16 / 3.0 / 0</span></td><td><span class="v">−18 / 2.0 / +1</span></td><td><span class="v">100 ms</span></td></tr>
+      <tr><td><strong>Jazz acoustique</strong></td><td><span class="v">−30 / 2.0 / 0</span></td><td><span class="v">−24 / 1.5 / 0</span></td><td><span class="v">−26 / 2.0 / 0</span></td><td><span class="v">200 ms</span></td></tr>
+      <tr><td><strong>Petite salle / cave</strong></td><td>discret</td><td><span class="v">−18 / 3 / 0</span></td><td>discret</td><td><span class="v">80 ms</span></td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sub-title">Dividing Frequencies (split entre bandes)</h2>
+  <div class="body">
+    <p>UTILITY → page Master Comp → <span class="pill">DivFrqL</span> (split Low/Mid) : <span class="v">200-250 Hz</span> standard. <span class="pill">DivFrqH</span> (split Mid/High) : <span class="v">3-5 kHz</span> standard.</p>
+  </div>
+
+  <div class="warn">
+    <div class="callout-label">⚠ Ne pas doubler les compressions</div>
+    <p>Si une Performance a déjà son Comp376 actif (Wurli Bright, Rock Wurli, CF Boogie Woogie, etc.) ET que le Master Comp est agressif (ratio 4+), <strong>tu compresses deux fois — la dynamique meurt</strong>. Sur les scènes où tu joues beaucoup de Wurly/Clavi, mets le Master Comp discret. Sur les scènes acoustiques, le Master Comp peut être plus actif.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">STORE pour figer les paramètres système</div>
+    <p>Une fois Master EQ et Master Comp réglés à ton goût, <span class="kbd">STORE</span> depuis l'écran Master Comp (ou Master EQ). Ces réglages vivent dans les <strong>paramètres système</strong>, pas dans une Performance. Ils survivent à l'extinction.</p>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">28</span>
+  </div>
+</section>
+
+
+<!-- ════════════════════════════════════════════════════════════
+     PAGE 29 — SAUVEGARDE + AU REVOIR
+     ════════════════════════════════════════════════════════════ -->
+<section class="page">
+  <span class="eyebrow">Chapitre 16 &middot; Conserver ce que tu as encodé</span>
+  <h1 class="section-title">Sauvegarde, AutoLoad, <em>et la suite</em>.</h1>
+  <p class="lead">Tu as 50+ Performances encodées dans la mémoire utilisateur. Cette dernière page te montre comment les sécuriser et les charger automatiquement à chaque démarrage.</p>
+
+  <h2 class="sub-title">Sauvegarde complète sur clé USB</h2>
+  <div class="universal">
+    <h3>Procédure SAVE ALL (à faire APRÈS chaque session d'encodage)</h3>
+    <ol>
+      <li>Brancher une clé USB <strong>Verbatim</strong> (Kingston signalées incompatibles), formatée <strong>FAT/FAT32</strong>, dans le port USB TO DEVICE du panneau supérieur</li>
+      <li>Touche <span class="kbd">FILE</span> → page <span class="kbd">1</span> → Potar 1 <span class="pill">Save</span></li>
+      <li>Type = <span class="v">All</span> (extension .C5A)</li>
+      <li>Nom du fichier : ex. <span class="v">CP5_BACKUP_2026</span> (10 caractères max)</li>
+      <li><span class="kbd">ENTER</span></li>
+      <li>Attendre <span class="scr-r">Completed</span> — <strong>NE JAMAIS éteindre pendant <span class="scr-r">Please keep power on...</span></strong></li>
+    </ol>
+  </div>
+
+  <h2 class="sub-title">AutoLoad au démarrage</h2>
+  <div class="universal">
+    <h3>Avoir tes 50 Performances chargées automatiquement à chaque allumage</h3>
+    <ol>
+      <li>Après la sauvegarde Save All ci-dessus, garder la clé USB branchée</li>
+      <li>Sur l'ordinateur (ou directement en gardant la clé branchée), <strong>renommer</strong> le fichier en <span class="v">AUTOLOAD.C5A</span> — exactement ce nom, en majuscules, à la racine de la clé</li>
+      <li>Sur le CP5 : <span class="kbd">UTILITY</span> → page <span class="kbd">11</span> (touche A) → <span class="pill">AutoLoad</span> = <span class="v">on</span></li>
+      <li><span class="kbd">STORE</span> les paramètres système</li>
+      <li>Désormais, brancher la clé AVANT d'allumer le CP5 → tes 50 Performances + paramètres système se chargent automatiquement</li>
+      <li>Si la clé est absente, le CP5 démarre sur le Factory Set sans planter</li>
+    </ol>
+  </div>
+
+  <h2 class="sub-title">Performance de démarrage</h2>
+  <div class="body">
+    <p><span class="kbd">UTILITY</span> → page <span class="kbd">12</span> (touche B) → <span class="pill">StartUp</span> = <span class="v">USR1:A01</span> (CFGrandRk). Le CP5 démarre directement sur cette Performance. Tu branches, tu allumes, tu joues.</p>
+  </div>
+
+  <div class="crit">
+    <div class="callout-label">🔴 Sauvegarde mensuelle obligatoire</div>
+    <p>La flash ROM du CP5 n'est pas immortelle. Fais une sauvegarde Save All <strong>une fois par mois minimum</strong>, sur une clé USB dédiée. Pendant un firmware update, sauvegarde aussi — la V1.20 efface toutes les données utilisateur. Ta clé USB AUTOLOAD est ton seul filet.</p>
+  </div>
+
+  <div class="farewell">
+    <p>Tu as devant toi cinquante Performances prêtes à jouer en live. Cinquante recettes assemblées à partir de la documentation Yamaha officielle, des threads Bad Mister, de Piano World, d'Audiofanzine, du pack Bruno Zucchetti — quarante ans d'expérience CP condensés en quelques heures d'encodage.</p>
+
+    <p>Si tu as fait toutes les recettes, ton CP5 contient plus de personnalité que la sortie d'usine. Sauvegarde, joue, ajuste à l'oreille, refais STORE. Le piano vit et meurt par tes mains.</p>
+
+    <p>Le guide ultime reste à côté pour comprendre <em>pourquoi</em>. Ce livret-ci pour comprendre <em>comment</em>. Les deux ensemble — tu n'as plus besoin de rien d'autre.</p>
+
+    <div class="sign">— Maurisson, Herve, 2026</div>
+  </div>
+
+  <div class="foot">
+    <span class="brand">Encoder le CP5 &middot; Maurisson</span>
+    <span class="num">29</span>
+  </div>
+</section>
+
+</body>
+</html>
