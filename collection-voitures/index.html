@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La collection de papa — jouets anciens</title>
-<meta name="description" content="La collection de jouets anciens héritée de papa : Dinky Toys France & Angleterre, Corgi, Crescent, Britains et tôle lithographiée des années 1950-60. Identifiés, datés et estimés.">
+<title>La collection de papa — catalogue raisonné</title>
+<meta name="description" content="Catalogue raisonné de la collection de jouets anciens héritée de papa : Dinky Toys France & Angleterre, Corgi, Crescent, Britains et tôle lithographiée des années 1950-60. Identifiés, datés et estimés, lot par lot.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='13' font-size='13'%3E🚗%3C/text%3E%3C/svg%3E">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-56YBF3Q9FN"></script>
 <script>
@@ -13,555 +13,540 @@
   gtag('js', new Date());
   gtag('config', 'G-56YBF3Q9FN', { cookie_domain: '.maurisson.com', cookie_flags: 'SameSite=None;Secure' });
 </script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#1c1a17; --bg2:#232019; --card:#2b2620; --card2:#322c24;
-    --ink:#f3ead9; --ink-soft:#cdbfa6; --muted:#9c8e76;
-    --line:#473e31; --line-soft:#3a332a;
-    --cu:#c9892f; --cu2:#e7a948; --cu-soft:#7a5a2a;
-    --gem:#e7a948; --green:#7c8f54; --red:#b8543f; --blue:#5d7e98;
-    --shadow:0 18px 40px -18px rgba(0,0,0,.7);
+    --paper:#faf8f3; --paper-2:#f1ece2; --plate:#ece5d8;
+    --ink:#17150f; --ink-2:#56514a; --ink-3:#8f887c;
+    --rule:#ded6c7; --rule-2:#cabfab;
+    --accent:#c0341a; --accent-deep:#8f2310; --accent-soft:#f0e4dc;
+    --max:1180px;
+    --serif:"Playfair Display",Georgia,serif;
+    --sans:"Inter",system-ui,sans-serif;
   }
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
   body{
-    margin:0; background:linear-gradient(180deg,#16140f,#1c1a17 30%);
-    color:var(--ink);
-    font-family:"Iowan Old Style","Palatino Linotype",Georgia,serif;
-    line-height:1.65; -webkit-font-smoothing:antialiased;
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); font-size:17px; line-height:1.7;
+    -webkit-font-smoothing:antialiased; overflow-x:hidden;
   }
-  a{color:var(--cu2);text-decoration:none}
-  a:hover{text-decoration:underline}
-  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  img{max-width:100%;display:block}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{color:var(--accent-deep)}
+  :focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 clamp(20px,5vw,64px)}
 
-  /* ---- HERO ---- */
-  header.hero{
-    padding:72px 0 46px; text-align:center; position:relative; overflow:hidden;
-    border-bottom:1px solid var(--line);
-    background:
-      radial-gradient(900px 380px at 50% -120px, rgba(201,137,47,.22), transparent 70%),
-      linear-gradient(180deg,#211d16,#1c1a17);
+  /* ---------- masthead ---------- */
+  .masthead{border-bottom:1px solid var(--rule);position:sticky;top:0;z-index:30;
+    background:rgba(250,248,243,.82);backdrop-filter:saturate(140%) blur(10px)}
+  .masthead .wrap{display:flex;align-items:center;justify-content:space-between;
+    height:58px;gap:16px}
+  .mast-brand{font-family:var(--serif);font-weight:600;font-size:1.05rem;letter-spacing:.01em;color:var(--ink)}
+  .mast-brand a{color:inherit}
+  .mast-meta{font-size:.72rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-3);
+    white-space:nowrap}
+  @media(max-width:560px){.mast-meta{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{padding:clamp(56px,11vw,128px) 0 clamp(40px,7vw,80px);border-bottom:1px solid var(--rule)}
+  .hero .kicker{display:flex;align-items:center;gap:14px;font-size:.74rem;letter-spacing:.3em;
+    text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:clamp(22px,4vw,38px)}
+  .hero .kicker::after{content:"";flex:1;height:1px;background:var(--rule-2);max-width:240px}
+  .hero h1{font-family:var(--serif);font-weight:800;
+    font-size:clamp(2.9rem,11vw,7rem);line-height:.95;letter-spacing:-.025em;margin:0;color:var(--ink)}
+  .hero h1 em{font-style:italic;font-weight:500;color:var(--accent)}
+  .hero .lede{font-family:var(--serif);font-weight:400;font-style:italic;
+    font-size:clamp(1.15rem,2.6vw,1.6rem);line-height:1.5;color:var(--ink-2);
+    max-width:34ch;margin:clamp(26px,4vw,40px) 0 0}
+
+  /* stats — editorial figures */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,3vw,30px);
+    margin-top:clamp(40px,7vw,72px);border-top:1px solid var(--rule);padding-top:clamp(24px,4vw,38px)}
+  @media(max-width:620px){.stats{grid-template-columns:repeat(2,1fr);gap:26px 14px}}
+  .stat b{display:block;font-family:var(--serif);font-weight:700;
+    font-size:clamp(2rem,7vw,3.4rem);line-height:1;letter-spacing:-.02em;color:var(--ink)}
+  .stat.accent b{color:var(--accent)}
+  .stat span{display:block;margin-top:8px;font-size:.7rem;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--ink-2)}
+
+  /* intro note */
+  .note{max-width:64ch;margin:clamp(44px,7vw,72px) 0 0;font-size:1.02rem;color:var(--ink-2)}
+  .note strong{color:var(--ink);font-weight:600}
+  .note .small{display:block;margin-top:16px;font-size:.86rem;color:var(--ink-3);max-width:70ch}
+
+  /* ---------- chapter heads ---------- */
+  .chapter{display:flex;align-items:flex-end;gap:clamp(16px,3vw,28px);
+    margin:clamp(70px,12vw,128px) 0 clamp(30px,5vw,52px);padding-bottom:22px;
+    border-bottom:2px solid var(--ink)}
+  .chapter .num{font-family:var(--serif);font-weight:800;font-style:italic;
+    font-size:clamp(2.4rem,9vw,4.6rem);line-height:.8;color:var(--accent);flex-shrink:0}
+  .chapter .ct{flex:1}
+  .chapter h2{font-family:var(--serif);font-weight:600;font-size:clamp(1.4rem,4vw,2.3rem);
+    line-height:1.05;margin:0 0 6px;letter-spacing:-.01em}
+  .chapter p{margin:0;font-size:.92rem;color:var(--ink-2);max-width:62ch}
+
+  /* ---------- lot ---------- */
+  .lot{display:grid;grid-template-columns:1fr;gap:clamp(22px,4vw,40px);
+    padding:clamp(30px,5vw,56px) 0;border-bottom:1px solid var(--rule);
+    align-items:start;scroll-margin-top:70px}
+  @media(min-width:840px){
+    .lot{grid-template-columns:minmax(0,46%) minmax(0,1fr);gap:clamp(36px,4vw,64px);align-items:center}
+    .lot.flip .plate{order:2}
   }
-  .hero .kicker{letter-spacing:.42em;text-transform:uppercase;font-size:.72rem;
-    color:var(--cu2);font-family:ui-sans-serif,system-ui,sans-serif;font-weight:600}
-  .hero h1{font-size:clamp(2.1rem,5vw,3.4rem);margin:.25em 0 .15em;
-    font-weight:600;letter-spacing:.01em;
-    background:linear-gradient(180deg,#f7eddb,#d7b277);
-    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-  .hero p.sub{color:var(--ink-soft);max-width:640px;margin:.4em auto 0;font-size:1.08rem}
-  .hero .meta{margin-top:8px;color:var(--muted);font-size:.86rem;font-family:ui-sans-serif,system-ui,sans-serif}
+  /* plate (photo) */
+  .plate{margin:0}
+  .plate .frame{position:relative;border:1px solid var(--rule-2);background:var(--plate);
+    padding:10px;box-shadow:0 1px 0 var(--paper),0 22px 40px -28px rgba(40,30,15,.45)}
+  .plate .frame img{width:100%;aspect-ratio:4/3;object-fit:cover;object-position:center;
+    background:#ddd5c6}
+  .plate figcaption{display:flex;justify-content:space-between;gap:12px;
+    margin-top:10px;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+  .plate figcaption .pl{color:var(--accent);font-weight:600}
 
-  .stats{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin:30px auto 0}
-  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;
-    padding:14px 22px;min-width:120px;box-shadow:var(--shadow)}
-  .stat b{display:block;font-size:1.7rem;color:var(--cu2);line-height:1.1}
-  .stat span{font-size:.78rem;color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif;
-    text-transform:uppercase;letter-spacing:.08em}
+  /* body */
+  .lot .num{font-family:var(--serif);font-weight:700;font-size:.95rem;letter-spacing:.04em;
+    color:var(--accent);margin:0 0 10px}
+  .lot h3{font-family:var(--serif);font-weight:700;font-size:clamp(1.6rem,4.4vw,2.5rem);
+    line-height:1.04;letter-spacing:-.015em;margin:0 0 6px}
+  .lot .sub{font-style:italic;color:var(--ink-2);font-size:1.02rem;margin:0 0 20px;max-width:48ch}
 
-  /* ---- intro / legend ---- */
-  .intro{margin:42px 0 8px;padding:22px 26px;background:var(--card);
-    border:1px solid var(--line);border-left:3px solid var(--cu);border-radius:12px;color:var(--ink-soft)}
-  .intro b{color:var(--ink)}
-  .legend{display:flex;gap:18px;flex-wrap:wrap;margin:18px 0 6px;font-size:.85rem;
-    color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif}
-  .legend span{display:inline-flex;align-items:center;gap:7px}
+  /* spec list */
+  .spec{list-style:none;margin:0 0 20px;padding:18px 0;border-top:1px solid var(--rule);
+    border-bottom:1px solid var(--rule);display:grid;grid-template-columns:auto 1fr;gap:7px 22px}
+  .spec dt{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);
+    align-self:center}
+  .spec dd{margin:0;font-size:.95rem;color:var(--ink);font-weight:500}
+  .spec .val{font-family:var(--serif);font-weight:700;font-size:1.3rem;color:var(--accent);line-height:1}
 
-  /* ---- section titles ---- */
-  h2.sec{font-size:1.5rem;margin:54px 0 6px;padding-bottom:10px;border-bottom:1px solid var(--line);
-    display:flex;align-items:baseline;gap:12px;color:#fff}
-  h2.sec .n{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.8rem;color:var(--cu2);
-    letter-spacing:.2em;text-transform:uppercase}
-  .sec-desc{color:var(--muted);margin:2px 0 26px;font-size:.96rem}
+  .lot p.txt{margin:0 0 14px;color:var(--ink-2);max-width:60ch}
+  .lot p.txt strong{color:var(--ink);font-weight:600}
+  .lead-label{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+    font-weight:700;margin:18px 0 4px}
+  .insight{background:var(--paper-2);border-left:2px solid var(--accent);
+    padding:14px 18px;margin:16px 0;font-size:.92rem;color:var(--ink-2)}
+  .insight strong{color:var(--ink)}
+  .srcs{margin-top:18px;font-size:.78rem;color:var(--ink-3);letter-spacing:.01em}
+  .srcs a{margin-right:2px}
 
-  /* ---- card ---- */
-  .card{background:linear-gradient(180deg,var(--card2),var(--card));
-    border:1px solid var(--line);border-radius:18px;overflow:hidden;margin:26px 0;
-    box-shadow:var(--shadow);scroll-margin-top:20px}
-  .card.gem{border-color:var(--cu);box-shadow:0 0 0 1px rgba(231,169,72,.25),var(--shadow)}
-  .card-grid{display:grid;grid-template-columns:minmax(0,420px) 1fr}
-  @media(max-width:780px){.card-grid{grid-template-columns:1fr}}
-  .photo{position:relative;background:#100e0b;min-height:260px;display:flex}
-  .photo img{width:100%;height:100%;object-fit:cover;display:block}
-  .photo .ribbon{position:absolute;top:14px;left:0;background:linear-gradient(90deg,var(--cu),var(--cu2));
-    color:#231a09;font-family:ui-sans-serif,system-ui,sans-serif;font-weight:800;font-size:.74rem;
-    letter-spacing:.06em;padding:5px 14px 5px 12px;border-radius:0 8px 8px 0;box-shadow:0 4px 12px rgba(0,0,0,.4)}
-  .body{padding:24px 26px}
-  .body h3{margin:0 0 2px;font-size:1.42rem;color:#fff;font-weight:600}
-  .body .latin{color:var(--muted);font-size:.92rem;font-style:italic;margin-bottom:14px}
+  /* pièce phare flag */
+  .lot.star{position:relative}
+  .flag{display:inline-flex;align-items:center;gap:8px;font-size:.68rem;letter-spacing:.2em;
+    text-transform:uppercase;color:var(--accent);font-weight:700;
+    border:1px solid var(--accent);border-radius:999px;padding:5px 13px;margin:0 0 14px}
+  .flag svg{width:13px;height:13px}
 
-  .badges{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;
-    font-family:ui-sans-serif,system-ui,sans-serif}
-  .badge{font-size:.74rem;padding:4px 11px;border-radius:999px;border:1px solid var(--line);
-    background:#241f18;color:var(--ink-soft);display:inline-flex;gap:6px;align-items:center}
-  .badge b{color:#fff;font-weight:700}
-  .badge.cu{border-color:var(--cu-soft);background:rgba(201,137,47,.12);color:var(--cu2)}
-  .badge.price{border-color:var(--cu);background:rgba(231,169,72,.16);color:#f6dba2;font-weight:700}
-  .badge.warn{border-color:#6b5a2a;background:rgba(180,140,40,.1);color:#dcc488}
+  /* footer */
+  .colophon{margin-top:clamp(60px,10vw,110px);border-top:2px solid var(--ink);
+    padding:clamp(34px,6vw,64px) 0 clamp(50px,8vw,80px)}
+  .colophon h4{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:0 0 16px}
+  .colophon p{color:var(--ink-2);font-size:.92rem;max-width:72ch;margin:0 0 14px}
+  .colophon .end{margin-top:26px;display:flex;flex-wrap:wrap;gap:18px;align-items:center;
+    justify-content:space-between;font-size:.8rem;letter-spacing:.04em;color:var(--ink-3)}
+  .colophon .end a{font-weight:600}
 
-  .body h4{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.74rem;letter-spacing:.14em;
-    text-transform:uppercase;color:var(--cu2);margin:18px 0 4px;font-weight:700}
-  .body p{margin:.3em 0 .6em;color:var(--ink-soft)}
-  .body p strong{color:var(--ink)}
-  .tip{background:#211c15;border-left:3px solid var(--cu-soft);padding:10px 14px;border-radius:0 8px 8px 0;
-    font-size:.92rem;color:var(--ink-soft);margin:10px 0}
-  .tip b{color:var(--cu2)}
-  .src{font-family:ui-sans-serif,system-ui,sans-serif;font-size:.78rem;color:var(--muted);
-    margin-top:14px;border-top:1px dashed var(--line-soft);padding-top:10px}
-  .src a{margin-right:4px}
-
-  table.spec{width:100%;border-collapse:collapse;margin:6px 0 4px;font-size:.92rem}
-  table.spec td{padding:5px 8px;border-bottom:1px solid var(--line-soft);vertical-align:top}
-  table.spec td:first-child{color:var(--muted);width:38%;font-family:ui-sans-serif,system-ui,sans-serif;font-size:.84rem}
-  table.spec td:last-child{color:var(--ink)}
-
-  footer{margin:60px 0 40px;padding:26px;background:var(--card);border:1px solid var(--line);
-    border-radius:14px;color:var(--muted);font-size:.86rem;font-family:ui-sans-serif,system-ui,sans-serif}
-  footer b{color:var(--ink-soft)}
-  .dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+  @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;
+    transition:none!important;animation:none!important}}
 </style>
 </head>
 <body>
 
-<header class="hero">
+  <header class="masthead">
+    <div class="wrap">
+      <span class="mast-brand"><a href="/">Studio Maurisson</a></span>
+      <span class="mast-meta">Catalogue raisonné · MCML–MCMLXIV</span>
+    </div>
+  </header>
+
+  <main>
+  <section class="hero">
+    <div class="wrap">
+      <p class="kicker">Collection privée · héritage familial</p>
+      <h1>La collection<br><em>de papa</em></h1>
+      <p class="lede">Des jouets qui ont vraiment roulé entre des mains d'enfant — Dinky, Corgi, Crescent, Britains et tôle d'après-guerre — identifiés, datés et estimés, un lot à la fois.</p>
+
+      <div class="stats">
+        <div class="stat"><b>17</b><span>objets</span></div>
+        <div class="stat"><b>15</b><span>lots</span></div>
+        <div class="stat accent"><b>4</b><span>pièces phares</span></div>
+        <div class="stat"><b>500–1000&nbsp;€</b><span>valeur estimée</span></div>
+      </div>
+
+      <p class="note">Le cœur de l'ensemble, ce sont des <strong>Dinky Toys des années 1950-60</strong>, fabriquées à Bobigny et à Liverpool, accompagnées d'un <strong>Corgi</strong> iconique, d'artillerie <strong>Crescent &amp; Britains</strong> et de <strong>tôle allemande</strong>. Des pièces ayant servi — sans boîte, sauf le porte-char — ce qui n'enlève rien à leur histoire.
+      <span class="small">Estimations en euros, vente entre particuliers/collectionneurs, ajustées à l'état réel (jouées, sans boîte). Une cote « guide » suppose une pièce neuve en boîte parfaite : on en est ici à 25-45 %. Un marchand paierait moins ; une enchère peut surprendre sur les pièces phares.</span></p>
+    </div>
+  </section>
+
   <div class="wrap">
-    <div class="kicker">Dossier de collection · héritage</div>
-    <h1>La collection de papa</h1>
-    <p class="sub">Jouets anciens — Dinky Toys (France &amp; Angleterre), Corgi, et tôle lithographiée des années 1950‑60. Identifiés, datés et estimés un par un.</p>
-    <div class="meta">Inventaire dressé le 13 juin 2026 · 27 photos · recherche approfondie</div>
-    <div class="stats">
-      <div class="stat"><b>17</b><span>objets</span></div>
-      <div class="stat"><b>14</b><span>modèles</span></div>
-      <div class="stat"><b>4</b><span>pépites&nbsp;★</span></div>
-      <div class="stat"><b>≈500–1000&nbsp;€</b><span>valeur estimée</span></div>
+
+    <!-- ============ I ============ -->
+    <div class="chapter">
+      <span class="num">I</span>
+      <div class="ct">
+        <h2>Voitures civiles &amp; de course</h2>
+        <p>La berline mythique des fifties et les monoplaces des premières heures de la Formule 1.</p>
+      </div>
     </div>
-  </div>
-</header>
 
-<div class="wrap">
-
-  <div class="intro">
-    Le cœur de la collection, ce sont des <b>Dinky Toys des années 1950‑60</b>, fabriquées à Bobigny (France) et à Liverpool (Angleterre), complétées par un <b>Corgi</b> iconique et de beaux <b>jouets en tôle allemands</b>. Des pièces qui ont <b>vraiment servi</b> (pas de boîtes, sauf le porte‑char) — ce qui n'enlève rien à leur charme ni à leur histoire. Voici, pour chacune, tout ce qu'on sait : la vraie machine derrière le jouet, sa fabrication, et sa cote actuelle.
-    <div class="legend">
-      <span><span class="dot" style="background:var(--gem)"></span> ★ pépite à valeur notable</span>
-      <span><span class="dot" style="background:var(--green)"></span> identification certaine (marquage châssis lu)</span>
-      <span><span class="dot" style="background:var(--blue)"></span> tôle non signée — datée au style</span>
-    </div>
-    <p style="margin:14px 0 0;font-size:.86rem;color:var(--muted);font-family:ui-sans-serif,system-ui,sans-serif">
-      Les estimations sont en euros, pour une <b style="color:var(--ink-soft)">vente entre particuliers/collectionneurs</b>, ajustées à l'état réel (jouées, sans boîte). Une cote « guide » correspond à une pièce neuve en boîte parfaite : on en est ici à 25‑45 %. Un marchand paierait moins ; une enchère peut surprendre sur les pépites.
-    </p>
-  </div>
-
-  <!-- ============ SECTION 1 : CIVILES & COURSE ============ -->
-  <h2 class="sec"><span class="n">Lot I</span> Voitures civiles &amp; de course</h2>
-  <p class="sec-desc">La berline mythique des années 50 et les monoplaces des débuts de la Formule 1.</p>
-
-  <!-- DS19 -->
-  <div class="card gem" id="ds19">
-    <div class="card-grid">
-      <div class="photo"><span class="ribbon">★ Pépite</span><img src="photos/20260613_205918.jpg" alt="Citroën DS19 Dinky Toys"></div>
-      <div class="body">
+    <!-- 01 DS -->
+    <article class="lot star" id="ds19">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_205918.jpg" alt="Citroën DS19 Dinky Toys, carrosserie deux tons vert pâle, vue de profil"></div>
+        <figcaption><span class="pl">Pl. 01</span><span>Dinky Toys France · réf. 24C</span></figcaption>
+      </figure>
+      <div class="bd">
+        <span class="flag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.3L21 9l-4.9 4.3L17.6 21 12 17.3 6.4 21l1.5-7.7L3 9l6.4-.7z"/></svg> Pièce phare</span>
+        <p class="num">Lot 01</p>
         <h3>Citroën DS19</h3>
-        <div class="latin">Dinky Toys France — réf. 24C · carrosserie deux tons vert pâle / toit gris</div>
-        <div class="badges">
-          <span class="badge cu">Dinky Toys <b>France</b></span>
-          <span class="badge">réf. <b>24C</b></span>
-          <span class="badge">1956–1959</span>
-          <span class="badge">éch. <b>1/43</b></span>
-          <span class="badge price">≈ 30–55 €</span>
-        </div>
-        <h4>La voiture réelle</h4>
-        <p>Dévoilée le <strong>6 octobre 1955 au Salon de Paris</strong>, la DS provoque un choc : des dizaines de milliers de commandes en quelques jours. Ligne « soucoupe » futuriste, <strong>suspension hydropneumatique</strong> (correcteur d'assiette, freinage et direction assistés). Une icône absolue du design français des Trente Glorieuses.</p>
-        <h4>Le jouet</h4>
-        <p>Dinky la sort dès <strong>novembre 1956</strong>, un an seulement après la vraie — réactivité remarquable. Corps en zamak, châssis tôle anodisée rivetée. La lignée : <strong>24C</strong> (1956‑58, sans vitrage) → <strong>24CP / 522</strong> (1958, ajout du vitrage) → <strong>530</strong> (1963, calandre redessinée, parties ouvrantes). Le marquage lu sous ton châssis — <em>« MECCANO · DINKY TOYS · CITROËN DS19 · FRANCE »</em> — confirme la première famille.</p>
-        <div class="tip"><b>Pour dater précisément&nbsp;:</b> le <b>vitrage</b> est le marqueur n°1. Pas de vitres = 24C (1956‑58, la plus ancienne). Jantes <b>convexes chromées</b> = 24C ; concaves = 530.</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Guide neuf‑en‑boîte ≈ 110–275 € selon variante ; les teintes alternatives (vert/vert, bleu‑vert/ivoire) et les 24CP à jantes convexes sont les plus recherchées. <strong>Pièce jouée sans boîte : ≈ 30–55 €.</strong></p>
-        <div class="src">Sources : <a href="https://www.voituresminiatures.com/dinky-toys/dinky-toys-france/dinky-toys-citroen-ds-19-24c-1956/">voituresminiatures</a>· <a href="https://www.toymart.com/Dinky-24C-Citroen-DS19-Saloon/2409">ToyMart 24C</a>· <a href="https://www.jouetsanciens.fr/dinky-toys-2/">jouetsanciens.fr</a></div>
+        <p class="sub">L'icône de 1955, miniaturisée un an plus tard.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Dinky Toys France · réf. 24C</dd>
+          <dt>Datation</dt><dd>1956–1959 · échelle 1/43</dd>
+          <dt>Estimation</dt><dd class="val">30–55 €</dd>
+        </dl>
+        <p class="txt">Dévoilée au <strong>Salon de Paris 1955</strong>, la DS provoque un choc : suspension hydropneumatique, ligne « soucoupe », des dizaines de milliers de commandes en quelques jours. Dinky la sort dès <strong>novembre 1956</strong> — une réactivité remarquable.</p>
+        <div class="insight"><strong>Pour dater :</strong> le vitrage est le marqueur n°1. Pas de vitres = 24C (1956-58, la plus ancienne, la tienne). Le marquage <em>« MECCANO · DINKY TOYS · CITROËN DS19 · FRANCE »</em> le confirme.</div>
+        <p class="srcs">Sources : <a href="https://www.voituresminiatures.com/dinky-toys/dinky-toys-france/dinky-toys-citroen-ds-19-24c-1956/">voituresminiatures</a> · <a href="https://www.toymart.com/Dinky-24C-Citroen-DS19-Saloon/2409">ToyMart 24C</a></p>
       </div>
-    </div>
-  </div>
+    </article>
 
-  <!-- MINI -->
-  <div class="card gem" id="mini">
-    <div class="card-grid">
-      <div class="photo"><span class="ribbon">★ Pépite</span><img src="photos/20260613_205937.jpg" alt="Corgi Mini Cooper Monte Carlo n°37"></div>
-      <div class="body">
-        <h3>Mini Cooper S « Monte‑Carlo » n°37</h3>
-        <div class="latin">Corgi Toys — réf. 317 · la Mini de Paddy Hopkirk, vainqueur 1964</div>
-        <div class="badges">
-          <span class="badge cu">Corgi Toys <b>GB</b></span>
-          <span class="badge">réf. <b>317</b></span>
-          <span class="badge">1964–1965</span>
-          <span class="badge">éch. <b>1/43</b></span>
-          <span class="badge price">≈ 45–110 €</span>
-        </div>
-        <h4>L'exploit derrière le jouet</h4>
-        <p>En janvier <strong>1964</strong>, BMC engage la petite Mini Cooper S 1071 cm³ contre des bolides bien plus gros (la Ford Falcon V8 de Ljungfeldt, plus rapide en spéciales). Grâce à son agilité sur les cols enneigés et au système de handicap du règlement, <strong>Paddy Hopkirk et Henry Liddon (n°37, immatriculée 33 EJB) remportent le classement général</strong> — l'un des plus beaux David contre Goliath du sport auto. MINI a ressorti en 2020 une « Paddy Hopkirk Edition » reprenant le n°37.</p>
-        <h4>Le jouet</h4>
-        <p>Corgi <strong>317</strong>, produit 1964‑65 : carrosserie rouge, toit blanc, intérieur jaune, <strong>n°37 sur les portes</strong>, transfert « Monte Carlo » au capot, <strong>phare longue‑portée chromé sur le toit</strong>, phares « bijoux », roues libres. Le marquage châssis lu — <em>« CORGI TOYS · MORRIS MINI‑COOPER · PATENT APPLICATION 21107/59 »</em> — colle parfaitement.</p>
-        <div class="tip"><b>Ne pas confondre&nbsp;:</b> <b>317</b> = n°37, 1964, Hopkirk (le tien). <b>321</b> = n°52, 1965, Mäkinen (3 antibrouillards). <b>339</b> = 1967, Aaltonen (galerie de toit).</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Pièce la plus cotée du lot : guide neuf‑en‑boîte ≈ 280 €. Le marché joué va de ~20 € à ~235 € selon état. <strong>Le tien, joué mais avec phare de toit + décals « 37 » intacts : ≈ 45–110 €.</strong></p>
-        <div class="src">Sources : <a href="https://www.hagerty.com/media/motorsports/paddy-hopkirk-1964-monte-carlo-rally-win/">Hagerty (Monte‑Carlo 64)</a>· <a href="https://www.toymart.com/Corgi-317-Mini-Monte-Carlo/576">ToyMart 317</a>· <a href="http://ilovecorgitoys.blogspot.com/2017/09/317-321-333-and-339-rally-mini-coopers.html">I Love Corgi (317/321/339)</a></div>
+    <!-- 02 Mini -->
+    <article class="lot star flip" id="mini">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_205937.jpg" alt="Corgi Mini Cooper rouge à toit blanc, plaque rallye Monte-Carlo numéro 37"></div>
+        <figcaption><span class="pl">Pl. 02</span><span>Corgi Toys · réf. 317</span></figcaption>
+      </figure>
+      <div class="bd">
+        <span class="flag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.3L21 9l-4.9 4.3L17.6 21 12 17.3 6.4 21l1.5-7.7L3 9l6.4-.7z"/></svg> Pièce phare</span>
+        <p class="num">Lot 02</p>
+        <h3>Mini Cooper S « Monte-Carlo » n°37</h3>
+        <p class="sub">La Mini de Paddy Hopkirk, vainqueur 1964.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Corgi Toys · réf. 317</dd>
+          <dt>Datation</dt><dd>1964–1965 · échelle 1/43</dd>
+          <dt>Estimation</dt><dd class="val">45–110 €</dd>
+        </dl>
+        <p class="txt">En janvier 1964, la petite Mini bat des bolides bien plus gros sur les cols enneigés : <strong>Hopkirk &amp; Liddon (n°37) remportent le général</strong> — l'un des plus beaux David contre Goliath du sport auto. Le marquage <em>« MORRIS MINI-COOPER · PATENT 21107/59 »</em> colle parfaitement.</p>
+        <div class="insight"><strong>Ne pas confondre :</strong> 317 = n°37, 1964, Hopkirk (la tienne). 321 = n°52, 1965, Mäkinen. Ton phare de toit chromé + les décals « 37 » intacts tirent la valeur vers le haut.</div>
+        <p class="srcs">Sources : <a href="https://www.hagerty.com/media/motorsports/paddy-hopkirk-1964-monte-carlo-rally-win/">Hagerty</a> · <a href="https://www.toymart.com/Corgi-317-Mini-Monte-Carlo/576">ToyMart 317</a></p>
       </div>
-    </div>
-  </div>
+    </article>
 
-  <!-- ALFA -->
-  <div class="card" id="alfa">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_210007.jpg" alt="Dinky Alfa Romeo de course"></div>
-      <div class="body">
+    <!-- 03 Alfa -->
+    <article class="lot" id="alfa">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_210007.jpg" alt="Monoplace Alfa Romeo de course Dinky Toys, rouge, avec pilote"></div>
+        <figcaption><span class="pl">Pl. 03</span><span>Dinky Toys England · réf. 232</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 03</p>
         <h3>Alfa Romeo de Grand Prix</h3>
-        <div class="latin">Dinky Toys England — réf. 232 (ex‑23F) · Alfa 158/159 « Alfetta »</div>
-        <div class="badges">
-          <span class="badge cu">Dinky <b>England</b></span>
-          <span class="badge">réf. <b>232 / 23F</b></span>
-          <span class="badge">1954–1964</span>
-          <span class="badge">éch. <b>1/43</b></span>
-          <span class="badge price">≈ 15–40 €</span>
-        </div>
-        <h4>La voiture réelle</h4>
-        <p>L'<strong>Alfa Romeo 158/159 « Alfetta »</strong>, reine de l'aube de la F1. En <strong>1950</strong>, elle gagne quasiment toutes les courses et <strong>Nino Farina devient le tout premier Champion du monde</strong>. En <strong>1951</strong>, la 159 offre à <strong>Fangio</strong> son premier titre. Bilan combiné : 47 victoires en 54 GP.</p>
-        <h4>Le jouet</h4>
-        <p>Monoplace rouge écarlate, pilote casqué moulé, <strong>moyeux rouges</strong>, pneus gris à crampons. Marquage lu : <em>« DINKY TOYS · ALFA‑ROMEO · MADE IN ENGLAND · MECCANO LTD »</em>. Faisait partie du coffret 249 « Racing Cars ».</p>
-        <div class="tip"><b>Variante rare&nbsp;:</b> les exemplaires à roues « spun » alu (au lieu des moyeux rouges) sont plus recherchés.</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Guide neuf‑en‑boîte ≈ 140 €. <strong>Pièce jouée sans boîte : ≈ 15–40 €.</strong></p>
-        <div class="src">Sources : <a href="https://www.toymart.com/Dinky-232-Alfa-Romeo-Racing-Car/1815">ToyMart 232</a>· <a href="https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta">Wikipedia Alfetta</a></div>
+        <p class="sub">L'« Alfetta », reine de l'aube de la F1.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Dinky Toys England · réf. 232 (ex-23F)</dd>
+          <dt>Datation</dt><dd>1952–1958 · échelle 1/43</dd>
+          <dt>Estimation</dt><dd class="val">15–40 €</dd>
+        </dl>
+        <p class="txt">L'<strong>Alfa Romeo 158/159</strong> : en 1950, elle gagne presque tout et <strong>Nino Farina devient le premier Champion du monde</strong> ; en 1951, elle offre à Fangio son premier titre. La miniature, rouge écarlate à pilote casqué, est marquée <em>« DINKY TOYS · ALFA-ROMEO · MECCANO LTD »</em>.</p>
+        <p class="srcs">Sources : <a href="https://www.toymart.com/Dinky-232-Alfa-Romeo-Racing-Car/1815">ToyMart 232</a> · <a href="https://en.wikipedia.org/wiki/Alfa_Romeo_158/159_Alfetta">Wikipedia</a></p>
       </div>
-    </div>
-  </div>
+    </article>
 
-  <!-- FERRARI -->
-  <div class="card" id="ferrari">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_210023.jpg" alt="Dinky Ferrari de course n°5"></div>
-      <div class="body">
+    <!-- 04 Ferrari -->
+    <article class="lot flip" id="ferrari">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_210023.jpg" alt="Monoplace Ferrari de course Dinky Toys, bleue à nez jaune, numéro 5"></div>
+        <figcaption><span class="pl">Pl. 04</span><span>Dinky Toys England · réf. 234</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 04</p>
         <h3>Ferrari de Grand Prix n°5</h3>
-        <div class="latin">Dinky Toys England — réf. 234 (ex‑23H) · bleue, nez jaune</div>
-        <div class="badges">
-          <span class="badge cu">Dinky <b>England</b></span>
-          <span class="badge">réf. <b>234 / 23H</b></span>
-          <span class="badge">≈1954–1962</span>
-          <span class="badge">éch. <b>1/43</b></span>
-          <span class="badge price">≈ 20–45 €</span>
-        </div>
-        <h4>La voiture réelle</h4>
-        <p>Évoque les Ferrari F1 du début des années 50 — la <strong>500 F2</strong> (Ascari, double champion 1952‑53, 9 victoires d'affilée) puis la <strong>625 F1</strong>. La livrée bleu/nez jaune du jouet est une stylisation Dinky (pas le rouge Ferrari d'usine).</p>
-        <h4>Le jouet</h4>
-        <p>Monoplace bleue, <strong>nez peint en jaune</strong>, <strong>n°5</strong> derrière le cockpit, pilote en blanc. Variantes : moyeux jaune vif, et une rare version à moyeux plastique jaunes / base noire brillante.</p>
-        <div class="tip"><b>Variante rare&nbsp;:</b> base noire brillante + pneus noirs = tirage tardif, le plus difficile à trouver.</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Guide neuf‑en‑boîte ≈ 118 €. <strong>Pièce jouée sans boîte : ≈ 20–45 €.</strong></p>
-        <div class="src">Sources : <a href="https://www.brightontoymuseum.co.uk/index/Ferrari_Racing_Car_(Dinky_Toys_234)">Brighton Toy Museum 234</a>· <a href="https://www.toymart.com/Dinky-234-Ferrari-Racing-car/1817">ToyMart 234</a></div>
+        <p class="sub">Les Ferrari F1 d'Ascari, livrée bleu/nez jaune.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Dinky Toys England · réf. 234 (ex-23H)</dd>
+          <dt>Datation</dt><dd>≈ 1954–1962 · échelle 1/43</dd>
+          <dt>Estimation</dt><dd class="val">20–45 €</dd>
+        </dl>
+        <p class="txt">Évoque la <strong>Ferrari 500 F2</strong> d'Ascari (double champion 1952-53, neuf victoires d'affilée). Le bleu à nez jaune est une stylisation Dinky, pas le rouge d'usine. La variante à base noire brillante est la plus rare.</p>
+        <p class="srcs">Sources : <a href="https://www.brightontoymuseum.co.uk/index/Ferrari_Racing_Car_(Dinky_Toys_234)">Brighton Toy Museum</a> · <a href="https://www.toymart.com/Dinky-234-Ferrari-Racing-car/1817">ToyMart 234</a></p>
+      </div>
+    </article>
+
+    <!-- ============ II ============ -->
+    <div class="chapter">
+      <span class="num">II</span>
+      <div class="ct">
+        <h2>Le lot militaire — Dinky Toys</h2>
+        <p>La plus grosse partie de la collection : du Dinky kaki, France et Angleterre, 1954-1964.</p>
       </div>
     </div>
-  </div>
 
-  <!-- ============ SECTION 2 : MILITAIRE ============ -->
-  <h2 class="sec"><span class="n">Lot II</span> Le lot militaire — Dinky Toys</h2>
-  <p class="sec-desc">La plus grosse partie de la collection : presque exclusivement du Dinky kaki, France et Angleterre, 1954‑1964.</p>
-
-  <!-- TANK TRANSPORTER -->
-  <div class="card gem" id="tank">
-    <div class="card-grid">
-      <div class="photo"><span class="ribbon">★ Pièce maîtresse</span><img src="photos/20260613_212324.jpg" alt="Dinky Supertoys 660 Tank Transporter Mighty Antar"></div>
-      <div class="body">
+    <!-- 05 Tank Transporter -->
+    <article class="lot star" id="tank">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_212324.jpg" alt="Dinky Supertoys 660, porte-char Thornycroft Mighty Antar et sa remorque, kaki"></div>
+        <figcaption><span class="pl">Pl. 05</span><span>Dinky Supertoys · réf. 660</span></figcaption>
+      </figure>
+      <div class="bd">
+        <span class="flag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.3L21 9l-4.9 4.3L17.6 21 12 17.3 6.4 21l1.5-7.7L3 9l6.4-.7z"/></svg> Pièce maîtresse</span>
+        <p class="num">Lot 05</p>
         <h3>Tank Transporter « Mighty Antar »</h3>
-        <div class="latin">Dinky Supertoys — réf. 660 · Thornycroft Mighty Antar (porte‑char)</div>
-        <div class="badges">
-          <span class="badge cu">Dinky <b>Supertoys</b></span>
-          <span class="badge">réf. <b>660</b></span>
-          <span class="badge">1956–1964</span>
-          <span class="badge">≈33 cm</span>
-          <span class="badge price">≈ 120–250 €</span>
-          <span class="badge warn">boîte présente (abîmée)</span>
-        </div>
-        <h4>Le véhicule réel</h4>
-        <p>Le <strong>Thornycroft « Mighty Antar »</strong> est un tracteur lourd 6×4 né à la fin des années 40 — d'abord engin de champ pétrolifère, puis militarisé. Entré en service britannique en <strong>1951</strong>, il remplace le Diamond T américain comme transporteur de chars. Moteur Rolls‑Royce « Meteorite » (V8 dérivé du V12 Meteor des chars). Mission : déplacer les <strong>Centurion, Conqueror puis Chieftain</strong>, surtout au sein de la British Army of the Rhine. Quatre décennies de service.</p>
-        <h4>Le jouet</h4>
-        <p>Un <strong>Dinky Supertoys</strong> (haut de gamme, grand format) — l'une des plus grosses pièces militaires de la marque, plus de <strong>33 cm rampes baissées</strong>. Conçu pour porter le char Centurion Dinky 651 (le duo 651+660 est mythique). Marquage lu : <em>« DINKY SUPERTOYS · TANK TRANSPORTER · 660 »</em>.</p>
-        <table class="spec">
-          <tr><td>Édition ancienne</td><td>remorque fixée par goupille, sans vitrage</td></tr>
-          <tr><td>Vers 1959</td><td>remorque détachable (variante recherchée)</td></tr>
-          <tr><td>Mars 1961</td><td>ajout du vitrage cabine</td></tr>
-        </table>
-        <div class="tip"><b>Pourquoi c'est la pépite&nbsp;:</b> format Supertoys, sujet iconique, production courte (8 ans), et surtout <b>la complétude est fragile</b> — les rampes de remorque se perdent, et la boîte est rare. <b>Le fait que tu aies la boîte (même fatiguée) peut doubler à tripler la valeur.</b> Un exemplaire sans boîte tombe à ~25‑55 € ; avec boîte + complet, on monte facilement à 150‑250 € (jusqu'à ~455 € pour la variante remorque détachable).</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Enchères observées : 100 à 720 $. Guide neuf‑en‑boîte ≈ 290 €. <strong>Le tien, joué avec boîte abîmée : ≈ 120–250 €</strong> selon complétude des rampes — vérifie qu'elles sont là, ça fait la différence.</p>
-        <div class="src">Sources : <a href="https://en.wikipedia.org/wiki/Thornycroft_Antar">Wikipedia Antar</a>· <a href="https://www.brightontoymuseum.co.uk/index/Tank_Transporter_(Dinky_Toys_660)">Brighton 660</a>· <a href="https://www.toymart.com/Dinky-660-Tank-Transporter/2118">ToyMart 660</a>· <a href="https://www.vectis.co.uk/615-lot-669656-dinky-military-no-660-mighty-antar-tank-transporter-green">Vectis</a></div>
+        <p class="sub">Le porte-char de la guerre froide britannique.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Dinky Supertoys · réf. 660</dd>
+          <dt>Datation</dt><dd>1956–1964 · ≈ 33 cm</dd>
+          <dt>Boîte</dt><dd>présente (abîmée) — atout majeur</dd>
+          <dt>Estimation</dt><dd class="val">120–250 €</dd>
+        </dl>
+        <p class="txt">Le <strong>Thornycroft Mighty Antar</strong>, tracteur lourd 6×4 à moteur Rolls-Royce, déplaçait les chars Centurion et Chieftain au sein de l'armée du Rhin. Le jouet Supertoys, l'une des plus grosses pièces militaires Dinky, porte sous le châssis <em>« DINKY SUPERTOYS · TANK TRANSPORTER · 660 »</em>.</p>
+        <div class="insight"><strong>Pourquoi c'est la pièce maîtresse :</strong> production courte (8 ans), rampes fragiles, boîte rare. <strong>Avoir la boîte — même fatiguée — peut doubler à tripler la valeur :</strong> ~25-55 € sans boîte, 120-250 € complet et boîté (jusqu'à ~455 € pour la variante remorque détachable). Vérifie la présence des deux rampes.</div>
+        <p class="srcs">Sources : <a href="https://en.wikipedia.org/wiki/Thornycroft_Antar">Wikipedia Antar</a> · <a href="https://www.brightontoymuseum.co.uk/index/Tank_Transporter_(Dinky_Toys_660)">Brighton 660</a> · <a href="https://www.toymart.com/Dinky-660-Tank-Transporter/2118">ToyMart</a></p>
       </div>
-    </div>
-  </div>
+    </article>
 
-  <!-- AMBULANCE -->
-  <div class="card" id="ambulance">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_210116.jpg" alt="Dinky France 80F Ambulance Militaire"></div>
-      <div class="body">
+    <!-- 06 Ambulance -->
+    <article class="lot flip" id="ambulance">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_210116.jpg" alt="Dinky France 80F, ambulance militaire Renault kaki avec croix rouges"></div>
+        <figcaption><span class="pl">Pl. 06</span><span>Dinky Toys France · réf. 80F</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 06</p>
         <h3>Ambulance Militaire</h3>
-        <div class="latin">Dinky Toys France — réf. 80F · Renault Goélette 1000 kg « Carrier »</div>
-        <div class="badges">
-          <span class="badge cu">Dinky <b>France</b></span>
-          <span class="badge">réf. <b>80F</b></span>
-          <span class="badge">1959–1960</span>
-          <span class="badge">éch. <b>1/55</b></span>
-          <span class="badge price">≈ 20–45 €</span>
-        </div>
-        <h4>Le véhicule réel</h4>
-        <p>Le fourgon <strong>Renault 1000 kg</strong> (« Goélette » dans l'usage courant), vendu de 1947 à 1965 à plus de 124 000 exemplaires. En 1957, l'Armée française s'en équipe massivement, dont en version <strong>ambulance</strong>.</p>
-        <h4>Le jouet</h4>
-        <p>Tout métal, kaki, <strong>quatre croix rouges</strong>, porte arrière ouvrante. Marquage lu : <em>« DINKY TOYS · AMBULANCE MILITAIRE · MADE IN FRANCE MECCANO · 80F »</em>. La lignée : <strong>80F</strong> (1959‑60) → <strong>820</strong> (1960‑69) → <strong>807</strong> (années 70, châssis plastique).</p>
-        <div class="tip"><b>Bon point&nbsp;:</b> la <b>80F</b> (1re édition, produite un an seulement, jantes convexes + pneus lisses) est la plus recherchée de la lignée — plus que les 820 ultérieures.</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Guide neuf‑en‑boîte ≈ 75–92 €. <strong>Pièce jouée sans boîte : ≈ 20–45 €</strong> (attention aux croix/intérieur repeints, fréquents, qui font chuter la valeur).</p>
-        <div class="src">Sources : <a href="https://www.passioncollection.fr/vehicules-et-materiel-militaire-miniature/705-dinky-toys-80f-807-820-renault-goelette-1000-kgs-carrier-ambulance-militaire.html">passioncollection</a>· <a href="https://dtcawebsite.com/forum-topic/80f-and-820-renault-carrier-ambulance-militaire-1959-1970">DTCA forum</a></div>
+        <p class="sub">Renault 1000 kg « Goélette », version sanitaire.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Dinky Toys France · réf. 80F</dd>
+          <dt>Datation</dt><dd>1959–1960 · échelle 1/55</dd>
+          <dt>Estimation</dt><dd class="val">20–45 €</dd>
+        </dl>
+        <p class="txt">Tout métal, kaki, quatre croix rouges, porte arrière ouvrante. Marquage <em>« AMBULANCE MILITAIRE · MADE IN FRANCE MECCANO · 80F »</em>. La <strong>80F</strong> (1re édition, produite un an seulement) est la plus recherchée de la lignée 80F → 820 → 807.</p>
+        <div class="insight"><strong>Attention :</strong> croix et intérieur repeints sont fréquents et font chuter la valeur.</div>
+        <p class="srcs">Sources : <a href="https://www.passioncollection.fr/vehicules-et-materiel-militaire-miniature/705-dinky-toys-80f-807-820-renault-goelette-1000-kgs-carrier-ambulance-militaire.html">passioncollection</a></p>
       </div>
-    </div>
-  </div>
+    </article>
 
-  <!-- SARACEN -->
-  <div class="card" id="saracen">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_212036.jpg" alt="Dinky 676 APC Saracen"></div>
-      <div class="body">
+    <!-- 07 Saracen -->
+    <article class="lot" id="saracen">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_212036.jpg" alt="Dinky 676, automitrailleuse Alvis Saracen 6 roues kaki à tourelle"></div>
+        <figcaption><span class="pl">Pl. 07</span><span>Dinky Toys England · réf. 676</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 07</p>
         <h3>Armoured Personnel Carrier</h3>
-        <div class="latin">Dinky Toys England — réf. 676 · Alvis FV603 Saracen (6×6)</div>
-        <div class="badges">
-          <span class="badge cu">Dinky <b>England</b></span>
-          <span class="badge">réf. <b>676</b></span>
-          <span class="badge">1955–1962</span>
-          <span class="badge">≈82 mm</span>
-          <span class="badge price">≈ 13–30 €</span>
-        </div>
-        <h4>Le véhicule réel</h4>
-        <p>L'<strong>Alvis Saracen</strong>, transport de troupes blindé britannique 6×6 du milieu des années 50, petite tourelle à mitrailleuse, coque pour 8‑10 hommes. Emblématique du maintien de l'ordre et des unités blindées de la guerre froide.</p>
-        <h4>Le jouet</h4>
-        <p>Zamak kaki mat, tourelle rotative. Marquage lu : <em>« DINKY TOYS · ARMOURED PERSONNEL CARRIER · MADE IN ENGLAND · MECCANO LTD »</em>. Modèle produit en grande quantité, donc abordable — un bon « modèle d'entrée » de collection militaire.</p>
-        <h4>Cote &amp; rareté</h4>
-        <p>Courant. Guide neuf‑en‑boîte ≈ 62 € (boîte export rouge/jaune recherchée). <strong>Pièce jouée sans boîte : ≈ 13–30 €.</strong></p>
-        <div class="src">Sources : <a href="https://www.brightontoymuseum.co.uk/index/Armoured_Personnel_Carrier_(Dinky_Toys_676)">Brighton 676</a>· <a href="https://www.toymart.com/Dinky-676-Armoured-Personnel-Carrier/12076">ToyMart 676</a></div>
+        <p class="sub">L'Alvis Saracen 6×6 de la guerre froide.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Dinky Toys England · réf. 676</dd>
+          <dt>Datation</dt><dd>1955–1962 · ≈ 82 mm</dd>
+          <dt>Estimation</dt><dd class="val">13–30 €</dd>
+        </dl>
+        <p class="txt">Transport de troupes blindé 6×6, petite tourelle rotative. Marquage <em>« ARMOURED PERSONNEL CARRIER · MECCANO LTD »</em>. Produit en grande quantité — un bon « modèle d'entrée » de collection militaire ; la boîte export rouge/jaune est la plus prisée.</p>
+        <p class="srcs">Sources : <a href="https://www.brightontoymuseum.co.uk/index/Armoured_Personnel_Carrier_(Dinky_Toys_676)">Brighton 676</a></p>
+      </div>
+    </article>
+
+    <!-- 08 Humber -->
+    <article class="lot flip" id="humber">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_212053.jpg" alt="Dinky 641, camion militaire Humber 1 tonne bâché kaki"></div>
+        <figcaption><span class="pl">Pl. 08</span><span>Dinky Toys England · réf. 641</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 08</p>
+        <h3>Army 1-Ton Cargo Truck</h3>
+        <p class="sub">Camion de liaison sur base Humber.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Dinky Toys England · réf. 641</dd>
+          <dt>Datation</dt><dd>1954–1962 · ≈ 8 cm</dd>
+          <dt>Estimation</dt><dd class="val">12–28 €</dd>
+        </dl>
+        <p class="txt">Kaki mat, bâché. Marquage <em>« ARMY 1 TON CARGO TRUCK · MECCANO LTD »</em>. Les premières versions sont sans conducteur ni vitrage ; le vitrage arrive vers 1960 — c'est le repère de datation.</p>
+        <p class="srcs">Sources : <a href="https://www.brightontoymuseum.co.uk/index/Army_1-Ton_Cargo_Truck_(Dinky_Toys_641)">Brighton 641</a></p>
+      </div>
+    </article>
+
+    <!-- 09 Bedford -->
+    <article class="lot" id="bedford">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_212107.jpg" alt="Dinky 621, camion militaire Bedford RL 3 tonnes bâché kaki"></div>
+        <figcaption><span class="pl">Pl. 09</span><span>Dinky Toys England · réf. 621</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 09</p>
+        <h3>3-Ton Army Wagon</h3>
+        <p class="sub">Le Bedford RL, cheval de bataille logistique.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Dinky Toys England · réf. 621</dd>
+          <dt>Datation</dt><dd>1954–1963 · échelle 1/50</dd>
+          <dt>Estimation</dt><dd class="val">15–35 €</dd>
+        </dl>
+        <p class="txt">Camion cargo 3 tonnes 4×4. Marquage <em>« ARMY WAGON · MECCANO LTD »</em>. Un peu plus coté que le 641/676.</p>
+        <div class="insight"><strong>À ne pas confondre :</strong> le 621 = Bedford <strong>RL</strong>. Le Bedford QL de la WWII, c'est une autre référence (le 623).</div>
+        <p class="srcs">Sources : <a href="https://www.toymart.com/Dinky-621-3-Ton-Army-Wagon/2103">ToyMart 621</a> · <a href="https://www.chezbois.com/non_corgi/dinky_toys/Model_8008.htm">ChezBois (RL)</a></p>
+      </div>
+    </article>
+
+    <!-- ============ III ============ -->
+    <div class="chapter">
+      <span class="num">III</span>
+      <div class="ct">
+        <h2>Artillerie &amp; blindés — Crescent &amp; Britains</h2>
+        <p>Trois pièces britanniques qui <strong>tirent des bouts d'allumette</strong> (mécanisme à ressort) — l'autre grande tradition du jouet militaire anglais.</p>
       </div>
     </div>
-  </div>
 
-  <!-- HUMBER 641 -->
-  <div class="card" id="humber">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_212053.jpg" alt="Dinky 641 Army 1-Ton Cargo Truck Humber"></div>
-      <div class="body">
-        <h3>Army 1‑Ton Cargo Truck</h3>
-        <div class="latin">Dinky Toys England — réf. 641 · base Humber, bâché</div>
-        <div class="badges">
-          <span class="badge cu">Dinky <b>England</b></span>
-          <span class="badge">réf. <b>641</b></span>
-          <span class="badge">1954–1962</span>
-          <span class="badge">≈8 cm</span>
-          <span class="badge price">≈ 12–28 €</span>
-        </div>
-        <h4>Le véhicule réel</h4>
-        <p>Camion utilitaire 1 tonne sur base <strong>Humber</strong> (famille « Pig » 4×4), véhicule de transport et de liaison de l'armée britannique des années 50‑60.</p>
-        <h4>Le jouet</h4>
-        <p>Kaki mat, zamak + tôle. Marquage lu : <em>« ARMY 1 TON CARGO TRUCK · DINKY TOYS · MADE IN ENGLAND MECCANO LTD »</em>. Les premières versions sont <strong>sans conducteur ni vitrage</strong> ; le vitrage arrive vers 1960.</p>
-        <div class="tip"><b>Pour dater&nbsp;:</b> présence ou non du conducteur et du vitrage = principal repère (sans = plus ancien).</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Courant. Guide neuf‑en‑boîte ≈ 63 €. <strong>Pièce jouée sans boîte : ≈ 12–28 €.</strong></p>
-        <div class="src">Sources : <a href="https://www.brightontoymuseum.co.uk/index/Army_1-Ton_Cargo_Truck_(Dinky_Toys_641)">Brighton 641</a>· <a href="https://www.toymart.com/Dinky-641-Army-1-Ton-Cargo-Truck/2112">ToyMart 641</a></div>
+    <!-- 10 Crescent 25pdr -->
+    <article class="lot" id="crescent25">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_212139.jpg" alt="Crescent Toys, canon de campagne 25-pounder kaki à bouclier"></div>
+        <figcaption><span class="pl">Pl. 10</span><span>Crescent Toys · réf. 1250</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 10</p>
+        <h3>Canon de campagne 25-Pounder</h3>
+        <p class="sub">Le canon standard britannique, par Crescent.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Crescent Toys · réf. 1250</dd>
+          <dt>Datation</dt><dd>années 1950–60 · tir à ressort</dd>
+          <dt>Estimation</dt><dd class="val">10–25 €</dd>
+        </dl>
+        <p class="txt">Le marquage <em>« MADE IN ENGLAND · THE CRESCENT TOY Co Ld »</em> tranche : ce n'est pas un Dinky. Crescent (1922-1980) était un grand spécialiste des <strong>canons à ressort qui tirent allumettes et obus</strong> — gamme 1249 (18-pdr), 1250 (25-pdr), 1251 (obusier).</p>
+        <p class="srcs">Sources : <a href="https://www.planetdiecast.com/index.php?option=com_content&view=article&id=86976">PlanetDiecast</a> · <a href="https://en.wikipedia.org/wiki/Crescent_Toys">Wikipedia Crescent</a></p>
       </div>
-    </div>
-  </div>
+    </article>
 
-  <!-- BEDFORD 621 -->
-  <div class="card" id="bedford">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_212107.jpg" alt="Dinky 621 3-Ton Army Wagon Bedford RL"></div>
-      <div class="body">
-        <h3>3‑Ton Army Wagon</h3>
-        <div class="latin">Dinky Toys England — réf. 621 · Bedford RL 4×4, bâché</div>
-        <div class="badges">
-          <span class="badge cu">Dinky <b>England</b></span>
-          <span class="badge">réf. <b>621</b></span>
-          <span class="badge">1954–1963</span>
-          <span class="badge">éch. <b>1/50</b></span>
-          <span class="badge price">≈ 15–35 €</span>
-        </div>
-        <h4>Le véhicule réel</h4>
-        <p>Le <strong>Bedford RL</strong>, camion cargo 3 tonnes 4×4, cheval de bataille logistique de l'armée britannique des années 50‑60 (successeur du QL de guerre).</p>
-        <h4>Le jouet</h4>
-        <p>Kaki/olive mat, plateau à ridelles. Marquage lu : <em>« DINKY TOYS · ARMY WAGON · MADE IN ENGLAND · MECCANO LTD »</em>. Première version sans vitrage, fenêtres ajoutées vers 1960‑61.</p>
-        <div class="tip"><b>À ne pas confondre&nbsp;:</b> le 621 = Bedford <b>RL</b>. Le Bedford QL de la WWII, c'est une autre réf. (le 623). Un peu plus coté que le 641/676.</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Guide neuf‑en‑boîte ≈ 106 €. <strong>Pièce jouée sans boîte : ≈ 15–35 €.</strong></p>
-        <div class="src">Sources : <a href="https://www.toymart.com/Dinky-621-3-Ton-Army-Wagon/2103">ToyMart 621</a>· <a href="https://www.chezbois.com/non_corgi/dinky_toys/Model_8008.htm">ChezBois 621 RL</a></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ SECTION 3 : TÔLE ============ -->
-  <h2 class="sec"><span class="n">Lot III</span> Jouets en tôle lithographiée</h2>
-  <p class="sec-desc">Le charme mécanique de la tôle d'après‑guerre — un grand jouet de mine allemand et trois berlines à friction.</p>
-
-  <!-- TECHNOFIX 294 -->
-  <div class="card gem" id="technofix">
-    <div class="card-grid">
-      <div class="photo"><span class="ribbon">★ Pépite</span><img src="photos/20260613_212344.jpg" alt="Technofix 294 mine de charbon en tôle"></div>
-      <div class="body">
-        <h3>Mine de charbon mécanique « 294 »</h3>
-        <div class="latin">Technofix (Gebrüder Einfalt), Nuremberg — Allemagne de l'Ouest</div>
-        <div class="badges">
-          <span class="badge cu">Technofix <b>DE</b></span>
-          <span class="badge">n° <b>294</b></span>
-          <span class="badge">vers 1955–59</span>
-          <span class="badge">≈76 cm</span>
-          <span class="badge price">≈ 50–110 €</span>
-        </div>
-        <h4>La firme &amp; le jouet</h4>
-        <p><strong>Gebrüder Einfalt</strong>, fondée en 1922 à Nuremberg, capitale mondiale du jouet en tôle, prend la marque « Technofix » en 1928 (logo dans un triangle), active jusque 1977‑78. Le <strong>n°294</strong> (« Mechanically Operated Coal Mine » / <em>Förderbahn</em>) est un de leurs classiques « track toys » de milieu de gamme, daté de <strong>1959</strong> sur la plupart des exemplaires.</p>
-        <h4>Comment ça marche</h4>
-        <p><strong>Mécanisme à ressort</strong> (clockwork, pas friction) : on remonte, et l'autorail orange et jaune circule en boucle sur le circuit, autour du décor de mine/charbonnage avec son pont en arches.</p>
-        <div class="tip"><b>Ce qui fait la valeur&nbsp;:</b> le <b>mécanisme qui fonctionne encore</b>, la complétude (wagon présent) et la boîte. Sans boîte mais complet/fonctionnel : ~50‑110 € ; avec boîte d'origine : 130‑280 €.</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Recherché des amateurs de tôle. Guide ≈ 73 €. <strong>Le tien (sans boîte) : ≈ 50–110 €</strong> selon l'état du mécanisme et de la litho.</p>
-        <div class="src">Sources : <a href="https://www.toymart.com/Technofix-294-Mechanically-Operated-Coalmine/15499">ToyMart 294</a>· <a href="https://www.carters.com.au/index.cfm/index/4037-technofix-toys-and-models/">Carters Technofix</a></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TIN SEDANS (?) -->
-  <div class="card" id="berlines">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_212356.jpg" alt="Trois berlines en tôle litho friction"></div>
-      <div class="body">
-        <h3>Trois berlines en tôle</h3>
-        <div class="latin">Tôle litho à friction, passagers imprimés · orange · verte · bleue</div>
-        <div class="badges">
-          <span class="badge warn">non marqué</span>
-          <span class="badge">CKO Kellermann <b>?</b></span>
-          <span class="badge">ou Japon <b>?</b></span>
-          <span class="badge">1950–60</span>
-          <span class="badge price">≈ 45–130 € (les 3)</span>
-        </div>
-        <h4>Ce qu'on sait</h4>
-        <p>Petites berlines américaines stylisées, mécanisme à friction, <strong>passagers lithographiés aux vitres</strong> — un style très typique de la tôle d'après‑guerre. Deux pistes principales : <strong>CKO Kellermann (Allemagne de l'Ouest)</strong> ou un fabricant <strong>japonais</strong> (Bandai, Marusan, Yonezawa…), les Japonais dominant ce créneau.</p>
-        <div class="tip"><b>Vérifié : rien d'inscrit sous le châssis.</b> C'est courant sur la tôle d'après‑guerre d'entrée/milieu de gamme. Sans marquage, l'origine se lit au <b>style</b> : litho et finition très proches des productions <b>ouest‑allemandes (CKO)</b> et <b>japonaises</b> des fifties. On reste donc sur une estimation « par le style ».</div>
-        <h4>Cote &amp; rareté</h4>
-        <p>Petite berline tôle, jouée, sans boîte : ≈ <strong>15–60 € pièce</strong> ; le trio assorti (3 couleurs) vaut plus que la somme. <strong>Estimation : ≈ 45–130 € le lot.</strong></p>
-        <div class="src">Sources : <a href="https://www.carters.com.au/index.cfm/index/4037-technofix-toys-and-models/">Carters (tôle)</a> · pièce non marquée, datation au style.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TIN RACER (?) -->
-  <div class="card" id="bolide">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_210039.jpg" alt="Bolide de course en tôle n°5"></div>
-      <div class="body">
-        <h3>Bolide de course n°5 en tôle</h3>
-        <div class="latin">Streamliner / voiture de record en tôle litho, friction</div>
-        <div class="badges">
-          <span class="badge warn">non marqué</span>
-          <span class="badge">tôle DE ou JP <b>?</b></span>
-          <span class="badge">1950–60</span>
-          <span class="badge price">≈ 15–40 €</span>
-        </div>
-        <h4>Ce qu'on sait</h4>
-        <p>Voiture de record/streamliner en tôle lithographiée jaune &amp; rouge, n°5, friction. Le style « record car » profilé était courant chez plusieurs fabricants allemands et japonais des années 50‑60. Le dessous étant peint (rouge), pas de marquage lisible pour l'instant.</p>
-        <div class="tip"><b>Vérifié : aucun marquage sous le châssis</b> (typique des tôles non signées). Datation et fourchette établies au <b>style</b> : streamliner / voiture de record en tôle litho, friction, années 1950‑60 — courant chez plusieurs fabricants allemands et japonais.</div>
-        <h4>Cote &amp; rareté</h4>
-        <p><strong>Estimation : ≈ 15–40 €</strong>, fabricant non identifiable faute de marquage.</p>
-        <div class="src">Pièce non marquée — identification au style.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ SECTION 4 : ARTILLERIE & BLINDÉS CRESCENT / BRITAINS ============ -->
-  <h2 class="sec"><span class="n">Lot IV</span> Artillerie &amp; blindés — Crescent &amp; Britains</h2>
-  <p class="sec-desc">Trois pièces britanniques <strong>qui tirent des bouts d'allumette</strong> (mécanisme à ressort) — l'autre grande tradition du jouet militaire anglais, à côté de Dinky.</p>
-
-  <!-- CRESCENT 25 PDR -->
-  <div class="card" id="crescent25">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_212139.jpg" alt="Crescent Toys 25-Pounder Field Gun"></div>
-      <div class="body">
-        <h3>Canon de campagne 25‑Pounder</h3>
-        <div class="latin">Crescent Toys — réf. 1250 · « The Crescent Toy Co Ld, Made in England »</div>
-        <div class="badges">
-          <span class="badge cu">Crescent <b>England</b></span>
-          <span class="badge">réf. <b>1250</b></span>
-          <span class="badge">années 1950–60</span>
-          <span class="badge">tir à ressort</span>
-          <span class="badge price">≈ 10–25 €</span>
-        </div>
-        <h4>Identification confirmée</h4>
-        <p>Le marquage lu sous la flèche — <em>« MADE IN ENGLAND · THE CRESCENT TOY Co Ld »</em> — tranche : ce n'est pas un Dinky mais un <strong>Crescent Toys</strong>. Reproduction du fameux <strong>Ordnance QF 25‑pounder</strong>, le canon de campagne standard de l'armée britannique (WWII → années 60).</p>
-        <h4>Le jouet</h4>
-        <p>Crescent (fabricant anglais, 1922‑1980) était l'un des grands spécialistes des <strong>canons à ressort qui tirent allumettes et obus</strong>. Plateau pivotant, bouclier, flèche-caisson. Faisait partie de leur gamme militaire (1249 = 18‑pdr, <strong>1250 = 25‑pdr</strong>, 1251 = obusier 5,5″).</p>
-        <h4>Cote &amp; rareté</h4>
-        <p>Pièce courante et appréciée des amateurs. <strong>Joué, sans boîte : ≈ 10–25 €</strong> ; boîté complet ~30‑50 €.</p>
-        <div class="src">Sources : <a href="https://www.planetdiecast.com/index.php?option=com_content&view=article&id=86976">PlanetDiecast 25‑pdr</a>· <a href="https://en.wikipedia.org/wiki/Crescent_Toys">Wikipedia Crescent Toys</a></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- BRITAINS BIG GUN -->
-  <div class="card" id="britains">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_212208.jpg" alt="Britains Royal Artillery Gun patent 34218/30"></div>
-      <div class="body">
+    <!-- 11 Britains -->
+    <article class="lot flip" id="britains">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_212208.jpg" alt="Britains, canon Royal Artillery à grandes roues à rayons, brevet 34218/30"></div>
+        <figcaption><span class="pl">Pl. 11</span><span>Britains Ltd · brevet 34218/30</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 11</p>
         <h3>Canon Royal Artillery à grandes roues</h3>
-        <div class="latin">Britains Ltd, Londres — brevet 34218/30 · « latest pattern Royal Artillery Gun »</div>
-        <div class="badges">
-          <span class="badge cu">Britains <b>England</b></span>
-          <span class="badge">brevet <b>34218/30</b></span>
-          <span class="badge">années 1950</span>
-          <span class="badge">tir à ressort</span>
-          <span class="badge price">≈ 20–50 €</span>
-        </div>
-        <h4>Identification confirmée</h4>
-        <p>Le gros plan de la flèche donne le numéro complet : <em>« …GVT PATENT <strong>34218/30</strong> »</em>. C'est la signature de <strong>Britains Ltd</strong> — leur célèbre <strong>« latest pattern Royal Artillery Gun »</strong> (le « 4213/30 » lu d'abord était le marquage tronqué). Britains, fondée en 1893, est LA grande maison anglaise du soldat de plomb et de l'artillerie‑jouet.</p>
-        <h4>Comment ça marche</h4>
-        <p>On recule le couvre‑culasse, on glisse un <strong>bout d'allumette / bâtonnet</strong> en laissant ~6 mm dépasser, et le <strong>levier de droite</strong> déclenche le tir à ressort. Le <strong>levier de gauche</strong> règle l'élévation sur 4 crans. Grandes roues à rayons métalliques + bouclier = modèle de grand format.</p>
-        <div class="tip"><b>À savoir&nbsp;:</b> le « /30 » = année du <b>brevet (1930)</b>, pas du jouet — Britains a conservé ce marquage des décennies (le tien est plutôt un tirage des années 1950). Les grands modèles (~18‑20 cm) sont plus cotés que les petits.</div>
-        <h4>Cote &amp; rareté</h4>
-        <p><strong>Joué, sans boîte : ≈ 20–50 €</strong> selon la taille ; bon état fonctionnel jusqu'à ~90 € ; complet avec obus + boîte 90‑150 €+.</p>
-        <div class="src">Sources : <a href="https://www.iwm.org.uk/collections/item/object/30082550">Imperial War Museums</a>· <a href="https://www.worthpoint.com/worthopedia/vintage-britains-royal-artillery-1833864880">Worthpoint (34218/30)</a></div>
+        <p class="sub">Le « latest pattern Royal Artillery Gun » de Britains.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Britains Ltd, Londres</dd>
+          <dt>Marquage</dt><dd>brevet 34218/30 · tir à ressort</dd>
+          <dt>Datation</dt><dd>années 1950</dd>
+          <dt>Estimation</dt><dd class="val">20–50 €</dd>
+        </dl>
+        <p class="txt">Le gros plan de la flèche donne le numéro complet : <em>« GVT PATENT 34218/30 »</em> — la signature de <strong>Britains</strong>, la grande maison anglaise du soldat de plomb. On glisse un bout d'allumette, le levier de droite tire, celui de gauche règle l'élévation sur 4 crans.</p>
+        <div class="insight"><strong>À savoir :</strong> le « /30 » = l'année du <strong>brevet (1930)</strong>, pas du jouet — Britains a gardé ce marquage des décennies. Les grands modèles (~18-20 cm) sont les plus cotés.</div>
+        <p class="srcs">Sources : <a href="https://www.iwm.org.uk/collections/item/object/30082550">Imperial War Museums</a> · <a href="https://www.worthpoint.com/worthopedia/vintage-britains-royal-artillery-1833864880">Worthpoint</a></p>
       </div>
-    </div>
-  </div>
+    </article>
 
-  <!-- CRESCENT SALADIN -->
-  <div class="card" id="saladin">
-    <div class="card-grid">
-      <div class="photo"><img src="photos/20260613_212243.jpg" alt="Crescent Saladin Armoured Car 6 roues"></div>
-      <div class="body">
+    <!-- 12 Saladin -->
+    <article class="lot" id="saladin">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_212243.jpg" alt="Crescent Saladin, automitrailleuse 6 roues kaki à grosse tourelle"></div>
+        <figcaption><span class="pl">Pl. 12</span><span>Crescent Toys · réf. 1263</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 12</p>
         <h3>Saladin Armoured Car (6 roues)</h3>
-        <div class="latin">Crescent Toys — réf. 1263 · « Made in England, The Crescent Toy Co Ld »</div>
-        <div class="badges">
-          <span class="badge cu">Crescent <b>England</b></span>
-          <span class="badge">réf. <b>1263</b></span>
-          <span class="badge">années 1950–60</span>
-          <span class="badge">canon qui tire</span>
-          <span class="badge price">≈ 15–40 €</span>
-        </div>
-        <h4>Le véhicule réel</h4>
-        <p>L'<strong>Alvis FV601 Saladin</strong>, automitrailleuse britannique 6×6 armée d'un canon de 76 mm, en service de la fin des années 50 aux années 90. Cousine du Saracen (transport de troupes) de la même famille Alvis.</p>
-        <h4>Le jouet</h4>
-        <p>Confirmé <strong>Crescent Toys réf. 1263</strong> : engin 6 roues kaki, grosse tourelle, et — comme tes deux canons — <strong>un canon à ressort qui tire des allumettes</strong>. Le dessous porte « MADE IN ENGLAND · THE CRESCENT TOY Co Ld ». Vendu aux côtés du 25‑pdr et du Britains dans les vitrines militaires Crescent des fifties.</p>
-        <div class="tip"><b>Le trio cohérent&nbsp;:</b> Crescent 25‑pdr + Saladin + Britains — ton papa avait visiblement un faible pour les pièces <b>qui tirent</b> 😊</div>
-        <h4>Cote &amp; rareté</h4>
-        <p><strong>Joué, sans boîte : ≈ 15–40 €</strong> ; boîté ~50‑80 €.</p>
-        <div class="src">Sources : <a href="https://www.flintsauctions.com/auction/lot/1291-crescent-toys-boxed-british-army-vehicles-and-artillery/">Flints Auctions (set 1263)</a>· <a href="https://en.wikipedia.org/wiki/Alvis_Saladin">Wikipedia Saladin</a></div>
+        <p class="sub">L'Alvis Saladin 6×6, canon de 76 mm.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Crescent Toys · réf. 1263</dd>
+          <dt>Datation</dt><dd>années 1950–60 · canon qui tire</dd>
+          <dt>Estimation</dt><dd class="val">15–40 €</dd>
+        </dl>
+        <p class="txt">Cousine du Saracen dans la famille Alvis. Confirmé <strong>Crescent réf. 1263</strong> (dessous : « THE CRESCENT TOY Co Ld »), avec — comme tes deux canons — un canon à ressort qui tire des allumettes.</p>
+        <div class="insight"><strong>Le trio cohérent :</strong> Crescent 25-pdr + Saladin + Britains. Papa avait visiblement un faible pour les pièces <strong>qui tirent</strong>.</div>
+        <p class="srcs">Sources : <a href="https://www.flintsauctions.com/auction/lot/1291-crescent-toys-boxed-british-army-vehicles-and-artillery/">Flints Auctions</a> · <a href="https://en.wikipedia.org/wiki/Alvis_Saladin">Wikipedia Saladin</a></p>
+      </div>
+    </article>
+
+    <!-- ============ IV ============ -->
+    <div class="chapter">
+      <span class="num">IV</span>
+      <div class="ct">
+        <h2>Jouets en tôle lithographiée</h2>
+        <p>Le charme mécanique de la tôle d'après-guerre — un grand jouet de mine allemand et des berlines à friction.</p>
       </div>
     </div>
+
+    <!-- 13 Technofix -->
+    <article class="lot star flip" id="technofix">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_212344.jpg" alt="Technofix 294, mine de charbon mécanique en tôle lithographiée avec pont en arches"></div>
+        <figcaption><span class="pl">Pl. 13</span><span>Technofix (Gebr. Einfalt) · n° 294</span></figcaption>
+      </figure>
+      <div class="bd">
+        <span class="flag"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.6 6.3L21 9l-4.9 4.3L17.6 21 12 17.3 6.4 21l1.5-7.7L3 9l6.4-.7z"/></svg> Pièce phare</span>
+        <p class="num">Lot 13</p>
+        <h3>Mine de charbon mécanique « 294 »</h3>
+        <p class="sub">Le grand classique tôle de Nuremberg.</p>
+        <dl class="spec">
+          <dt>Fabricant</dt><dd>Technofix · n° 294 · Allemagne de l'Ouest</dd>
+          <dt>Datation</dt><dd>≈ 1955–1959 · ≈ 76 cm</dd>
+          <dt>Estimation</dt><dd class="val">50–110 €</dd>
+        </dl>
+        <p class="txt"><strong>Gebrüder Einfalt</strong> (Nuremberg, 1922), marque « Technofix » dès 1928. Le n°294 est un de leurs classiques : <strong>mécanisme à ressort</strong> qui fait circuler l'autorail orange et jaune autour du décor de mine et de son pont en arches.</p>
+        <div class="insight"><strong>Ce qui fait la valeur :</strong> le mécanisme qui fonctionne encore, la complétude (wagon présent) et la boîte. Sans boîte mais complet : ~50-110 € ; avec boîte : 130-280 €.</div>
+        <p class="srcs">Sources : <a href="https://www.toymart.com/Technofix-294-Mechanically-Operated-Coalmine/15499">ToyMart 294</a> · <a href="https://www.carters.com.au/index.cfm/index/4037-technofix-toys-and-models/">Carters</a></p>
+      </div>
+    </article>
+
+    <!-- 14 berlines -->
+    <article class="lot" id="berlines">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_212356.jpg" alt="Trois berlines en tôle lithographiée à friction, orange verte et bleue, avec passagers imprimés"></div>
+        <figcaption><span class="pl">Pl. 14</span><span>Tôle non signée · DE ou Japon</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 14</p>
+        <h3>Trois berlines en tôle</h3>
+        <p class="sub">Friction, passagers imprimés aux vitres.</p>
+        <dl class="spec">
+          <dt>Origine</dt><dd>non marqué — CKO (D.O.) ou Japon</dd>
+          <dt>Datation</dt><dd>1950–60 · datée au style</dd>
+          <dt>Estimation</dt><dd class="val">45–130 € (les 3)</dd>
+        </dl>
+        <p class="txt">Petites berlines américaines stylisées, mécanisme à friction, passagers lithographiés — typiques de la tôle d'après-guerre.</p>
+        <div class="insight"><strong>Vérifié : rien d'inscrit sous le châssis.</strong> Sans marquage, l'origine se lit au style — litho très proche des productions ouest-allemandes (CKO) et japonaises des fifties. Le trio assorti vaut plus que la somme des pièces.</div>
+        <p class="srcs">Sources : <a href="https://www.carters.com.au/index.cfm/index/4037-technofix-toys-and-models/">Carters (tôle)</a> · pièce non marquée, datation au style.</p>
+      </div>
+    </article>
+
+    <!-- 15 bolide -->
+    <article class="lot flip" id="bolide">
+      <figure class="plate">
+        <div class="frame"><img src="photos/20260613_210039.jpg" alt="Bolide de course en tôle lithographiée jaune et rouge, numéro 5, type streamliner"></div>
+        <figcaption><span class="pl">Pl. 15</span><span>Tôle non signée</span></figcaption>
+      </figure>
+      <div class="bd">
+        <p class="num">Lot 15</p>
+        <h3>Bolide de course n°5 en tôle</h3>
+        <p class="sub">Streamliner / voiture de record, à friction.</p>
+        <dl class="spec">
+          <dt>Origine</dt><dd>non marqué — DE ou Japon</dd>
+          <dt>Datation</dt><dd>1950–60 · datée au style</dd>
+          <dt>Estimation</dt><dd class="val">15–40 €</dd>
+        </dl>
+        <p class="txt">Voiture de record profilée, litho jaune &amp; rouge, n°5.</p>
+        <div class="insight"><strong>Vérifié : aucun marquage</strong> (typique des tôles non signées). Style « record car » courant chez plusieurs fabricants allemands et japonais — fabricant non identifiable faute de gravure.</div>
+        <p class="srcs">Pièce non marquée — identification au style.</p>
+      </div>
+    </article>
+
   </div>
 
-  <footer>
-    <p><b>Méthodologie.</b> Identifications confirmées par lecture directe des marquages de châssis (sauf pièces ❓). Datations et histoires issues de sources collectionneurs (Brighton Toy &amp; Model Index, ToyMart, Carters, DTCA, Vectis, Wikipedia, Hagerty…). Les <b>estimations</b> sont des fourchettes indicatives pour une vente entre particuliers en juin 2026, ajustées à l'état réel (pièces jouées, sans boîte sauf le 660) : une cote « guide » suppose une pièce neuve en boîte parfaite, rarement le cas ici. L'état précis (peinture, complétude, mécanisme, repeints) fait varier le prix du simple au triple.</p>
-    <p style="margin-top:14px"><b>État&nbsp;:</b> collection entièrement identifiée. Le lot militaire (Dinky France &amp; England, Crescent, Britains) et le lot civil sont nommés et datés ; les jouets en tôle non signés (bolide n°5, 3 berlines) sont datés au style, faute de tout marquage. <b>Pour affiner la valeur&nbsp;:</b> vérifier la complétude des rampes du porte‑char 660 et tester les mécanismes des jouets en tôle.</p>
-    <p style="margin-top:14px;color:var(--cu2)">Dossier patrimonial — la collection de jouets anciens héritée de papa · établi le 13 juin 2026.</p>
+  <footer class="colophon">
+    <div class="wrap">
+      <h4>Note du catalogueur</h4>
+      <p>Identifications confirmées par lecture directe des marquages de châssis. Datations et histoires issues de sources collectionneurs (Brighton Toy &amp; Model Index, ToyMart, Carters, IWM, Worthpoint, Vectis, Wikipedia, Hagerty). Les estimations sont des fourchettes indicatives pour une vente entre particuliers en juin 2026, ajustées à l'état réel : une cote « guide » suppose une pièce neuve en boîte parfaite, rarement le cas ici. L'état précis (peinture, complétude, mécanisme, repeints) fait varier le prix du simple au triple.</p>
+      <p>Collection entièrement identifiée — lot civil, lot militaire (Dinky France &amp; England, Crescent, Britains) et tôle. Les jouets en tôle non signés sont datés au style. Pour affiner la valeur : vérifier la complétude des rampes du porte-char 660 et tester les mécanismes en tôle.</p>
+      <div class="end">
+        <span>Catalogue raisonné — la collection de jouets héritée de papa · juin 2026</span>
+        <a href="https://maurisson.com/">Studio Maurisson →</a>
+      </div>
+    </div>
   </footer>
+  </main>
 
-</div>
 </body>
 </html>
