@@ -11,13 +11,13 @@
   gtag('js', new Date());
   gtag('config', 'G-56YBF3Q9FN', { cookie_domain: '.maurisson.com', cookie_flags: 'SameSite=None;Secure' });
 </script>
-<meta name="description" content="Le dossier complet de l'imprimante 3D Anycubic Kobra S1 Combo : réglages slicer optimaux avec captures d'écran, mapping Anycubic Slicer Next, conseils par filament, multicouleur ACE Pro, maintenance et 600+ modèles à imprimer." />
+<meta name="description" content="Le dossier complet de l'imprimante 3D Anycubic Kobra S1 Combo : un vrai cours sur les réglages du slicer Anycubic Slicer Next (expliqués pour de vrai), captures d'écran, conseils par filament, multicouleur ACE Pro, maintenance et 600+ modèles à imprimer." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://manuels.maurisson.com/kobra-s1/" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Univers Maurisson" />
 <meta property="og:title" content="Le dossier de la Kobra S1 Combo" />
-<meta property="og:description" content="Tout ce qu'il faut savoir, faire, éviter et imprimer sur l'Anycubic Kobra S1 Combo — réglages slicer avec captures, filaments, mods, modèles." />
+<meta property="og:description" content="Tout ce qu'il faut savoir, faire, éviter et imprimer sur l'Anycubic Kobra S1 Combo — un cours complet sur le slicer, les filaments, les mods et 600+ modèles." />
 <meta property="og:url" content="https://manuels.maurisson.com/kobra-s1/" />
 <meta property="og:image" content="https://maurisson.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -114,6 +114,12 @@
   .shot figcaption .src{display:block; margin-top:5px; font-size:.74rem; color:var(--muted); font-style:italic;}
   .shots2{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start;}
   .shots2 .shot{max-width:none; margin:0;}
+
+  /* ===== Chapitres du cours slicer ===== */
+  .chap{margin:40px 0 12px; font-size:1.32rem; font-weight:700; color:var(--txt); border-left:4px solid var(--green); padding-left:13px; line-height:1.3;}
+  .chap b{color:var(--accent2);}
+  #slicer-cours h3{margin-top:24px;}
+  #slicer-cours p{margin-bottom:12px;}
 </style>
 </head>
 <body>
@@ -134,6 +140,7 @@
 <nav>
   <a href="#reglages-or" style="background:rgba(255,122,24,.18);color:var(--accent2);font-weight:700;">⭐ Réglages OR</a>
   <a href="#slicer-map" style="background:rgba(96,165,250,.16);color:var(--blue);font-weight:700;">🧭 Où cliquer</a>
+  <a href="#slicer-cours" style="background:rgba(74,222,128,.16);color:var(--green);font-weight:700;">🎓 Le cours</a>
   <a href="#machine">⚙️ La machine</a>
   <a href="#acepro">🎨 ACE Pro</a>
   <a href="#conseils">💡 Conseils & pièges</a>
@@ -398,6 +405,311 @@
 
   <p class="lead" style="margin-top:18px;font-size:.82rem;font-style:italic;">Mapping vérifié sur captures d'écran récentes de l'interface (wiki Anycubic « Parameter Settings » + Reddit r/AnycubicKobraS1) et fichier de traduction officiel OrcaSlicer (<code>OrcaSlicer_fr.po</code>) — 2 agents de recherche + revue visuelle, Claude, 16 juin 2026. Libellés EN fiables ; les libellés FR dépendent de la langue de ta build.</p>
 </section>
+
+<!-- ================= COURS SLICER ================= -->
+<section id="slicer-cours" style="margin-top:30px;border:1px solid rgba(74,222,128,.35);border-radius:18px;padding:24px 22px;background:linear-gradient(160deg,rgba(74,222,128,.05),rgba(20,26,34,.4));">
+  <h2 style="border-left-color:var(--green);">🎓 Le slicer expliqué pour de vrai</h2>
+  <p class="lead">Pas une fiche technique de plus : un vrai petit cours pour <b>comprendre</b> chaque réglage — à quoi il sert, pourquoi il existe, et comment le choisir selon ta pièce. Si tu lis tout ça, tu sauras vraiment piloter ton slicer au lieu de recopier des chiffres au hasard. Installe-toi confortablement, c'est parti.</p>
+
+  <div class="chap">1 · <b>Les fondations</b> — épaisseur, finesse et vitesse</div>
+
+<h3>La hauteur de couche (<code>Layer height</code>)</h3>
+
+<p>C'est LE réglage roi, celui qui décide de tout le reste. Imagine que ton objet est une pile de crêpes empilées les unes sur les autres : la hauteur de couche, c'est l'épaisseur de chaque crêpe. Le slicer découpe ton modèle 3D en tranches horizontales, et l'imprimante les empile une par une jusqu'à reconstituer la forme. Plus tes tranches sont fines, plus la pile est lisse et détaillée ; plus elles sont épaisses, plus ça monte vite.</p>
+
+<p>Le piège, c'est que tout est un compromis. Une couche fine (genre 0,12 mm) donne des surfaces magnifiques, des courbes douces, des détails fins qui ressortent bien — mais comme il faut empiler trois fois plus de crêpes pour atteindre la même hauteur, ton impression peut durer deux à trois fois plus longtemps. À l'inverse, une couche épaisse (0,28 mm) avale la hauteur à toute vitesse et donne même une pièce <b>plus solide dans le sens vertical</b> (les couches plus grosses se soudent mieux entre elles), mais tu vois apparaître des <b>marches d'escalier</b> sur les surfaces inclinées et arrondies, comme les lignes d'un terrain vu d'avion.</p>
+
+<p>Pour la Kobra S1 avec sa buse de 0,4 mm, la valeur passe-partout c'est <b>0,20 mm</b>. C'est le réglage que tu garderas 80 % du temps : bon rendu, vitesse correcte, zéro prise de tête. Il existe une règle simple pour ne pas faire de bêtise : ne dépasse jamais <b>75 % du diamètre de ta buse</b>. Avec une buse de 0,4 mm, ça te donne un plafond à 0,30 mm. Au-delà, le plastique fondu n'a plus assez de « place » pour bien s'écraser et coller à la couche d'en dessous, et l'adhérence entre couches devient mauvaise.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> — Choisis selon l'objet, pas par habitude. Une figurine ou un objet déco où la beauté compte : descends à <b>0,12–0,16 mm</b>. Une pièce mécanique, un support, un proto qu'on veut juste tester : monte à <b>0,24–0,28 mm</b> et gagne un temps fou. Un objet « normal » du quotidien : reste à 0,20 mm, c'est fait pour ça.</div>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — Couche épaisse = plus solide en Z, ça surprend tout le monde. C'est contre-intuitif, mais moins il y a d'interfaces entre couches, moins il y a de plans de faiblesse où la pièce peut casser quand on tire dessus dans le sens de la hauteur.</div>
+
+<h3>La toute première couche (<code>Initial layer height</code>)</h3>
+
+<p>Celle-là, elle a droit à un réglage rien que pour elle, et c'est pas pour rien. La première couche, c'est les fondations de ta maison : si elle est ratée, tout ce qui est posé dessus part de travers ou se décolle en cours de route. Elle ne sert pas à faire joli, elle sert à <b>accrocher</b>. Du coup on la veut volontairement un peu plus épaisse et bien écrasée contre le plateau, pour qu'elle s'étale large et morde bien la surface.</p>
+
+<p>Sur la Kobra S1, mets impérativement <b>0,20 mm</b> pour cette première couche. Le problème, c'est que le profil d'usine te colle parfois une valeur ridiculement basse comme <b>0,08 mm</b>. À cette épaisseur, le plastique sort en filet de cheveu, le moindre point un peu haut du plateau racle la buse à vide, et tu te retrouves avec des trous, des zones qui n'accrochent pas, et une impression qui se décolle au bout d'une heure. Une première couche trop fine, c'est la première cause de ratés inexpliqués chez les débutants.</p>
+
+<div class="callout red"><b>🚫 À éviter</b> — Ne laisse JAMAIS la première couche à 0,08 mm « parce que le profil le proposait ». Vérifie cette valeur à chaque nouveau profil que tu charges. 0,08 mm = ratage quasi garanti sur une première couche.</div>
+
+<p>Cette première couche travaille main dans la main avec le <b>Z-offset</b> (le réglage de hauteur de la buse par rapport au plateau, le fameux « la buse est-elle trop haute ou trop basse ? »). Une bonne première couche bien épaisse pardonne un Z-offset légèrement imparfait : elle a de la marge pour s'écraser correctement. Une première couche trop fine, au contraire, ne pardonne rien — au micron près, ça passe ou ça casse. C'est exactement pour ça qu'on lui donne de la matière.</p>
+
+<h3>La largeur d'extrusion (<code>Line width</code>)</h3>
+
+<p>Si la hauteur de couche c'est l'épaisseur de ton trait de plastique, la largeur d'extrusion c'est sa <b>largeur</b>. C'est la taille du « boudin » de matière que la buse dépose en avançant, vu de dessus. Et là, surprise : cette largeur peut être <b>plus grande que le diamètre de ta buse</b>. Avec une buse de 0,4 mm, on travaille typiquement entre <b>0,42 et 0,60 mm</b> de large.</p>
+
+<p>Comment c'est possible ? Quand le plastique sort de la buse, il est mou et chaud, et la buse l'écrase contre la couche du dessous comme un rouleau à pâtisserie. Du coup le trait s'étale et devient plus large que le trou d'où il sort. C'est normal et voulu. Jouer sur cette largeur a un vrai impact : un trait <b>plus large</b> remplit la pièce plus vite et la rend plus costaude (plus de matière déposée à chaque passage), mais il « bave » un peu sur les détails fins. Un trait <b>plus fin</b> rapproche les détails et affine les petites parois, mais c'est plus lent et un poil plus fragile.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> — Augmente la largeur de la première couche à <b>0,5 mm</b> (ou même un peu plus). Un trait plus large = plus de surface de plastique en contact avec le plateau = ça colle franchement mieux. C'est un des secrets les mieux gardés pour une première couche qui ne se décolle jamais. Beaucoup de profils le font déjà — vérifie, et si ce n'est pas le cas, ajoute-le.</div>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — Tu trouveras plusieurs largeurs réglables séparément dans le slicer (parois, remplissage, première couche, etc.). Pas besoin de toutes les triturer au début : laisse la valeur par défaut autour de 0,42–0,45 mm pour le gros de la pièce, et concentre-toi juste sur celle de la première couche.</div>
+
+<h3>La vitesse d'impression (<code>Speed</code>)</h3>
+
+<p>La grande question du débutant : « la machine annonce 600 mm/s, pourquoi je ne mets pas tout à fond ? » Parce que la vitesse, ce n'est pas un seul curseur, c'est toute une famille de réglages — et surtout parce que <b>vitesse et qualité tirent dans des directions opposées</b>. Plus la buse va vite, moins le plastique a le temps de bien se poser, de refroidir au bon endroit et d'accrocher proprement. Une impression réussie, c'est savoir où aller vite et où ralentir.</p>
+
+<p>La règle d'or : <b>ralentis ce qui se voit, accélère ce qui se cache</b>. Les <b>parois externes</b> (la « peau » visible de ta pièce, <code>Outer wall</code>) doivent rester lentes pour être belles et lisses — brides-les à <b>150–200 mm/s</b> même si la machine est capable de bien plus. C'est là que se joue tout l'aspect final. En revanche, les <b>parois internes</b> et le <b>remplissage</b> (<code>Inner wall</code>, <code>Sparse infill</code>), que personne ne verra jamais puisqu'ils sont à l'intérieur, peuvent foncer à <b>250–350 mm/s</b> ou plus : on s'en fiche qu'ils soient parfaits, on veut juste que ça aille vite.</p>
+
+<p>Et puis il y a la <b>première couche</b>, à part comme toujours : on la veut <b>très lente, 15 à 25 mm/s</b>. À cette vitesse d'escargot, le plastique a tout le temps de bien s'écraser et de souder ses fondations au plateau. C'est lent, ça dure une minute de plus, mais c'est une minute qui sauve l'impression entière.</p>
+
+<div class="callout yellow"><b>⚠️ Le piège</b> — Le « 600 mm/s » marketing n'est presque <b>jamais</b> la vitesse réelle moyenne de ton impression. Pour atteindre une vitesse de pointe, l'imprimante doit d'abord accélérer puis freiner avant chaque virage ou chaque coin — c'est l'<b>accélération</b> (<code>Acceleration</code>) qui commande ça. Sur une petite pièce pleine de détails, la buse passe son temps à accélérer/freiner et n'atteint jamais sa vitesse max. Résultat : ta vitesse moyenne réelle est souvent 2 à 3 fois plus basse que le chiffre affiché. Ne te fie donc pas au gros nombre du carton — c'est l'estimation de temps du slicer qui dit la vérité.</div>
+
+  <div class="chap">2 · <b>Les murs et les coques</b> — la coquille de ta pièce</div>
+
+<h3>Le nombre de parois (<code>Wall loops</code>)</h3>
+
+<p>Imagine ta pièce comme un fruit : le remplissage à l'intérieur, c'est la chair, mais ce qui tient vraiment le coup, c'est la peau. Les <code>Wall loops</code> (littéralement « les boucles de mur »), ce sont justement ces contours pleins que la buse trace à la suite, l'un collé contre l'autre, pour former la coquille extérieure de ton objet. Une paroi = un tour de buse. Avec une buse de 0,4 mm, deux parois te donnent environ 0,8 mm d'épaisseur de coque, trois te donnent ~1,2 mm. C'est ce mur-là qui encaisse les chocs, qui se tord ou pas quand tu serres la pièce dans la main.</p>
+
+<p>Et voilà le truc que beaucoup de débutants ratent : pour la solidité, ajouter des parois change BIEN PLUS la donne que monter le remplissage. Une pièce avec 2 parois et 25 % de remplissage sera souvent plus molle qu'une pièce avec 4 parois et seulement 15 % de remplissage. Pourquoi ? Parce que la résistance à la flexion vient surtout de la matière située en périphérie, là où les contraintes sont les plus fortes — exactement comme une poutre en H concentre sa matière sur les bords. Le remplissage, lui, ne fait que soutenir le dessus et empêcher l'effondrement ; il ne porte presque rien en torsion.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> Conseil maison : 2 parois pour la déco (figurines, supports légers, objets qui ne forcent pas), 3 parois minimum pour tout ce qui est fonctionnel (clips, supports muraux, pièces qui encaissent un effort). Tu gagnes énormément en solidité pour quelques minutes d'impression en plus.</div>
+
+<p>Le compromis, parce qu'il y en a toujours un : chaque paroi supplémentaire ajoute du temps d'impression et un peu de matière, et elle « mange » de l'espace vers l'intérieur. Sur une petite pièce creuse, passer à 4 ou 5 parois peut carrément remplir les murs de plein, ce qui devient du gâchis. Pour l'étanchéité aussi les parois comptent : plus tu en as, moins il y a de risque qu'un micro-trou laisse fuir l'eau d'un vase ou d'un pot. Deux parois suffisent rarement pour du vraiment étanche ; vise 3 ou 4 si la pièce doit retenir un liquide.</p>
+
+<h3>L'ordre d'impression des parois (<code>Walls printing order</code>)</h3>
+
+<p>Quand ta pièce a plusieurs parois, la buse doit décider laquelle elle trace en premier : celle de l'intérieur ou celle de l'extérieur. C'est tout le sens de <code>Walls printing order</code>, avec des options comme <code>Inner/Outer</code> (intérieur d'abord, puis extérieur) ou <code>Outer/Inner</code> (extérieur d'abord). Ça paraît anecdotique, mais ce petit choix joue sur deux choses qui comptent : la précision des dimensions et la beauté de la surface visible.</p>
+
+<p>Avec <code>Outer/Inner</code> (la paroi extérieure imprimée en premier), le mur visible est posé sur du vide, bien net, avant que les parois intérieures ne viennent se plaquer dessus. Ça donne souvent une surface extérieure plus lisse et des détails plus francs, parce que la paroi du dehors n'est pas déformée par la pression de celles d'à côté. L'inconvénient : la paroi extérieure étant posée « dans le vide », elle peut très légèrement gonfler, ce qui nuit un poil à la précision des cotes.</p>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> Avec <code>Inner/Outer</code> (intérieur d'abord), les parois internes servent de rail : quand la buse trace enfin le mur extérieur, elle s'appuie contre la matière déjà posée. Résultat = des cotes plus justes, idéal quand ta pièce doit s'emboîter dans une autre, passer dans un trou précis ou visser. Le revers, c'est une surface extérieure parfois un chouïa moins parfaite. Choisis <code>Inner/Outer</code> dès que la précision prime sur l'esthétique, et l'inverse pour une belle déco.</div>
+
+<h3>Les couches du dessus et du dessous (<code>Top shell layers</code> / <code>Bottom shell layers</code>)</h3>
+
+<p>Les parois s'occupent des côtés, mais il faut aussi un couvercle et un fond pleins, sinon ton remplissage à 15 % laisserait des trous béants en haut et en bas. C'est le rôle des <code>Top shell layers</code> (les couches pleines du dessus) et des <code>Bottom shell layers</code> (celles du dessous). Le slicer te laisse régler soit un nombre de couches, soit directement une épaisseur via les champs <code>…thickness</code> — et les deux sont liés à ta hauteur de couche.</p>
+
+<p>Pourquoi plusieurs couches et pas une seule ? Parce que le dessus se construit en partie au-dessus du vide du remplissage. Les premières couches « pleines » traversent en réalité par-dessus les trous de la grille interne : elles s'affaissent un peu, comme un drap tendu sur une structure ajourée. Il faut empiler 3 à 5 couches pour que tout se referme proprement et devienne lisse et solide. Si tu en mets trop peu, tu obtiens du <i>pillowing</i> : des petits creux et des trous sur le dessus, comme un coussin mal rembourré qui laisse voir les bosses du remplissage en dessous.</p>
+
+<div class="callout yellow"><b>⚠️ Le piège</b> C'est une ÉPAISSEUR qu'il faut viser, pas un nombre de couches en l'air. À 0,2 mm de hauteur de couche, 4 couches font 0,8 mm — correct. Mais si tu passes en 0,28 mm de couche en gardant « 3 couches », tu n'as plus que 0,84 mm de dessus posé sur très peu de passes, et le pillowing revient. En couches fines (0,12 mm), il t'en faut plus en nombre pour atteindre la même épaisseur. Raisonne en millimètres : vise au moins 0,8 à 1 mm de dessus/dessous.</div>
+
+<p>En pratique, 4 à 5 couches pour le dessus et 3 à 4 pour le dessous font le job sur la plupart des pièces. Le dessous peut se permettre un peu moins, car il s'imprime à plat sur le plateau, bien soutenu dès le départ — pas de vide à enjamber. Le dessus, lui, est le plus exposé au pillowing, donc c'est là qu'il ne faut pas être radin.</p>
+
+<h3>La couture (<code>Seam position</code>)</h3>
+
+<p>Regarde de près un objet imprimé : tu verras souvent une fine ligne verticale qui court du bas vers le haut, comme une petite cicatrice. C'est la <i>couture</i>, gérée par <code>Seam position</code>. Elle existe parce que chaque couche est une boucle fermée : la buse doit bien commencer et finir son tour quelque part, et à cet endroit elle laisse un minuscule point de raccord, un léger surplus ou creux de matière. Empile ces points couche après couche et tu obtiens cette ligne visible.</p>
+
+<p>Tu ne peux pas la supprimer, mais tu peux décider où la cacher ou comment la diluer. <code>Aligned</code> empile toutes les coutures sur une même verticale : moche si c'est en plein milieu de la face avant, mais nickel si tu places cette ligne dans un angle ou une arête de la pièce, où l'œil ne la voit plus. <code>Back</code> force la couture à l'arrière de l'objet : parfait pour une figurine ou un buste qu'on regarde toujours de face. <code>Nearest</code> laisse le slicer la poser au point le plus proche pour gagner du temps, sans souci esthétique — pratique pour du fonctionnel.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> <code>Random</code> éparpille la couture au hasard à chaque couche : au lieu d'une cicatrice nette, tu obtiens une texture diffuse, comme un grain léger réparti sur toute la surface. C'est top pour les formes organiques et cylindriques (vases, colonnes) où une ligne droite jurerait. Le revers : la surface entière est très légèrement moins lisse, et tu peux voir de petits points isolés ici et là.</div>
+
+<p>Le bon réflexe, donc : pour une pièce déco qu'on regarde sous un angle précis, mets <code>Back</code> ou <code>Aligned</code> et oriente le modèle pour que la couture tombe dans un coin discret. Pour une forme ronde où aucune face n'est « la bonne », <code>Random</code> dilue le problème. Et pour du purement fonctionnel où l'esthétique n'a aucune importance, laisse <code>Nearest</code> et gagne un peu de temps d'impression.</p>
+
+  <div class="chap">3 · <b>Le remplissage</b> — ce qu'il y a à l'intérieur</div>
+
+<h3>À quoi sert le remplissage, et ce fameux pourcentage (<code>Sparse infill density</code>)</h3>
+
+<p>Imagine que tu coupes ta pièce imprimée en deux avec une scie. Surprise : à l'intérieur, ce n'est pas plein ! Tu vas trouver une sorte de structure ajourée, un treillis qui ressemble parfois à un nid d'abeille, parfois à des vaguelettes. Ça, c'est le remplissage — l'<em>infill</em> en anglais. Et c'est l'imprimante qui le génère toute seule entre les parois extérieures de ton objet.</p>
+
+<p>Pourquoi ne pas tout remplir, tant qu'à faire ? Parce que ce serait du gâchis pur. Une pièce 100 % pleine, ça mange des heures de print en plus, ça vide ta bobine, ça chauffe énormément le plastique au cœur (qui se rétracte mal et peut déformer ta pièce), et surtout… ça ne sert quasiment à rien. Le plastique du milieu ne travaille presque pas. Du coup, l'idée géniale de l'impression 3D, c'est de mettre juste ce qu'il faut de matière à l'intérieur pour tenir le coup, et de laisser du vide partout ailleurs. Comme le carton ondulé : ce n'est pas un bloc plein, c'est deux feuilles avec des vagues entre les deux, et pourtant ça porte un déménagement entier.</p>
+
+<p>Le pourcentage de remplissage, c'est précisément le réglage qui dit « remplis l'intérieur à X % de matière ». Dans Anycubic Slicer Next, ça s'appelle <code>Sparse infill density</code> (littéralement « densité du remplissage clairsemé »). À 10 %, l'intérieur est très aéré, plein de vide. À 50 %, c'est déjà bien dense et lourd. À 100 %, c'est plein. C'est un curseur de compromis entre quatre choses : la <strong>solidité</strong>, le <strong>poids</strong>, le <strong>temps d'impression</strong> et la <strong>matière consommée</strong>. Tu montes le pourcentage, tu gagnes en robustesse mais tu paies en temps et en bobine. Tu descends, c'est l'inverse.</p>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — Voici la vérité qui surprend tout le monde au début : au-delà d'environ 25 %, monter le remplissage ne rend quasiment plus ta pièce plus solide. La résistance d'un objet imprimé vient à 80 % de ses <strong>parois extérieures</strong> (les murs, qu'on règle ailleurs), PAS de son cœur. Passer de 20 % à 50 % d'infill, ça double presque ton temps d'impression pour un gain de solidité ridicule. Si ta pièce casse, la vraie solution est presque toujours d'ajouter une paroi de plus, pas de gonfler le remplissage.</div>
+
+<p>Du coup, voici les repères maison à garder en tête selon l'usage de ta pièce. Pour un objet purement <strong>décoratif</strong> (figurine, vase, déco posée sur une étagère qui ne subit aucun effort), vise <strong>5 à 10 %</strong> : c'est largement suffisant pour soutenir le dessus, et tu économises un temps fou. Pour une pièce <strong>fonctionnelle</strong> qui va prendre des contraintes (support, fixation, boîtier, pièce mécanique, truc qu'on manipule), monte à <strong>15 à 25 %</strong> : c'est la zone d'or, le meilleur rapport solidité/temps. Et pour le <strong>flexible (TPU)</strong>, reste vers <strong>10 %</strong> : trop de matière souple à l'intérieur et ta pièce devient un caillou tout dur au lieu de garder son côté élastique.</p>
+
+<div class="callout yellow"><b>⚠️ Le piège</b> — Le réflexe du débutant, c'est de pousser le remplissage à 40-50 % « pour être sûr que ça tienne ». Résultat : des impressions qui durent une éternité, une bobine qui fond à vue d'œil, et zéro gain réel de solidité. Si tu as un doute sur la robustesse, baisse l'infill et ajoute plutôt des parois. Ton portefeuille et ta patience te diront merci.</div>
+
+<h3>Les motifs de remplissage, passés en revue un par un (<code>Sparse infill pattern</code>)</h3>
+
+<p>Le pourcentage dit <em>combien</em> de matière, mais le motif dit <em>comment elle est dessinée</em> à l'intérieur. C'est le réglage <code>Sparse infill pattern</code> (« motif du remplissage clairsemé »). Et là, le choix change tout : la solidité, la vitesse, le bruit de l'imprimante, même la sensation au toucher pour une pièce souple. Petit tour du propriétaire, parce que chaque motif a sa personnalité et son terrain de jeu.</p>
+
+<p><strong><code>Grid</code> (la grille)</strong> — C'est le motif par défaut, le couteau suisse. Imagine un quadrillage de cahier d'écolier, mais en 3D : des lignes qui se croisent à angle droit, couche après couche. C'est <em>rapide</em> à imprimer, simple, et ça tient correctement dans la plupart des cas. Si tu débutes et que tu ne veux pas te prendre la tête, reste sur <code>Grid</code> : tu seras bien dans 90 % des situations. Son seul petit défaut, c'est qu'aux endroits où les lignes d'une couche croisent celles de la couche d'en dessous, la buse repasse sur un point déjà déposé et peut faire un léger « toc ». Pas dramatique, mais ça existe.</p>
+
+<p><strong><code>Gyroid</code></strong> — Ah, mon chouchou. Le <code>Gyroid</code>, c'est une structure ondulée en 3D, comme des vagues qui partent dans toutes les directions à la fois. Le génie de ce motif, c'est qu'il est solide de façon <em>égale dans tous les sens</em> — tu peux pousser ta pièce de n'importe quel côté, elle résiste pareil (les ingénieurs appellent ça « isotrope »). Autre avantage énorme : ses lignes ne se croisent jamais entre elles. Du coup la buse glisse en continu sans jamais cogner un point déjà posé, ce qui veut dire que tu peux imprimer ton remplissage <em>vite</em> et sans vibrations bizarres. Il est juste un chouïa plus lent à calculer et à tracer que la grille, mais le jeu en vaut la chandelle. C'est le motif idéal pour les pièces <strong>fonctionnelles</strong> sérieuses et pour le <strong>flexible</strong>, où sa souplesse et son équilibre font des merveilles.</p>
+
+<p><strong><code>Honeycomb</code> (le nid d'abeille)</strong> — Le vrai nid d'abeille, des hexagones bien dessinés, exactement comme dans une ruche. La nature n'a pas choisi cette forme par hasard : c'est l'une des structures les plus solides qui existent pour le moins de matière. Le <code>Honeycomb</code> est <em>très</em> robuste et, bonus, il est magnifique si on voit l'intérieur (pièces translucides, objets ajourés). Le revers de la médaille : il est nettement <em>plus lent</em> à imprimer, parce que la buse doit constamment changer de direction pour tracer tous ces angles. À sortir quand tu veux du costaud ou du joli, mais pas quand tu es pressé.</p>
+
+<p><strong><code>Cubic</code> et <code>Adaptive Cubic</code></strong> — Le <code>Cubic</code>, ce sont des petits cubes empilés et posés sur la pointe, qui créent des triangles dans toutes les couches. L'avantage : il répartit la solidité sur les trois axes (gauche-droite, avant-arrière, et la hauteur), tout en restant économe en matière. C'est un excellent compromis polyvalent, un cran au-dessus de la grille en robustesse multi-directions. Sa variante <code>Adaptive Cubic</code> est encore plus maligne : elle met de la matière <em>dense</em> près des parois et du dessus (là où c'est utile) et <em>aère</em> le centre de la pièce (là où ça ne sert à rien). Tu gagnes du temps et de la bobine sans rien perdre où ça compte. Parfait pour les grosses pièces.</p>
+
+<p><strong><code>Lightning</code> (l'éclair)</strong> — Celui-là est radical et il faut bien comprendre sa logique. Le <code>Lightning</code> ne remplit PAS la pièce : il génère juste une espèce d'arborescence, comme des branches d'éclair ou des racines, dont le seul boulot est de venir <em>soutenir le plafond</em> de ta pièce (les couches du dessus, qui sinon s'effondreraient dans le vide). En dehors de ça, l'intérieur est quasiment creux. Résultat : c'est <em>ultra rapide</em> et ça consomme une misère de plastique. Le piège, c'est qu'une pièce en <code>Lightning</code> n'a quasiment <em>aucune</em> solidité : appuie sur les côtés et ça s'écrase. C'est <strong>parfait pour la déco</strong> (une figurine que personne ne va serrer), mais à <strong>bannir absolument pour tout ce qui doit résister</strong>.</p>
+
+<div class="callout red"><b>🚫 À éviter</b> — Ne choisis jamais <code>Lightning</code> pour une pièce mécanique, un support, un crochet, un boîtier qu'on visse ou n'importe quoi qui subit une force. Elle sera creuse à l'intérieur et cédera au premier appui. <code>Lightning</code> = déco uniquement. Pour du solide, <code>Gyroid</code>, <code>Cubic</code> ou <code>Honeycomb</code>.</div>
+
+<p><strong><code>Concentric</code></strong> — Ce motif suit le <em>contour</em> de ta pièce, comme les cercles concentriques qui s'élargissent quand tu jettes un caillou dans l'eau : chaque ligne épouse la forme extérieure, de plus en plus petite vers le centre. Son intérêt principal n'est pas la solidité rigide, mais l'<em>élasticité</em> : comme il ne crée pas de croisements rigides à l'intérieur, il laisse la pièce se déformer et revenir. C'est LE motif pour le <strong>TPU (souple)</strong> : ta pièce garde son côté caoutchouc, elle plie et rebondit au lieu de se bloquer. On l'utilise aussi pour les objets ajourés où on veut un joli rendu de l'intérieur.</p>
+
+<p><strong><code>Triangles</code> et <code>Line</code> (ou <code>Rectilinear</code>)</strong> — Deux alternatives plus simples, vite expliquées. <code>Triangles</code>, ce sont des lignes croisées à 60° qui forment un maillage de triangles — c'est stable et plutôt résistant au cisaillement, une bonne alternative à la grille. <code>Line</code> (parfois appelé <code>Rectilinear</code>), ce sont de simples lignes parallèles, une couche dans un sens, la suivante perpendiculaire. C'est le motif le plus basique et le plus rapide qui soit, mais aussi le moins solide — pratique quand la robustesse n'a vraiment aucune importance et que tu veux juste que ça aille vite.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> — Le mini-guide « lequel je choisis ? » en une respiration :<br>
+• <strong>Déco / rapide / pas d'effort</strong> → <code>Lightning</code> (ou <code>Grid</code> à 5-10 %).<br>
+• <strong>Polyvalent, je débute, je veux pas réfléchir</strong> → <code>Grid</code> à 15 %.<br>
+• <strong>Solide et fonctionnel</strong> → <code>Gyroid</code> à 20 % (le meilleur tout-terrain), ou <code>Cubic</code> pour les grosses pièces.<br>
+• <strong>Maximum costaud / beau dedans</strong> → <code>Honeycomb</code>.<br>
+• <strong>Souple (TPU)</strong> → <code>Concentric</code> ou <code>Gyroid</code> à 10 %, jamais plus.<br>
+En cas de doute total : <code>Gyroid</code> à 20 %, tu te trompes rarement.</div>
+
+<h3>Les petits réglages malins du remplissage</h3>
+
+<p>Une fois le motif et le pourcentage choisis, il reste un ou deux réglages discrets qui font la différence entre une pièce qui tient et une pièce dont l'intérieur se décolle des murs. Le plus important s'appelle <code>Infill/wall overlap</code> (« recouvrement remplissage / parois »). En clair : de combien le remplissage vient <em>mordre</em> sur les parois pour s'y accrocher.</p>
+
+<p>Pourquoi c'est crucial ? Parce que ton remplissage et tes murs sont imprimés séparément. Si le treillis intérieur s'arrête pile au bord sans toucher la paroi, les deux ne sont pas vraiment soudés : ta pièce peut sonner creux, et sous contrainte l'infill se détache des murs comme une garniture qui se décolle d'un gâteau. Le <code>Infill/wall overlap</code> force le remplissage à empiéter légèrement (un petit pourcentage de la largeur de ligne) sur les parois, ce qui les colle ensemble et donne une pièce d'un seul bloc, bien plus solide. Le réglage par défaut d'Anycubic Slicer Next est très bien pour démarrer ; n'y touche que si tu vois des problèmes de séparation, et alors monte-le doucement.</p>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — Tu croiseras peut-être aussi des options d'« ancrage » du remplissage (les <em>anchor</em> dans le menu) : ce sont de petites longueurs de ligne qui prolongent l'infill le long de la paroi avant de partir vers le centre, histoire qu'il s'accroche bien et qu'on ne voie pas de petits points en relief sur les surfaces du dessus. À ne pas confondre avec le « fuzzy skin » (la peau granuleuse), qui lui n'a rien à voir avec l'infill : il rend juste la <em>surface extérieure</em> légèrement rugueuse pour un effet mat et antidérapant. Deux choses différentes, ne mélange pas les pinceaux. Pour le remplissage, les valeurs par défaut font déjà un excellent travail : commence par elles, et n'ajuste qu'en cas de souci concret.</div>
+
+  <div class="chap">4 · <b>Le chaud et le froid</b> — températures et ventilation</div>
+
+<h3>La température de la buse (<code>Nozzle temperature</code>) : le cœur de la fonte</h3>
+
+<p>La buse, c'est le petit canon chauffé par lequel ton filament ressort, fondu, pour être déposé couche après couche. Le réglage <code>Nozzle temperature</code> (en °C) décide à quel point ce plastique devient liquide au moment où il sort. Et là, c'est une histoire de juste milieu : ni trop froid, ni trop chaud. Imagine du miel. Sorti du frigo, il est dur et ne coule pas ; trop chauffé, il devient une eau qui dégouline partout. Le filament, c'est pareil.</p>
+
+<p>Si tu imprimes <b>trop froid</b>, le plastique ne fond pas complètement : la buse force, l'extrudeur patine, tu obtiens de la <b>sous-extrusion</b> (des trous, des couches maigres), des couches qui ne collent pas entre elles (ta pièce se déchire à la main), et au pire un <b>bouchage</b> de la buse. Si tu imprimes <b>trop chaud</b>, le plastique devient trop liquide : il bave entre deux points (le fameux <b>filant</b>, ou « stringing », ces fils d'araignée), les détails fins s'<b>affaissent</b>, et tu peux avoir des <b>blobs</b> (des paquets de matière qui se forment et restent collés). Le bon réglage, c'est celui où la matière sort proprement, nette, sans forcer ni dégouliner.</p>
+
+<p>Pourquoi chaque matière a SA plage ? Parce que chaque plastique fond à une température différente. Le PLA est doux et fond bas (<b>200–215 °C</b>). Le PETG demande plus chaud (<b>240–250 °C</b>) parce que sa chimie est plus costaude. L'ABS et l'ASA montent encore (<b>250–260 °C</b>). Le TPU, ce caoutchouc souple, tourne autour de <b>210–230 °C</b>. Ta Kobra S1 peut chauffer la buse jusqu'à <b>320 °C</b>, donc tu as de la marge même pour des matières exotiques.</p>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — La bonne température dépend AUSSI de ta vitesse d'impression. Plus tu imprimes vite, plus le plastique passe vite dans la buse et a moins de temps pour chauffer. Donc si tu pousses la vitesse, monte la buse de quelques degrés (5 à 10 °C) pour compenser. À l'inverse, en imprimant lentement, tu peux baisser un peu. C'est pour ça que deux profils différents peuvent donner deux températures « correctes » pour le même filament.</div>
+
+<div class="callout green"><b>✅ L'astuce</b> — Dans le doute, fais une <b>tour de température</b> (« temperature tower ») : un petit objet qui imprime chaque étage à une température différente. Tu regardes ensuite à l'œil quel étage est le plus net, sans filant ni couches qui se décollent, et tu tiens ta valeur idéale pour CE filament précis. Deux bobines du même PLA mais de marques différentes peuvent préférer 5 °C d'écart.</div>
+
+<h3>La température du plateau (<code>Bed temperature</code>) : coller la première couche</h3>
+
+<p>Le plateau, c'est la surface chauffante sur laquelle ta pièce se construit. Le réglage <code>Bed temperature</code> sert à une chose essentielle : faire <b>adhérer la première couche</b>. Un plastique chaud qui touche un plateau tiède reste mou un instant de plus, le temps de bien s'écraser et de s'accrocher. Si le plateau est froid, la première couche fige instantanément, se rétracte, et ta pièce se décolle — souvent dès les premières minutes, et tu retrouves un plat de spaghettis.</p>
+
+<p>Mais le plateau chaud combat surtout un ennemi sournois : le <b>warping</b> (le gauchissement). Quand le plastique refroidit, il se contracte légèrement. Les coins, qui refroidissent en premier, se contractent les premiers et <b>se relèvent</b>, décollant la pièce du plateau et déformant la base. En gardant le bas de la pièce au chaud via le plateau, tu ralentis ce refroidissement et tu limites la traction qui fait friser les coins. C'est pour ça aussi que la <b>première couche est souvent réglée plus chaude</b> que les suivantes (par exemple PETG à <b>80 °C</b> pour la 1re couche, puis <b>75 °C</b>) : on met le paquet sur l'accroche au démarrage, puis on relâche un peu.</p>
+
+<p>Les valeurs de référence : PLA <b>55–60 °C</b>, PETG <b>80 °C → 75 °C</b>, ABS/ASA <b>110 °C</b>, TPU <b>50 °C</b>. Ton plateau monte jusqu'à <b>120 °C</b>, largement assez. Tu remarques que l'ABS et l'ASA réclament énormément (110 °C) : c'est parce que ce sont des plastiques qui se contractent BEAUCOUP en refroidissant, donc très sujets au warping. Un plateau bien chaud ne suffit même pas tout seul pour eux.</p>
+
+<div class="callout yellow"><b>⚠️ Le piège</b> — Pour l'ABS et l'ASA, le plateau chaud à 110 °C ne suffit pas : il faut aussi une <b>enceinte fermée</b> autour de l'imprimante. Pourquoi ? Parce que ce qui fait gauchir, c'est l'écart de température entre le bas (chaud, sur le plateau) et le haut de la pièce (qui refroidit dans l'air ambiant). Une enceinte garde tout l'objet dans un air chaud et homogène, donc une contraction uniforme, donc pas de coins qui se relèvent. Sans enceinte, l'ABS warpe presque à tous les coups sur les pièces un peu grandes.</div>
+
+<h3>Le refroidissement et la ventilation (<code>Cooling</code>, <code>Fan speed</code>) : figer au bon moment</h3>
+
+<p>Voici le pendant exact de la buse. La buse fait fondre ; le ventilateur de pièce, lui, <b>refige le plastique juste après l'avoir posé</b>. Le réglage <code>Fan speed</code> (vitesse du ventilo, en %) contrôle ce souffle. L'idée : dès qu'un filet de plastique est déposé, on veut souvent qu'il durcisse vite pour qu'il garde sa forme et que la couche suivante se pose sur du solide plutôt que sur de la guimauve molle.</p>
+
+<p>Pour le <b>PLA</b>, ventilo à fond (<b>100 %</b>). Le PLA adore le refroidissement : c'est ce qui te donne des détails nets, des angles propres, et surtout de beaux <b>ponts</b> (« bridges », ces portions imprimées dans le vide d'un point à un autre) qui ne pendouillent pas. Plus tu refroidis vite, plus le PLA est beau. Pour le <b>PETG</b>, on calme le jeu (<b>~50 %</b>). Le PETG, si tu le refroidis trop fort, fige avant d'avoir eu le temps de bien souder à la couche d'en dessous : résultat, des <b>couches qui collent mal</b> et une pièce fragile qui se délamine. Un peu de ventilo pour les détails, pas trop pour garder la solidité.</p>
+
+<p>Pour l'<b>ABS et l'ASA</b>, ventilo quasi coupé (<b>0–10 %</b>). Là c'est radical : ces plastiques détestent le refroidissement brutal. Un coup de ventilo et la couche se contracte d'un coup, ça crée des <b>fissures</b> entre les couches et ça aggrave le <b>décollement</b> du plateau. On les laisse refroidir tout doucement dans la chaleur de l'enceinte. Le TPU, lui, se contente d'un refroidissement léger et surtout d'une impression lente.</p>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — Tout ça, c'est un <b>compromis entre le détail et l'adhérence entre couches</b>. Beaucoup de ventilo = beaux détails et surplombs nets, mais soudure entre couches plus faible. Peu de ventilo = pièce solide et homogène, mais détails fins qui peuvent légèrement s'affaisser. Le PLA penche vers le détail, l'ABS vers la solidité, le PETG est pile au milieu. Voilà toute la logique des % par matière.</div>
+
+<div class="callout red"><b>🚫 À éviter</b> — Ne mets jamais le ventilo à 100 % sur de l'ABS ou de l'ASA « pour faire comme le PLA ». Tu vas littéralement fissurer ta pièce de l'intérieur et la voir se décoller du plateau en cours de route. Chaque matière a son réglage de ventilo, et ce n'est pas un détail cosmétique : c'est structurel.</div>
+
+<h3>Le séchage des filaments (et l'ACE Pro) : l'ennemi invisible, l'humidité</h3>
+
+<p>Voilà un truc que personne ne soupçonne en débutant, et qui ruine pourtant des impressions entières : l'<b>humidité</b>. Le plastique en bobine est <b>hygroscopique</b> — un grand mot qui veut juste dire qu'il <b>boit l'eau présente dans l'air</b>, comme une éponge. Le PETG et le TPU sont particulièrement gourmands : laissés à l'air libre quelques jours dans une pièce humide, ils se gorgent d'eau sans que tu voies rien.</p>
+
+<p>Le problème arrive dans la buse. Cette eau emprisonnée dans le filament, chauffée à 240 °C, se transforme instantanément en <b>vapeur</b> et explose en micro-bulles. Concrètement, tu entends un petit <b>« ploc ploc »</b> ou des crépitements pendant l'impression, tu vois de la vapeur, et le résultat est moche : surface rugueuse et terne, <b>stringing massif</b> (des fils partout), trous, sous-extrusion erratique. Tu peux avoir réglé ta buse et ton ventilo à la perfection : avec un filament humide, ça sera raté quand même. C'est souvent LA cause cachée d'une bobine qui « imprimait bien avant et imprime mal maintenant ».</p>
+
+<p>Et c'est là que ton combo brille. L'<b>ACE Pro</b> (le boîtier multicouleur de la Kobra S1) intègre un <b>sécheur</b> qui chauffe les bobines à <b>55 °C</b> en continu, pendant le stockage ET pendant l'impression. Tes bobines restent au sec en permanence, sans manip de ta part — c'est un vrai atout du Combo que beaucoup de machines n'ont pas. (Sur l'ACE 2 Pro, le séchage monte à <b>65 °C</b>.) Tu charges ta bobine, et le boîtier s'occupe de la garder buvable.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> — Prends le réflexe de lancer un cycle de séchage <b>avant</b> d'imprimer du <b>PETG</b> ou du <b>TPU</b>, surtout si la bobine traîne ouverte depuis un moment ou si tu vois/entends les symptômes (« ploc ploc », vapeur, stringing soudain). Quelques heures dans l'ACE Pro à 55 °C et ta bobine retrouve une surface propre. Pour le PLA c'est moins critique, mais une bobine très humide en pâtit aussi.</div>
+
+<div class="callout yellow"><b>⚠️ Le piège</b> — Sécher une bobine pendant l'impression, c'est bien, mais une bobine <b>déjà très gorgée d'eau</b> ne se sèche pas en deux minutes : il faut souvent plusieurs heures pour évacuer l'humidité du cœur du filament. Si tu sors une vieille bobine d'un placard humide, lance un vrai cycle de séchage AVANT de lancer une grosse pièce — ne compte pas sur le séchage « à la volée » pour rattraper une éponge complètement imbibée.</div>
+
+  <div class="chap">5 · <b>Rétraction, supports et adhérence</b> — les finitions qui sauvent</div>
+
+<h3>La rétraction (<code>Retraction length</code>) et le fil qui bave (stringing)</h3>
+
+<p>Imagine que ta buse, c'est un stylo à encre chaude. Quand tu écris, l'encre coule pile où il faut. Mais quand tu lèves le stylo pour aller écrire un mot plus loin, qu'est-ce qui se passe ? L'encre continue de baver et tu traînes un trait dégueulasse sur ta feuille. En impression 3D, ce trait, c'est le <b>stringing</b> : ces petits fils, ces toiles d'araignée qui relient deux parties de ta pièce après un déplacement à vide.</p>
+
+<p>Pour éviter ça, l'imprimante a un réflexe malin : juste avant de faire un déplacement à vide (un trajet où elle n'imprime rien, elle se contente de se repositionner ailleurs), elle <b>aspire un peu de filament en arrière</b>. C'est exactement ça, la rétraction. Le <code>Retraction length</code>, c'est la longueur de fil qu'elle ravale. En reculant le plastique fondu dans la buse, on coupe la pression : plus rien ne goutte pendant le voyage. Sur la Kobra S1, qui est une imprimante à extrudeur direct (le moteur qui pousse le fil est juste au-dessus de la buse, pas à l'autre bout d'un tube), tu as besoin de <b>peu de rétraction</b> : on parle de 0,8 à 1,2 mm pour le PLA et l'ABS. C'est court, et c'est normal — sur une imprimante Bowden (avec un long tube), il en faudrait 4 ou 5 fois plus.</p>
+
+<p>Deux réglages comptent : la <b>longueur</b> (combien de fil on aspire) et la <b>vitesse</b> (à quelle vitesse on l'aspire, le <code>Retraction speed</code>). Trop peu de longueur, ça bave encore. Trop, et tu crées un manque de matière au redémarrage, voire un bouchon. La vitesse, elle, doit être franche : un retrait rapide coupe net le filet, comme quand tu retires vite une cuillère de miel au lieu de la laisser couler.</p>
+
+<p>Et la matière joue énormément. Le <b>PETG file beaucoup plus</b> que le PLA — c'est un plastique plus visqueux, plus collant, qui adore faire des toiles. Pour lui, on monte la rétraction autour de 1,8 mm. Le <b>TPU</b> (le flexible), c'est encore une autre histoire : mou comme un chewing-gum, il absorbe la rétraction au lieu de la transmettre, donc on monte à 1,5–2,0 mm mais on imprime surtout très lentement.</p>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — La température et le séchage du fil pèsent autant que la rétraction. Un plastique imprimé trop chaud est plus liquide, donc il bave davantage : si tu as du stringing malgré une bonne rétraction, baisse la température de buse de 5 à 10 °C avant de toucher au reste. Et un filament qui a pris l'humidité (surtout le PETG et le TPU, de vraies éponges) crépite et file énormément, peu importe tes réglages. C'est tout l'intérêt de l'ACE Pro : il garde tes bobines au sec. Un fil humide qui « pète » à la buse, aucun réglage ne le sauvera.</div>
+
+<p>Dernier ingrédient, le <code>Z hop</code> : quand cette option est active, la buse <b>monte légèrement</b> (de quelques dixièmes de millimètre) avant chaque déplacement à vide, histoire de survoler la pièce au lieu de la raboter. Pratique sur les pièces fragiles ou hérissées de petits piquots qu'un coup de buse pourrait arracher. Le revers, c'est que ça peut très légèrement aggraver le stringing (la buse a plus de temps pour baver en l'air) — active-le si tu vois ta buse accrocher la pièce, mais ne le mets pas partout par réflexe.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> — Pour traquer le stringing, imprime un « test de température » ou deux petites tours espacées de quelques centimètres. La buse fait l'aller-retour à vide entre les deux : s'il y a des fils tendus dans le vide, tu les vois tout de suite. Tu ajustes alors par toutes petites touches (la rétraction de 0,2 mm, la température de 5 °C) jusqu'à ce que le vide reste… vide.</div>
+
+<h3>Les supports : quand et lesquels (<code>Enable support</code>, <code>Type</code>, <code>Style</code>)</h3>
+
+<p>Une imprimante 3D empile des couches de plastique les unes sur les autres, du bas vers le haut. Le problème, c'est qu'elle <b>ne sait pas imprimer dans le vide</b> : si une couche n'a rien en dessous pour la porter, le plastique fondu tombe et fait des spaghettis. Pour les parties de ta pièce qui « avancent dans le vide » (un bras tendu, un toit en surplomb, le menton d'une figurine), il faut donc construire des <b>échafaudages sacrificiels</b> : les supports. On les imprime exprès pour soutenir, puis on les casse à la fin. Tu les actives avec <code>Enable support</code>.</p>
+
+<p>La grande question : à partir de quand en a-t-on besoin ? La règle d'or, c'est <b>les 45°</b>. Tant qu'une paroi penche de moins de 45° par rapport à la verticale, chaque nouvelle couche repose suffisamment sur la précédente, ça tient tout seul (on dit que c'est « auto-portant »). Au-delà, ça déborde dans le vide et il faut soutenir. Le réglage <code>Threshold angle</code> (angle seuil) fixe précisément ce déclencheur. Le mettre entre 45 et 55° est un bon compromis : plus tu montes vers 55°, moins tu génères de supports (tu fais confiance à la machine pour gérer les surplombs un peu raides), mais tu prends le risque qu'un surplomb baveux passe.</p>
+
+<p>Maintenant, quel <b>type</b> de support ? Tu as deux familles dans <code>Type</code> :</p>
+
+<p>Les <b>supports normaux</b> (en grille / colonnes verticales) : très solides, ils montent tout droit comme des poteaux. Mais ils ont deux défauts — ils <b>marquent la surface</b> là où ils touchent la pièce (ça laisse une zone rugueuse), et ils sont parfois <b>galère à retirer</b> car ils s'accrochent partout. Et puis ils consomment beaucoup de plastique.</p>
+
+<p>Les supports <b>arbre / organiques</b> (<code>Tree(auto)</code> pour le type, combiné au style <code>Organic</code>) : eux, ils poussent comme les branches d'un arbre. Le tronc monte depuis le plateau, puis des branches partent en biais pour aller toucher la pièce <b>juste aux endroits qui en ont besoin</b>, par de petits points de contact. Résultat : ils <b>touchent beaucoup moins la pièce</b> (donc moins de marques), ils <b>se retirent bien mieux</b> (souvent d'un seul bloc, à la main), et ils utilisent moins de matière. Pour 90 % des pièces — surtout les figurines et les formes organiques — c'est le choix par défaut que je te conseille.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> — L'arme secrète, c'est le <code>Interface filament</code> (le filament d'interface, cette fine couche pile entre le support et ta pièce). Si tu imprimes en ABS ou ASA et que tu charges du <b>PETG comme filament d'interface</b>, magie : le PETG et l'ABS ne collent quasiment pas l'un à l'autre. Les supports se détachent alors <b>tout seuls</b>, en laissant une surface nickel en dessous. C'est exactement le genre de combine que l'ACE Pro multi-bobines rend facile, puisque tu peux charger les deux matières en même temps.</div>
+
+<div class="callout yellow"><b>⚠️ Le piège</b> — Plus de supports n'est pas mieux. Trop de supports, c'est de la matière gaspillée, du temps d'impression en plus, et surtout des cicatrices partout sur ta pièce. Avant de tout couvrir, regarde l'aperçu de ta pièce : oriente-la intelligemment sur le plateau (poser une figurine à plat, coucher une pièce) peut <b>supprimer la moitié des surplombs</b> et t'éviter des supports tout court. Un bon angle vaut mieux qu'une forêt de béquilles.</div>
+
+<h3>Accrocher la pièce au plateau : skirt, brim, raft (<code>Brim</code>, <code>Skirt</code>, <code>Raft</code>)</h3>
+
+<p>Une impression qui se <b>décolle du plateau</b> en cours de route, c'est la cata : la pièce gondole, se soulève par les coins (le fameux <b>warping</b>), et finit par bouger et tout rater. Pour ça, le slicer te propose trois aides à la base de ta pièce. Elles ne servent pas du tout à la même chose, alors voyons-les une par une.</p>
+
+<p>Le <code>Skirt</code> (la « jupe ») : c'est un ou deux tours de plastique <b>autour</b> de ta pièce, sans la toucher. Son boulot n'est pas de coller — c'est juste un <b>tour de chauffe</b> pour la buse. Avant d'imprimer pour de vrai, la buse amorce le flux, purge le petit bout de fil refroidi, stabilise le débit. Quand l'impression « réelle » commence, tout coule bien. Ça ne protège pas du décollement, mais c'est sain de le laisser actif par défaut.</p>
+
+<p>Le <code>Brim</code> (la « collerette ») : là, on attaque le décollement. C'est un <b>large rebord plat collé tout autour de la base</b> de ta pièce, comme le bord d'un chapeau. Il augmente la surface en contact avec le plateau, donc l'adhérence, et il maintient les coins plaqués pendant que ça refroidit. C'est <b>le remède n°1 contre le warping</b>, et c'est quasi indispensable pour l'ABS et l'ASA, qui se rétractent fort en refroidissant et adorent retrousser leurs coins. Compte 5 à 8 mm de large pour ces matières. Point crucial : règle le <b>gap (l'écart) à 0 mm</b> pour que le brim soit bien soudé à la pièce — il fait son office et se détache ensuite proprement au cutter.</p>
+
+<p>Le <code>Raft</code> (le « radeau ») : l'option lourde. C'est une <b>plaque complète imprimée sous toute la pièce</b>, qui flotte entre elle et le plateau. Ta pièce s'imprime par-dessus ce radeau, pas directement sur le verre. C'est costaud mais ça consomme de la matière, ça rallonge l'impression, et le dessous de ta pièce sera moins lisse. On le réserve donc à un cas précis : les pièces qui ont une <b>toute petite surface de contact</b> avec le plateau (des pieds fins, une figurine en équilibre sur un orteil) où ni le skirt ni le brim ne suffisent à tenir.</p>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — En pratique, 95 % du temps tu seras sur <b>skirt</b> (PLA tranquille, grande base bien posée) ou <b>brim</b> (ABS/ASA, pièce à coins, base un peu juste). Le <b>raft</b> est l'exception, sorti uniquement quand une pièce tient sur un mouchoir de poche. Ne le mets pas par défaut « pour être sûr » : tu gaspilles du fil et du temps pour rien.</div>
+
+<h3>Le Z-offset (la première couche parfaite)</h3>
+
+<p>Si je devais te donner un seul réglage à maîtriser, ce serait celui-là. Le <b>Z-offset</b>, c'est la toute petite distance entre la buse et le plateau au moment où la première couche s'écrase. Et cette première couche décide de TOUT : si elle accroche bien, le reste suit ; si elle rate, ton impression est morte avant d'avoir commencé. C'est les fondations de la maison.</p>
+
+<p>Le principe est simple à visualiser. Si la buse est <b>trop haute</b>, le plastique sort « en l'air » et n'est pas plaqué contre le plateau : il n'accroche pas, les premiers traits sont des boudins ronds qui ne collent pas entre eux, et au mieux ta pièce se décolle, au pire tu obtiens un nid de <b>spaghettis</b>. Si la buse est <b>trop basse</b>, elle écrase le plastique contre le verre au point qu'il ne peut plus sortir : ça gratte, ça laisse des traces, et la buse finit par se <b>boucher</b> faute de place pour extruder.</p>
+
+<p>Le bon réglage est entre les deux : la première couche doit être <b>légèrement écrasée</b>, des traits bien plats, larges, soudés à leurs voisins, sans bourrelet ni trou. On ajuste ça <b>finement</b>, par pas de 0,02 mm environ. Un cran négatif (−0,02) rapproche la buse du plateau ; un cran positif l'éloigne. Sur la Kobra S1, tu peux corriger ce réglage <b>en direct pendant l'impression de la première couche</b> via l'écran de la machine, ce qui est idéal pour le régler à l'œil.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> — Le test du « 1er calque » : lance ta pièce et regarde attentivement la première couche se poser. Tu veux des lignes <b>collées les unes aux autres, sans espace entre elles, sans être translucides ni hachées</b>. Si tu vois des trous / des fils ronds qui ne se touchent pas → buse trop haute, descends de 0,02 en 0,02. Si la matière déborde, fait des vagues ou est transparente d'être trop écrasée → buse trop basse, remonte. En 2-3 essais tu trouves le point parfait, et tu le notes une bonne fois pour toutes.</div>
+
+<div class="callout yellow"><b>⚠️ Le piège</b> — Un plateau gras ruine le meilleur des Z-offset. Les doigts laissent un film de gras invisible sur lequel <b>rien</b> ne colle, et tu vas accuser tes réglages à tort. Avant une impression importante, un coup d'alcool isopropylique sur la plaque et tu n'y touches plus avec les doigts. Adhérence parfaite garantie avant même de parler de Z-offset.</div>
+
+  <div class="chap">6 · <b>Multicouleur et calibration</b> — l'ACE Pro et le quart d'heure qui change tout</div>
+
+<h3>Comment marche le multicouleur (et pourquoi ça gâche autant)</h3>
+
+<p>Avant de toucher au moindre réglage, il faut piger un truc fondamental : ta Kobra S1, même avec l'ACE Pro et ses 4 bobines, n'a qu'<b>une seule buse</b>. Une seule. Les 4 filaments ne sortent pas chacun par leur petit trou comme on pourrait l'imaginer : l'ACE Pro est juste un « chargeur » qui pousse le bon filament dans le tube, et tout passe par la même buse unique. C'est exactement comme un robinet par lequel tu ferais couler du sirop rouge, puis du sirop blanc, puis du bleu… tout par le même bec.</p>
+
+<p>Et là tu vois tout de suite le problème. Quand tu passes du rouge au blanc, il reste du rouge dans la buse et le tube. Si tu imprimes direct, ton blanc va sortir rose pendant un moment, le temps que l'ancienne couleur soit chassée. Pour éviter ça, l'imprimante fait ce qu'on appelle une <b>purge</b> (ou « rinçage », ou « flush ») : à chaque changement de couleur, elle pousse plusieurs centimètres de filament neuf dans le vide pour <i>nettoyer</i> la buse, jusqu'à ce que ce qui sort soit bien d'une seule couleur. Ce filament de nettoyage, lui, ne sert à rien sur ta pièce. Il part à la poubelle.</p>
+
+<p>Multiplie ça par le nombre de changements de couleur dans ta pièce. Un logo bicolore tout simple ? Quelques purges, peu de perte. Mais une figurine bien bariolée qui alterne 4 couleurs à chaque couche ? La machine peut changer de couleur des centaines de fois, et tu te retrouves avec <b>plus de plastique dans la poubelle que dans ta pièce</b>. On parle couramment de 150, 200, jusqu'à <b>350 % de déchets</b> sur une pièce très chargée. Autrement dit, pour 30 g de modèle, tu peux cramer 100 g de bobine. C'est LE sujet n°1 du multicouleur, et tout ce qui suit ne sert qu'à reprendre le contrôle là-dessus.</p>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — La purge n'est pas un défaut de ta machine ni un bug du slicer : c'est physiquement obligatoire dès qu'on partage une buse entre plusieurs couleurs. On ne peut pas la supprimer, seulement la réduire et la recycler intelligemment. C'est exactement ce qu'on va faire dans les sections suivantes.</div>
+
+<h3>Réduire le gâchis : les volumes de purge et le multiplicateur (<code>Flushing volumes</code>, <code>Multiplier</code>)</h3>
+
+<p>Le slicer ne purge pas une quantité fixe bêtement. Il a une vraie <b>matrice</b> sous le capot, dans <code>Flushing volumes</code> : un tableau qui dit « pour passer de la couleur A vers la couleur B, purge X mm³ ». Et ce X change selon le couple de couleurs, parce que toutes les transitions ne se valent pas.</p>
+
+<p>La règle est simple à retenir : <b>passer du foncé au clair coûte cher, passer du clair au foncé coûte peu</b>. Pourquoi ? Parce qu'une trace de noir qui bave dans du blanc, ça se voit immédiatement, c'est moche, il faut purger longtemps pour la faire disparaître. Alors qu'un reste de blanc dans du noir, on ne le verra jamais : deux ou trois traces et c'est noyé. Dans la matrice, tu verras donc des valeurs élevées dans les cases « foncé → clair » et des valeurs basses dans les cases « clair → foncé ». C'est logique et tu peux même ajuster une case précise à la main si une transition particulière te pose problème.</p>
+
+<p>Au-dessus de cette matrice, il y a le réglage qui va te sauver des bobines entières : le champ <code>Multiplier</code>. C'est un curseur global (de 0 à 3) qui multiplie <b>toutes</b> les valeurs de la matrice d'un coup. Par défaut Anycubic le met assez haut pour être tranquille (genre 1,0 et plus), ce qui garantit des couleurs nickel… mais gaspille énormément. La plupart du temps, la machine purge bien plus que nécessaire « au cas où ».</p>
+
+<div class="callout green"><b>✅ L'astuce</b> — Baisse le <code>Multiplier</code> à <b>0,6–0,8</b>. Tu réduis instantanément la purge de 20 à 40 % sur toute la pièce, sans toucher à la matrice case par case. Procède par étapes : descends à 0,8, lance une petite pièce test bicolore, et regarde s'il reste des bavures de l'ancienne couleur sur les premières couches après changement. Si c'est net, tente 0,7 puis 0,6. Dès que tu vois une couleur « fantôme » qui traîne, tu es descendu trop bas : remonte d'un cran. Tu cales ainsi le minimum vital pour TES filaments.</div>
+
+<div class="callout yellow"><b>⚠️ Le piège</b> — Ne mets pas le <code>Multiplier</code> à 0,3 « pour économiser un max » sans tester. Une purge insuffisante, c'est des couleurs sales sur toute l'impression — du rose à la place du blanc, des traînées —, et là tu jettes la pièce ENTIÈRE, pas juste un peu de purge. Tu auras gaspillé infiniment plus que si tu avais purgé correctement. L'économie se fait par petits pas vérifiés, jamais d'un coup à l'aveugle.</div>
+
+<h3>Purger malin : dans la pièce ou dans une tour (<code>Flush into objects' infill</code>, <code>Prime tower</code>)</h3>
+
+<p>Réduire la purge, c'est bien. Mais il y a encore mieux : <b>ne plus la jeter du tout</b>. Réfléchis-y deux secondes — ce filament de nettoyage, c'est du plastique fondu parfaitement utilisable. Le seul problème, c'est sa couleur incertaine pendant la transition. Alors pourquoi ne pas le mettre là où la couleur n'a aucune importance ?</p>
+
+<p>C'est exactement ce que font deux options en or. <code>Flush into objects' infill</code> dit au slicer : « au lieu de cracher la purge dans le vide, injecte-la dans le <b>remplissage</b> de la pièce ». Le remplissage, c'est l'intérieur de l'objet, ces nids d'abeille qu'on ne voit jamais une fois la pièce fermée. Peu importe qu'il soit rouge, vert ou marbré : il est planqué à l'intérieur. Tu récupères donc de la purge gratuitement, elle devient de la matière utile. Son cousin <code>Flush into support</code> fait pareil mais dans les supports (que tu jetteras de toute façon) — pratique quand ta pièce en a beaucoup.</p>
+
+<p>Et quand il reste de la purge à évacuer malgré tout, il y a la fameuse <code>Prime tower</code> : une petite tour qui se construit à côté de ta pièce, couche après couche, et dans laquelle la machine vient « s'essuyer » à chaque changement. Son rôle n'est pas que poubelle : à chaque transition, elle <b>réamorce et stabilise la pression</b> dans la buse, pour que le tout premier trait de la nouvelle couleur sur ta vraie pièce soit déjà propre et bien dosé. Vise une tour de <b>30–40 mm</b> de base : assez large pour être stable et ne pas se décrocher en cours de route, sans devenir un gouffre à filament.</p>
+
+<div class="callout green"><b>✅ L'astuce</b> — Range tes couleurs <b>du plus clair au plus foncé</b> dans l'ordre d'impression quand tu peux choisir. Comme on l'a vu, aller vers le foncé coûte peu de purge, aller vers le clair coûte cher. En enchaînant clair → moyen → foncé, tu minimises le coût de chaque transition. Combine ça avec <code>Flush into infill</code> + <code>Multiplier</code> à 0,7, et tu passes de « 300 % de déchets » à quelque chose de presque raisonnable.</div>
+
+<div class="callout red"><b>🚫 À éviter</b> — Ne lance JAMAIS une impression multicouleur avec du TPU (le filament souple) via l'ACE Pro. Le TPU est mou et élastique : dans les tubes longs et les engrenages du système multi-bobines, il se coince, se compresse comme un chewing-gum et finit par bourrer le mécanisme. Le TPU, c'est uniquement en mono-couleur, chargé en direct. Pour le multicouleur, reste sur du PLA (et éventuellement du PETG en sachant ce que tu fais).</div>
+
+<h3>La calibration : le quart d'heure qui change tout</h3>
+
+<p>On passe au deuxième gros morceau, et celui-là, beaucoup de gens le zappent par flemme — puis se demandent pourquoi leurs impressions ne sont « pas tout à fait ça ». La calibration, c'est le quart d'heure d'investissement qui transforme une imprimante correcte en imprimante qui sort des pièces nettes. La raison est bête comme chou : <b>aucun filament n'est identique</b>. Un PLA blanc d'une marque, un PLA noir d'une autre, ou même deux bobines du même rouleau achetées à six mois d'écart, ne fondent pas exactement pareil, ne coulent pas pareil. Calibrer, c'est dire à la machine « voilà précisément comment CE filament se comporte ». Et bonne nouvelle : Anycubic Slicer Next a un menu <code>Calibration</code> qui déroule ces tests presque tout seul, tu n'as qu'à lire le résultat.</p>
+
+<p>Le réglage le plus important, c'est le <b>débit</b>, le <code>Flow ratio</code>. C'est la quantité de matière que la machine pousse. Trop de débit, et elle dépose trop de plastique : tu obtiens une surface bombée, granuleuse, des petits paquets (« blobs ») et des angles qui débordent. Pas assez, et il manque de la matière : des trous entre les lignes, des couches qui ne se collent pas, une pièce fragile et translucide par endroits. Le bon réglage te donne un dessus parfaitement lisse. Comme point de départ : <b>PLA autour de 1,00</b>, <b>PETG vers 1,07</b> (le PETG coule plus, il en faut un poil plus).</p>
+
+<p>Ensuite vient un réglage plus subtil mais qui fait toute la différence sur la netteté : le <code>Pressure advance</code>, qu'on calibre via <code>Flow Dynamics Calibration</code>. Le souci qu'il corrige : dans la buse, le plastique fondu est sous pression, et cette pression a de l'inertie. Quand la tête ralentit pour prendre un angle, la pression met un instant à retomber, donc la buse continue de baver une fraction de seconde — résultat, un petit <b>renflement à chaque coin</b>. Le <code>Pressure advance</code> anticipe ça : il relâche la pression juste avant que la tête ralentisse, pour que les coins soient francs et nets, sans bourrelet. Le test <code>Flow Dynamics Calibration</code> trouve la bonne valeur tout seul et la range au bon endroit. Ordres de grandeur : <b>PLA ~0,035</b>, <b>PETG ~0,08</b> (le PETG, plus visqueux, a plus d'inertie, donc une valeur plus haute).</p>
+
+<p>Le troisième pilier, c'est le <code>Max volumetric speed</code>, et c'est sans doute le plus mal compris. Ce n'est PAS une vitesse de déplacement en mm/s : c'est le <b>vrai plafond physique</b> de ta machine, exprimé en mm³ par seconde — combien de millimètres cubes de plastique ta buse est capable de <b>faire fondre</b> chaque seconde. Pense à un goulot d'étranglement : tu peux demander à la tête d'aller vite, mais si la buse n'arrive pas à fondre assez de matière pour suivre, elle « patine » et tu obtiens des lignes maigres et sous-extrudées. Régler ce plafond correctement, c'est garantir que la matière suit, même à grande vitesse. Repères : <b>PLA classique 12 mm³/s</b>, <b>PLA Haute Vitesse 20–23</b>, <b>PETG Haute Vitesse 18–20</b>. C'est CE chiffre qui détermine ta vitesse réelle utile, pas le curseur de vitesse.</p>
+
+<p>À côté de ces trois-là, la <b>Temp tower</b> (tour de température) imprime un même objet à plusieurs températures empilées et te laisse choisir à l'œil l'étage le plus beau (adhérence des couches, pas de filaments parasites) — ça te donne la température idéale de TON filament, là encore propre à chaque bobine.</p>
+
+<div class="callout blue"><b>💡 Bon à savoir</b> — Au tout premier démarrage de la Kobra S1, laisse-la faire son auto-calibration <code>LeviQ</code> (le nivellement automatique du plateau : elle palpe la surface pour mémoriser ses creux et ses bosses et coller la première couche pile au bon endroit) et son <code>PID</code> (le réglage qui stabilise la chauffe pour que la température reste pile constante au lieu de yoyoter). Ces deux-là sont gérés côté machine, pas dans le slicer, et conditionnent tout le reste : une bonne calibration de filament sur un plateau mal nivelé ou une buse qui fait du yoyo en température, ça ne sert à rien.</div>
+
+<div class="callout green"><b>✅ L'astuce</b> — L'ordre qui marche, du plus impactant au plus fin : <b>(1)</b> LeviQ + PID côté imprimante (une fois), <b>(2)</b> <code>Flow ratio</code>, <b>(3)</b> <code>Flow Dynamics Calibration</code> pour le <code>Pressure advance</code>, <b>(4)</b> Temp tower si tu veux peaufiner, <b>(5)</b> <code>Max volumetric speed</code> pour débloquer la vitesse. Fais-le UNE fois par type de filament et note tes valeurs dans le profil : tu ne le refais pas à chaque impression, seulement quand tu changes de marque ou de matière. Un quart d'heure investi une fois, des dizaines d'impressions propres derrière.</div>
+
+<div class="callout yellow"><b>⚠️ Le piège</b> — Ne calibre jamais le débit et le <code>Pressure advance</code> à la chaîne sans refaire un tour quand tu changes de bobine « parce que c'est le même PLA ». Une couleur différente (surtout les blancs très chargés en pigment et les filaments à paillettes) peut décaler tes valeurs et te ramener tes blobs ou tes coins gonflés. En multicouleur, c'est encore plus vrai : tu jongles avec 4 bobines qui n'ont pas forcément le même comportement. Idéalement, garde un petit profil calibré par bobine importante.</div>
+
+  <p class="lead" style="margin-top:26px;font-size:.86rem;font-style:italic;">Voilà, tu as fait le tour. Garde ce dossier sous le coude et reviens-y dès qu'un réglage te chiffonne — au bout de quelques impressions, tout ça deviendra une seconde nature. Bonne impression ! 🖨️</p>
+</section>
+
 
 <!-- ================= MACHINE ================= -->
 <section id="machine">
