@@ -11,13 +11,13 @@
   gtag('js', new Date());
   gtag('config', 'G-56YBF3Q9FN', { cookie_domain: '.maurisson.com', cookie_flags: 'SameSite=None;Secure' });
 </script>
-<meta name="description" content="Le dossier complet de l'imprimante 3D Anycubic Kobra S1 Combo : réglages slicer optimaux, mapping Anycubic Slicer Next, conseils par filament, multicouleur ACE Pro, maintenance et 600+ modèles à imprimer." />
+<meta name="description" content="Le dossier complet de l'imprimante 3D Anycubic Kobra S1 Combo : réglages slicer optimaux avec captures d'écran, mapping Anycubic Slicer Next, conseils par filament, multicouleur ACE Pro, maintenance et 600+ modèles à imprimer." />
 <meta name="robots" content="index, follow" />
 <link rel="canonical" href="https://manuels.maurisson.com/kobra-s1/" />
 <meta property="og:type" content="article" />
 <meta property="og:site_name" content="Univers Maurisson" />
 <meta property="og:title" content="Le dossier de la Kobra S1 Combo" />
-<meta property="og:description" content="Tout ce qu'il faut savoir, faire, éviter et imprimer sur l'Anycubic Kobra S1 Combo — réglages slicer, filaments, mods, modèles." />
+<meta property="og:description" content="Tout ce qu'il faut savoir, faire, éviter et imprimer sur l'Anycubic Kobra S1 Combo — réglages slicer avec captures, filaments, mods, modèles." />
 <meta property="og:url" content="https://manuels.maurisson.com/kobra-s1/" />
 <meta property="og:image" content="https://maurisson.com/og.png" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -101,6 +101,19 @@
   code{background:var(--card2); padding:1px 7px; border-radius:6px; font-size:.88em; color:var(--accent2);}
   .toc-files{display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-top:12px;}
   .toc-files span{background:var(--card); border:1px solid var(--line); border-radius:8px; padding:5px 12px; font-size:.8rem;}
+
+  /* ===== Captures d'écran encadrées (fenêtre d'app) ===== */
+  .shot{margin:18px 0; border:1px solid var(--line); border-radius:14px; overflow:hidden; background:#0a0d12; max-width:580px; box-shadow:0 14px 34px -16px rgba(0,0,0,.7);}
+  .shot-bar{display:flex; align-items:center; gap:7px; padding:9px 13px; background:linear-gradient(180deg,#222a36,#1a212c); border-bottom:1px solid var(--line);}
+  .shot-bar .d{width:11px; height:11px; border-radius:50%; background:#3a4452;}
+  .shot-bar .d.r{background:#f87171;} .shot-bar .d.y{background:#fbbf24;} .shot-bar .d.g{background:#4ade80;}
+  .shot-bar .t{margin-left:9px; font-size:.8rem; color:var(--muted); letter-spacing:.02em;}
+  .shot img{display:block; width:100%; height:auto; background:#fff;}
+  .shot figcaption{padding:11px 15px; font-size:.88rem; color:var(--txt); border-top:1px solid var(--line); background:var(--card2); line-height:1.5;}
+  .shot figcaption b{color:var(--accent2);}
+  .shot figcaption .src{display:block; margin-top:5px; font-size:.74rem; color:var(--muted); font-style:italic;}
+  .shots2{display:grid; gap:18px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); align-items:start;}
+  .shots2 .shot{max-width:none; margin:0;}
 </style>
 </head>
 <body>
@@ -290,6 +303,11 @@
   <p class="lead" style="padding-left:19px;margin-bottom:8px;">La barre « Process / Paramètres d'impression » a ces onglets : <b>Qualité · Solidité · Vitesse · Supports</b> (toujours visibles) <b>· Multi-matériaux · Autre</b> (mode Advanced). Les réglages <b>par filament</b> (PA, ventilation, vitesse volumétrique) sont dans l'onglet <b>Filament</b>, séparé.</p>
 
   <h3>📐 Onglet « Qualité » (Quality)</h3>
+  <figure class="shot">
+    <div class="shot-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Anycubic Slicer Next · Process › Quality</span></div>
+    <img src="slicer-shots/sl-qualite.png" alt="Panneau Qualité d'Anycubic Slicer Next : Layer height et First layer height" loading="lazy">
+    <figcaption>👉 <b>Layer height</b> = <b>0,20 mm</b> et surtout <b>First layer height</b> = <b>0,20 mm</b> (jamais 0,08). Juste en dessous, <b>Line width</b>.<span class="src">Capture : wiki officiel Anycubic (Slicer Next).</span></figcaption>
+  </figure>
   <table>
     <thead><tr><th>Mon conseil</th><th>Libellé exact (EN)</th><th>Libellé FR</th><th>Valeur à mettre</th></tr></thead>
     <tbody>
@@ -299,6 +317,11 @@
   </table>
 
   <h3>🧱 Onglet « Solidité » (Strength)</h3>
+  <figure class="shot">
+    <div class="shot-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Anycubic Slicer Next · Process › Strength</span></div>
+    <img src="slicer-shots/sl-solidite.png" alt="Panneau Solidité : Sparse infill density et Sparse infill pattern" loading="lazy">
+    <figcaption>👉 <b>Sparse infill density</b> (le %) et <b>Sparse infill pattern</b> → choisis <b>Gyroid</b> dans la liste. Les parois (<b>Wall loops</b>) sont juste au-dessus.<span class="src">Capture : wiki officiel Anycubic (Slicer Next).</span></figcaption>
+  </figure>
   <table>
     <thead><tr><th>Mon conseil</th><th>Libellé exact (EN)</th><th>Libellé FR</th><th>Valeur à mettre</th></tr></thead>
     <tbody>
@@ -310,6 +333,11 @@
   </table>
 
   <h3>🏗️ Onglet « Supports » (Support)</h3>
+  <figure class="shot">
+    <div class="shot-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Anycubic Slicer Next · Process › Support</span></div>
+    <img src="slicer-shots/sl-supports.png" alt="Panneau Supports : Type Tree(auto), Style, Threshold angle" loading="lazy">
+    <figcaption>👉 <b>Enable support</b> ☑, <b>Type</b> = <b>Tree(auto)</b>, <b>Style</b> = Organic, <b>Threshold angle</b> = 45–55°. Le <b>Brim</b> est plus bas dans ce même onglet.<span class="src">Capture : wiki officiel Anycubic (Slicer Next).</span></figcaption>
+  </figure>
   <table>
     <thead><tr><th>Mon conseil</th><th>Libellé exact (EN)</th><th>Libellé FR</th><th>Valeur à mettre</th></tr></thead>
     <tbody>
@@ -324,6 +352,18 @@
   <p class="lead" style="font-size:.82rem;padding-left:19px;">⚠️ L'« organique » n'est pas un <i>Type</i> mais un <i>Style</i> : choisis <code>Type = Tree(auto)</code> PUIS <code>Style = Organic</code>. Le <b>brim est dans l'onglet Supports</b>, pas ailleurs.</p>
 
   <h3>🎨 Onglet « Multi-matériaux » (Multimaterial · mode Advanced)</h3>
+  <div class="shots2">
+    <figure class="shot">
+      <div class="shot-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Filament › bouton « Flushing volumes »</span></div>
+      <img src="slicer-shots/sl-purge.png" alt="Dialogue Flushing volumes avec la matrice et le champ Multiplier" loading="lazy">
+      <figcaption>Bouton <b>Flushing volumes</b> (panneau Filament) → ouvre la matrice de purge. En bas, le champ <b>Multiplier</b> (entouré) : descends-le à <b>0,6–0,8</b> (il accepte 0 à 3).<span class="src">Capture : wiki officiel Anycubic (Slicer Next).</span></figcaption>
+    </figure>
+    <figure class="shot">
+      <div class="shot-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Process › Multimaterial › Flush options</span></div>
+      <img src="slicer-shots/sl-flush-options.png" alt="Section Flush options : Flush into objects' infill / support" loading="lazy">
+      <figcaption>Section <b>Flush options</b> : coche <b>Flush into objects' infill</b> (et/ou support) pour purger dans la pièce au lieu de la tour.<span class="src">Capture : wiki officiel Anycubic (Slicer Next).</span></figcaption>
+    </figure>
+  </div>
   <table>
     <thead><tr><th>Mon conseil</th><th>Libellé exact (EN)</th><th>Libellé FR</th><th>Valeur à mettre</th></tr></thead>
     <tbody>
@@ -337,6 +377,11 @@
   <p class="lead" style="font-size:.82rem;padding-left:19px;">⚠️ Les options « Flush into… » <b>n'ont aucun effet si la tour de purge n'est pas activée</b>. Le multiplicateur est stocké dans le fichier <code>.3mf</code>, pas dans le profil imprimante.</p>
 
   <h3>🧵 Onglet « Filament » (réglages matériau — pas dans Process)</h3>
+  <figure class="shot">
+    <div class="shot-bar"><span class="d r"></span><span class="d y"></span><span class="d g"></span><span class="t">Anycubic Slicer Next · Material settings</span></div>
+    <img src="slicer-shots/sl-filament.png" alt="Fenêtre Material settings : sous-onglets Filament / Cooling, températures" loading="lazy">
+    <figcaption>Fenêtre <b>Material settings</b> (le filament). En haut, les sous-onglets : <b>Cooling</b> = ventilation, et le bouton <b>Advanced</b> (en haut à droite) débloque <b>Pressure advance</b> et <b>Max volumetric speed</b>.<span class="src">Capture : wiki officiel Anycubic (Slicer Next).</span></figcaption>
+  </figure>
   <table>
     <thead><tr><th>Mon conseil</th><th>Libellé exact (EN)</th><th>Libellé FR</th><th>Où / valeur</th></tr></thead>
     <tbody>
