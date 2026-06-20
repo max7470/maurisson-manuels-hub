@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 """
-Génère kobra-s1.json (machine-readable) DEPUIS index.html (le manuel public).
+PONT HTML -> bible. Parse index.html (manuel public) en kobra-s1.json structuré.
 
-But : le skill maurisson-3d (et toute IA) consulte 1 JSON propre au lieu de
-scraper 514 Ko de HTML. Rejouable : édite index.html puis relance ce script.
-
-    python build-json.py
-
-Sortie : kobra-s1.json à côté du HTML (servi sur manuels.maurisson.com/kobra-s1/).
+⚠️ Ce JSON est un INTERMÉDIAIRE TRANSIENT (gitignoré, non servi) : la SOURCE DE
+VÉRITÉ est la bible `maurisson-kobra-s1` (data/*.json). Workflow quand Maxime
+enrichit le manuel public :
+    1. python build-json.py                         # ici : HTML -> kobra-s1.json (transient)
+    2. python ../../Imprimante\\ Kobra\\ S1\\ Combo/tools/merge_manuels_hub.py
+                                                     # fusionne les nouveautés dans la bible
+Voir reference/kobra-s1.md du skill maurisson-3d.
 """
 import json, os, re, sys
 from bs4 import BeautifulSoup
