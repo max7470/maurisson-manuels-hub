@@ -22,7 +22,76 @@
 <meta content="https://manuels.maurisson.com/kobra-s1/" property="og:url"/>
 <meta content="https://maurisson.com/og.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
+<meta content="2026-06-10T00:00:00+02:00" property="article:published_time"/>
+<meta content="2026-07-23T00:00:00+02:00" property="article:modified_time"/>
+<meta content="Maxime Kleinkenberg" property="article:author"/>
 <link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext y='13' font-size='13'%3E🖨️%3C/text%3E%3C/svg%3E" rel="icon"/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "@id": "https://manuels.maurisson.com/kobra-s1/#article",
+  "url": "https://manuels.maurisson.com/kobra-s1/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://manuels.maurisson.com/kobra-s1/"
+  },
+  "headline": "Le dossier de la Kobra S1 Combo",
+  "description": "Guide complet de l'imprimante 3D Anycubic Kobra S1 Combo : réglages Anycubic Slicer Next, ACE Pro, filaments, maintenance, pannes, mods et modèles à imprimer.",
+  "image": "https://maurisson.com/og.png",
+  "datePublished": "2026-06-10",
+  "dateModified": "2026-07-23",
+  "inLanguage": "fr-BE",
+  "author": {
+    "@type": "Person",
+    "@id": "https://maurisson.com/#maxime",
+    "name": "Maxime Kleinkenberg",
+    "alternateName": "Maurisson",
+    "url": "https://maurisson.com/"
+  },
+  "publisher": {
+    "@type": "Person",
+    "@id": "https://maurisson.com/#maxime",
+    "name": "Maxime Kleinkenberg"
+  },
+  "about": {
+    "@type": "Product",
+    "name": "Anycubic Kobra S1 Combo",
+    "brand": {
+      "@type": "Brand",
+      "name": "Anycubic"
+    },
+    "category": "Imprimante 3D FDM"
+  },
+  "citation": [
+    "https://wiki.anycubic.com/en/fdm-3d-printer/kobra-s1-Combo",
+    "https://wiki.anycubic.com/kobra-s1/anycubic_kobra_s1_combo_user_manual-fr-v1.0.pdf",
+    "https://www.tomshardware.com/3d-printing/anycubic-kobra-s1-review",
+    "https://github.com/rinkhals-community/Rinkhals/releases"
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "@id": "https://manuels.maurisson.com/kobra-s1/#breadcrumb",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Manuels Maurisson",
+      "item": "https://manuels.maurisson.com/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Anycubic Kobra S1 Combo",
+      "item": "https://manuels.maurisson.com/kobra-s1/"
+    }
+  ]
+}
+</script>
 <style>
   :root{
     --bg:#0e1116; --bg2:#151a22; --card:#1a212c; --card2:#1f2835;
@@ -147,7 +216,7 @@ details.course>*:last-child{margin-bottom:14px}
 <body>
 <header class="hero">
 <h1>🖨️ Anycubic <span>Kobra S1 Combo</span> — Le Dossier</h1>
-<p class="sub">Tout ce qu'il faut savoir, faire, éviter et imprimer · Compilé le 10 juin 2026 (6 agents de recherche, wiki officiel + reviews long-terme + communauté)</p>
+<p class="sub">Tout ce qu'il faut savoir, faire, éviter et imprimer · Compilé le 10 juin 2026, vérifié le 23 juillet 2026 (wiki officiel + tests et reviews long-terme + communauté)</p>
 <div class="badges">
 <span class="badge">CoreXY fermée · <b>250³ mm</b></span>
 <span class="badge">Buse <b>320 °C</b> quick-release</span>
@@ -172,8 +241,17 @@ details.course>*:last-child{margin-bottom:14px}
 
 
 
-<a href="#machine">⚙️ La machine</a><a href="#acepro">🎨 ACE Pro</a><a href="#conseils">💡 Conseils &amp; pièges</a><a href="#filaments">🧵 Filaments</a><a href="#reglages-or" style="background:rgba(255,122,24,.18);color:var(--accent2);font-weight:700;">⭐ Réglages OR</a><a href="#slicer-map" style="background:rgba(96,165,250,.16);color:var(--blue);font-weight:700;">🧭 Où cliquer</a><a href="#slicer">🔪 Slicer</a><a href="#slicer-cours" style="background:rgba(74,222,128,.16);color:var(--green);font-weight:700;">🎓 Le cours</a><a href="#maintenance">🧰 Maintenance</a><a href="#pannes">🚑 Pannes</a><a href="#mods">🛠️ Mods &amp; Rinkhals</a><a href="#imprimer">✨ À imprimer</a><a href="#claude">🤝 Hacks Claude</a><a href="#liens">🔗 Liens</a></nav>
+<a href="#en-bref">🎯 En bref</a><a href="#machine">⚙️ La machine</a><a href="#acepro">🎨 ACE Pro</a><a href="#conseils">💡 Conseils &amp; pièges</a><a href="#filaments">🧵 Filaments</a><a href="#reglages-or" style="background:rgba(255,122,24,.18);color:var(--accent2);font-weight:700;">⭐ Réglages OR</a><a href="#slicer-map" style="background:rgba(96,165,250,.16);color:var(--blue);font-weight:700;">🧭 Où cliquer</a><a href="#slicer">🔪 Slicer</a><a href="#slicer-cours" style="background:rgba(74,222,128,.16);color:var(--green);font-weight:700;">🎓 Le cours</a><a href="#maintenance">🧰 Maintenance</a><a href="#pannes">🚑 Pannes</a><a href="#mods">🛠️ Mods &amp; Rinkhals</a><a href="#imprimer">✨ À imprimer</a><a href="#claude">🤝 Hacks Claude</a><a href="#liens">🔗 Liens</a></nav>
 <main>
+<section id="en-bref" style="margin-top:0;">
+<h2>🎯 Kobra S1 Combo : l'essentiel avant de commencer</h2>
+<p class="lead">La Kobra S1 Combo est une CoreXY fermée de 250 × 250 × 250 mm, rapide et fiable en mono-couleur. Son ACE Pro gère quatre couleurs et sèche les bobines, mais le TPU et les filaments chargés en fibres doivent passer directement par l'imprimante.</p>
+<div class="grid g3">
+<div class="card ok"><h4>Premier réglage sûr</h4><p>Commence en PLA à 0,20 mm, environ 220 °C, avec une première couche lente. Calibre ensuite température, débit et pression pour chaque bobine.</p></div>
+<div class="card warn"><h4>Piège principal</h4><p>Ne fais jamais passer du TPU ou un filament carbone/verre dans l'ACE Pro. Utilise le support arrière et l'alimentation directe.</p></div>
+<div class="card info"><h4>Source et méthode</h4><p>Dossier compilé par Maxime Kleinkenberg à partir du wiki et du manuel Anycubic, de tests documentés et de reviews long-terme. Vérifié le 23 juillet 2026.</p></div>
+</div>
+</section>
 <!-- ================= RÉGLAGES OR — SYNTHÈSE SLICER ================= -->
 
 <!-- ================= OÙ CLIQUER — MAPPING SLICER RÉEL ================= -->
