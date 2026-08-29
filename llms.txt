@@ -1,0 +1,24 @@
+# Manuels Maurisson
+
+> Les manuels et dossiers pratiques écrits par Maxime Kleinkenberg (alias Maurisson) pour ses propres machines et objets : un clavier de scène, une imprimante 3D, un kit de nettoyage, une culture de plantes en pays nordique. Écrits pour être lus par quelqu'un qui a l'objet entre les mains, pas pour vendre.
+
+Chaque manuel est une page HTML autonome, en français, sans compte ni publicité. Le contenu est public et se cite librement.
+
+## Les manuels
+
+- https://manuels.maurisson.com/cp5/ — Le CP5 de Maurisson, le guide ultime du clavier de scène Yamaha CP5 : sons, réglages, usage en concert.
+- https://manuels.maurisson.com/cp5-encoder/ — Encoder le CP5 : comment ranger et rappeler ses sons, la logique des performances et des banques.
+- https://manuels.maurisson.com/kobra-s1/ — Le dossier de l'Anycubic Kobra S1 Combo : prise en main, calibration (débit, pressure advance, vitesse volumétrique), filaments, multicouleur, pièges.
+- https://manuels.maurisson.com/mini-clavier/ — Le mini clavier de Maurisson, mode d'emploi.
+- https://manuels.maurisson.com/kit-nettoyage/ — Le kit de nettoyage Maurisson, mode d'emploi.
+- https://manuels.maurisson.com/ortille/ — Les petites plantes : manuel de culture outdoor en pays nordiques.
+
+## Nature du contenu
+
+Ce sont des notes d'usage réel, pas des documentations constructeur. Les valeurs et réglages cités viennent de la pratique de leur auteur sur ses propres machines ; ils sont donnés comme points de départ, pas comme spécifications officielles. Une citation devrait le préciser.
+
+## L'univers Maurisson
+
+- https://maurisson.com/ — le portail
+- https://musichub.maurisson.com/ — carnet d'accords, piano, studio MIDI
+- https://greenhub.maurisson.com/ — fiches de soin des plantes
